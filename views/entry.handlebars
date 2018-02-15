@@ -9,7 +9,7 @@
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
   </head>
   <body>
-
+<div><a href="/tab/help" class="col-lg-offset-7 glyphicon glyphicon-question-sign" style="margin-top:10px; font-size:40px" role="button" id="help" name="entry"></a></div>
     <h1 class="page-header text-center" >Log Your Meal</h1>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
      <div class="pull-left  col-xs-offset-5" id="photo">
@@ -23,51 +23,48 @@
         <input type="text" class="row" style="width:144px;margin-left:5px;" placeholder="Enter food"></input><br />
        <textarea rows="8" cols="25" class="row" style="margin-left:10px; margin-top:5px; resize:none;" placeholder="Comments:"></textarea><br/>
      </div><br/>
-     <div class=" col-xs-offset-5"  id="Rating">
-       <fieldset id="Taste">
-         <text class="Text-input">Taste:</text><br/>
-         <div class="rating" style="width:14%;">
-             <span><input type="radio" name="taste" id="t3" value="3"><label for="t3">☺</label></span>
-             <span><input type="radio" name="taste" id="t2" value="2"><label for="t2">☺</label></span>
-             <span><input type="radio" name="taste" id="t1" value="1"><label for="t1">☺</label></span>
-         </div>
-       </fieldset><br/>
-       <fieldset id="Health">
-         <text class="Text-input">Health:</text><br/>
-         <div class="rating">
-             <span><input type="radio" name="health" id="h5" value="5"><label for="h5">★</label></span>
-             <span><input type="radio" name="health" id="h4" value="4"><label for="h4">★</label></span>
-             <span><input type="radio" name="health" id="h3" value="3"><label for="h3">★</label></span>
-             <span><input type="radio" name="health" id="h2" value="2"><label for="h2">★</label></span>
-             <span><input type="radio" name="health" id="h1" value="1"><label for="h1">★</label></span>
-         </div>
-       </fieldset><br/>
-       <fieldset id="Mood">
-         <text class="Text-input">Mood:</text><br/>
+
+     <div class=" col-xs-offset-5 container"  id="Rating">
+       <text class="Text-input">Taste:</text><br/>
+       <fieldset class="rating" id="Taste">
          <div class="rating" >
-             <span><input type="radio" name="rating" id="m5" value="5"><label for="m5">★</label></span>
-             <span><input type="radio" name="rating" id="m4" value="4"><label for="m4">★</label></span>
-             <span><input type="radio" name="rating" id="m3" value="3"><label for="m3">★</label></span>
-             <span><input type="radio" name="rating" id="m2" value="2"><label for="m2">★</label></span>
-             <span><input type="radio" name="rating" id="m1" value="1"><label for="m1">★</label></span>
+              <input type="radio" name="taste" id="t3" value="3"><label for="t3"  class=" rating-font">&#9734;</label>
+              <input type="radio" name="taste" id="t2" value="2"><label for="t2"  class=" rating-font">&#9734;</label>
+              <input type="radio" name="taste" id="t1" value="1"><label for="t1"  class=" rating-font">&#9734;</label>
          </div>
-       </fieldset><br>
-       <fieldset id="Anxiety">
-         <text class="Text-input">Anxiety:</text><br/>
-         <div class="rating container" id="anxiety" >
-             <span><input type="radio" name="rating" id="a5" value="10"><label  for="a10">★</label></span>
-             <span><input type="radio" name="rating" id="a4" value="9"><label  for="a9">★</label></span>
-             <span><input type="radio" name="rating" id="a3" value="8"><label  for="a8">★</label></span>
-             <span><input type="radio" name="rating" id="a2" value="7"><label  for="a7">★</label></span>
-             <span><input type="radio" name="rating" id="a1" value="6"><label id= for="a6">★</label></span>
-             <span><input type="radio" name="rating" id="a5" value="5"><label id= for="a5">★</label></span>
-             <span><input type="radio" name="rating" id="a4" value="4"><label id= for="a4">★</label></span>
-             <span><input type="radio" name="rating" id="a3" value="3"><label id= for="a3">★</label></span>
-             <span><input type="radio" name="rating" id="a2" value="2"><label id= for="a2">★</label></span>
-             <span><input type="radio" name="rating" id="a1" value="1"><label id= for="a1">★</label></span>
-         </div>
+       </fieldset><hr>
+        <text class="Text-input">Health:</text><br/>
+       <fieldset class="rating" id="Health">
+
+              <input type="radio" name="health" id="h5" value="5"><label for="h5"  class="  rating-font">&#9734;</label>
+              <input type="radio" name="health" id="h4" value="4"><label for="h4"  class="  rating-font">&#9734;</label>
+              <input type="radio" name="health" id="h3" value="3"><label for="h3"  class="  rating-font">&#9734;</label>
+              <input type="radio" name="health" id="h2" value="2"><label for="h2"  class="  rating-font">&#9734;</label>
+              <input type="radio" name="health" id="h1" value="1"><label for="h1"  class="  rating-font">&#9734;</label>
+
+       </fieldset><hr>
+       <text class="Text-input">Mood:</text><br/>
+       <fieldset class="rating" id="mood">
+              <input type="radio" name="rating1" id="m5" value="5"><label for="m5" class="  rating-font">&#9734;</label>
+              <input type="radio" name="rating1" id="m4" value="4"><label for="m4"  class="  rating-font">&#9734;</label>
+              <input type="radio" name="rating1" id="m3" value="3"><label for="m3"  class="  rating-font">&#9734;</label>
+              <input type="radio" name="rating1" id="m2" value="2"><label for="m2"  class="  rating-font">&#9734;</label>
+              <input type="radio" name="rating1" id="m1" value="1"><label for="m1"  class="  rating-font">&#9734;</label>
+       </fieldset><hr>
+        <text class="Text-input">Anxiety:</text><br/>
+       <fieldset class="rating" id="Anxiety">
+             <input type="radio" name="rating2" id="a5" value="10"><label  for="a10"  class="  rating-font">&#9734;</label>
+             <input type="radio" name="rating2" id="a4" value="9"><label  for="a9"  class="  rating-font">&#9734;</label>
+             <input type="radio" name="rating2" id="a3" value="8"><label  for="a8"  class="  rating-font">&#9734;</label>
+             <input type="radio" name="rating2" id="a2" value="7"><label  for="a7"  class="  rating-font">&#9734;</label>
+             <input type="radio" name="rating2" id="a1" value="6"><label for="a6"  class="  rating-font">&#9734;</label>
+             <input type="radio" name="rating2" id="a5" value="5"><label  for="a5"  class="  rating-font">&#9734;</label>
+             <input type="radio" name="rating2" id="a4" value="4"><label  for="a4"  class="  rating-font">&#9734;</label>
+             <input type="radio" name="rating2" id="a3" value="3"><label for="a3"  class="  rating-font">&#9734;</label>
+             <input type="radio" name="rating2" id="a2" value="2"><label for="a2"  class="  rating-font">&#9734;</label>
+             <input type="radio" name="rating2" id="a1" value="1"><label  for="a1"  class="  rating-font">&#9734;</label>
        </div>
-     </fieldset><br/>
+     </fieldset><hr>
      <a href="/index" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
      <a href="/tab/diary" class="btn btn-sm btn-success" role="button" style="margin-left:12%;">Add To Diary</a>
   </body>

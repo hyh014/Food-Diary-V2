@@ -1,3 +1,45 @@
 {
-	"Help"
+	"info":[
+		{
+				"id":"tester1",
+				"password":"password",
+				"email":"tester@gmail.com",
+				"phone":"000-000-0000",
+				"camera":"N",
+				"location":"N",
+				"share":"N",
+				"data":[
+					{
+						"foodName":"cereal",
+						"image":"/images/fake1.png",
+						"comments":"Yummy Food :D",
+						"date":"02/05/18 8:20am",
+						"taste":"3",
+						"health":"4",
+						"mood":"5",
+						"anxiety":"1"
+					},
+					{
+						"foodName":"chicken with rice",
+						"image":"/images/fake2.png",
+						"comments":"Yummy Food :D",
+						"date":"02/05/18 1:05pm",
+						"taste":"2",
+						"health":"3",
+						"mood":"3",
+						"anxiety":"6"
+					},
+					{
+						"foodName":"lunch set",
+						"image":"/images/fake3.png",
+						"comments":"Yummy Food :D",
+						"date":"02/05/18 8:20pm",
+						"taste":"3",
+						"health":"5",
+						"mood":"2",
+						"anxiety":"3"
+					}
+				]
+		}
+	]
 }

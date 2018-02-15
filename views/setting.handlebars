@@ -13,17 +13,54 @@
 
 </head>
 <body>
-<div id="root">
-<h1 class="page-header text-center" >Settings</h1>
-<form>
-	<fieldset>
-		<legend>Notifications:</legend>
-		<label for="location">Allow Location</label><br>
-		<label for="camera">Allow Camera</label><br>
-		<label for="mic">Allow microphone</label><br>
-	</fieldset>
-</form>
-<a href="/index" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
-<div>
+	<div class="navbar col-lg-offset-5">
+		<div class="dropdown">
+			<button  class="glyphicon glyphicon-list transparent-button "  style="font-size:40px;"></button>
+			<div class="dropdown-content">
+				<a href="#">Home</a>
+				<a href="#">Entry</a>
+				<a href="#">Diary</a>
+		</div>
+	</div>
+</div>
+<div class="text-center" id="root">
+	<h1 class="page-header text-center" >Settings</h1>
+	<h2>Account Information</h2><hr>
+	<div class="container" id="account">
+		<h4>Username: {{info.0.id}}</h4>
+		<h4>Email: {{info.0.email}}</h4>
+		<h4>Phone: {{info.0.phone}}</h4>
+	</div>
+	<form>
+		<fieldset>
+			<h2>Notifications:</h2><hr>
+				<div id="Location">
+					<label for="location">Allow Location</label>
+					<label class="switch">
+		  			<input type="checkbox">
+		  			<span class="slider round"></span>
+					</label><br>
+				</div>
+				<div id="camera">
+					<label for="camera">Allow Camera</label>
+					<label class="switch">
+				  	<input type="checkbox">
+				  	<span class="slider round"></span>
+				</label><br>
+				</div>
+		</fieldset>
+	</form>
+	<hr>
+	<h2>Privacy</h2><hr>
+		<div id="share">
+			<text>Share my diary to nearby users</text>
+			<label class="switch">
+	  		<input type="checkbox">
+	  		<span class="slider round"></span>
+			</label>
+		</div>
+	<hr>
+	<a href="/index" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
+</div>
 </body>
 </html>

@@ -1,10 +1,9 @@
-
-/*
+var data = require('../data.json');/*
  * GET home page.
  */
 
 exports.view = function(req, res){
-  res.render('index', {
+  res.render('index',data); /*{
     "tabs": [
       { "name": "Create New Entry",
         "id": "entry"},
@@ -25,5 +24,5 @@ exports.view = function(req, res){
       {"name":"Help",
         "id":"help"}
     ]
-  });
+  };*/
 };
