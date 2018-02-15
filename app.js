@@ -11,7 +11,7 @@ var handlebars = require('express3-handlebars');
 var login = require('./routes/login');
 var index = require('./routes/index');
 var tab = require('./routes/tab');
-var photo = require('./routes/entry/photo');
+var photo = require('./routes/photo');
 // Example route
 // var user = require('./routes/user');
 
