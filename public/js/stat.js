@@ -12,7 +12,7 @@ $('a').click(function(){
   }
   else if(selected === 'mood')
   {
-    $('img').attr('src','/images/taste2.png');
+    $('img').attr('src','/images/mood1.png');
   }
   else {
     $('img').attr('src','/images/health1.png');

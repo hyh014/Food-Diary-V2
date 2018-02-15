@@ -9,12 +9,26 @@
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
   </head>
   <body>
+      <div class="navbar col-lg-offset-5">
+    <div class="dropdown">
+      <button  class="glyphicon glyphicon-list transparent-button "  style="font-size:40px;"></button>
+      <div class="dropdown-content">
+        <a href="/index">Home</a>
+        <a href="/tab/diary">Diary</a>
+        <a href="/tab/anxiety">Anxiety</a>
+        <a href="/tab/stat">Statistics</a>
+        <a href="/tab/news">News</a>
+        <a href="/tab/community">Community</a>
+        <a href="/tab/setting">Settings</a>
+        <a href="/" style="color:red; bottom:0;">Log Out</a>
+    </div>
+  </div>
 <div><a href="/tab/help" class="col-lg-offset-7 glyphicon glyphicon-question-sign" style="margin-top:10px; font-size:40px" role="button" id="help" name="entry"></a></div>
     <h1 class="page-header text-center" >Log Your Meal</h1>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
      <div class="pull-left  col-xs-offset-5" id="photo">
        <a href='#'><span class="glyphicon glyphicon-camera" style="font-size:100px;"></span></a><br/>
-        <a href='#' class="btn-info btn-lg" role="button">View Pictures</a><br/>
+        <a href='/tab/photo' class="btn-info btn-lg" role="button">View Pictures</a><br/>
         <p class="help-block" id="clock" ></p>
      </div>
 
