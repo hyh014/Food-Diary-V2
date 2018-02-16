@@ -30,7 +30,7 @@
 	</div>
 	  <a href="/tab/help" class="col-lg-offset-4 glyphicon glyphicon-question-sign" style="margin-top:10px; font-size:40px" role="button" id="help" name="entry"></a>
 </div>
-	<div><a href="/tab/help" class="col-lg-offset-7 glyphicon glyphicon-question-sign" style="margin-top:10px; font-size:40px" role="button" id="help" name="stat"></a></div>
+	<div><a href="#" class="col-lg-offset-7 glyphicon glyphicon-question-sign" onclick="helpStat()" style="margin-top:10px; font-size:40px" role="button" id="help" name="stat"></a></div>
 <div id="root" class="text-center">
 	<h1 class="page-header" >Statistics</h1>
 	<div align="center" >
@@ -54,5 +54,11 @@
 <script src="/js/stat.js"></script>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script>
+function helpStat() {
+    alert("Tutorials\n\nThis page gives out statistical analysis with graphs to help you track your self-logged meals. It will provides you weekly, monthly and yearly barchart graphs about your food health, food taste and mood."               
+      );
+}
+</script>
 </body>
 </html>
