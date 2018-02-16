@@ -7128,6 +7128,9 @@ td.visible-print {
 
 
 */
+.larger{
+  width:246px;
+}
 .image-small{
   max-width:30%;
 }
