@@ -13,25 +13,60 @@
 
 </head>
 <body>
-	<div><a href="/tab/help" class="col-lg-offset-7 glyphicon glyphicon-question-sign" style="margin-top:10px; font-size:40px" role="button" id="help" name="entry"></a></div>
+	<div class="navbar col-lg-offset-5">
+		<div class="dropdown">
+			<button  class="glyphicon glyphicon-list transparent-button "  style="font-size:40px;"></button>
+			<div class="dropdown-content">
+				<a href="/index">Home</a>
+				<a href="/tab/entry">Entry</a>
+				<a href="/tab/diary">Diary</a>
+				<a href="/tab/anxiety">Anxiety</a>
+				<a href="/tab/stat">Statistics</a>
+				<a href="/tab/community">Community</a>
+				<a href="/tab/setting">Setting</a>
+				<a href="/" style="color:red; bottom:0;">Log Out</a>
+		</div>
+	</div>
+	  <a href="#" class="col-lg-offset-4 glyphicon glyphicon-question-sign" onclick="helpNews()" style="margin-top:10px; font-size:40px" role="button" id="help" name="entry"></a>
+</div>
 <h1 class="page-header text-center" >News</h1>
 <div id="root">
 	<div class="container" id="FUN">
-		<text>FUN</text>
-		<div class="container">
-			<text>How Animals Eat!</text>
+		<h2>Fun</h2>
+		<div class="scrolling-box">
+			<h3>How Animals Eat!</h3>
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/1PAghQ7jvL4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 			<hr>
-			<text>Funny Baby Eating Cake!</text>
+			<h3>Funny Baby Eating Cake!</h3>
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/kbOgbll5tiw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 		</div>
 
 	</div>
 	<hr>
 	<div class="container" id="TIPS">
-
+		<div>
+			<h2>Health Tips<h2>
+			<div class="container" style="overflow:auto">
+				<div>
+					<h3>Eating right-what you put in your mouth -- starts with what you put in your shopping cart!</h3><br>
+					<div id="content" style="display:inline-block; float:right;">
+					<p>article1</p>
+				</div>
+			</div><hr>
+				<div>
+					<h3></h3>
+					<div id="content" style="display:inline-block; float:right;">
+						<p>article2</p>
+				</div>
+		</div>
 	</div>
 </div>
 <a href="/index" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
+<script>
+function helpNews() {
+    alert("News:\n\nThis is the place where you could have fun while you are eating meals. You could browse the latest funny videos about eating that makes you laugh and the scientific healthy tips to help you eat healthier. This also contributes users to have a better mood."               
+    	);
+}
+</script>
 </body>
 </html>

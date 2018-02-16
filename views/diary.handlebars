@@ -13,7 +13,23 @@
 
 </head>
 <body>
-	<div><a href="/tab/help" class="col-lg-offset-7 glyphicon glyphicon-question-sign" style="margin-top:10px; font-size:40px" role="button" id="help" name="entry"></a></div>
+	<div class="navbar col-lg-offset-5">
+		<div class="dropdown">
+			<button  class="glyphicon glyphicon-list transparent-button "  style="font-size:40px;"></button>
+			<div class="dropdown-content">
+				<a href="/index">Home</a>
+				<a href="/tab/entry">Entry</a>
+				<a href="/tab/anxiety">Anxiety</a>
+				<a href="/tab/stat">Statistics</a>
+				<a href="/tab/news">News</a>
+				<a href="/tab/community">Community</a>
+				<a href="/tab/setting">Setting</a>
+				<a href="/" style="color:red; bottom:0;">Log Out</a>
+		</div>
+	</div>
+		  <a  href = "#" class="col-lg-offset-4 glyphicon glyphicon-question-sign" onclick="helpDairy()" style="margin-top:10px; font-size:40px" role="button" id="help" name="diary"></a>
+</div>
+
 <h1 class="page-header text-center" >My Diary</h1>
 <div id="root">
 	{{#each info.0.data}}
@@ -23,6 +39,7 @@
 	</div>
 	<div>
 		<text>{{foodName}}</text><br>
+		<text>{{date}}</text><br>
 		<textarea rows="8" cols="25" class="row" style="resize:none;" readonly>{{comments}}</textarea><br/>
 	</div>
 	<div>
@@ -37,5 +54,12 @@
 	{{/each}}
 </div>
 <a href="/index" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
+<a href = "/tab/cal2" row = "button" class="glyphicon glyphicon-calendar" style="padding-left:5px; font-size:50px"></a><br>
+<script>
+function helpDairy() {
+    alert("Tutorials\n\nIn this page, you could view your dairy history. You could either scrolls up down or click the calendar to find one specific day."               
+      );
+}
+</script>
 </body>
 </html>

@@ -1,21 +1,43 @@
 
-$('a').click(function(){
+$('a.selection').click(function(){
 
   var selected = this.id;
+  var time = $('option').get(0).id;
+  console.log(time);
   if(selected === 'taste')
   {
-    $('img').attr('src','/images/taste1.png');
+    if(time === 'week'){
+      $('img').attr('src','/images/taste1.png');
+    }
+    else{
+      $('img').attr('src','/images/taste2.png');
+    }
   }
   else if(selected === 'health')
   {
-    $('img').attr('src','/images/health1.png');
+      if(time === 'week'){
+      $('img').attr('src','/images/health1.png');
+    }
+    else{
+      $('img').attr('src','/images/health2.png');
+    }
   }
   else if(selected === 'mood')
   {
-    $('img').attr('src','/images/taste2.png');
+      if(time === 'week'){
+      $('img').attr('src','/images/mood1.png');
+    }
+    else{
+      $('img').attr('src','/images/mood2.png');
+    }
   }
   else {
-    $('img').attr('src','/images/health1.png');
+      if(time === 'week'){
+      $('img').attr('src','/images/taste1.png');
+    }
+    else{
+      $('img').attr('src','/images/taste2.png');
+    }
   }
 
 });

@@ -7128,6 +7128,9 @@ td.visible-print {
 
 
 */
+.larger{
+  width:246px;
+}
 .image-small{
   max-width:30%;
 }
@@ -7308,89 +7311,87 @@ input:checked + .slider:before {
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
-/*
-.rating {
-    float:left;
-    width:40%;
+
+
+ul {list-style-type: none;}
+
+/* Month header */
+.month {
+    padding: 70px 25px;
+    width: 100%;
+    background: #1abc9c;
+    text-align: center;
 }
 
-.rating span { float:right; position:relative; }
-.rating span input {
-    position:absolute;
-    top:0px;
-    left:0px;
-    opacity:0;
-}
-.rating span label {
-    display:inline-block;
-    width:30px;
-    height:30px;
-    color:#ccc;
-    font-size:30px;
-    margin-right:2px;
-    line-height:30px;
+/* Month list */
+.month ul {
+    margin: 0;
+    padding: 0;
 }
 
-.rating span:hover ~ span label,
-.rating span:hover label,
-.rating span.checked label,
-.rating span.checked ~ span label {
-    color:yellow;
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
-/*
-.rating#anxiety{
-  float:left;
-  width:30%;
+/* Previous button inside month header */
+.month .prev {
+    float: left;
+    padding-top: 10px;
 }
 
-.rating span input#anxiety {
-    position:absolute;
-    top:0px;
-    left:2px;
-    opacity:0;
-}
-.rating span label#anxiety
-{
-display:inline-block;
-width:30px;
-height:30px;
-color:#FFF;
-background:#ccc;
-font-size:30px;
-margin-right:5px;
-line-height:30px;
-border-radius:50%;
--webkit-border-radius:50%;
-}
-@media (min-width: 768px) {
-  .rating span label,
-  .rating span label#anxiety{
-    width: 15px;
-    height:15px;
-    font-size:15px;
-  }
+/* Next button */
+.month .next {
+    float: right;
+    padding-top: 10px;
 }
 
-@media (min-width: 992px) {
-  .rating span label,
-  .rating span label#anxiety{
-    width: 20px;
-    height:20px;
-    font-size:20px;
-  }
+/* Weekdays (Mon-Sun) */
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
 }
 
-@media (min-width: 1200px) {
-  .rating span label,
-  .rating span label#anxiety{
-    width: 25px;
-    height:25px;
-    font-size:25px;
-  }
-.rating span:hover, ~ span label,
-.rating span:hover label,
-.rating span.checked label,
-.rating span.checked ~ span label {
-    color:yellow;
-}*/
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+.scrolling-box{
+  overflow:auto;
+  width:600px;
+  height:350px;
+}
+.larger-text{
+  width:246px;
+  height:50px;
+  font-size:30px;
+}
