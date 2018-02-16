@@ -31,6 +31,13 @@
 </div>
 
 <h1 class="page-header text-center" >My Diary</h1>
+<div class="text-center">
+	<form class="col-lg-offset-4">
+		<input type="date" name="Date">
+		<input type="submit">
+</form>
+</div>
+
 <div id="root">
 	{{#each info.0.data}}
 	<div class="container">
@@ -40,7 +47,7 @@
 	<div>
 		<text>{{foodName}}</text><br>
 		<text>{{date}}</text><br>
-		<textarea rows="8" cols="25" class="row" style="resize:none;" readonly>{{comments}}</textarea><br/>
+		<textarea rows="4" cols="25" class="row" style="resize:none;" readonly>{{comments}}</textarea><br/>
 	</div>
 	<div>
 		<text>Health:{{health}} &#9734;</text><br>
@@ -48,16 +55,17 @@
 		<text>Mood:{{mood}} &#9734;</text><br>
 		<text>Anxiety:{{anxiety}} </text>
 	</div>
-		<a href="#" class="btn" role="button">Edit</a>
+		<a href="/tab/entry" class="btn" role="button">Edit</a>
 	</div>
 	<hr>
 	{{/each}}
 </div>
+
 <a href="/index" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
-<a href = "/tab/cal2" row = "button" class="glyphicon glyphicon-calendar" style="padding-left:5px; font-size:50px"></a><br>
+<br>
 <script>
 function helpDairy() {
-    alert("Tutorials\n\nIn this page, you could view your dairy history. You could either scrolls up down or click the calendar to find one specific day."               
+    alert("Tutorials\n\nIn this page, you could view your diary history. You could either scrolls up down or click the calendar to find one specific day."
       );
 }
 </script>
