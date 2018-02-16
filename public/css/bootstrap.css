@@ -7128,6 +7128,9 @@ td.visible-print {
 
 
 */
+.larger{
+  width:246px;
+}
 .image-small{
   max-width:30%;
 }
@@ -7309,6 +7312,7 @@ input:checked + .slider:before {
     background-color: #3e8e41;
 }
 
+
 ul {list-style-type: none;}
 
 /* Month header */
@@ -7380,90 +7384,10 @@ ul {list-style-type: none;}
     padding: 5px;
     background: #1abc9c;
     color: white !important
-}
-/*
-.rating {
-    float:left;
-    width:40%;
-}
 
-.rating span { float:right; position:relative; }
-.rating span input {
-    position:absolute;
-    top:0px;
-    left:0px;
-    opacity:0;
-}
-.rating span label {
-    display:inline-block;
-    width:30px;
-    height:30px;
-    color:#ccc;
-    font-size:30px;
-    margin-right:2px;
-    line-height:30px;
-}
+.scrolling-box{
+  overflow:auto;
+  width:600px;
+  height:350px;
 
-.rating span:hover ~ span label,
-.rating span:hover label,
-.rating span.checked label,
-.rating span.checked ~ span label {
-    color:yellow;
 }
-
-/*
-.rating#anxiety{
-  float:left;
-  width:30%;
-}
-
-.rating span input#anxiety {
-    position:absolute;
-    top:0px;
-    left:2px;
-    opacity:0;
-}
-.rating span label#anxiety
-{
-display:inline-block;
-width:30px;
-height:30px;
-color:#FFF;
-background:#ccc;
-font-size:30px;
-margin-right:5px;
-line-height:30px;
-border-radius:50%;
--webkit-border-radius:50%;
-}
-@media (min-width: 768px) {
-  .rating span label,
-  .rating span label#anxiety{
-    width: 15px;
-    height:15px;
-    font-size:15px;
-  }
-}
-
-@media (min-width: 992px) {
-  .rating span label,
-  .rating span label#anxiety{
-    width: 20px;
-    height:20px;
-    font-size:20px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .rating span label,
-  .rating span label#anxiety{
-    width: 25px;
-    height:25px;
-    font-size:25px;
-  }
-.rating span:hover, ~ span label,
-.rating span:hover label,
-.rating span.checked label,
-.rating span.checked ~ span label {
-    color:yellow;
-}*/
