@@ -11,7 +11,7 @@
   <body>
       <div class="navbar col-lg-offset-5">
         <div class="dropdown">
-          <button  class="glyphicon glyphicon-list transparent-button "  style="font-size:40px;"></button>
+          <button  class="glyphicon glyphicon-list transparent-button " onclick="helpEntry()" style="font-size:40px;"></button>
           <div class="dropdown-content">
             <a href="/index">Home</a>
             <a href="/tab/diary">Diary</a>
@@ -90,4 +90,9 @@
 
       <script src="https://code.jquery.com/jquery.js"></script>
      <script src="/js/bootstrap.min.js"></script>
+     <script>
+function helpEntry() {
+    alert("Tutorials\n\nThis page intends to help you record your meals. You record meals by either take a photo or leave some texts. And you will then do  self-rate about current mood, food taste and food healthy level."               
+      );
+}
 </html>
