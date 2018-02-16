@@ -7308,6 +7308,11 @@ input:checked + .slider:before {
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+.scrolling-box{
+  overflow:auto;
+  width:600px;
+  height:350px;
+}
 /*
 .rating {
     float:left;
