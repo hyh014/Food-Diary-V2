@@ -7128,9 +7128,14 @@ td.visible-print {
 
 
 */
+
 .topright{
   position: absolute;
   top: auto;
+}
+.botright{
+  position:absolute;
+  bottom:auto;
   right:auto;
 }
 .index-padding{
@@ -7179,6 +7184,7 @@ td.visible-print {
       font-size:100px;
     }
 }
+
 @media (min-width: 768px) {
   .large-box {
     width: 750px;

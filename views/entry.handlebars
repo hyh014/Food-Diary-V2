@@ -3,33 +3,31 @@
   <head>
     <title>Food Diary App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      </head>
+  </head>
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 
   <body>
+    <
       <div class="navbar" style="float:left">
         <div class="dropdown">
           <button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
           <div class="dropdown-content">
             <a href="/index">Home</a>
             <a href="/tab/diary">Diary</a>
-
             <a href="/tab/stat">Statistics</a>
             <a href="/tab/news">News</a>
-            <!--<a href="/tab/community">Community</a>-->
             <a href="/tab/setting">Settings</a>
-            <a href="/" style="color:red; bottom:0;">Log Out</a>
+            <a href="/" style="color:red;">Log Out</a>
         </div>
       </div>
       </div>
       <div>
-        <a href="#" class="glyphicon glyphicon-question-sign" onclick="helpEntry()" style=" font-size:40px; float:right" role="button" id="help" name="entry"></a>
+        <a href="" class="glyphicon glyphicon-question-sign" onclick="helpEntry()" style=" font-size:40px; float:right" role="button" id="help" name="entry"></a>
       </div>
 <hr>
-
     <h1 class="page-header text-center" >Log Your Meal</h1>
     <div >
        <div class="container" style="display:inline-block"id="photo">
@@ -40,23 +38,22 @@
 
        <div class="container topright" style="display:inline-block " id="text-input">
           <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
-          <input type="text" class="row" style="width:144px;margin-left:5px;" placeholder="Enter food"></input><br />
-         <textarea rows="4" cols="25" class="row" style="margin-left:10px; margin-top:5px; resize:none;" placeholder="Comments:"></textarea><br/>
+          <input type="text" class="row" style="width:140px;margin-left:5px;" placeholder="Enter food"></input><br />
+         <textarea rows="4" cols="24" class="row" style="margin-left:10px; margin-top:5px; resize:none;" placeholder="Comments:"></textarea><br/>
        </div><br/>
    </div>
-<!--
+
      <div class="container"  id="Rating">
        <text class="Text-input">Taste:</text><br/>
        <fieldset class="rating" id="Taste">
-         <div class="rating" >
+              <input type="radio" name="taste" id="t5" value="5"><label for="t5"  class=" rating-font">&#9734;</label>
+              <input type="radio" name="taste" id="t4" value="4"><label for="t4"  class=" rating-font">&#9734;</label>
               <input type="radio" name="taste" id="t3" value="3"><label for="t3"  class=" rating-font">&#9734;</label>
               <input type="radio" name="taste" id="t2" value="2"><label for="t2"  class=" rating-font">&#9734;</label>
               <input type="radio" name="taste" id="t1" value="1"><label for="t1"  class=" rating-font">&#9734;</label>
-         </div>
        </fieldset><hr>
         <text class="Text-input">Health:</text><br/>
        <fieldset class="rating" id="Health">
-
               <input type="radio" name="health" id="h5" value="5"><label for="h5"  class="  rating-font">&#9734;</label>
               <input type="radio" name="health" id="h4" value="4"><label for="h4"  class="  rating-font">&#9734;</label>
               <input type="radio" name="health" id="h3" value="3"><label for="h3"  class="  rating-font">&#9734;</label>
@@ -87,8 +84,7 @@
        </div>
      </fieldset><hr>
      <a href="/index" class="btn btn-primary " role="button">Back</a>
-     <a href="/tab/diary" class="btn btn-sm btn-success" role="button" style="margin-left:12%;">Add To Diary</a>
--->
+     <a href="/tab/diary" class="btn btn-sm btn-success" style="float:right" role="button" >Add To Diary</a>
   </body>
   <script src="/js/DisplayClock.js"></script>
 
