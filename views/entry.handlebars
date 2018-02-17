@@ -3,17 +3,16 @@
   <head>
     <title>Food Diary App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      </head>
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-  </head>
+
   <body>
-      <div class="navbar col-lg-offset-5">
+      <div class="navbar" style="float:left">
         <div class="dropdown">
-
           <button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
-
           <div class="dropdown-content">
             <a href="/index">Home</a>
             <a href="/tab/diary">Diary</a>
@@ -25,25 +24,28 @@
             <a href="/" style="color:red; bottom:0;">Log Out</a>
         </div>
       </div>
-
-      <a href="#" class="col-lg-offset-4 glyphicon glyphicon-question-sign" onclick="helpEntry()" style="margin-top:10px; font-size:40px" role="button" id="help" name="entry"></a>
       </div>
+      <div>
+        <a href="#" class="glyphicon glyphicon-question-sign" onclick="helpEntry()" style=" font-size:40px; float:right" role="button" id="help" name="entry"></a>
+      </div>
+<hr>
 
     <h1 class="page-header text-center" >Log Your Meal</h1>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-     <div class="pull-left  col-xs-offset-5" id="photo">
-       <a href='#'><span class="glyphicon glyphicon-camera" style="font-size:100px;"></span></a><br/>
-        <a href='/tab/photo' class="btn-info btn-lg" role="button">View Pictures</a><br/>
-        <p class="help-block" id="clock" ></p>
-     </div>
+    <div >
+       <div class="container" style="display:inline-block"id="photo">
+         <a href='#'><span class="glyphicon glyphicon-camera glyphicon-size" ></span></a><br/>
+          <a href='/tab/photo' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
+          <p class="help-block" id="clock" ></p>
+       </div>
 
-     <div class="col-xs-offset-6"  id="text input">
-        <span class="glyphicon glyphicon-pencil" style="margin-left:8px; font-size:30px;"></span>
-        <input type="text" class="row" style="width:144px;margin-left:5px;" placeholder="Enter food"></input><br />
-       <textarea rows="8" cols="25" class="row" style="margin-left:10px; margin-top:5px; resize:none;" placeholder="Comments:"></textarea><br/>
-     </div><br/>
-
-     <div class=" col-xs-offset-5 container"  id="Rating">
+       <div class="container topright" style="display:inline-block " id="text-input">
+          <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
+          <input type="text" class="row" style="width:144px;margin-left:5px;" placeholder="Enter food"></input><br />
+         <textarea rows="4" cols="25" class="row" style="margin-left:10px; margin-top:5px; resize:none;" placeholder="Comments:"></textarea><br/>
+       </div><br/>
+   </div>
+<!--
+     <div class="container"  id="Rating">
        <text class="Text-input">Taste:</text><br/>
        <fieldset class="rating" id="Taste">
          <div class="rating" >
@@ -84,13 +86,14 @@
              <input type="radio" name="rating2" id="a1" value="1"><label  for="a1"  class="  rating-font">&#9734;</label>
        </div>
      </fieldset><hr>
-     <a href="/index" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
+     <a href="/index" class="btn btn-primary " role="button">Back</a>
      <a href="/tab/diary" class="btn btn-sm btn-success" role="button" style="margin-left:12%;">Add To Diary</a>
+-->
   </body>
   <script src="/js/DisplayClock.js"></script>
 
   <script src="/js/entry.js"></script>
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
       <script src="https://code.jquery.com/jquery.js"></script>
      <script src="/js/bootstrap.min.js"></script>
      <script>

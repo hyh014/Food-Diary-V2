@@ -7128,6 +7128,17 @@ td.visible-print {
 
 
 */
+.topright{
+  position: absolute;
+  top: auto;
+  right:auto;
+}
+.index-padding{
+  max-width:100%;
+  font-size:21px;
+  padding:20px;
+  margin-bottom:5px;
+}
 .large{
   width:123px !important;
 }
@@ -7144,6 +7155,29 @@ td.visible-print {
 
 .large-box{
   border: 5px solid gray;
+}
+@media (max-width: 767px) {
+  .glyphicon-size {
+      font-size:70px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .glyphicon-size {
+      font-size:80px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+.glyphicon-size {
+    font-size:90px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .glyphicon-size {
+      font-size:100px;
+    }
 }
 @media (min-width: 768px) {
   .large-box {
