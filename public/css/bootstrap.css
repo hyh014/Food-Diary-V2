@@ -7123,12 +7123,73 @@ td.visible-print {
 
 /* Added stylings
 
+.rating {
+  border: none;
+  float: left;
+  margin:0px 5px 0px 28px;
+}
+
+.rating > input { display: none; }
+.rating > label:before {
+  margin-top: 2px;
+  padding:5px 5px 5px 5px;
+  font-size: 1.25em;
+  display: inline-block;
+
+}
+
+.rating > .half:before {
+
+  position: absolute;
+}
+
+.rating > label {
+	color: black;
+	float: right;
+	margin:4px 1px 0px 0px;
+	background-color:#D8D8D8;
+  border-radius:1000px;
+  height:25px;
+  width:25px;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+
+	background-color:blue !important;
+  cursor:pointer;
+} /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+
+	background-color:blue !important;
+  cursor:pointer;
+}
 
 
 
 
-*/
+.icon {
+    background-color: DodgerBlue; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+}
 
+/* Darker background on mouse-over */
+.icon:hover {
+    background-color: RoyalBlue;
+}
+.resize{
+  max-width:75%;
+  max-height:75%;
+}
 .topright{
   position: absolute;
   top: auto;
@@ -7206,50 +7267,8 @@ td.visible-print {
   font-size:25px;
   float:left;
 }
-.rating {
-  border: none;
-  float: left;
-  margin:0px 5px 0px 28px;
-}
 
-.rating > input { display: none; }
-.rating > label:before {
-  margin-top: 2px;
-  padding:5px 5px 5px 5px;
-  font-size: 1.25em;
-  display: inline-block;
 
-}
-
-.rating > .half:before {
-
-  position: absolute;
-}
-
-.rating > label {
-	color: #fff;
-	float: right;
-	margin:4px 1px 0px 0px;
-	background-color:#D8D8D8;
-  border-radius:1000px;
-  height:25px;
-  width:25px;
-}
-
-/***** CSS Magic to Highlight Stars on Hover *****/
-
-.rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label {
-	background-color:#7ED321 !important;
-  cursor:pointer;
-} /* hover previous stars in list */
-
-.rating > input:checked + label:hover, /* hover current star when changing rating */
-.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label {
-	background-color:#7ED321 !important;
-  cursor:pointer;
-}
 /* The switch - the box around the slider */
 .switch {
   position: relative;

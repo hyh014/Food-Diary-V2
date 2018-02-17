@@ -10,27 +10,27 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/bootstrap.css" rel="stylesheet">
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-
 </head>
 <body>
-	<div class="navbar col-lg-offset-5">
+	<div class="navbar" style="float:left">
 		<div class="dropdown">
-			<button  class="glyphicon glyphicon-list transparent-button "  style="font-size:40px;"></button>
+			<button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
 			<div class="dropdown-content">
 				<a href="/index">Home</a>
 				<a href="/tab/entry">Entry</a>
 				<a href="/tab/stat">Statistics</a>
 				<a href="/tab/news">News</a>
-				<!--<a href="/tab/community">Community</a>-->
-				<a href="/tab/setting">Setting</a>
-				<a href="/" style="color:red; bottom:0;">Log Out</a>
+				<a href="/tab/setting">Settings</a>
+				<a href="/" style="color:red;">Log Out</a>
 		</div>
 	</div>
-		  <a  href = "#" class=" glyphicon glyphicon-question-sign" onclick="helpDairy()" style="margin-top:10px; font-size:40px; float:right" role="button" id="help" name="diary"></a>
-</div>
+	</div>
+	<div>
+		<a href="" class="glyphicon glyphicon-question-sign" onclick="helpDiary()" style=" font-size:40px; float:right" role="button" id="help" name="entry"></a>
+	</div>
 <hr>
 <h1 class="page-header text-center" >My Diary</h1>
-<div class="text-center">
+<div class="text-center" style="margin-bottom:15px;">
 	<form class="col-lg-offset-4">
 		Search: <input type="date" name="Date">
 		<input type="submit">
@@ -39,13 +39,13 @@
 
 <div id="root">
 	{{#each info.0.data}}
-	<div class="container">
+	<div class="container text-center">
+		<text>{{date}}</text><br>
 		<div class="container photo">
-		<img src="{{image}}" class="img">
-	</div>
+			<img src="{{image}}" class="img resize">
+		</div>
 	<div>
 		<text>{{foodName}}</text><br>
-		<text>{{date}}</text><br>
 		<textarea rows="4" cols="25" class="row" style="resize:none;" readonly>{{comments}}</textarea><br/>
 	</div>
 	<div>
@@ -63,7 +63,7 @@
 <a href="/index" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
 <br>
 <script>
-function helpDairy() {
+function helpDiary() {
     alert("Tutorials\n\nIn this page, you could view your diary history. You could either scrolls up down or click the calendar to find one specific day."
       );
 }

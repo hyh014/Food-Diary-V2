@@ -14,21 +14,23 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
-		<div class="navbar col-lg-offset-5">
-		<div class="dropdown">
-			<button  class="glyphicon glyphicon-list transparent-button "  style="font-size:40px;"></button>
-			<div class="dropdown-content">
-				<a href="/index">Home</a>
-				<a href="/tab/entry">Entry</a>
-				<a href="/tab/diary">Diary</a>
-				<a href="/tab/news">News</a>
-				<a href="/tab/community">Community</a>
-				<a href="/tab/setting">Setting</a>
-				<a href="/" style="color:red; bottom:0;">Log Out</a>
+		<div class="navbar" style="float:left">
+			<div class="dropdown">
+				<button  class="glyphicon glyphicon-list transparent-button "  style="font-size:40px;"></button>
+				<div class="dropdown-content">
+					<a href="/index">Home</a>
+					<a href="/tab/entry">Entry</a>
+					<a href="/tab/diary">Diary</a>
+					<a href="/tab/news">News</a>
+					<a href="/tab/community">Community</a>
+					<a href="/tab/setting">Setting</a>
+					<a href="/" style="color:red;">Log Out</a>
+				</div>
+			</div>
 		</div>
-	</div>
-	  <a href="#" class="col-lg-offset-4 glyphicon glyphicon-question-sign" onclick="helpStat()" style="margin-top:10px; font-size:40px" role="button" id="help" name="stat"></a>
-</div>
+		<div>
+		  <a href="#" class="glyphicon glyphicon-question-sign" onclick="helpStat()" style=" font-size:40px; float:right;" role="button" id="help" name="stat"></a>
+		</div>
 <hr>
 <div id="root" class="text-center">
 	<h1 class="page-header" >Statistics</h1>
@@ -45,11 +47,10 @@
 		<option value="yearly" id="year">Yearly</option>
 	</select>
 	<a href = "/tab/cal1" row = "button" class="glyphicon glyphicon-calendar" style="padding-left:5px; font-size:50px"></a><br>
-	<div class="container " >
-		<img src="/images/blank.jpg" class="img">
+	<div class="container" >
+		<img src="/images/blank.jpg" class="img" style="max-width:90%;max-height:90%;">
 	</div>
 </div>
-<a href="/index" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
 <script src="/js/stat.js"></script>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
