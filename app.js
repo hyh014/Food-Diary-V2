@@ -13,6 +13,7 @@ var index = require('./routes/index');
 var tab = require('./routes/tab');
 var photo = require('./routes/photo');
 var register = require('./routes/register');
+var user = require('./routes/user');
 // Example route
 // var user = require('./routes/user');
 
@@ -42,6 +43,7 @@ app.get('/',login.view);
 app.get('/index', index.view);
 // Example route
 // app.get('/users', user.list);
+app.get('/user/:id',user.userInfo);
 app.get('/tab/:name', tab.viewTab);
 app.get('/register', register.view);
 app.get('tab/entry/:name',photo.view);
