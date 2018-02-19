@@ -10,35 +10,174 @@
 				"share":"N",
 				"data":[
 					{
+						"foodName":"Cool Breakfast",
+						"image":"/images/B1.jpg",
+						"comments":"Soooo good breakfast that I could view scences from the big window!",
+						"date":"02/05/18",
+						"time":"8:20am",
+						"taste":"5",
+						"health":"4",
+						"mood":"5",
+						"anxiety":"1"
+					},
+					{
+						"foodName":"Chinese noodles",
+						"image":"/images/L1.jpg",
+						"comments":"I love chinese noodles, tasty!!",
+						"date":"02/05/18",
+						"time":"11:30am",
+						"taste":"5",
+						"health":"3",
+						"mood":"5",
+						"anxiety":"1"
+					},
+					{
+						"foodName":"Sushi",
+						"image":"/images/L9.jpg",
+						"comments":"Great time with my best friends to have this good sushi!! @Alice @Stephanie",
+						"date":"02/05/18",
+						"time":"7:20pm",
+						"taste":"5",
+						"health":"5",
+						"mood":"5",
+						"anxiety":"1"
+					},
+
+					{
 						"foodName":"cereal",
-						"image":"/images/fake1.png",
+						"image":"/images/B9.jpeg",
 						"comments":"Yummy Food :D",
-						"date":"02/05/18 8:20am",
+						"date":"02/06/18",
+						"time":"7:00am",
 						"taste":"3",
 						"health":"4",
 						"mood":"5",
 						"anxiety":"1"
 					},
 					{
-						"foodName":"chicken with rice",
-						"image":"/images/fake2.png",
+						"foodName":"Vegetable scrolls",
+						"image":"/images/L3.jpg",
+						"comments":"I think I can't be more healthy!",
+						"date":"02/06/18",
+						"time":"12:30pm",
+						"taste":"3",
+						"health":"5",
+						"mood":"5",
+						"anxiety":"1"
+					},
+					{
+						"foodName":"spicy chicken",
+						"image":"/images/L7.jpg",
+						"comments":"Too much spicy but taste good!",
+						"date":"02/06/18",
+						"time":"6:00pm",
+						"taste":"4",
+						"health":"2",
+						"mood":"5",
+						"anxiety":"1"
+					},
+					{
+						"foodName":"pancake",
+						"image":"/images/B10.jpg",
 						"comments":"Yummy Food :D",
-						"date":"02/05/18 1:05pm",
+						"date":"02/07/18",
+						"time":"8:20am",
+						"taste":"3",
+						"health":"4",
+						"mood":"5",
+						"anxiety":"1"
+					},
+					{
+						"foodName":"pasta",
+						"image":"/images/L2.jpg",
+						"comments":"So so",
+						"date":"02/07/18",
+						"time":"1:00pm",
 						"taste":"2",
 						"health":"3",
 						"mood":"3",
-						"anxiety":"6"
+						"anxiety":"2"
 					},
 					{
-						"foodName":"lunch set",
-						"image":"/images/fake3.png",
+						"foodName":"Stone rice",
+						"image":"/images/L5.jpeg",
 						"comments":"Yummy Food :D",
-						"date":"02/05/18 8:20pm",
+						"date":"02/07/18",
+						"time":"5:30pm",
 						"taste":"3",
 						"health":"5",
-						"mood":"2",
-						"anxiety":"3"
-					}
+						"mood":"5",
+						"anxiety":"1"
+					},
+
+					{
+						"foodName":"Home's memory",
+						"image":"/images/B5.jpg",
+						"comments":"I wanted to eat this for a super long time",
+						"date":"02/08/18",
+						"time":"9:30am",
+						"taste":"5",
+						"health":"5",
+						"mood":"5",
+						"anxiety":"1"
+					},
+					{
+
+						"foodName":"Family lunch",
+						"image":"/images/L10.jpg",
+						"comments":"@all my families",
+						"date":"02/08/18",
+						"time":"12:30pm",
+						"taste":"5",
+						"health":"5",
+						"mood":"5",
+						"anxiety":"1"
+					},
+					{
+		      			"foodName":"BBQ",
+						"image":"/images/L4.jpg",
+						"comments":"Love it!!",
+						"date":"02/08/18",
+						"time":"5:30pm",
+						"taste":"5",
+						"health":"2",
+						"mood":"5",
+						"anxiety":"1"
+					},
+					{
+						"foodName":"Mochi",
+						"image":"/images/snack.jpg",
+						"comments":"My favorite!!",
+						"date":"02/08/18",
+						"time":"5:30pm",
+						"taste":"3",
+						"health":"5",
+						"mood":"5",
+						"anxiety":"1"
+					},
+					{
+						"foodName":"Sweet Breakfast",
+						"image":"/images/BB.jpg",
+						"comments":"Yummy Food :D @My love",
+						"date":"02/09/18",
+						"time":"10:00am",
+						"taste":"3",
+						"health":"5",
+						"mood":"5",
+						"anxiety":"1"
+					},
+					{
+						"foodName":"BBQ",
+						"image":"/images/L4.jpg",
+						"comments":"Love it!!",
+						"date":"02/09/18",
+						"time":"5:30pm",
+						"taste":"5",
+						"health":"2",
+						"mood":"5",
+					},
+
+
 				]
 		}
 	]
