@@ -1,5 +1,6 @@
 {
-	"info":[
+	"info":
+	[
 		{
 				"id":"tester1",
 				"password":"password",
@@ -8,7 +9,8 @@
 				"camera":"N",
 				"location":"N",
 				"share":"N",
-				"data":[
+				"data":
+				[
 					{
 						"foodName":"Cool Breakfast",
 						"image":"/images/B1.jpg",
@@ -42,7 +44,6 @@
 						"mood":"5",
 						"anxiety":"1"
 					},
-
 					{
 						"foodName":"cereal",
 						"image":"/images/B9.jpeg",
@@ -109,7 +110,6 @@
 						"mood":"5",
 						"anxiety":"1"
 					},
-
 					{
 						"foodName":"Home's memory",
 						"image":"/images/B5.jpg",
@@ -174,8 +174,8 @@
 						"time":"5:30pm",
 						"taste":"5",
 						"health":"2",
-						"mood":"5",
-					},
+						"mood":"5"
+					}
 
 
 				]
