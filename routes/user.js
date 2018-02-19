@@ -10,4 +10,9 @@ exports.userInfo = function(req,res){
     }
   }
   res.json(data);
+
+}
+
+exports.info = function(req,res){
+  res.json(users);
 }

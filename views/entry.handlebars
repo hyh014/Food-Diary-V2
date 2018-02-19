@@ -30,7 +30,7 @@
 <hr>
     <h1 class="page-header text-center" >Log Your Meal</h1>
     <div >
-       <div class="container" style="display:inline-block"id="photo">
+       <div class="container" style="display:inline-block" id="photo">
          <a href='#'><span class="glyphicon glyphicon-camera glyphicon-size" ></span></a><br/>
           <a href='/tab/photo' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
           <p class="help-block" id="clock" ></p>
@@ -38,25 +38,25 @@
 
        <div class="container topright" style="display:inline-block " id="text-input">
           <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
-          <input type="text" class="row" style="width:140px;margin-left:5px;" placeholder="Enter food"></input><br />
-         <textarea rows="4" cols="24" class="row" style="margin-left:10px; margin-top:5px; resize:none;" placeholder="Comments:"></textarea><br/>
+          <input type="text" class="row" style="width:140px;margin-left:5px;" placeholder="Enter food" id="foodName"></input><br />
+         <textarea rows="4" cols="24" class="row" style="margin-left:10px; margin-top:5px; resize:none;" placeholder="Comments:" id="comments"></textarea><br/>
        </div><br/>
    </div>
 
-     <div class="container"  id="Rating">
+     <div class="container"  id="Rating" >
        <text class="Text-input">Taste:</text><br/>
-       <input type="range" min="0" max="5" value="0" step="1" id="Taste">
-       <div class="rateit" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-backingfld="#Taste"></div>
+       <div class="rateit" id="taste" data-rateit-resetable="false"  data-rateit-ispreset="true">
+        </div>
       <!-- <fieldset class="rating" id="Taste">
               <input type="radio" name="taste" id="t5" value="5"><label for="t5"  class=" rating-font">&#9734;</label>
               <input type="radio" name="taste" id="t4" value="4"><label for="t4"  class=" rating-font">&#9734;</label>
               <input type="radio" name="taste" id="t3" value="3"><label for="t3"  class=" rating-font">&#9734;</label>
               <input type="radio" name="taste" id="t2" value="2"><label for="t2"  class=" rating-font">&#9734;</label>
               <input type="radio" name="taste" id="t1" value="1"><label for="t1"  class=" rating-font">&#9734;</label>
-       </fieldset>--><hr>
+       </fieldset>-->
+     <hr>
         <text class="Text-input">Health:</text><br/>
-        <input type="range" min="0" max="5" value="0" step="1" id="Health">
-        <div class="rateit" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-backingfld="#Health"></div>
+        <div class="rateit" id="health" data-rateit-resetable="false"  data-rateit-ispreset="true">
         <!--
        <fieldset class="rating" id="Health">
               <input type="radio" name="health" id="h5" value="5"><label for="h5"  class="  rating-font">&#9734;</label>
@@ -66,10 +66,9 @@
               <input type="radio" name="health" id="h1" value="1"><label for="h1"  class="  rating-font">&#9734;</label>
 
        </fieldset>-->
-       <hr>
+       </div><hr>
        <text class="Text-input">Mood:</text><br/>
-       <input type="range" min="0" max="5" value="0" step="1" id="Mood">
-       <div class="rateit" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-backingfld="#Mood"></div>
+       <div class="rateit" id="mood" data-rateit-resetable="false"  data-rateit-ispreset="false">
        <!--
        <fieldset class="rating" id="mood">
               <input type="radio" name="mood" id="m5" value="5"><label for="m5" class="  rating-font">&#9734;</label>
@@ -77,11 +76,10 @@
               <input type="radio" name="mood" id="m3" value="3"><label for="m3"  class="  rating-font">&#9734;</label>
               <input type="radio" name="mood" id="m2" value="2"><label for="m2"  class="  rating-font">&#9734;</label>
               <input type="radio" name="mood" id="m1" value="1"><label for="m1"  class="  rating-font">&#9734;</label>
-       </fieldset>-->
-       <hr>
+       </fieldset>-->  
+       </div> <hr>
         <text class="Text-input">Anxiety:</text><br/>
-        <input type="range" min="0" max="10" value="0" step="1" id="Anxiety">
-        <div class="rateit" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-backingfld="#Anxiety"></div>
+        <div class="rateit" id="anxiety" data-rateit-resetable="false"  data-rateit-ispreset="false">
         <!--
        <fieldset class="rating" id="Anxiety">
              <input type="radio" name="Anxiety" id="a5" value="10"><label  for="a10"  class="  rating-font">&#9734;</label>
@@ -95,9 +93,12 @@
              <input type="radio" name="Anxiety" id="a2" value="2"><label for="a2"  class="  rating-font">&#9734;</label>
              <input type="radio" name="Anxiety" id="a1" value="1"><label  for="a1"  class="  rating-font">&#9734;</label>
        </div>
-     </fieldset>--><hr>
+     </fieldset>-->
+   </div><hr>
+ </div>
+
      <a href="/index" class="btn btn-primary " role="button">Back</a>
-     <a href="/tab/diary" class="btn btn-sm btn-success" style="float:right" role="button" >Add To Diary</a>
+     <a href="#" class="btn btn-sm btn-success" style="float:right" role="button" id="AddDiary">Add To Diary</a>
 
      <script src="/js/DisplayClock.js"></script>
      <script src="/js/entry.js"></script>
@@ -106,8 +107,8 @@
          <script src="https://code.jquery.com/jquery.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/scripts/jquery.rateit.min.js"></script>
+        <script src="/js/user.js"></script>
   </body>
-
      <script>
 function helpEntry() {
     alert("Tutorials\n\nThis page intends to help you record your meals. You record meals by either take a photo or leave some texts. And you will then do  self-rate about current mood, food taste and food healthy level."

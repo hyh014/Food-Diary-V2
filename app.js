@@ -16,7 +16,6 @@ var register = require('./routes/register');
 var user = require('./routes/user');
 // Example route
 // var user = require('./routes/user');
-
 var app = express();
 
 // all environments
@@ -43,6 +42,7 @@ app.get('/',login.view);
 app.get('/index', index.view);
 // Example route
 // app.get('/users', user.list);
+app.get('/data.json',user.info);
 app.get('/user/:id',user.userInfo);
 app.get('/tab/:name', tab.viewTab);
 app.get('/register', register.view);
