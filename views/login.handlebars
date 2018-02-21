@@ -28,9 +28,17 @@
 		<div class="form-group">
 			<a href="/register" role="button" class="btn btn-primary btn-lg larger">Register</a>
 		</div>
+		<div class="form-group">
+			<fb:login-button 
+			  scope="public_profile,email"
+			  onlogin="checkLoginState();">
+			</fb:login-button>
+		</div>
 	</div>
 </div>
   <script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/user.js"></script>
+	{{>facebook}}
+	<script src="/js/facebook.js"></script>
 </body>
 </html>

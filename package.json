@@ -12,11 +12,14 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "browserify": "^16.1.0",
     "express": "3.x",
     "express3-handlebars": "*",
+    "fs": "0.0.1-security",
     "jquery.rateit": "^1.1.1",
     "mongodb": "*",
-    "mongoose": "*"
+    "mongoose": "*",
+    "uniq": "^1.0.1"
   },
   "engines": {
     "node": "8.9.x"

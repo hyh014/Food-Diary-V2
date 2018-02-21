@@ -25,6 +25,7 @@ function callBackFn(result){
   }
 }
 $('#AddDiary').click(function(){
+  userID= document.getElementById('userid').value;
   var foodName = document.getElementById('foodName').value;
   var comments = document.getElementById('comments').value;
   var taste = $('#taste').rateit('value');
@@ -32,12 +33,12 @@ $('#AddDiary').click(function(){
   var mood = $('#mood').rateit('value');
   var anxiety = $('#anxiety').rateit('value');
   $.getJSON('data.json',function(data){
-    
+
   });
 });
 
 $('#register').click(function(){
-  $.getJSON('data.json',function(data){
+$.getJSON('data.json',function(data){
     userID = document.getElementById('userid').value;
     password = document.getElementById('password').value;
     email = document.getElementById('email').value;
@@ -52,11 +53,14 @@ $('#register').click(function(){
         "share":"N",
         "data":[]
     };
-    var json = JSON.stringify(newObject);
-    data.info.push(json);
+    
+    data.info.push(newObject);
    // data.info.push(JSON.stringify(newObject));
     console.log(data.info[0]);
     console.log(data.info[1]);
       });
-  });
+});
 
+$('#edit').click(function(){
+
+});
