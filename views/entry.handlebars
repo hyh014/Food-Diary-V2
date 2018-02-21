@@ -31,7 +31,15 @@
     <h1 class="page-header text-center" >Log Your Meal</h1>
     <div >
        <div class="container" style="display:inline-block" id="photo">
-         <a href='#'><span class="glyphicon glyphicon-camera glyphicon-size" ></span></a><br/>
+        <!-- 
+        <a href='#'><span class="glyphicon glyphicon-camera glyphicon-size" ></span></a><br/>
+      -->
+         <div style="height:0px;overflow:hidden">
+          <input type="file" id="fileInput" name="fileInput" />
+        </div>
+        <button class="glyphicon glyphicon-camera glyphicon-size" type="button" onclick="chooseFile();">
+        </button>
+
           <a href='/tab/photo' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
           <p class="help-block" id="clock" ></p>
        </div>
@@ -98,7 +106,42 @@
  </div>
 
      <a href="/index" class="btn btn-primary " role="button">Back</a>
+     <a href="#" class = "btn btn-sm btn-success" role="button"  id ="Save" >Save</a>
      <a href="#" class="btn btn-sm btn-success" style="float:right" role="button" id="AddDiary">Add To Diary</a>
+
+<asp:button id = "Button1" runat="server" Text = "Save" disabled = "True" onclick="Button1_Click"/>
+
+<script type="text/javascript">
+var changesSaved = true;
+function hasPendingChanges()
+{
+  changesSaved = document.getElementById()
+}
+var setSaveChanges = function() { saveChanges = true; };
+
+window.onload = function() {
+    window.addEventListener("beforeunload", function (e) {
+        if (saveChanges) {
+            return undefined;
+        }
+
+        var confirmationMessage = 'It looks like you have been editing something. '
+                                + 'If you leave before saving, your changes will be lost.';
+
+        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+    });
+};
+</script>
+
+
+<script>
+   function chooseFile() {
+      $("#fileInput").click();
+   }
+</script>
+
+
 
      <script src="/js/DisplayClock.js"></script>
      <script src="/js/entry.js"></script>
@@ -113,6 +156,11 @@
 function helpEntry() {
     alert("Tutorials\n\nThis page intends to help you record your meals. You record meals by either take a photo or leave some texts. And you will then do  self-rate about current mood, food taste and food healthy level."
       );
+}
+
+$('#Save').click(changeText);
+function changeText(event){
+  $(this).text("Saved");
 }
 </script>
 </html>
