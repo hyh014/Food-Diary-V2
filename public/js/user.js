@@ -4,8 +4,8 @@ var email;
 var phone
 
 $('#login').click(function(){
-
   userID= document.getElementById('userid').value;
+  localStorage.setItem('name',userID);
   password= document.getElementById('password').value;
   $.get("/user/"+userID,callBackFn);
 });
@@ -40,6 +40,7 @@ $('#AddDiary').click(function(){
 $('#register').click(function(){
 $.getJSON('data.json',function(data){
     userID = document.getElementById('userid').value;
+    localStorage.setItem('name',userID);
     password = document.getElementById('password').value;
     email = document.getElementById('email').value;
     phone = document.getElementById('phone').value;
