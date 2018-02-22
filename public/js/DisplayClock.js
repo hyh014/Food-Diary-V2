@@ -19,7 +19,6 @@ var d = new Date();
     {
       curr_hour-=12;
     }
-
 var curr_min = d.getMinutes();
 curr_min=curr_min+"";
 if (curr_min.length == 1)

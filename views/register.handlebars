@@ -18,15 +18,17 @@
 <script src="js/bootstrap.min.js"></script>
 <body>
 	<div id="root" class="text-center">
-		<div id="input">
+		<form id="addID" role="form" method="get" action="add">
+			<div id="input">
 			<h4>User Name:</h4><input type="text" class="larger-text" name="userid" id="userid"><br>
 			<h4>Password:</h4><input type="password" class="larger-text" name="password" id="password"><br>
 			<h4>Email:</h4><input type="text" class="larger-text" name="email" id="email"><br>
 			<h4>Phone:</h4><input type="text" class="larger-text" name="phone" id="phone">
-		</div>
-		<!--<input type="submit" id="submitBtn" class="btn btn-default" value="Add the user"></input>-->
-		<a href="#" role="button" class="btn btn-primary larger" style="margin-top:10px;" id="register">Create Account</a>
-		<a href="/" role="button" class="btn btn-primary larger" style="margin-top:10px;">Back</a>
+			</div>
+			<input type="submit" class="btn btn-primary larger" style="margin-top:10px;" id="register">
+			<a href="/" role="button" class="btn btn-primary larger" style="margin-top:10px;">Back</a>
+		</form>
+
 	</div>
 	<script src="/js/user.js"></script>
 </body>

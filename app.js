@@ -14,6 +14,7 @@ var tab = require('./routes/tab');
 var photo = require('./routes/photo');
 var register = require('./routes/register');
 var user = require('./routes/user');
+var add = require('./routes/add');
 // Example route
 // var user = require('./routes/user');
 var app = express();
@@ -40,6 +41,7 @@ if ('development' == app.get('env')) {
 
 app.get('/',login.view);
 app.get('/index', index.view);
+app.get('/add',add.addID);
 // Example route
 // app.get('/users', user.list);
 app.get('/data.json',user.info);
@@ -47,6 +49,7 @@ app.get('/user/:id',user.userInfo);
 app.get('/tab/:name', tab.viewTab);
 app.get('/register', register.view);
 app.get('tab/entry/:name',photo.view);
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
