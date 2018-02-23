@@ -10,6 +10,7 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/bootstrap.css" rel="stylesheet">
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+
 </head>
 <body>
 	<div class="navbar" style="float:left">
@@ -37,9 +38,9 @@
 </form>
 </div>
 
-<div id="root">
+
 	{{#each info.0.datas}}
-	<div class="container text-center">
+	<div id = "one" class="container text-center">
 		<text>{{date}} {{time}}</text><br>
 		<div class="container photo">
 			<img src="{{image}}" class="img resize">
@@ -55,10 +56,11 @@
 		<text>Anxiety:{{anxiety}} </text>
 	</div>
 		<a href="/tab/entry" class="btn" role="button">Edit</a>
+		<button>Remove</button>
 	</div>
 	<hr>
 	{{/each}}
-</div>
+
 
 <a href="/index" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
 <br>
@@ -67,6 +69,14 @@ function helpDiary() {
     alert("Tutorials\n\nIn this page, you could view your diary history. You could either scrolls up down or click the calendar to find one specific day."
       );
 }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#one").remove();
+    });
+});
 </script>
 </body>
 </html>

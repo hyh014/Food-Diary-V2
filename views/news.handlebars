@@ -12,10 +12,16 @@
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 
 </head>
+<style>
+body {
+    background-image: url("/images/224.jpg");
+}
+</style>
 <body>
 	<div class="navbar" style="float:left">
 		<div class="dropdown">
 			<button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
+
 			<div class="dropdown-content">
 				<a href="/index">Home</a>
 				<a href="/tab/entry">Entry</a>
@@ -27,6 +33,7 @@
 	</div>
 	</div>
 	<div>
+		<favorite-star active></favorite-star>
 		<a href="#" class="glyphicon glyphicon-question-sign" onclick="helpEntry()" style=" font-size:40px; float:right" role="button" id="help" name="entry"></a>
 	</div>
 <hr>
@@ -40,6 +47,12 @@
 			<hr>
 			<h3>Funny Baby Eating Cake!</h3>
 			<iframe width="560" height="315" style="max-width:60%;" src="https://www.youtube.com/embed/kbOgbll5tiw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			<h3>Panda Eating!</h3>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/EnWYNIwWj3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			<h3>Funny Rancoo Eating</h3>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/T9PeJo67jyg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			<h3>Funny Baby Fall Asleep while eating</h3>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/G3Bao_JX0VY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 		</div>
 
 	</div>
@@ -68,5 +81,24 @@ function helpNews() {
     	);
 }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+  $('#bookmarkme').click(function() {
+    if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
+      window.sidebar.addPanel(document.title, window.location.href, '');
+    } else if (window.external && ('AddFavorite' in window.external)) { // IE Favorite
+      window.external.AddFavorite(location.href, document.title);
+    } else if (window.opera && window.print) { // Opera Hotlist
+      this.title = document.title;
+      return true;
+    } else { // webkit - safari/chrome
+      alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
+    }
+  });
+});
+</script>
+
+<a id="bookmarkme" href="#" rel="sidebar" title="bookmark this page">Add to Favoriate</a>
 </body>
 </html>

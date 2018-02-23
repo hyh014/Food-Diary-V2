@@ -10,6 +10,12 @@
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 
     <link href="/scripts/rateit.css" rel="stylesheet">
+    <style>
+body {
+    background-image: url("/images/224.jpg");
+
+}
+</style>
   <body>
       <div class="navbar" style="float:left">
         <div class="dropdown">
@@ -108,31 +114,6 @@
      <a href="/index" class="btn btn-primary " role="button">Back</a>
      <a href="#" class = "btn btn-sm btn-success" role="button"  id ="Save" >Save</a>
      <a href="#" class="btn btn-sm btn-success" style="float:right" role="button" id="AddDiary">Add To Diary</a>
-
-<asp:button id = "Button1" runat="server" Text = "Save" disabled = "True" onclick="Button1_Click"/>
-
-<script type="text/javascript">
-var changesSaved = true;
-function hasPendingChanges()
-{
-  changesSaved = document.getElementById()
-}
-var setSaveChanges = function() { saveChanges = true; };
-
-window.onload = function() {
-    window.addEventListener("beforeunload", function (e) {
-        if (saveChanges) {
-            return undefined;
-        }
-
-        var confirmationMessage = 'It looks like you have been editing something. '
-                                + 'If you leave before saving, your changes will be lost.';
-
-        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
-        return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
-    });
-};
-</script>
 
 
 <script>
