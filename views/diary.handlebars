@@ -12,9 +12,7 @@
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 
 </head>
-
 <body>
-	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 	<div class="navbar" style="float:left">
 		<div class="dropdown">
 			<button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
@@ -60,12 +58,11 @@
 		<a href="/tab/entry" class="btn btn-sm btn-success" role="button">Edit</a>
 		<button class="remove btn btn-sm btn-success">Remove</button>
 		<hr>
-
 	</div>
 	{{/each}}
 
 
-<a href="/index" class="myBtnBack" role="button">Back</a>
+<a href="/index" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
 <br>
 <script>
 function helpDiary() {
@@ -81,41 +78,5 @@ $(document).ready(function(){
     });
 });
 </script>
-<script>
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
-    }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-</script>
-
-<script>
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
-    }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-	</script>
 </body>
 </html>

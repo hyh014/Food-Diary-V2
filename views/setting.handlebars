@@ -17,23 +17,6 @@ body {
     background-image: url("/images/224.jpg");
 
 }
-h3 {
-	margin-left: 30px;
-    text-align: left;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-
-}
-h4{
-	text-align:left;
-	margin-left: 60px;
-	display:inline-block;
-    float:left;
-}
-label {
-	font: Arial, Helvetica, sans-serif 100px;
-	margin-left: 40px;
-}
-
 </style>
 <body>
 	<div class="navbar" style="float:left">
@@ -56,7 +39,7 @@ label {
 <hr>
 <div class="text-center" id="root">
 	<h1 class="page-header text-center" >Settings</h1>
-	<h3>Account Information</h2><hr>
+	<h2>Account Information</h2><hr>
 	<div class="container" id="account">
 		<h4>Username: {{id}}</h4>
 		<h4>Email: {{email}}</h4>
@@ -64,18 +47,16 @@ label {
 	</div>
 	<form>
 		<fieldset>
-			<h3>Notifications:</h2><hr>
+			<h2>Notifications:</h2><hr>
 				<div id="Location">
-					<h4>Allow Location</h4>
-					<label for="location"></label>
+					<label for="location">Allow Location</label>
 					<label class="switch">
 		  			<input type="checkbox">
 		  			<span class="slider round"></span>
 					</label><br>
 				</div>
 				<div id="camera">
-					<h4>Allow Location</h4>
-					<label for="camera"></label>
+					<label for="camera">Allow Camera</label>
 					<label class="switch">
 				  	<input type="checkbox">
 				  	<span class="slider round"></span>
@@ -84,9 +65,9 @@ label {
 		</fieldset>
 	</form>
 	<hr>
-	<h3>Privacy</h2><hr>
+	<h2>Privacy</h2><hr>
 		<div id="share">
-			<h4>Share my diary</h4>
+			<text>Share my diary to nearby users</text>
 			<label class="switch">
 	  		<input type="checkbox">
 	  		<span class="slider round"></span>
