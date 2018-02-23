@@ -372,6 +372,7 @@ hr {
   margin-bottom: 20px;
   border: 0;
   border-top: 1px solid #eeeeee;
+  opacity:0 !important;
 }
 
 .sr-only {
@@ -7193,6 +7194,7 @@ td.visible-print {
 .topright{
   position: absolute;
   top: auto;
+  right:auto;
 }
 .botright{
   position:absolute;

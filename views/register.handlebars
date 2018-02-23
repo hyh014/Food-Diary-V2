@@ -16,20 +16,45 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- Include all compiled plugins (blelow), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+<style>
+body {
+    background-image: url("/images/224.jpg");
+}
+</style>
 <body>
 	<div id="root" class="text-center">
+		<h2>Register</h2>
 		<form id="addID" role="form" method="get" action="/add">
 			<div id="input">
-			<h4>User Name:</h4><input type="text" class="larger-text" name="userid" id="userid"><br>
-			<h4>Password:</h4><input type="password" class="larger-text" name="password" id="password"><br>
-			<h4>Email:</h4><input type="text" class="larger-text" name="email" id="email"><br>
-			<h4>Phone:</h4><input type="text" class="larger-text" name="phone" id="phone">
+			<h4>User Name:</h4><input type="text" class="larger" name="userid" id="userid">*<br>
+			<h4>Password:</h4><input type="password" class="larger" name="password" id="password">*<br>
+			<h4>Email:</h4><input type="text" class="larger" name="email" required id="email">*<br>
+			<h4>Phone:</h4><input type="text" class="larger" name="phone" required id="phone">
+			</div>
+			<h5 name="sample" id="sample">Hello</h5>
+			<input type="submit" class="btn btn-primary larger" style="margin-top:10px;" id="register">
+
+		</form>
+					<a href="/" role="button" class="btn btn-primary larger" style="margin-top:10px;">Back</a>
+</div>
+
+
+
+
+	<script src="/js/user.js"></script>
+</body>
+	</html>
+
+<!--
+	<div id="root" class="text-center">
+		<form action= id="addID" role="form" method="get" action="add">
+			<div id="input">
+			<h4>User Name:</h4><input type="text" class="larger" name="userid"id="userid">*<br>
+			<h4>Password:</h4><input type="password" class="larger" name="password" id="password">*<br>
+			<h4>Email:</h4><input type="text" class="larger" name="email" required id="email">*<br>
+			<h4>Phone:</h4><input type="text" class="larger" name="phone" required id="phone">
 			</div>
 			<input type="submit" class="btn btn-primary larger" style="margin-top:10px;" id="register">
 			<a href="/" role="button" class="btn btn-primary larger" style="margin-top:10px;">Back</a>
 		</form>
-
-	</div>
-	<script src="/js/user.js"></script>
-</body>
-	</html>
+	-->

@@ -3,7 +3,7 @@ var data = require('../data.json');/*
  */
 
 exports.view = function(req, res){
-  res.render('index',data); /*{
+  res.render('index',data.info[data.info.length-1]); /*{
     "tabs": [
       { "name": "Create New Entry",
         "id": "entry"},

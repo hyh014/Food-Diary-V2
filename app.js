@@ -7,6 +7,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars');
+var io = require('socket.io')(http);
 
 var login = require('./routes/login');
 var index = require('./routes/index');
@@ -39,7 +40,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+});
 app.get('/',login.view);
 app.get('/index', index.view);
 app.get('/add',add.addID);

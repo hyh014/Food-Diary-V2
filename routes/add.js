@@ -6,7 +6,7 @@ exports.addID = function(req,res){
   var password = req.query.password;
   var email = req.query.email;
   var phone = req.query.phone;
-  var newID = {
+    var newID = {
         'id':userid,
         'password':password,
         'email':email,
@@ -14,10 +14,9 @@ exports.addID = function(req,res){
         'camera':'N',
         'location':'N',
         'share':'N',
-        'data':[]
+        'datas':[]
       };
-      console.log("In register");
         data.info.push(newID);
-        console.log(data);
+        return res.redirect('/index');
       }
 }

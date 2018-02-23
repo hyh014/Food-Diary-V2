@@ -13,6 +13,7 @@ $('#login').click(function(){
   sessionStorage.setItem('name',userID);
   password= document.getElementById('password').value;
   $.get("/user/"+sessionStorage.getItem('name'),callBackFn);
+
 });
 function callBackFn(result){
 
@@ -28,40 +29,46 @@ function callBackFn(result){
     $('#error').show();
   }
 }
-/*
-$('#register').click(function(e){
-  e.preventDefault();
-  sessionStorage.setItem('name',document.getElementById('userid').value);
-  console.log("going to index");
-  location.replace("/index");
-});*/
-/*$('#addEntry').click(function(){
-  
-  var foodName = document.getElementById('foodName').value;
-  var comments = document.getElementById('comments').value;
-  var taste = $('#taste').rateit('value');
-  var health = $('#health').rateit('value');
-  var mood = $('#mood').rateit('value');
-  var anxiety = $('#anxiety').rateit('value');
-  var date = document.getElementById('clock').value;
-  var newObject = {
-      "foodName":foodName,
-      "image":"/images/L5.jpeg",
-      "comments":comments,
-      "date":date,
-      "taste":taste,
-      "health":health,
-      "mood":mood,
-      "anxiety":anxiety
-    };
-    sessionStorage.setItem('userID','tester1');
-    $.post("/user/tester1",newObject,function(data){
-        console.log(data);
-        console.log(newObject);
-    });
-   // data.info[1].datas.push(newObject);
-  });
-*/
+$('#register').click(function(){
+  userID = document.getElementById('userid').value;
+  sessionStorage.setItem('name',userID);
+  console.log("USERID is "+userID);
+})
+$('#addEntry').click(function(){
+  sessionStorage.edit=false;
+var d = new Date();
+    var a_p ="";
+    var curr_hour = d.getHours();
+    if(curr_hour <12)
+    {
+      a_p="AM";
+    }
+    else {
+      a_p="PM";
+    }
+    if(curr_hour==0)
+    {
+      curr_hour=12;
+    }
+    if(curr_hour>12)
+    {
+      curr_hour-=12;
+    }
+var curr_min = d.getMinutes();
+curr_min=curr_min+"";
+if (curr_min.length == 1)
+   {
+   curr_min = "0" + curr_min;
+   }
+  document.getElementById('taste').value= $('#tasteRate').rateit('value');
+  document.getElementById('health').value=$('#healthRate').rateit('value');
+  document.getElementById('mood').value=$('#moodRate').rateit('value');
+  document.getElementById('anxiety').value=$('#anxietyRate').rateit('value');
+  document.getElementById('date').value=(d.getMonth()+1)+"/"+d.getDate()+"/"+d.getFullYear();
+  document.getElementById('time').value=curr_hour+":"+curr_min+a_p;
+  document.getElementById('userid').value=sessionStorage.getItem('userID');
+  console.log(document.getElementById('userid').value);
+});
 $('#edit').click(function(){
 
 });
