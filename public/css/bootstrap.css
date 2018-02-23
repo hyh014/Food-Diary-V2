@@ -1,3 +1,4 @@
+
 /*!
  * Bootstrap v3.0.3 (http://getbootstrap.com)
  * Copyright 2013 Twitter, Inc.
@@ -371,8 +372,8 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #eeeeee;
   opacity:0 !important;
+ 
 }
 
 .sr-only {
@@ -581,6 +582,8 @@ cite {
   padding-bottom: 9px;
   margin: 40px 0 20px;
   border-bottom: 1px solid #eeeeee;
+  font-family: Comic Sans MS, cursive, sans-serif;
+  font-size:;
 }
 
 ul,
@@ -2352,6 +2355,7 @@ fieldset[disabled] .btn-default.active {
   color: #ffffff;
   background-color: #428bca;
   border-color: #357ebd;
+  
 }
 
 .btn-primary:hover,
@@ -2362,6 +2366,7 @@ fieldset[disabled] .btn-default.active {
   color: #ffffff;
   background-color: #3276b1;
   border-color: #285e8e;
+  
 }
 
 .btn-primary:active,
@@ -7122,37 +7127,6 @@ td.visible-print {
   }
 }
 
-/* Added stylings
-
-.rating {
-  border: none;
-  float: left;
-  margin:0px 5px 0px 28px;
-}
-
-.rating > input { display: none; }
-.rating > label:before {
-  margin-top: 2px;
-  padding:5px 5px 5px 5px;
-  font-size: 1.25em;
-  display: inline-block;
-
-}
-
-.rating > .half:before {
-
-  position: absolute;
-}
-
-.rating > label {
-	color: black;
-	float: right;
-	margin:4px 1px 0px 0px;
-	background-color:#D8D8D8;
-  border-radius:1000px;
-  height:25px;
-  width:25px;
-}
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 
@@ -7170,7 +7144,6 @@ td.visible-print {
 	background-color:blue !important;
   cursor:pointer;
 }
-
 
 
 
@@ -7194,7 +7167,6 @@ td.visible-print {
 .topright{
   position: absolute;
   top: auto;
-  
 }
 .botright{
   position:absolute;
@@ -7290,7 +7262,7 @@ td.visible-print {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #EC7063;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -7308,7 +7280,7 @@ td.visible-print {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #F7DC6F;
 }
 
 input:focus + .slider {
@@ -7458,4 +7430,43 @@ ul {list-style-type: none;}
   width:246px;
   height:50px;
   font-size:30px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #3276b1;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #3276b1;
+}
+
+.myBtnBack {
+
+  position: fixed;
+  bottom: 20px;
+  left: 30px !important;
+  border: none;
+  outline: none;
+  background-color: #428bca;
+  color: white;
+  cursor: pointer;
+
+
+}
+
+.myBtnBack:hover {
+  background-color: #428bca;
+  
 }
