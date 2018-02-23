@@ -29,89 +29,53 @@
       </div>
 <hr>
     <h1 class="page-header text-center" >Log Your Meal</h1>
-    <div >
+    <div>    
        <div class="container" style="display:inline-block" id="photo">
-        <!-- 
-        <a href='#'><span class="glyphicon glyphicon-camera glyphicon-size" ></span></a><br/>
-      -->
          <div style="height:0px;overflow:hidden">
           <input type="file" id="fileInput" name="fileInput" />
-        </div>
+         </div>
         <button class="glyphicon glyphicon-camera glyphicon-size" type="button" onclick="chooseFile();">
         </button>
-
           <a href='/tab/photo' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
           <p class="help-block" id="clock" ></p>
        </div>
+         <div class="container topright" style="display:inline-block " id="text-input">
+            <form id="addDiary" role="form" method="get" action="/addDiary">
+            <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
+            <input type="text" class="row" style="width:140px;margin-left:5px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
+            <textarea rows="4" cols="24" class="row" style="margin-left:10px; margin-top:5px; resize:none;" placeholder="Comments:" name="comments" id="comments"></textarea><br/>
 
-       <div class="container topright" style="display:inline-block " id="text-input">
-          <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
-          <input type="text" class="row" style="width:140px;margin-left:5px;" placeholder="Enter food" id="foodName"></input><br />
-         <textarea rows="4" cols="24" class="row" style="margin-left:10px; margin-top:5px; resize:none;" placeholder="Comments:" id="comments"></textarea><br/>
-       </div><br/>
-   </div>
+         </div>
+       <br/>
+     </div>
 
      <div class="container"  id="Rating" >
        <text class="Text-input">Taste:</text><br/>
-       <div class="rateit" id="taste" data-rateit-resetable="false"  data-rateit-ispreset="true">
-        </div>
-      <!-- <fieldset class="rating" id="Taste">
-              <input type="radio" name="taste" id="t5" value="5"><label for="t5"  class=" rating-font">&#9734;</label>
-              <input type="radio" name="taste" id="t4" value="4"><label for="t4"  class=" rating-font">&#9734;</label>
-              <input type="radio" name="taste" id="t3" value="3"><label for="t3"  class=" rating-font">&#9734;</label>
-              <input type="radio" name="taste" id="t2" value="2"><label for="t2"  class=" rating-font">&#9734;</label>
-              <input type="radio" name="taste" id="t1" value="1"><label for="t1"  class=" rating-font">&#9734;</label>
-       </fieldset>-->
+       <div class="rateit" name="taste" id="taste" data-rateit-resetable="false"  data-rateit-ispreset="true">
+      </div>
+
      <hr>
         <text class="Text-input">Health:</text><br/>
-        <div class="rateit" id="health" data-rateit-resetable="false"  data-rateit-ispreset="true">
-        <!--
-       <fieldset class="rating" id="Health">
-              <input type="radio" name="health" id="h5" value="5"><label for="h5"  class="  rating-font">&#9734;</label>
-              <input type="radio" name="health" id="h4" value="4"><label for="h4"  class="  rating-font">&#9734;</label>
-              <input type="radio" name="health" id="h3" value="3"><label for="h3"  class="  rating-font">&#9734;</label>
-              <input type="radio" name="health" id="h2" value="2"><label for="h2"  class="  rating-font">&#9734;</label>
-              <input type="radio" name="health" id="h1" value="1"><label for="h1"  class="  rating-font">&#9734;</label>
-
-       </fieldset>-->
+        <div class="rateit" id="health" name="health" data-rateit-resetable="false"  data-rateit-ispreset="true">
+        
        </div><hr>
        <text class="Text-input">Mood:</text><br/>
-       <div class="rateit" id="mood" data-rateit-resetable="false"  data-rateit-ispreset="false">
-       <!--
-       <fieldset class="rating" id="mood">
-              <input type="radio" name="mood" id="m5" value="5"><label for="m5" class="  rating-font">&#9734;</label>
-              <input type="radio" name="mood" id="m4" value="4"><label for="m4"  class="  rating-font">&#9734;</label>
-              <input type="radio" name="mood" id="m3" value="3"><label for="m3"  class="  rating-font">&#9734;</label>
-              <input type="radio" name="mood" id="m2" value="2"><label for="m2"  class="  rating-font">&#9734;</label>
-              <input type="radio" name="mood" id="m1" value="1"><label for="m1"  class="  rating-font">&#9734;</label>
-       </fieldset>-->  
+       <div class="rateit" name="mood" id="mood" data-rateit-resetable="false"  data-rateit-ispreset="false">
        </div> <hr>
         <text class="Text-input">Anxiety:</text><br/>
-        <div class="rateit" id="anxiety" data-rateit-resetable="false"  data-rateit-ispreset="false">
-        <!--
-       <fieldset class="rating" id="Anxiety">
-             <input type="radio" name="Anxiety" id="a5" value="10"><label  for="a10"  class="  rating-font">&#9734;</label>
-             <input type="radio" name="Anxiety" id="a4" value="9"><label  for="a9"  class="  rating-font">&#9734;</label>
-             <input type="radio" name="Anxiety" id="a3" value="8"><label  for="a8"  class="  rating-font">&#9734;</label>
-             <input type="radio" name="Anxiety" id="a2" value="7"><label  for="a7"  class="  rating-font">&#9734;</label>
-             <input type="radio" name="Anxiety" id="a1" value="6"><label for="a6"  class="  rating-font">&#9734;</label>
-             <input type="radio" name="Anxiety" id="a5" value="5"><label  for="a5"  class="  rating-font">&#9734;</label>
-             <input type="radio" name="Anxiety" id="a4" value="4"><label  for="a4"  class="  rating-font">&#9734;</label>
-             <input type="radio" name="Anxiety" id="a3" value="3"><label for="a3"  class="  rating-font">&#9734;</label>
-             <input type="radio" name="Anxiety" id="a2" value="2"><label for="a2"  class="  rating-font">&#9734;</label>
-             <input type="radio" name="Anxiety" id="a1" value="1"><label  for="a1"  class="  rating-font">&#9734;</label>
-       </div>
-     </fieldset>-->
-   </div><hr>
- </div>
-
+        <div class="rateit" name="anxiety" id="anxiety" data-rateit-resetable="false"  data-rateit-ispreset="false">
+        </div><hr>
+     </div>
+    
      <a href="/index" class="btn btn-primary " role="button">Back</a>
      <a href="#" class = "btn btn-sm btn-success" role="button"  id ="Save" >Save</a>
-     <a href="#" class="btn btn-sm btn-success" style="float:right" role="button" id="AddDiary">Add To Diary</a>
-
+      <input type="submit" class="btn btn-sm btn-success" style="float:right;" id="addEntry"/>
+      </form>
+    </div>
 <asp:button id = "Button1" runat="server" Text = "Save" disabled = "True" onclick="Button1_Click"/>
 
 <script type="text/javascript">
+  /*
 var changesSaved = true;
 function hasPendingChanges()
 {
@@ -131,7 +95,7 @@ window.onload = function() {
         (e || window.event).returnValue = confirmationMessage; //Gecko + IE
         return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
     });
-};
+};*/
 </script>
 
 
