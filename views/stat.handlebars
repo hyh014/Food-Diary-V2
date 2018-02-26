@@ -12,16 +12,15 @@
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
-</head>
+</head> 
 <style>
-body {
+{
     background-image: url("/images/224.jpg");
-
-
-
 }
 </style>
+
 <body>
+	<input type="hidden" id="userid" name="userid" value=""/>
 		<div class="navbar" style="float:left">
 			<div class="dropdown">
 				<button  class="glyphicon glyphicon-list transparent-button "  style="font-size:40px;"></button>
@@ -63,6 +62,7 @@ body {
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script>
+	document.getElementById('userid').value=sessionStorage.getItem('userid');
 function helpStat() {
     alert("Tutorials\n\nThis page gives out statistical analysis with graphs to help you track your self-logged meals. It will provides you weekly, monthly and yearly barchart graphs about your food health, food taste and mood."
       );

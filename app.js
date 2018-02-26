@@ -15,6 +15,7 @@ var photo = require('./routes/photo');
 var register = require('./routes/register');
 var user = require('./routes/user');
 var add = require('./routes/add');
+var addDiary = require('./routes/addDiary');
 // Example route
 // var user = require('./routes/user');
 var app = express();
@@ -42,6 +43,7 @@ if ('development' == app.get('env')) {
 app.get('/',login.view);
 app.get('/index', index.view);
 app.get('/add',add.addID);
+app.get('/addDiary',addDiary.addDiary);
 // Example route
 // app.get('/users', user.list);
 app.get('/data.json',user.info);
