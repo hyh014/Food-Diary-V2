@@ -12,7 +12,7 @@
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
-</head> 
+</head>
 <style>
 {
     background-image: url("/images/224.jpg");
@@ -25,12 +25,11 @@
 			<div class="dropdown">
 				<button  class="glyphicon glyphicon-list transparent-button "  style="font-size:40px;"></button>
 				<div class="dropdown-content">
-					<a href="/index">Home</a>
-					<a href="/tab/entry">Entry</a>
-					<a href="/tab/diary">Diary</a>
-					<a href="/tab/news">News</a>
-					
-					<a href="/tab/setting">Setting</a>
+					<a href="/index/{{id}}">Home</a>
+					<a href="/entry/{{id}}">Entry</a>
+					<a href="/diary/{{id}}">Diary</a>
+					<a href="/news">News</a>
+					<a href="/setting/{{id}}">Setting</a>
 					<a href="/" style="color:red;">Log Out</a>
 				</div>
 			</div>
@@ -53,7 +52,7 @@
 		<option value="monthly" id="month">Monthly</option>
 		<option value="yearly" id="year">Yearly</option>
 	</select>
-	<a href = "/tab/cal1" row = "button" class="glyphicon glyphicon-calendar" style="padding-left:5px; font-size:50px"></a><br>
+	<a href = "/cal1" row = "button" class="glyphicon glyphicon-calendar" style="padding-left:5px; font-size:50px"></a><br>
 	<div class="container" >
 		<img src="/images/blank.jpg" class="img" style="max-width:90%;max-height:90%;">
 	</div>

@@ -8,12 +8,11 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link href="/scripts/rateit.css" rel="stylesheet">
     <style>
 body {
     background-image: url("/images/224.jpg");
-
 }
 </style>
   <body>
@@ -21,11 +20,11 @@ body {
         <div class="dropdown">
           <button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
           <div class="dropdown-content">
-            <a href="/index">Home</a>
-            <a href="/tab/diary">Diary</a>
-            <a href="/tab/stat">Statistics</a>
-            <a href="/tab/news">News</a>
-            <a href="/tab/setting">Settings</a>
+            <a href="/index/{{id}}">Home</a>
+            <a href="/diary/{{id}}">Diary</a>
+            <a href="/stat/{{id}}">Statistics</a>
+            <a href="/news">News</a>
+            <a href="/setting/{{id}}">Settings</a>
             <a href="/" style="color:red;">Log Out</a>
         </div>
       </div>
@@ -35,18 +34,18 @@ body {
       </div>
 <hr>
     <h1 class="page-header text-center" >Log Your Meal</h1>
-    <div>    
+    <div>
        <div class="container" style="display:inline-block" id="photo">
          <div style="height:0px;overflow:hidden">
           <input  type="file" id="fileInput" name="fileInput" />
          </div>
         <button class="glyphicon glyphicon-camera glyphicon-size" type="button" onclick="chooseFile();">
         </button><br>
-          <a href='/tab/photo' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
+          <a href='/photo' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
           <p class="help-block" id="clock" ></p>
        </div>
          <div class="container topright" style="display:inline-block " id="text-input">
-            <form id="addDiary" role="form" method="get" action="/addDiary">
+            <form id="addDiary" role="form" method="post" action="/addDiary">
             <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
             <input type="text" class="row" style="width:140px;margin-left:5px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
             <textarea rows="4" cols="24" class="row" style="margin-left:10px; margin-top:5px; resize:none;" placeholder="Comments:" name="comments" id="comments"></textarea><br/>
@@ -58,23 +57,23 @@ body {
      <div class="container"  id="Rating" >
 
        <text class="Text-input">Taste:</text><br/>
-       <div name="taste" class="rateit" id="tasteRate" data-rateit-resetable="false"  data-rateit-ispreset="true">
+       <div name="taste" class="rateit" id="tasteRate">
 
       </div>
-      <input type="hidden" name="taste" id="taste" value="1" />
+      <input type="hidden" name="taste" id="taste" value="0" />
      <hr>
         <text class="Text-input">Health:</text><br/>
-        <div class="rateit" id="healthRate"  data-rateit-resetable="false"  data-rateit-ispreset="true">
+        <div class="rateit" id="healthRate">
        </div>
        <input type="hidden" name="health" value="0" id="health"/>
       <hr>
        <text class="Text-input">Mood:</text><br/>
-       <div class="rateit" id="moodRate" data-rateit-resetable="false"  data-rateit-ispreset="false">
+       <div class="rateit" id="moodRate">
        </div>
        <input type="hidden" name="mood" value="0" id="mood"/>
       <hr>
         <text class="Text-input">Anxiety:</text><br/>
-        <div class="rateit" id="anxietyRate" data-rateit-resetable="false"  data-rateit-ispreset="false">
+        <div class="rateit" id="anxietyRate">
         </div>
         <input type="hidden" name="anxiety" value="0" id="anxiety"/>
       <hr>
@@ -84,12 +83,14 @@ body {
      </div>
      <a href="/index" class="btn btn-primary " role="button">Back</a>
      <a href="#" class = "btn btn-sm btn-success" role="button"  id ="Save" >Save</a>
-      <input type="submit" class="btn btn-sm btn-success" style="float:right;" id="addEntry"/>
+      <input type="submit" class="btn btn-sm btn-success" style="float:right;" id="addEntry" onclick="return changeID();"/>
       </form>
     </div>
 <asp:button id = "Button1" runat="server" Text = "Save" disabled = "True" onclick="Button1_Click"/>
 <script type="text/javascript">
-
+function changeID(){
+  document.getElementById('userid').value=sessionStorage.userID;
+}
   /*
 var changesSaved = true;
 function hasPendingChanges()

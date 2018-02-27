@@ -10,12 +10,18 @@ var handlebars = require('express3-handlebars');
 
 var login = require('./routes/login');
 var index = require('./routes/index');
-var tab = require('./routes/tab');
 var photo = require('./routes/photo');
 var register = require('./routes/register');
 var user = require('./routes/user');
 var add = require('./routes/add');
+var remove = require('./routes/remove');
 var addDiary = require('./routes/addDiary');
+
+var diary = require('./routes/diary');
+var setting = require('./routes/setting');
+var entry = require('./routes/entry');
+var stat = require('./routes/stat');
+var news = require('./routes/news');
 // Example route
 // var user = require('./routes/user');
 var app = express();
@@ -41,16 +47,25 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/',login.view);
-app.get('/index', index.view);
-app.get('/add',add.addID);
-app.get('/addDiary',addDiary.addDiary);
 // Example route
 // app.get('/users', user.list);
-app.get('/data.json',user.info);
+/*app.get('/data.json',user.info);
+*/
 app.get('/user/:id',user.userInfo);
-app.get('/tab/:name', tab.viewTab);
+app.get('/add',add.addID);
+app.post('/addDiary',addDiary.addDiary);
+app.get('/remove/:name/:month/:day/:year',remove.remove);
+app.get('/checkLogin/:name',user.checkLogin);
+
+app.get('/index/:name', index.view);
+app.get('/diary/:name',diary.viewDiary);
+app.get('/setting/:name',setting.viewSetting);
+app.get('/entry/:name',entry.addEntry);
+app.get('/stat/:name',stat.getStat);
+app.get('/news',news.show);
+
 app.get('/register', register.view);
-app.get('tab/entry/:name',photo.view);
+app.get('/entry/photo/:name',photo.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -10,18 +10,19 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/bootstrap.css" rel="stylesheet">
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<link href="/scripts/rateit.css" rel="stylesheet">
 </head>
 <body>
 	<div class="navbar" style="float:left">
 		<div class="dropdown">
 			<button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
 			<div class="dropdown-content">
-				<a href="/index">Home</a>
-				<a href="/tab/entry">Entry</a>
-				<a href="/tab/stat">Statistics</a>
-				<a href="/tab/news">News</a>
-				<a href="/tab/setting">Settings</a>
+				<a href="/index/{{id}}">Home</a>
+				<a href="/entry/{{id}}">Entry</a>
+				<a href="/stat/{{id}}">Statistics</a>
+				<a href="/news">News</a>
+				<a href="/setting/{{id}}">Settings</a>
 				<a href="/" style="color:red;">Log Out</a>
 		</div>
 	</div>
@@ -41,7 +42,7 @@
 
 	{{#each datas}}
 	<div id = "one" class="container text-center">
-		<text>{{date}} {{time}}</text><br>
+		<text id="date">{{date}} {{time}}</text><br>
 		<div class="container photo">
 			<img src="{{image}}" class="img resize">
 		</div>
@@ -55,7 +56,7 @@
 		<text>Mood:{{mood}} &#9734;</text><br>
 		<text>Anxiety:{{anxiety}} </text>
 	</div>
-		<a href="/tab/entry" class="btn btn-sm btn-success" role="button">Edit</a>
+		<a href="#" class="btn btn-sm btn-success" role="button" id='edit'>Edit</a>
 		<button class="remove btn btn-sm btn-success">Remove</button>
 		<hr>
 	</div>
@@ -70,11 +71,23 @@ function helpDiary() {
       );
 }
 </script>
+<script src="/js/user.js"></script>
+<script src="/js/entry.js"></script>
+		 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery.js"></script>
+	 <script src="/js/bootstrap.min.js"></script>
+	 <script src="/scripts/jquery.rateit.min.js"></script>
+	 <script src="/js/user.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
     $(".remove").click(function(){
         $("#one").remove();
+				var value = $.trim( $("#date").text());
+				console.log("REMOVING");
+
+				location.replace("/remove/"+sessionStorage.getItem('name')+"/"+value);
     });
 });
 </script>
