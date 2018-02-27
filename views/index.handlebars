@@ -2,15 +2,14 @@
 
 <html>
 <head>
-	
 	<title>Food Diary App</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <!-- Bootstrap -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap.css" rel="stylesheet">
+<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -18,15 +17,12 @@
 <style>
 body {
     background-image: url("/images/background.jpg");
-    
-
-
 }
 </style>
 <!-- Include all compiled plugins (blelow), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <fieldset>
-	<a href="/tab/login" class="btn btn-info btn-sm " role="button" id="login">Log Off</a>
+	<a href="/" class="btn btn-info btn-sm " role="button" id="login">Log Off</a>
 
 </fieldset>
 <body>
@@ -34,22 +30,22 @@ body {
 <hr>
 	<h1 style="text-align:center" class="page-header ">HOME</h1>
 	<div class="tab" align="Center">
-		<a href="/tab/entry" class="jumbotron glyphicon glyphicon-plus btn btn-primary btn-lg" style="margin-bottom:5px; " role="button" id="entry"><br>Create New Entry</a><br/>
+		<a href="/entry/{{id}}" class="jumbotron glyphicon glyphicon-plus btn btn-primary btn-lg" style="margin-bottom:5px; " role="button" id="entry"><br>Create New Entry</a><br/>
 		<div class="container">
-			<div ><a href="/tab/diary" class=" btn btn-primary btn-lg larger index-padding" role="button"  id="diary">View Diary</a></div>
-		<!--	<div style="display:inline-block"><a href="/tab/anxiety" class="btn btn-primary btn-lg " role="button" style="font-size:21.5px" id="anxiety">Anxiety</a><br></div>-->
+			<div ><a href="/diary/{{id}}" class=" btn btn-primary btn-lg larger index-padding" role="button"  id="diary">View Diary</a></div>
+		<!--	<div style="display:inline-block"><a href="/anxiety" class="btn btn-primary btn-lg " role="button" style="font-size:21.5px" id="anxiety">Anxiety</a><br></div>-->
 		</div>
 		<div class="container">
-			<div style="display:inline-block"><a href="/tab/stat" class="btn btn-primary btn-lg larger index-padding" role="button" id="stat">Statistics</a></div>
-				<!--<div style="display:inline-block"><a href="/tab/community" class=" btn-primary btn-sm" role="button" style="font-size:15.3px; padding-top:25px; padding-bottom:25px;" id="community">Community</a></div>-->
+			<div style="display:inline-block"><a href="/stat/{{id}}" class="btn btn-primary btn-lg larger index-padding" role="button" id="stat">Statistics</a></div>
+				<!--<div style="display:inline-block"><a href="/community" class=" btn-primary btn-sm" role="button" style="font-size:15.3px; padding-top:25px; padding-bottom:25px;" id="community">Community</a></div>-->
 		</div>
 		<div  class="container">
-			<div style="display:inline-block"><a href="/tab/news" class="btn btn-primary btn-lg larger index-padding" role="button" id="news">News</a>
+			<div style="display:inline-block"><a href="/news" class="btn btn-primary btn-lg larger index-padding" role="button" id="news">News</a>
 		</div>
 		</div>
 		<div class="container" style="width:100%" >
 			<div style="display:inline-block; float:left">
-				<a href="/tab/setting" class="glyphicon glyphicon-cog  " style="margin-top:30px; font-size:50px; ;" role="button" id="setting"></a>
+				<a href="/setting/{{id}}" class="glyphicon glyphicon-cog  " style="margin-top:30px; font-size:50px; ;" role="button" id="setting"></a>
 			</div>
 			<div style="display:inline-block; float:right">
 				<a href = "#" class="glyphicon glyphicon-question-sign" id = "question1" style="margin-top:30px; font-size:50px; ;" role="button" id="help" onclick="helpHome()"></a>

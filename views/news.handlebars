@@ -18,7 +18,7 @@ body {
 }
 h2{
 	font-family: Impact, Charcoal, sans-serif;
-	
+
 }
 p{
 	font-family:"Times New Roman", Times, serif;
@@ -31,17 +31,17 @@ p{
 			<button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
 
 			<div class="dropdown-content">
-				<a href="/index">Home</a>
-				<a href="/tab/entry">Entry</a>
-				<a href="/tab/diary">Diary</a>
-				<a href="/tab/stat">Statistics</a>
-				<a href="/tab/setting">Settings</a>
+				<a href="/index/{{id}}">Home</a>
+				<a href="/entry/{{id}}">Entry</a>
+				<a href="/diary{{id}}">Diary</a>
+				<a href="/stat/{{id}}">Statistics</a>
+				<a href="/setting/{{id}}">Settings</a>
 				<a href="/" style="color:red;">Log Out</a>
 		</div>
 	</div>
 	</div>
 	<div>
-		
+
 		<a href="#" class="glyphicon glyphicon-question-sign" onclick="helpNews()" style=" font-size:40px; float:right" role="button" id="help" name="entry"></a>
 	</div>
 <hr>
@@ -76,7 +76,7 @@ p{
 				</div>
 			</div>
 				<div>
-					
+
 					<div id="content" style="display:inline-block; ">
 						<p>Mindful Eating: Savor the Flavor</p>
 						<font size="2"><a href="https://healthyforgood.heart.org/be-well/articles/mindful-eating-savor-the-flavor">See Details</a></font>
@@ -102,7 +102,7 @@ p{
 		</div>
 	</div>
 </div>
-<a href="/index" class="btn btn-primary" role="button">Back</a>
+<a href="/index/{{id}}" class="btn btn-primary" role="button">Back</a>
 <script>
 function helpNews() {
     alert("News:\n\nThis is the place where you could have fun while you are eating meals. You could browse the latest funny videos about eating that makes you laugh and the scientific healthy tips to help you eat healthier. This also contributes users to have a better mood."

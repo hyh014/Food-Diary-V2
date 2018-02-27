@@ -5,14 +5,22 @@ exports.userInfo = function(req,res){
   for(var i =0; i<users.info.length;i++)
   {
     if(userID == users.info[i].id){
-      console.log(users.info[i]);
         data = users.info[i];
     }
   }
   res.json(data);
-
 }
 
-exports.info = function(req,res){
-  res.json(users);
+exports.checkLogin = function(req,res){
+  var userid = req.params.name;
+  var session= req.sessionID;
+  for(var i=0; i<users.info.length;i++)
+  {
+    if(userid == users.info[i].id){
+        console.log(session);
+        users.info[i].session=session;
+        return res.redirect('/index/'+userid);
+    }
+  }
+  return false;
 }
