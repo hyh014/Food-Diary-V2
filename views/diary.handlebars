@@ -10,18 +10,63 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/bootstrap.css" rel="stylesheet">
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<link href="/scripts/rateit.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+
+/* When the input field gets focus, change its width to 100% */
+form.example input[type=text]:focus {
+    width: 80%;
+}
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 100px;
+    background: #f1f1f1;
+    transition: width 0.4s ease-in-out;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+</style>
 
 </head>
 <body>
+	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 	<div class="navbar" style="float:left">
 		<div class="dropdown">
 			<button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
 			<div class="dropdown-content">
-				<a href="/index">Home</a>
-				<a href="/tab/entry">Entry</a>
-				<a href="/tab/stat">Statistics</a>
-				<a href="/tab/news">News</a>
-				<a href="/tab/setting">Settings</a>
+				<a href="/index/{{id}}">Home</a>
+				<a href="/entry/{{id}}">Entry</a>
+				<a href="/stat/{{id}}">Statistics</a>
+				<a href="/news">News</a>
+				<a href="/setting/{{id}}">Settings</a>
 				<a href="/" style="color:red;">Log Out</a>
 		</div>
 	</div>
@@ -29,8 +74,21 @@
 	<div>
 		<a href="#" class="glyphicon glyphicon-question-sign" onclick="helpDiary()" style=" font-size:40px; float:right" role="button" id="help" name="entry"></a>
 	</div>
+
+
+
+
 <hr>
 <h1 class="page-header text-center" >My Diary</h1>
+
+<form class="example" action="#" style="margin:auto;max-width:300px">
+  <input type="text" placeholder="Search.." name="search2"/>
+  
+  
+  <button type="submit"><i class="fa fa-search"></i></button>
+
+</form>
+
 <div class="text-center" style="margin-bottom:15px;">
 	<form class="col-lg-offset-4">
 		Search: <input type="date" name="Date">
@@ -39,9 +97,10 @@
 </div>
 
 
+
 	{{#each datas}}
 	<div id = "one" class="container text-center">
-		<text>{{date}} {{time}}</text><br>
+		<text id="date">{{date}} {{time}}</text><br>
 		<div class="container photo">
 			<img src="{{image}}" class="img resize">
 		</div>
@@ -55,13 +114,14 @@
 		<text>Mood:{{mood}} &#9734;</text><br>
 		<text>Anxiety:{{anxiety}} </text>
 	</div>
-		<a href="/tab/entry" class="btn btn-sm btn-success" role="button">Edit</a>
+		<a href="#" class="btn btn-sm btn-success" role="button" id='edit'>Edit</a>
 		<button class="remove btn btn-sm btn-success">Remove</button>
 		<hr>
 	</div>
 	{{/each}}
 
 
+<a href="/index" class="myBtnBack" role="button">Back</a>
 <a href="/index" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
 <br>
 <script>
@@ -70,13 +130,45 @@ function helpDiary() {
       );
 }
 </script>
+<script src="/js/user.js"></script>
+<script src="/js/entry.js"></script>
+		 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery.js"></script>
+	 <script src="/js/bootstrap.min.js"></script>
+	 <script src="/scripts/jquery.rateit.min.js"></script>
+	 <script src="/js/user.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
     $(".remove").click(function(){
         $("#one").remove();
+				var value = $.trim( $("#date").text());
+				console.log("REMOVING");
+
+				location.replace("/remove/"+sessionStorage.getItem('name')+"/"+value);
     });
 });
 </script>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+	</script>
+
+
+
 </body>
 </html>

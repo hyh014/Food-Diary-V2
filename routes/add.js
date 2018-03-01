@@ -6,6 +6,7 @@ exports.addID = function(req,res){
   var password = req.query.password;
   var email = req.query.email;
   var phone = req.query.phone;
+  var session = req.sessionID;
     var newID = {
         'id':userid,
         'password':password,
@@ -14,9 +15,10 @@ exports.addID = function(req,res){
         'camera':'N',
         'location':'N',
         'share':'N',
+        'session':session,
         'datas':[]
       };
         data.info.push(newID);
-        return res.redirect('/index');
+        return res.redirect('/index/'+userid);
       }
 }

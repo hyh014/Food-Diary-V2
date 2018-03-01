@@ -1,28 +1,22 @@
-var data = require('../data.json');/*
+var data = require('../data.json');
+/*
  * GET home page.
  */
-
 exports.view = function(req, res){
-  res.render('index',data.info[data.info.length-1]); /*{
-    "tabs": [
-      { "name": "Create New Entry",
-        "id": "entry"},
-      { "name": "Anxiety",
-        "id": "anxiety"},
-      { "name": "View Diary",
-        "id": "diary"},
-      {"name": "Show Statistics",
-        "id": "stat"},
-      {"name": "Settings",
-        "id": "setting"},
-      {"name": "Fun News",
-        "id": "news"},
-      { "name":"Community",
-        "id":"community"},
-      { "name":"Login",
-        "id": "login"},
-      {"name":"Help",
-        "id":"help"}
-    ]
-  };*/
-};
+    var userid = req.params.name;
+    var session = req.sessionID;
+    var authentication = false;
+    console.log(session);
+    for(var i=0;i<data.info.length;i++){
+      if(userid == data.info[i].id){
+        //if(data.info[i].session==session){
+            authentication = true;
+            res.render('index',data.info[i]);
+      //  }
+      }
+    }
+    if(authentication==false){
+          res.status(404).send();
+    }
+
+  }

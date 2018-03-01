@@ -15,9 +15,6 @@
 <style>
 body {
     background-image: url("/images/224.jpg");
-    
-
-
 }
 </style>
 <body>
@@ -26,10 +23,10 @@ body {
 	<div class="container">
 		<text id="error" class="hide">Wrong Username/Password</text>
 		<div class="form-group">
-			<input type="text" class="larger" name="userid" id="userid" placeholder="Username">
+			<input type="text" class="larger" name="userid" id="userid" placeholder="Username" required>
 		 </div>
 		<div class="form-group">
-			<input type="password" class="larger" name="password" id="password" placeholder="password">
+			<input type="password" class="larger" name="password" id="password" placeholder="password" required>
 		</div>
 		<div class="form-group">
 			<a href="#" role="button" class="btn btn-primary btn-lg larger" id="login">Login</a>
@@ -38,7 +35,7 @@ body {
 			<a href="/register" role="button" class="btn btn-primary btn-lg larger">Register</a>
 		</div>
 		<div class="form-group">
-			<fb:login-button 
+			<fb:login-button
 			  scope="public_profile,email"
 			  onlogin="checkLoginState();">
 			</fb:login-button>
