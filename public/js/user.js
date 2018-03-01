@@ -13,7 +13,7 @@ function callBackFn(result){
   if(userID == result.id && password == result.password)
   {
     $('#login').attr('href','/index/'+userID);
-    sessionStorage.userID=userID;
+    sessionStorage.setItem('name',userID);
     location.replace("/checkLogin/"+sessionStorage.getItem('name'));
 
   }

@@ -22,13 +22,55 @@ body {
     <div id="wrapper">
       <div id="top">
         <div style="height:100%">
-          <button class="glyphicon glyphicon-book" style="width:33%; height:100%"/>
-          <button class="glyphicon glyphicon-list-alt" style="width:34%; height:100%"/>
-          <button class="glyphicon glyphicon-signal" style="width:33%; height:100%"/>
+          <a role="button" class="glyphicon glyphicon-book" style="width:33%; height:100%"></a>
+          <a role="button" class="glyphicon glyphicon-list-alt" style="width:34%; height:100%">Diary</a>
+          <a role="button" class="glyphicon glyphicon-signal" style="width:33%; height:100%">Statistics</a>
         </div>
       </div>
       <div id="bottom-left">
-        
+          <div id="photo2" style="width:30%">
+               <div style="height:0px;overflow:hidden">
+                <input  type="file" id="fileInput" name="fileInput"  />
+               </div>
+              <button class="transparent-button glyphicon glyphicon-camera glyphicon-size" type="button" style="width:100px;height:80px;" onclick="chooseFile();">
+              </button><br>
+                <a href='/photo' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
+                <p class="help-block" id="clock"></p>
+            </div>
+            <div id="textinput" style="width:70%;">
+              <form id="addDiary" role="form" method="post" action="/addDiary/ne">
+              <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
+               <input type="text" class="row" style="width:140px; margin-left:10px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
+              <textarea rows="4" cols="24" class="row" style="margin-left:10px; height: 250px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                         Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
+            </div>
+          
+      <div class="container"  id="Rating" >
+       <text class="Text-input">Taste:</text><br/>
+       <div name="taste" class="rateit" id="tasteRate" >
+      </div>
+      <input type="hidden" name="taste" id="taste" value="0" />
+     <hr class="rating-hr">
+        <text class="Text-input">Health:</text><br/>
+        <div class="rateit" id="healthRate">
+       </div>
+       <input type="hidden" name="health" value="0" id="health"/>
+      <hr class="rating-hr">
+       <text class="Text-input">Mood:</text><br/>
+       <div class="rateit" id="moodRate">
+       </div>
+       <input type="hidden" name="mood" value="0"  id="mood"/>
+      <hr class="rating-hr">
+        <text class="Text-input">Anxiety:</text><br/>
+        <div class="rateit" id="anxietyRate">
+        </div>
+        <input type="hidden" name="anxiety" value="0" id="anxiety"/>
+      <hr class="rating-hr">
+        <input type="hidden" name="date" id="date" value=""/>
+        <input type="hidden" name="time" id="time" value=""/>
+        <input type="hidden" name="userid" id="userid" value=""/>
+     </div>
+     <input type="submit" class="btn btn-sm btn-success" style="float:right;" id="addEntry" onclick="clicked(event);" Text="Submit" />
+        </form>
       </div>
       <div id="bottom-right">
         <div id="buttons">
@@ -95,16 +137,7 @@ body {
       </form>
     </div>
 <asp:button id = "Button1" runat="server" Text = "Save" disabled = "True" onclick="Button1_Click"/>
-<script type="text/javascript">
-function changeID(){
-  document.getElementById('userid').value=sessionStorage.name;
-}
-</script>
-<script>
-   function chooseFile() {
-      $("#fileInput").click();
-   }
-</script>
+
 <script>
    function edit(){
     if(sessionStorage.getItem('edit') == 'true'){
@@ -133,9 +166,9 @@ function changeID(){
   }
   window.onload=edit;
 </script>
-
+-->
      <script src="/js/DisplayClock.js"></script>
-     -->
+     
      <script src="/js/entry.js"></script>
      <script src="https://code.jquery.com/jquery.js"></script>
      <script src="/js/bootstrap.min.js"></script>
@@ -150,7 +183,16 @@ function helpHome() {
 }
 </script>
 
-
+<script type="text/javascript">
+function changeID(){
+  document.getElementById('userid').value=sessionStorage.name;
+}
+</script>
+<script>
+   function chooseFile() {
+      $("#fileInput").click();
+   }
+</script>
 <script>
 function clicked(e)
 {

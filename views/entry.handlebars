@@ -38,7 +38,7 @@ body {
 <hr>
     <h1 class="page-header text-center" >Log Your Meal</h1>
     <div class="inline-block">
-       <div class="container" style="display:inline-block; width: 120px" id="photo">
+       <div class="container" style="display:inline-block; width: 120px" id="photos">
          <div style="height:0px;overflow:hidden">
           <input  type="file" id="fileInput" name="fileInput"  />
          </div>
@@ -106,7 +106,6 @@ function changeID(){
 <script>
    function edit(){
     if(sessionStorage.getItem('edit') == 'true'){
-      sessionStorage.setItem('name','tester1');
       document.getElementById('foodName').value = sessionStorage.foodName;
       document.getElementById('comments').value = sessionStorage.comments;
       document.getElementById('userid').value = sessionStorage.name;
@@ -115,7 +114,7 @@ function changeID(){
       $('#moodRate').rateit('value',sessionStorage.mood);
       $('#anxietyRate').rateit('value',sessionStorage.anxiety);
       $('#clock').text(sessionStorage.date+" "+sessionStorage.time);
-      $('#back').attr('href','/diary/tester1');//+sessionStorage.name);
+      $('#back').attr('href','/diary/'+sessionStorage.name);
       document.getElementById('addDiary').action= '/addDiary/e';
       sessionStorage.setItem('edit',false);
     }
