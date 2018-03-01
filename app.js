@@ -22,6 +22,7 @@ var setting = require('./routes/setting');
 var entry = require('./routes/entry');
 var stat = require('./routes/stat');
 var news = require('./routes/news');
+var entry2 = require('./routes/entry2');
 // Example route
 // var user = require('./routes/user');
 var app = express();
@@ -63,6 +64,7 @@ app.get('/setting/:name',setting.viewSetting);
 app.get('/entry/:name',entry.addEntry);
 app.get('/stat/:name',stat.getStat);
 app.get('/news/:name',news.show);
+app.get('/entry2/:name',entry2.addEntry);
 
 app.get('/register', register.view);
 app.get('/entry/photo/:name',photo.view);
