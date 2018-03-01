@@ -7127,26 +7127,6 @@ td.visible-print {
   }
 }
 
-
-/***** CSS Magic to Highlight Stars on Hover *****/
-
-.rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label {
-
-	background-color:blue !important;
-  cursor:pointer;
-} /* hover previous stars in list */
-
-.rating > input:checked + label:hover, /* hover current star when changing rating */
-.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label {
-
-	background-color:blue !important;
-  cursor:pointer;
-}
-
-
-
 .icon {
     background-color: DodgerBlue; /* Blue background */
     border: none; /* Remove borders */
