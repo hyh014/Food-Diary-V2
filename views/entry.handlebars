@@ -8,6 +8,7 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+   
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link href="/scripts/rateit.css" rel="stylesheet">
     <style>
@@ -15,6 +16,8 @@ body {
     background-image: url("/images/224.jpg");
 }
 </style>
+
+
   <body>
       <div class="navbar" style="float:left">
         <div class="dropdown">
@@ -35,11 +38,11 @@ body {
 <hr>
     <h1 class="page-header text-center" >Log Your Meal</h1>
     <div>
-       <div class="container" style="display:inline-block" id="photo">
+       <div class="container" style="display:inline-block; width: 120px" id="photo">
          <div style="height:0px;overflow:hidden">
           <input  type="file" id="fileInput" name="fileInput" />
          </div>
-        <button class="glyphicon glyphicon-camera glyphicon-size" type="button" onclick="chooseFile();">
+        <button class="glyphicon glyphicon-camera glyphicon-size" type="button" style="width:50px;height:25px;" onclick="chooseFile();">
         </button><br>
           <a href='/photo' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
           <p class="help-block" id="clock" ></p>
@@ -47,17 +50,19 @@ body {
          <div class="container topright" style="display:inline-block " id="text-input">
             <form id="addDiary" role="form" method="post" action="/addDiary">
             <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
-            <input type="text" class="row" style="width:140px;margin-left:5px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
-            <textarea rows="4" cols="24" class="row" style="margin-left:10px; margin-top:5px; resize:none;" placeholder="Comments:" name="comments" id="comments"></textarea><br/>
+            <input type="text" class="row" style="width:140px; margin-left:5px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
+            <textarea rows="4" cols="24" class="row" style="margin-left:10px; height: 250px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                         Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
 
          </div>
        <br/>
      </div>
 
+
+
      <div class="container"  id="Rating" >
 
        <text class="Text-input">Taste:</text><br/>
-       <div name="taste" class="rateit" id="tasteRate">
+       <div name="taste" class="rateit" id="tasteRate" >
 
       </div>
       <input type="hidden" name="taste" id="taste" value="0" />
@@ -70,7 +75,7 @@ body {
        <text class="Text-input">Mood:</text><br/>
        <div class="rateit" id="moodRate">
        </div>
-       <input type="hidden" name="mood" value="0" id="mood"/>
+       <input type="hidden" name="mood" value="0"  id="mood"/>
       <hr>
         <text class="Text-input">Anxiety:</text><br/>
         <div class="rateit" id="anxietyRate">
@@ -82,8 +87,11 @@ body {
         <input type="hidden" name="userid" id="userid" value=""/>
      </div>
      <a href="/index" class="btn btn-primary " role="button">Back</a>
+  <!--
      <a href="#" class = "btn btn-sm btn-success" role="button"  id ="Save" >Save</a>
-      <input type="submit" class="btn btn-sm btn-success" style="float:right;" id="addEntry" onclick="return changeID();"/>
+   -->
+    
+     <input type="submit" class="btn btn-sm btn-success" style="float:right;" id="addEntry" onclick="clicked(event);" Text="Submit" />
       </form>
     </div>
 <asp:button id = "Button1" runat="server" Text = "Save" disabled = "True" onclick="Button1_Click"/>
@@ -92,25 +100,7 @@ function changeID(){
   document.getElementById('userid').value=sessionStorage.userID;
 }
   /*
-var changesSaved = true;
-function hasPendingChanges()
-{
-  changesSaved = document.getElementById()
-}
-var setSaveChanges = function() { saveChanges = true; };
-
-window.onload = function() {
-    window.addEventListener("beforeunload", function (e) {
-        if (saveChanges) {
-            return undefined;
-        }
-
-        var confirmationMessage = 'It looks like you have been editing something. '
-                                + 'If you leave before saving, your changes will be lost.';
-
-        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
-        return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
-    });
+   <input type="submit" class="btn btn-sm btn-success" style="float:right;" id="addEntry" onclick="return changeID();"/>
 };*/
 </script>
 
@@ -143,4 +133,28 @@ function changeText(event){
   $(this).text("Saved");
 }
 </script>
+
+
+<script>
+function clicked(e)
+{
+
+    if(!confirm('Do you want to submit?'))e.preventDefault();
+    confirm = 0;
+}
+</script>
+
+<script type="text/javascript">
+  window.onbeforeunload = confirmExit;
+  function confirmExit()
+  {
+    if (confirm != 0){
+    return "Do you want to leave this page without saving?";
+   }
+  }
+</script>
+
+
+
+
 </html>

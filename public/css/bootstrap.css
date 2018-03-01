@@ -14667,6 +14667,7 @@ td.visible-print {
 .topright{
   position: absolute;
   top: auto;
+  padding-right: -150px;
 }
 .botright{
   position:absolute;
