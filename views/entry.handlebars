@@ -40,9 +40,11 @@ body {
     <div class="inline-block">
        <div class="container" style="display:inline-block; width: 120px" id="photo">
          <div style="height:0px;overflow:hidden">
-          <input  type="file" id="fileInput" name="fileInput" />
+          <input  type="file" id="fileInput" name="fileInput"  />
          </div>
-        <button class="glyphicon glyphicon-camera glyphicon-size" type="button" style="width:40px;height:40px;" onclick="chooseFile();">
+
+        <button class="transparent-button glyphicon glyphicon-camera glyphicon-size" type="button" style="width:100px;height:100px;" onclick="chooseFile();">
+
         </button><br>
           <a href='/photo' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
           <p class="help-block" id="clock"></p>
@@ -86,8 +88,11 @@ body {
         <input type="hidden" name="userid" id="userid" value=""/>
      </div>
      <a href="/index/{{id}}" class="btn btn-primary " role="button" id="back">Back</a>
+<<<<<<< HEAD
      
 
+=======
+>>>>>>> 015f3ebd2d8592cde0a1d138fa3be5521f9a7d91
      <input type="submit" class="btn btn-sm btn-success" style="float:right;" id="addEntry" onclick="clicked(event);" Text="Submit" />
       </form>
     </div>
@@ -133,8 +138,8 @@ function changeID(){
 
      <script src="/js/DisplayClock.js"></script>
      <script src="/js/entry.js"></script>
-     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+     
+     
      <script src="https://code.jquery.com/jquery.js"></script>
      <script src="/js/bootstrap.min.js"></script>
      <script src="/scripts/jquery.rateit.min.js"></script>
