@@ -7450,3 +7450,44 @@ ul {list-style-type: none;}
   background-color: #428bca;
   
 }
+.home1{
+  padding:30px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #A3E4D7;
+  width:80px;
+  height: 50px;
+}
+
+.home2{
+  background-color:#F9E79F;
+  padding:30px;
+  width:80px;
+  height:50px;
+}
+
+.a1 {
+  color: #ffffff;
+  background-color: #F9E79F;
+  border-color: none ;
+  height:100px;
+  width:150px;
+  
+}
+.a2 {
+  color: #ffffff;
+  background-color: #A3E4D7;
+  border-color: none;
+  height:100px;
+  width:150px;
+  
+}
+
+.backInDiary {
+  color: #ffffff;
+  background-color: #ABEBC6;
+  border-color: #357ebd;
+  
+}
