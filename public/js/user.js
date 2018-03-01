@@ -44,6 +44,7 @@ $('#addEntry').click(function(){
 });
 
 $('#edit').click(function(){
+
   sessionStorage.setItem('edit',true);
   sessionStorage.setItem('editDate',true);
   sessionStorage.setItem('name','tester1');
