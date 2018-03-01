@@ -53,9 +53,11 @@ body {
             <form id="addDiary" role="form" method="post" action="/addDiary/ne">
             <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
             <input type="text" class="row" style="width:140px; margin-left:5px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
-            <textarea rows="4" cols="24" class="row" style="margin-left:10px; height: 250px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                         Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
+            <textarea rows="4" cols="24" class="row" style="margin-left:10px; height: 100px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                         Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
+         
 
          </div>
+         
        <br/>
      </div>
 
@@ -88,11 +90,7 @@ body {
         <input type="hidden" name="userid" id="userid" value=""/>
      </div>
      <a href="/index/{{id}}" class="btn btn-primary " role="button" id="back">Back</a>
-<<<<<<< HEAD
-     
 
-=======
->>>>>>> 015f3ebd2d8592cde0a1d138fa3be5521f9a7d91
      <input type="submit" class="btn btn-sm btn-success" style="float:right;" id="addEntry" onclick="clicked(event);" Text="Submit" />
       </form>
     </div>
