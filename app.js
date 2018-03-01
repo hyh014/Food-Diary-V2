@@ -53,7 +53,7 @@ app.get('/',login.view);
 */
 app.get('/user/:id',user.userInfo);
 app.get('/add',add.addID);
-app.post('/addDiary',addDiary.addDiary);
+app.post('/addDiary/:edit',addDiary.addDiary);
 app.get('/remove/:name/:month/:day/:year',remove.remove);
 app.get('/checkLogin/:name',user.checkLogin);
 
