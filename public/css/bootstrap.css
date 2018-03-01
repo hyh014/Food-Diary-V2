@@ -7176,9 +7176,9 @@ td.visible-print {
 .large-box{
   border: 5px solid gray;
 }
-@media (max-width: 767px) {
+@media (max-width: 600px) {
   .glyphicon-size {
-      font-size:70px;
+      font-size:60px;
     }
 }
 
@@ -7490,4 +7490,16 @@ ul {list-style-type: none;}
   background-color: #ABEBC6;
   border-color: #357ebd;
   
+}
+
+.glyphiconHome {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: large;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
 }
