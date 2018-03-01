@@ -62,7 +62,7 @@ app.get('/diary/:name',diary.viewDiary);
 app.get('/setting/:name',setting.viewSetting);
 app.get('/entry/:name',entry.addEntry);
 app.get('/stat/:name',stat.getStat);
-app.get('/news',news.show);
+app.get('/news/:name',news.show);
 
 app.get('/register', register.view);
 app.get('/entry/photo/:name',photo.view);
