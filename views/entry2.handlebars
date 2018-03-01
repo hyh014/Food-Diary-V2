@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Food Diary App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link href="/scripts/rateit.css" rel="stylesheet">
+    <style>
+body {
+    background-image: url("/images/224.jpg");
+}
+</style>
+
+
+  <body>
+<hr>
+    <h1 class="page-header text-center" >Log Your Meal</h1>
+    <div class="inline-block">
+       <div class="container" style="display:inline-block; width: 120px" id="photo">
+         <div style="height:0px;overflow:hidden">
+          <input  type="file" id="fileInput" name="fileInput" />
+         </div>
+        <button class="glyphicon glyphicon-camera glyphicon-size" type="button" style="width:50px;height:25px;" onclick="chooseFile();">
+        </button><br>
+          <a href='/photo' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
+          <p class="help-block" id="clock"></p>
+       </div>
+         <div class="container topright" style="display:inline-block " id="text-input">
+            <form id="addDiary" role="form" method="post" action="/addDiary/ne">
+            <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
+            <input type="text" class="row" style="width:140px; margin-left:5px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
+            <textarea rows="4" cols="24" class="row" style="margin-left:10px; height: 250px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                         Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
+
+         </div>
+       <br/>
+     </div>
+
+
+
+     <div class="container"  id="Rating" >
+
+       <text class="Text-input">Taste:</text><br/>
+       <div name="taste" class="rateit" id="tasteRate" >
+      </div>
+      <input type="hidden" name="taste" id="taste" value="0" />
+     <hr>
+        <text class="Text-input">Health:</text><br/>
+        <div class="rateit" id="healthRate">
+       </div>
+       <input type="hidden" name="health" value="0" id="health"/>
+      <hr>
+       <text class="Text-input">Mood:</text><br/>
+       <div class="rateit" id="moodRate">
+       </div>
+       <input type="hidden" name="mood" value="0"  id="mood"/>
+      <hr>
+        <text class="Text-input">Anxiety:</text><br/>
+        <div class="rateit" id="anxietyRate">
+        </div>
+        <input type="hidden" name="anxiety" value="0" id="anxiety"/>
+      <hr>
+        <input type="hidden" name="date" id="date" value=""/>
+        <input type="hidden" name="time" id="time" value=""/>
+        <input type="hidden" name="userid" id="userid" value=""/>
+     </div>
+     <a href="/index/{{id}}" class="btn btn-primary " role="button" id="back">Back</a>
+     <a href="#" class = "btn btn-sm btn-success" role="button"  id ="Save" >Save</a>
+
+     <input type="submit" class="btn btn-sm btn-success" style="float:right;" id="addEntry" onclick="clicked(event);" Text="Submit" />
+      </form>
+    </div>
+<asp:button id = "Button1" runat="server" Text = "Save" disabled = "True" onclick="Button1_Click"/>
+<script type="text/javascript">
+function changeID(){
+  document.getElementById('userid').value=sessionStorage.name;
+}
+</script>
+<script>
+   function chooseFile() {
+      $("#fileInput").click();
+   }
+</script>
+<script>
+   function edit(){
+    if(sessionStorage.getItem('edit') == 'true'){
+      sessionStorage.setItem('name','tester1');
+      document.getElementById('foodName').value = sessionStorage.foodName;
+      document.getElementById('comments').value = sessionStorage.comments;
+      document.getElementById('userid').value = sessionStorage.name;
+      $('#tasteRate').rateit('value',sessionStorage.taste);
+      $('#healthRate').rateit('value',sessionStorage.health);
+      $('#moodRate').rateit('value',sessionStorage.mood);
+      $('#anxietyRate').rateit('value',sessionStorage.anxiety);
+      $('#clock').text(sessionStorage.date+" "+sessionStorage.time);
+      $('#back').attr('href','/diary/tester1');//+sessionStorage.name);
+      document.getElementById('addDiary').action= '/addDiary/e';
+      sessionStorage.setItem('edit',false);
+    }
+    else{
+      document.getElementById('foodName').value = "";
+      document.getElementById('comments').value = "";
+      $('#tasteRate').rateit('value',0);
+      $('#healthRate').rateit('value',0);
+      $('moodRate').rateit('value',0);
+      $('#anxietyRate').rateit('value',0);
+      document.getElementById('addDiary').action = '/addDiary/ne';
+    }
+  }
+  window.onload=edit;
+</script>
+
+     <script src="/js/DisplayClock.js"></script>
+     <script src="/js/entry.js"></script>
+     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+     <script src="https://code.jquery.com/jquery.js"></script>
+     <script src="/js/bootstrap.min.js"></script>
+     <script src="/scripts/jquery.rateit.min.js"></script>
+     <script src="/js/user.js"></script>
+  </body>
+     <script>
+function helpEntry() {
+    alert("Tutorials\n\nThis page intends to help you record your meals. You record meals by either take a photo or leave some texts. And you will then do  self-rate about current mood, food taste and food healthy level."
+      );
+}
+
+$('#Save').click(changeText);
+function changeText(event){
+  $(this).text("Saved");
+}
+</script>
+
+
+<script>
+function clicked(e)
+{
+
+    if(!confirm('Do you want to submit?'))e.preventDefault();
+    confirm = 0;
+}
+</script>
+
+<script type="text/javascript">
+  window.onbeforeunload = confirmExit;
+  function confirmExit()
+  {
+    if (confirm != 0){
+    return "Do you want to leave this page without saving?";
+   }
+  }
+</script>
+</html>
