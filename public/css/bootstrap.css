@@ -7176,9 +7176,9 @@ td.visible-print {
 .large-box{
   border: 5px solid gray;
 }
-@media (max-width: 767px) {
+@media (max-width: 600px) {
   .glyphicon-size {
-      font-size:70px;
+      font-size:60px;
     }
 }
 
@@ -7525,4 +7525,5 @@ border-style:dotted;
   width:25%;
   height:80%;
   border-style:dotted;
+
 }

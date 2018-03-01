@@ -61,6 +61,10 @@ label {
 		<h4>Email: {{email}}</h4>
 		<h4>Phone: {{phone}}</h4>
 	</div>
+	<fieldset>
+	<a href="/" class="btn btn-info btn-sm " style="width:100px;" onclick="clicked(event);"" role="button" id="login">Log Off</a>
+
+</fieldset>
 	<form>
 		<fieldset>
 			<h3>Notifications:</h2><hr>
@@ -93,5 +97,14 @@ label {
 		</div>
 	<hr>
 </div>
+<script>
+function clicked(e)
+{
+
+    if(!confirm('Are you sure to log off?'))e.preventDefault();
+    
+}
+</script>
+
 </body>
 </html>
