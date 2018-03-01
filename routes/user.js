@@ -17,7 +17,6 @@ exports.checkLogin = function(req,res){
   for(var i=0; i<users.info.length;i++)
   {
     if(userid == users.info[i].id){
-        console.log(session);
         users.info[i].session=session;
         return res.redirect('/index/'+userid);
     }

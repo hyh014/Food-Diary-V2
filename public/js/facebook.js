@@ -21,5 +21,4 @@ function statusChangeCallback(response) {
 
 function changeUser(response){
   $("p.facebookLogin").hide();
-  $()
 }

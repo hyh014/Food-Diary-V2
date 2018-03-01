@@ -47,14 +47,14 @@
 			<img src="{{image}}" class="img resize">
 		</div>
 	<div>
-		<text>{{foodName}}</text><br>
-		<textarea rows="4" cols="25" class="row" style="resize:none;" readonly>{{comments}}</textarea><br/>
+		<text id="foodName">{{foodName}}</text><br>
+		<textarea id="comments" rows="4" cols="25" class="row" style="resize:none;" readonly>{{comments}}</textarea><br/>
 	</div>
 	<div>
-		<text>Health:{{health}} &#9734;</text><br>
-		<text>Taste:{{taste}} &#9734;</text><br>
-		<text>Mood:{{mood}} &#9734;</text><br>
-		<text>Anxiety:{{anxiety}} </text>
+		<text id="health">Health:{{health}} &#9734;</text><br>
+		<text id="taste">Taste:{{taste}} &#9734;</text><br>
+		<text id="mood">Mood:{{mood}} &#9734;</text><br>
+		<text id="anxiety">Anxiety:{{anxiety}} </text>
 	</div>
 		<a href="#" class="btn btn-sm btn-success" role="button" id='edit'>Edit</a>
 		<button class="remove btn btn-sm btn-success">Remove</button>
@@ -63,7 +63,7 @@
 	{{/each}}
 
 
-<a href="/index" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
+<a href="/index/{{id}}" class="btn btn-primary col-xs-offset-5" role="button">Back</a>
 <br>
 <script>
 function helpDiary() {
@@ -73,11 +73,9 @@ function helpDiary() {
 </script>
 <script src="/js/user.js"></script>
 <script src="/js/entry.js"></script>
-		 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 		<script src="https://code.jquery.com/jquery.js"></script>
 	 <script src="/js/bootstrap.min.js"></script>
-	 <script src="/scripts/jquery.rateit.min.js"></script>
+	     <script src="/scripts/jquery.rateit.min.js"></script>
 	 <script src="/js/user.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -85,8 +83,6 @@ $(document).ready(function(){
     $(".remove").click(function(){
         $("#one").remove();
 				var value = $.trim( $("#date").text());
-				console.log("REMOVING");
-
 				location.replace("/remove/"+sessionStorage.getItem('name')+"/"+value);
     });
 });
