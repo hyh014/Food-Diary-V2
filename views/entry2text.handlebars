@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Food Diary App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link href="/scripts/rateit.css" rel="stylesheet">
+    <style>
+body {
+    background-image: url("/images/224.jpg");
+}
+</style>
+  <body>
+    <div id="wrapper">
+      <div class="text-center" id="top">
+        <h4 >Type in your food and leave comments</h4>
+        <hr>
+        <img src="/images/B1.jpg" class="image-small"/>
+        <hr>  
+        <p class="help-block" id="clock"></p><hr >
+         <div class="container" style="display:inline-block " id="text-input">
+          <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
+          <input type="text" class="row" style="width:140px; margin-left:5px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
+          <textarea rows="4" cols="26" class="row" style="margin-left:10px; height: 100px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                                 Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
+         </div>
+         <hr>
+         <div>
+           <a href="/entry2/{{id}}" role="button" class="btn btn-primary" style="float:left; font-size:25px; margin-top:15%;">Back</a>
+           <a href="/entry2rating/{{id}}" id="entry2rating" role="button" class="btn btn-primary col-xs-offset-6" style="float:right; font-size:25px; margin-top:15%;">Next</a><hr>
+         </div>
+      </div>
+      <div id="bottom">
+        <button id="diary" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
+        <button id="entry" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
+        <button id="stat" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
+        <button id="setting" class="btn quarter glyphicon glyphicon-cog"><br>Setting</button>
+      </div>
+   </div>
+        <script src="/js/DisplayClock.js"></script>
+     <script src="/js/entry.js"></script>
+     <script src="https://code.jquery.com/jquery.js"></script>
+     <script src="/js/bootstrap.min.js"></script>
+     <script src="/scripts/jquery.rateit.min.js"></script>
+     <script src="/js/user.js"></script>
+     <script>
+     </script>
+  </body>
+</html>
+
