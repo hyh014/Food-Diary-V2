@@ -24,7 +24,7 @@ var stat = require('./routes/stat');
 var news = require('./routes/news');
 var entry2 = require('./routes/entry2');
 // Example route
-// var user = require('./routes/user');
+// var user = require('./routes/user');	
 var app = express();
 
 // all environments
