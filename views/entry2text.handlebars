@@ -14,26 +14,34 @@
     <link href="/scripts/rateit.css" rel="stylesheet">
     <style>
 body {
-    background-image: url("/images/224.jpg");
+    background-image: url("/images/g1.jpg");
 }
 </style>
+
+<style>
+ h3{
+  margin-top: 50px;
+}
+</style>
+
   <body>
     <div id="wrapper">
       <div class="text-center" id="top">
-        <h4 >Type in your food and leave comments</h4>
+        
+        <h3 >Type in your food and leave comments</h3>
         <hr>
         <img src="/images/B1.jpg" class="image-small"/>
-        <hr>  
-        <p class="help-block" id="clock"></p><hr >
+        <hr class ="rating-hr">  
+        <p class="help-block" id="clock"></p><hr class="rating-hr">
          <div class="container" style="display:inline-block " id="text-input">
-          <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
-          <input type="text" class="row" style="width:140px; margin-left:5px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
-          <textarea rows="4" cols="26" class="row" style="margin-left:10px; height: 100px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                                 Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
+          <span class="glyphicon glyphicon-pencil" style="margin-left:-15px; font-size:30px;"></span>
+          <input type="text" class="row" style="width:178px; margin-left:5px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
+          <textarea rows="4" cols="30" class="row" style="margin-left:10px; height: 130px; width:225; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                                 Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
          </div>
          <hr>
          <div>
-           <a href="/entry2/{{id}}" role="button" class="btn btn-primary" style="float:left; font-size:25px; margin-top:15%;">Back</a>
-           <a href="/entry2rating/{{id}}" id="entry2rating" role="button" class="btn btn-primary col-xs-offset-6" style="float:right; font-size:25px; margin-top:15%;">Next</a><hr>
+           <a href="/entry2/{{id}}" role="button" class="btn btn-primary" style="float:left; font-size:18px; margin-left: 35px;margin-top:-5%;">Back</a>
+           <a href="/entry2rating/{{id}}" id="entry2rating" role="button" class="btn btn-primary col-xs-offset-6" style="float:right; font-size:18px; margin-top:-11%; margin-right: 28px;">Next</a><hr>
          </div>
       </div>
       <div id="bottom">
