@@ -71,7 +71,7 @@ app.get('/entry2text/:name',entry2text.addEntry);
 app.get('/entry2rating/:name',entry2rating.addEntry);
 
 app.get('/register', register.view);
-app.get('/entry/photo/:name',photo.view);
+app.get('/photo/:name',photo.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
