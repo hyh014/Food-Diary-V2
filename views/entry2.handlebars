@@ -19,27 +19,69 @@ body {
 
 
   <body>
-<<<<<<< HEAD
-<hr>
-    <h1 class="page-header text-center" >
-      <button class="btn glyphiconHome larger glyphicon-home"></button>
-    </h1>
-=======
-
     <div id="wrapper">
       <div id="top">
-        <button class="glyphicon glyphicon-book"/>
+        <div style="height:100%">
+          <a role="button" class="glyphicon glyphicon-book" style="width:33%; height:100%"></a>
+          <a role="button" class="glyphicon glyphicon-list-alt" style="width:34%; height:100%">Diary</a>
+          <a role="button" class="glyphicon glyphicon-signal" style="width:33%; height:100%">Statistics</a>
+        </div>
       </div>
       <div id="bottom-left">
-        
+          <div id="photo2" style="width:30%">
+               <div style="height:0px;overflow:hidden">
+                <input  type="file" id="fileInput" name="fileInput"  />
+               </div>
+              <button class="transparent-button glyphicon glyphicon-camera glyphicon-size" type="button" style="width:100px;height:80px;" onclick="chooseFile();">
+              </button><br>
+                <a href='/photo' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
+                <p class="help-block" id="clock"></p>
+            </div>
+            <div id="textinput" style="width:70%;">
+              <form id="addDiary" role="form" method="post" action="/addDiary/ne">
+              <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
+               <input type="text" class="row" style="width:140px; margin-left:10px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
+              <textarea rows="4" cols="24" class="row" style="margin-left:10px; height: 250px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                         Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
+            </div>
+          
+      <div class="container"  id="Rating" >
+       <text class="Text-input">Taste:</text><br/>
+       <div name="taste" class="rateit" id="tasteRate" >
+      </div>
+      <input type="hidden" name="taste" id="taste" value="0" />
+     <hr class="rating-hr">
+        <text class="Text-input">Health:</text><br/>
+        <div class="rateit" id="healthRate">
+       </div>
+       <input type="hidden" name="health" value="0" id="health"/>
+      <hr class="rating-hr">
+       <text class="Text-input">Mood:</text><br/>
+       <div class="rateit" id="moodRate">
+       </div>
+       <input type="hidden" name="mood" value="0"  id="mood"/>
+      <hr class="rating-hr">
+        <text class="Text-input">Anxiety:</text><br/>
+        <div class="rateit" id="anxietyRate">
+        </div>
+        <input type="hidden" name="anxiety" value="0" id="anxiety"/>
+      <hr class="rating-hr">
+        <input type="hidden" name="date" id="date" value=""/>
+        <input type="hidden" name="time" id="time" value=""/>
+        <input type="hidden" name="userid" id="userid" value=""/>
+     </div>
+     <input type="submit" class="btn btn-sm btn-success" style="float:right;" id="addEntry" onclick="clicked(event);" Text="Submit" />
+        </form>
       </div>
       <div id="bottom-right">
-        
+        <div id="buttons">
+              <a href="/setting/{{id}}" class="glyphicon glyphicon-cog  " style=" font-size:50px; ;" role="button" id="setting"></a>
+              <a href = "#" class="glyphicon glyphicon-question-sign" id = "question1" style="bottom:0; font-size:50px; ;" role="button" id="help" onclick="helpHome()"></a>
+           </div>
+          </div>
       </div>
     </div>
 <!--
     <h1 class="page-header text-center" >Log Your Meal</h1>
->>>>>>> 015f3ebd2d8592cde0a1d138fa3be5521f9a7d91
     <div class="inline-block">
        <div class="container" style="display:inline-block; width: 120px" id="photo">
          <div style="height:0px;overflow:hidden">
@@ -95,16 +137,7 @@ body {
       </form>
     </div>
 <asp:button id = "Button1" runat="server" Text = "Save" disabled = "True" onclick="Button1_Click"/>
-<script type="text/javascript">
-function changeID(){
-  document.getElementById('userid').value=sessionStorage.name;
-}
-</script>
-<script>
-   function chooseFile() {
-      $("#fileInput").click();
-   }
-</script>
+
 <script>
    function edit(){
     if(sessionStorage.getItem('edit') == 'true'){
@@ -133,30 +166,33 @@ function changeID(){
   }
   window.onload=edit;
 </script>
-
+-->
      <script src="/js/DisplayClock.js"></script>
+     
      <script src="/js/entry.js"></script>
-     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
      <script src="https://code.jquery.com/jquery.js"></script>
      <script src="/js/bootstrap.min.js"></script>
      <script src="/scripts/jquery.rateit.min.js"></script>
      <script src="/js/user.js"></script>
-   -->
+   
   </body>
      <script>
-function helpEntry() {
-    alert("Tutorials\n\nThis page intends to help you record your meals. You record meals by either take a photo or leave some texts. And you will then do  self-rate about current mood, food taste and food healthy level."
+function helpHome() {
+    alert("Tutorials\nCreate new Entry: \n\nThis page intends to help you record your meals. You record meals by either take a photo or leave some texts. And you will then do  self-rate about current mood, food taste and food healthy level.\n\nMy Diary:\n\nIn this page, you could view your dairy history. You could either scrolls up down or click the calendar to find one specific day.\n\nStatistics:\n\nThis page gives out statistical analysis with graphs to help you track your self-logged meals. It will provides you weekly, monthly and yearly barchart graphs about your food health, food taste and mood.\n\nNews:\n\nThis is the place where you could have fun while you are eating meals. You could browse the latest funny videos about eating that makes you laugh and the scientific healthy tips to help you eat healthier. This also contributes users to have a better mood."
       );
-}
-
-$('#Save').click(changeText);
-function changeText(event){
-  $(this).text("Saved");
 }
 </script>
 
-
+<script type="text/javascript">
+function changeID(){
+  document.getElementById('userid').value=sessionStorage.name;
+}
+</script>
+<script>
+   function chooseFile() {
+      $("#fileInput").click();
+   }
+</script>
 <script>
 function clicked(e)
 {
