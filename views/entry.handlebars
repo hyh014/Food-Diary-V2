@@ -48,13 +48,15 @@ body {
 
 
         </button><br>
+          <!--
           <a href='/photo/{{id}}' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
+        -->
           <p class="help-block" id="clock"></p>
        </div>
          <div class="container topright" style="display:inline-block " id="text-input">
             <form id="addDiary" role="form" method="post" action="/addDiary/ne">
             <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
-            <input type="text" class="row" style="width:140px; margin-left:5px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
+            <input type="text" class="row" style="width:140px; margin-left:-23px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
             <textarea rows="4" cols="24" class="row" style="margin-left:10px; height: 100px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                         Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
          
 
@@ -91,9 +93,9 @@ body {
         <input type="hidden" name="time" id="time" value=""/>
         <input type="hidden" name="userid" id="userid" value=""/>
      </div>
-     <a href="/index/{{id}}" class="btn btn-primary " role="button" id="back">Home</a>
+     <a href="/index/{{id}}" class="btn btn-primary " style="margin-left:36px;" role="button" id="back">Home</a>
 
-     <input type="submit" class="btn btn-sm btn-success" style="float:right;" id="addEntry" onclick="clicked(event);" value="Add to Diary" Text="Submit" />
+     <input type="submit" class="btn btn-sm btn-success" style="float:right; margin-right: 36px;" id="addEntry" onclick="clicked(event);" value="Add to Diary" Text="Submit" />
       </form>
     </div>
 

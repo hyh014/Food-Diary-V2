@@ -2705,7 +2705,7 @@ input[type="button"].btn-block {
 }
 
 .glyphicon:empty {
-  width: 1em;
+  width: 2em;
 }
 
 .glyphicon-asterisk:before {
@@ -2914,6 +2914,7 @@ input[type="button"].btn-block {
 
 .glyphicon-camera:before {
   content: "\e046";
+
 }
 
 .glyphicon-font:before {

@@ -14,32 +14,33 @@
     <link href="/scripts/rateit.css" rel="stylesheet">
     <style>
 body {
-    background-image: url("/images/g1.jpg");
+    background-color:#A6DB3D;
 }
 </style>
 <style>
  h1{
   margin-top: 50px;
+
 }
 </style>
   <body>
     <div id="wrapper">
       <div class="text-center" id="top">
-        <h1 >Hello {{id}}</h1>
-        <h3> Take a photo of your meal</h3>
+        <h1 style="color:white;">Hello {{id}}</h1>
+        <h3 style="color:white;"> Take a photo of your meal</h3>
          <input  type="file" id="fileInput" style="display: none;" name="fileInput"/>
 
 
-        <button class="glyphicon glyphicon-camera transparent-button" type="button" onclick="chooseFile();" style="font-size:200px; position:relative"></button><hr>
+        <button class="glyphicon glyphicon-camera transparent-button" type="button" onclick="chooseFile();" style="color:white; font-size:200px; margin-top:40px; position:relative"></button><hr>
         <button class="glyphicon glyphicon-remove transparent-button" id="remove1" style="font-size:50px"></button> 
         <button class="glyphicon glyphicon-ok transparent-button" style="font-size:50px"></button><hr>
-        <a href="/entry2text/{{id}}" role="button" class="btn btn-primary" style="font-size:25px; margin-bottom: 50px; margin-left:50%;margin-top:18%;">Next</a>
+        <a href="/entry2text/{{id}}" role="button" class="btn btn-primary" style="font-size:18px; margin-bottom: 50px; margin-left:50%;margin-top:30px;">Next</a>
       </div>
       <div id="bottom">
-        <button id="diary" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
-        <button id="entry" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
-        <button id="stat" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
-        <button id="setting" class="btn quarter glyphicon glyphicon-cog"><br>Setting</button>
+        <button id="diary" style="background-color: #87B536; color:white; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
+        <button id="entry" style="background-color: #87B536; color:white; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
+        <button id="stat" style="background-color: #87B536; color:white; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
+        <button id="setting" style="background-color: #87B536; color:white; font-size: 19px;" class="btn quarter glyphicon glyphicon-cog"><br>Setting</button>
       </div>
    </div>
      <script src="/js/entry.js"></script>

@@ -14,32 +14,39 @@
     <link href="/scripts/rateit.css" rel="stylesheet">
     <style>
 body {
-    background-image: url("/images/g1.jpg");
+     background-color:#A6DB3D;
+}
+</style>
+
+<style>
+h4{
+  margin-top:35px;
+  font-size: 30px;
 }
 </style>
   <body>
     <div id="wrapper">
       <div class="text-center" id="top">
-        <h4 >Rate in your food and add to diary</h4>
+        <h4 style="color:white;">Self-rate your food </h4>
         <form id="addDiary" role="form" method="post" action="/addDiary/ne">
           <div class="container"  id="Rating" >
-         <text class="Text-input">Taste:</text><br/>
-         <div name="taste" class="rateit" id="tasteRate" data-rateit-mode="font" style="font-size:50px">
+         <text style="font-size:22px; color: white" class="Text-input">Taste:</text><br/>
+         <div name="taste" class="rateit" id="tasteRate" data-rateit-mode="font" style="font-size:44px">
         </div>
         <input type="hidden" name="taste" id="taste" value="0" />
        <hr>
-          <text class="Text-input">Health:</text><br/>
-          <div class="rateit" id="healthRate" data-rateit-mode="font" style="font-size:50px">
+          <text style="font-size:22px; color: white" class="Text-input">Health:</text><br/>
+          <div class="rateit" id="healthRate" data-rateit-mode="font" style="font-size:44px">
          </div>
          <input type="hidden" name="health" value="0" id="health"/>
         <hr>
-         <text class="Text-input">Mood:</text><br/>
-         <div class="rateit" id="moodRate" data-rateit-mode="font" style="font-size:50px">
+         <text style="font-size:22px; color: white" class="Text-input">Mood:</text><br/>
+         <div class="rateit" id="moodRate" data-rateit-mode="font" style="font-size:44px">
          </div>
          <input type="hidden" name="mood" value="0"  id="mood"/>
         <hr>
-          <text class="Text-input">Anxiety:</text><br/>
-          <div class="rateit" id="anxietyRate" data-rateit-mode="font" style="font-size:50px">
+          <text style="font-size:22px; color: white" class="Text-input">Anxiety:</text><br/>
+          <div class="rateit" id="anxietyRate" data-rateit-mode="font" style="font-size:44px">
           </div>
           <input type="hidden" name="anxiety" value="0" id="anxiety"/>
         <hr>
@@ -49,14 +56,16 @@ body {
           <input type="hidden" name="foodName" id="foodName" value=""/>
           <input type="hidden" name="comments" id="comments" value=""/>
        </div>
-       <input type="submit" class="btn btn-sm btn-success" style="float:right;" id="addEntry2" onclick="clicked(event);" value="Add to Diary" Text="Submit" />
+       <a href="/entry2text/{{id}}" role="button" class="btn btn-primary" style="margin-left: -100px;">Back</a>
+
+       <input type="submit" class="btn btn-sm btn-success" style="float:right; margin-right:30px;" id="addEntry2" onclick="clicked(event);" value="Add to Diary" Text="Submit" />
      </form>
       </div>
       <div id="bottom">
-        <button id="diary" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
-        <button id="entry" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
-        <button id="stat" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
-        <button id="setting" class="btn quarter glyphicon glyphicon-cog"><br>Setting</button>
+        <button id="diary" style="background-color: #87B536; color:white; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
+        <button id="entry" style="background-color: #87B536; color:white; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
+        <button id="stat" style="background-color: #87B536; color:white; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
+        <button id="setting" style="background-color: #87B536; color:white; font-size: 19px;" class="btn quarter glyphicon glyphicon-cog"><br>Setting</button>
       </div>
    </div>
        
