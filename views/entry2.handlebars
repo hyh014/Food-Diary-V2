@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Food Diary App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link href="/scripts/rateit.css" rel="stylesheet">
+    <style>
+body {
+    background-image: url("/images/224.jpg");
+}
+</style>
+  <body>
+    <div id="wrapper">
+      <div class="text-center" id="top">
+        <h4 >Take a photo of your meal!</h4>
+        <button class="glyphicon glyphicon-camera transparent-button" style="font-size:200px; position:relative"></button><hr>
+        <button class="glyphicon glyphicon-remove transparent-button" style="font-size:50px"></button> 
+        <button class="glyphicon glyphicon-ok transparent-button" style="font-size:50px"></button>
+        <a href="/entry2text/{{id}}" role="button" class="btn" >Next</a>
+      </div>
+      <div id="bottom">
+        <button class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
+        <button class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
+        <button class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
+        <button class="btn quarter glyphicon glyphicon-cog"><br>Setting</button>
+      </div>
+   </div>
+     <script src="/js/entry.js"></script>
+     <script src="https://code.jquery.com/jquery.js"></script>
+     <script src="/js/bootstrap.min.js"></script>
+     <script src="/scripts/jquery.rateit.min.js"></script>
+     <script src="/js/user.js"></script>
+  </body>
+</html>
+
