@@ -40,7 +40,9 @@ body {
     <div class="inline-block">
        <div class="container" style="display:inline-block; width: 120px" id="photos">
          <div style="height:0px;overflow:hidden">
-          <input  type="file" id="fileInput" name="fileInput"/>
+           <form id="addDiary" role="form" method="post" action="/addDiary/ne">
+          <input  type="file" id="fileInput" name="fileInput" />
+          <input type="hidden" id="image" name="image" value=""/>
          </div>
 
 
@@ -54,14 +56,14 @@ body {
           <p class="help-block" id="clock"></p>
        </div>
          <div class="container topright" style="display:inline-block " id="text-input">
-            <form id="addDiary" role="form" method="post" action="/addDiary/ne">
+
             <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
             <input type="text" class="row" style="width:140px; margin-left:-23px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
             <textarea rows="4" cols="24" class="row" style="margin-left:10px; height: 100px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                         Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
-         
+
 
          </div>
-         
+
        <br/>
      </div>
 
@@ -112,6 +114,7 @@ function changeID(){
 <script>
    function edit(){
     if(sessionStorage.getItem('edit') == 'true'){
+      document.getElementById('image').value = sessionStorage.image;
       document.getElementById('foodName').value = sessionStorage.foodName;
       document.getElementById('comments').value = sessionStorage.comments;
       document.getElementById('userid').value = sessionStorage.name;
@@ -139,8 +142,8 @@ function changeID(){
 
      <script src="/js/DisplayClock.js"></script>
      <script src="/js/entry.js"></script>
-     
-     
+
+
      <script src="https://code.jquery.com/jquery.js"></script>
      <script src="/js/bootstrap.min.js"></script>
      <script src="/scripts/jquery.rateit.min.js"></script>

@@ -1,6 +1,8 @@
 var data = require("../data.json");
 exports.addDiary = function(req,res){
     var edit = req.params.edit;
+    var image = req.body.image;
+    console.log(image);
     var foodName = req.body.foodName;
     var comments = req.body.comments;
     var taste = req.body.taste;
@@ -14,9 +16,12 @@ exports.addDiary = function(req,res){
     {
       if(userid==data.info[i].id)
       {
+        if(image == ""){
+          image = "/images/B1.jpg";
+        }
           var newObject = {
         "foodName":foodName,
-        "image":"/images/B1.jpg",
+        "image":image,
         "comments":comments,
         "date":date,
         "time":time,

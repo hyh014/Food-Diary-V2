@@ -30,6 +30,8 @@ $('#register').click(function(){
 
 $('#addEntry').click(function(){
   sessionStorage.edit=false;
+
+
   var date = $('#clock').text();
   var time = date.substring(9);
   var date = date.substring(0,8);
@@ -43,39 +45,6 @@ $('#addEntry').click(function(){
   document.getElementById('userid').value=sessionStorage.name;
 });
 
-$('#edit').click(function(){
-
-  sessionStorage.setItem('edit',true);
-  sessionStorage.setItem('editDate',true);
-  sessionStorage.setItem('name','tester1');
-  var foodName = $('#foodName').text();
-  var comments = $('#comments').text();
-  var health = $('#health').text();
-  var taste = $('#taste').text();
-  var mood = $('#mood').text();
-  var anxiety = $('#anxiety').text();
-  var date = $('#date').text();
-
-  var time = date.substring(9);
-  var date = date.substring(0,8);
-  health = health.substring(7,8);
-  taste = taste.substring(6,7);
-  mood = mood.substring(5,6);
-  anxiety = anxiety.substring(8,9);
-
-  sessionStorage.setItem('foodName',foodName);
-  sessionStorage.setItem('comments',comments);
-  sessionStorage.setItem('health',health);
-  sessionStorage.setItem('taste',taste);
-  sessionStorage.setItem('mood',mood);
-  sessionStorage.setItem('anxiety',anxiety);
-  sessionStorage.setItem('time',time);
-  sessionStorage.setItem('date',date);
-
-  console.log()
-
-  location.replace("/entry/"+sessionStorage.getItem('name'));
-});
 
 $('#diary').click(function(){
   location.href="/diary/tester1";

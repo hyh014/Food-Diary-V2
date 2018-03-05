@@ -5,7 +5,6 @@
 	<title>Food Diary App</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap -->
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/bootstrap.css" rel="stylesheet">
@@ -76,50 +75,34 @@ form.example::after {
 	</div>
 
 
-
-
 <hr>
 <h1 class="page-header text-center" >My Diary</h1>
-
-<!--
-<form class="example" action="#" style="margin:auto;max-width:300px">
-  <input type="text" placeholder="Search.." name="search2"/>
-  
-  
-  <button type="submit"><i class="fa fa-search"></i></button>
-
-</form>
--->
-
 <div class="text-center" style="margin-bottom:15px;">
 	<form class="col-lg-offset-4">
-	<!--	Search: <input type="date" name="Date">
-		<input type="submit">
-	-->
 </form>
 </div>
 
-
-
 	{{#each datas}}
-	<div id = "one" class="container text-center">
-		<text id="date">{{date}} {{time}}</text><br>
-		<div class="container photo">
-			<img src="{{image}}" class="img resize">
+	<div id="loop">
+		<div id = "one" class="container text-center">
+			<text id="date">{{date}} {{time}}</text><br>
+			<div class="container ">
+				<img src="{{image}}" class="resize">
+			</div>
+		<div id="input">
+			<text id="foodName">{{foodName}}</text><br>
+			<textarea id="comments" rows="4" cols="25" class="row" style="resize:none;" readonly>{{comments}}</textarea><br/>
 		</div>
-	<div>
-		<text id="foodName">{{foodName}}</text><br>
-		<textarea id="comments" rows="4" cols="25" class="row" style="resize:none;" readonly>{{comments}}</textarea><br/>
-	</div>
-	<div>
-		<text id="health">Health:{{health}} &#9734;</text><br>
-		<text id="taste">Taste:{{taste}} &#9734;</text><br>
-		<text id="mood">Mood:{{mood}} &#9734;</text><br>
-		<text id="anxiety">Anxiety:{{anxiety}} </text>
-	</div>
-		<a href="#" class="btn btn-sm btn-success" role="button" id='edit'>Edit</a>
+		<div id="ratings">
+			<text id="health">Health:{{health}} &#9734;</text><br>
+			<text id="taste">Taste:{{taste}} &#9734;</text><br>
+			<text id="mood">Mood:{{mood}} &#9734;</text><br>
+			<text id="anxiety">Anxiety:{{anxiety}} </text>
+		</div>
+		<button class="edit btn btn-sm btn-success" >Edit</button>
 		<button class="remove btn btn-sm btn-success">Remove</button>
 		<hr>
+		</div>
 	</div>
 	{{/each}}
 
@@ -134,20 +117,53 @@ function helpDiary() {
       );
 }
 </script>
-<script src="/js/user.js"></script>
-<script src="/js/entry.js"></script>
+		<script src="/js/user.js"></script>
+		<script src="/js/entry.js"></script>
 		<script src="https://code.jquery.com/jquery.js"></script>
-	 <script src="/js/bootstrap.min.js"></script>
-	     <script src="/scripts/jquery.rateit.min.js"></script>
-	 <script src="/js/user.js"></script>
+	 	<script src="/js/bootstrap.min.js"></script>
+	  <script src="/scripts/jquery.rateit.min.js"></script>
+	 	<script src="/js/user.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
     $(".remove").click(function(){
-        $("#one").remove();
-				var value = $.trim( $("#date").text());
+        $(this).parent("#one").remove();//$("#one").remove();
+				var value = $.trim($(this).siblings('#date').text());
 				location.replace("/remove/"+sessionStorage.getItem('name')+"/"+value);
     });
+		$(".edit").click(function(){
+			sessionStorage.setItem('edit',true);
+			sessionStorage.setItem('editDate',true);
+			var image = $(this).siblings('.container').children('img')[0].src;
+
+			var foodName = $(this).siblings('#input').children('#foodName').text();//$('#foodName').text();
+			var comments = $(this).siblings('#input').children('#comments').text();//$('#comments').text();
+			var health = $(this).siblings('#ratings').children('#health').text();//$('#health').text();
+			var taste = $(this).siblings('#ratings').children('#taste').text();//$('#taste').text();
+			var mood = $(this).siblings('#ratings').children('#mood').text();//$('#mood').text();
+			var anxiety = $(this).siblings('#ratings').children('#anxiety').text();//$('#anxiety').text();
+			var date = $(this).siblings('#date').text();//$('#date').text();
+
+			var time = date.substring(9);
+			var date = date.substring(0,8);
+			health = health.substring(7,8);
+			taste = taste.substring(6,7);
+			mood = mood.substring(5,6);
+			anxiety = anxiety.substring(8,9);
+
+			sessionStorage.setItem('image',image);
+			sessionStorage.setItem('foodName',foodName);
+			sessionStorage.setItem('comments',comments);
+			sessionStorage.setItem('health',health);
+			sessionStorage.setItem('taste',taste);
+			sessionStorage.setItem('mood',mood);
+			sessionStorage.setItem('anxiety',anxiety);
+			sessionStorage.setItem('time',time);
+			sessionStorage.setItem('date',date);
+
+
+	//		location.replace("/entry/"+sessionStorage.getItem('name'));
+		});
 });
 </script>
 <script>
