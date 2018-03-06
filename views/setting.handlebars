@@ -46,6 +46,7 @@ label {
 				<a href="/news/{{id}}">News</a>
 				<!--<a href="/community">Community</a>-->
 				<a href="/" style="color:red;">Log Out</a>
+				<fb:login-button autologoutlink="true"></fb:login-button>
 		</div>
 	</div>
 	<!--
@@ -116,6 +117,7 @@ function clicked(e)
 
   gtag('config', 'UA-114570926-2');
 </script>
-
+{{>facebook}}
+	<script src="/js/facebook.js"></script>
 </body>
 </html>

@@ -23,11 +23,30 @@ function callBackFn(result){
   }
 }
 
-$('#register').click(function(){
+$('#register').submit(function(){
+  console.log("ASDFasdfas");
   userID = document.getElementById('userid').value;
+  password = document.getElementById('password').value;
   sessionStorage.setItem('name',userID);
+  var bool=$.get("/user/"+sessionStorage.name,callBack);
+  if(bool==true){
+    return false;
+  }
+  else{
+    $("form").action="/register";
+    alert("existing userid");
+    location.reload();
+  }
 });
-
+function callBack(result){
+  console.log("in callback");
+  if(result.id == sessionStorage.name){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
 $('#addEntry').click(function(){
   sessionStorage.edit=false;
 
