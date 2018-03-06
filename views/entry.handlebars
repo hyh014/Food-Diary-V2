@@ -43,13 +43,14 @@ body {
            <div style="height:0px;overflow:hidden">
              <form id="addDiary" role="form" method="post" action="/addDiary/ne">
               
-           <!-- <input  type="file" id="fileInput" name="fileInput" />-->
-            <input type="hidden" id="image" name="image" value=""/>
            </div>
-
-
-          <button class="transparent-button glyphicon glyphicon-camera glyphicon-size" type="button" style="width:auto;height:100%;" onclick="chooseFile();">
-
+           <div>
+              <!--<label for="file-input">Take a Picture</label>-->
+              <input type="file" accept="image/*" id="file-input" capture="environment"/>
+              <img id="output">
+            </div>
+          <div class="transparent-button glyphicon glyphicon-camera glyphicon-size" type="button" style="width:auto;height:100%;">
+          </div>
 
           </button><br>
             <!--
@@ -109,45 +110,34 @@ function changeID(){
 }
 </script>
 
-<input type="file" accept="image/*" id="file-input" capture="environment">
-              <video id="player" controls autoplay></video>
-              <button class="btn btn-lg" id="capture">Capture</button>
-              <canvas id="canvas" width=320 height=240></canvas>
+
 <script>
-const supported = 'mediaDevices' in navigator;
-  /*
-   function chooseFile() {
-      $("#fileInput").click();
-   }*/
+
+    const supported = 'mediaDevices' in navigator;
     const player = document.getElementById('player');
-  const canvas = document.getElementById('canvas');
-  const context = canvas.getContext('2d');
-  const captureButton = document.getElementById('capture');
 
-  const constraints = {
-    video: true,
-  };
-    captureButton.addEventListener('click', () => {
-    // Draw the video frame to the canvas.
-    context.drawImage(player, 0, 0, canvas.width, canvas.height);
-    player.srcObject.getVideoTracks().forEach(track => track.stop());
-  });
+    const output = document.getElementById('output');
 
-  // Attach the video stream to the video element and autoplay.
-  navigator.mediaDevices.getUserMedia(constraints)
-    .then((stream) => {
-      player.srcObject = stream;
+  function doSomethingWithFiles(fileList) {
+    let file = null;
+
+    for (let i = 0; i < fileList.length; i++) {
+      if (fileList[i].type.match(/^image\//)) {
+        file = fileList[i];
+        break;
+      }
     }
 
-  navigator.mediaDevices.getUserMedia(constraints)
-    .then((stream) => {
-      player.srcObject = stream;
-    });
-
+    if (file !== null) {
+      output.src = URL.createObjectURL(file);
+    }
+  }
+  // Attach the video stream to the video element and autoplay.
   const fileInput = document.getElementById('file-input');
 
   fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
 </script>
+
 <script>
    function edit(){
     if(sessionStorage.getItem('edit') == 'true'){
@@ -185,6 +175,16 @@ const supported = 'mediaDevices' in navigator;
      <script src="/js/bootstrap.min.js"></script>
      <script src="/scripts/jquery.rateit.min.js"></script>
      <script src="/js/user.js"></script>
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114570926-2');
+</script>
+
   </body>
      <script>
 function helpEntry() {
