@@ -22,7 +22,7 @@ inputs.change(function() {
 var edit = document.getElementById("edit");
 var save = document.getElementById("save");
 
-edit.onclick = function() {
+/*dit.onclick = function() {
     save.style.visibility = "visible";
 
-}
+}*/

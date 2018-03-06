@@ -35,11 +35,7 @@ body {
         
         <h4 style="color:white;">Enter food and leave comments</h3>
         <hr>
-
-      
-        
-
-        <img src="/images/B1.jpg" style="width:220px; height:270px; margin-top: -20px"/>
+        <img src="/images/B1.jpg" id="output" style="width:220px; height:270px; margin-top: -20px"/>
         <hr class ="rating-hr">  
         <p class="help-block" id="clock"></p><hr class="rating-hr">
          <div class="container" style="display:inline-block " id="text-input">
@@ -84,7 +80,13 @@ body {
 
   gtag('config', 'UA-114570926-2');
 </script>
-
+<script>
+  window.onload=function(){
+    if(sessionStorage.image!=""){
+    document.getElementById('output').src = sessionStorage.image;
+   }
+  }
+</script>
   </body>
 </html>
 

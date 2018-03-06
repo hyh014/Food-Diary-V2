@@ -47,6 +47,7 @@ function callBack(result){
     return false;
   }
 }
+
 $('#addEntry').click(function(){
   sessionStorage.edit=false;
 
@@ -76,6 +77,9 @@ $('#stat').click(function(){
 });
 $('#setting').click(function(){
   location.href="/setting/tester1";
+});
+$('#next').click(function(){
+  sessionStorage.setItem('image',document.getElementById('output').src);
 });
 
 $('#entry2rating').click(function(){

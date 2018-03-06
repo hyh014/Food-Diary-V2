@@ -37,63 +37,47 @@ body {
       </div>
 <hr>
     <h1 class="text-center" style="font-family:Palatino;">Log Your Meal</h1>
-
       <div class="inline-block">
-         <div class="container col-lg-offset-4" style="display:inline-block; width:auto" id="photos">
+         <div class="container col-lg-offset-4" style="display:inline-block; margin-right:auto" id="photos">
            <div style="height:0px;overflow:hidden">
              <form id="addDiary" role="form" method="post" action="/addDiary/ne">
-              
            </div>
            <div>
-              <!--<label for="file-input">Take a Picture</label>-->
-              <input type="file" accept="image/*" id="file-input" capture="environment"/>
-              <img id="output">
+             <label for="file-input" class="transparent-button glyphicon glyphicon-camera glyphicon-size"></label>
+              <input type="file" accept="image/*" style="display:none" id="file-input" name="image" capture="environment"/>
             </div>
-          <div class="transparent-button glyphicon glyphicon-camera glyphicon-size" type="button" style="width:auto;height:100%;">
-          </div>
-
-          </button><br>
-            <!--
-            <a href='/photo/{{id}}' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
-          -->
             <p class="help-block" id="clock"></p>
          </div>
            <div class="topright" style="display:inline-block;" id="text-input">
 
               <span class="glyphicon glyphicon-pencil" style="margin-left:auto; font-size:30px;"></span>
-              <input type="text" class="row" style="width:140px; margin-left:-23px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
+              <input type="text" class="row" style="width:140px; margin-left:5px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
               <textarea rows="4" cols="24" class="row" style="margin-left:10px; height: 100px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                         Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
-
-
            </div>
-
          <br/>
        </div>
-
-
-
+        <img id="output" style="height:35vh;width:50vw;">
      <div class="container"  id="Rating" >
-
        <text class="Text-input">Taste:</text><br/>
        <div name="taste" class="rateit" id="tasteRate" >
       </div>
       <input type="hidden" name="taste" id="taste" value="0" />
-     <hr>
+     <hr class="rating-hr">
         <text class="Text-input">Health:</text><br/>
         <div class="rateit" id="healthRate">
        </div>
        <input type="hidden" name="health" value="0" id="health"/>
-      <hr>
+      <hr class="rating-hr">
        <text class="Text-input">Mood:</text><br/>
        <div class="rateit" id="moodRate">
        </div>
        <input type="hidden" name="mood" value="0"  id="mood"/>
-      <hr>
+      <hr class="rating-hr">
         <text class="Text-input">Anxiety:</text><br/>
         <div class="rateit" id="anxietyRate">
         </div>
         <input type="hidden" name="anxiety" value="0" id="anxiety"/>
-      <hr>
+      <hr class="rating-hr">
         <input type="hidden" name="date" id="date" value=""/>
         <input type="hidden" name="time" id="time" value=""/>
         <input type="hidden" name="userid" id="userid" value=""/>
@@ -109,7 +93,6 @@ function changeID(){
   document.getElementById('userid').value=sessionStorage.name;
 }
 </script>
-
 
 <script>
 
@@ -136,9 +119,11 @@ function changeID(){
   const fileInput = document.getElementById('file-input');
 
   fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
+
 </script>
 
 <script>
+
    function edit(){
     if(sessionStorage.getItem('edit') == 'true'){
       document.getElementById('image').value = sessionStorage.image;
@@ -164,18 +149,17 @@ function changeID(){
       document.getElementById('addDiary').action = '/addDiary/ne';
     }
   }
-  window.onload=edit;
+window.onload=edit;
 </script>
 
      <script src="/js/DisplayClock.js"></script>
      <script src="/js/entry.js"></script>
-
-
      <script src="https://code.jquery.com/jquery.js"></script>
      <script src="/js/bootstrap.min.js"></script>
      <script src="/scripts/jquery.rateit.min.js"></script>
      <script src="/js/user.js"></script>
      <!-- Global site tag (gtag.js) - Google Analytics -->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -186,12 +170,12 @@ function changeID(){
 </script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   </body>
+
      <script>
 function helpEntry() {
     alert("Tutorials\n\nThis page intends to help you record your meals. You record meals by either take a photo or leave some texts. And you will then do  self-rate about current mood, food taste and food healthy level."
       );
 }
-
 $('#Save').click(changeText);
 function changeText(event){
   $(this).text("Saved");
@@ -202,7 +186,6 @@ function changeText(event){
 <script>
 function clicked(e)
 {
-
     if(!confirm('Do you want to submit?'))e.preventDefault();
     confirm = 0;
 }
@@ -217,4 +200,6 @@ function clicked(e)
    }
   }
 </script>
+  </body>
+
 </html>

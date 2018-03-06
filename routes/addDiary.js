@@ -20,7 +20,6 @@ exports.addDiary = function(req,res){
     {
       if(userid==data.info[i].id)
       {
-        console.log("checking for new image");
         if(image == ""){
           image = "/images/B1.jpg";
         }
