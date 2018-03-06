@@ -76,14 +76,14 @@ form.example::after {
 
 
 <hr>
-<h1 class="page-header text-center" >My Diary</h1>
+<h1 class="text-center" style="font-family:Palatino;">My Diary</h1>
 <div class="text-center" style="margin-bottom:15px;">
 	<form class="col-lg-offset-4">
 </form>
 </div>
 
 	{{#each datas}}
-	<div id="loop">
+	<div id="loop" style="border-style:double;">
 		<div id = "one" class="container text-center">
 			<text id="date">{{date}} {{time}}</text><br>
 			<div class="container ">
@@ -162,7 +162,7 @@ $(document).ready(function(){
 			sessionStorage.setItem('date',date);
 
 
-	//		location.replace("/entry/"+sessionStorage.getItem('name'));
+			location.replace("/entry/"+sessionStorage.getItem('name'));
 		});
 });
 </script>

@@ -7141,10 +7141,32 @@ td.visible-print {
 .icon:hover {
     background-color: RoyalBlue;
 }
+@media (max-width: 600px) {
+  .resize {
+        width:75%;
+        height:75%;
+    }
+}
 
-.resize{
-  width:75%;
-  height:75%;
+@media (min-width: 768px) and (max-width: 991px) {
+  .resize {
+      width:60%;
+      height:60%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+.resize {
+    width:45%;
+    height:45%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .resize {
+      width:30%;
+      height:30%;
+    }
 }
 
 .topright{

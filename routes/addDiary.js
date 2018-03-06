@@ -12,10 +12,15 @@ exports.addDiary = function(req,res){
     var date = req.body.date;
     var time = req.body.time;
     var userid = req.body.userid;
+    console.log("going to for loop");
+    console.log(userid);
+    console.log(time);
+    console.log(foodName);
     for(var i=0; i<data.info.length;i++)
     {
       if(userid==data.info[i].id)
       {
+        console.log("checking for new image");
         if(image == ""){
           image = "/images/B1.jpg";
         }
@@ -34,6 +39,7 @@ exports.addDiary = function(req,res){
           for(var j=0;j<data.info[i].datas.length;j++){
             if(time===data.info[i].datas[j].time && date===data.info[i].datas[j].date){
               data.info[i].datas[j] = newObject;
+              console.log("redirecting to diary");
               return res.redirect('/diary/'+userid);
             }
           }
