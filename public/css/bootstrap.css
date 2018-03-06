@@ -2705,7 +2705,7 @@ input[type="button"].btn-block {
 }
 
 .glyphicon:empty {
-  width: 2em;
+  width: 1em;
 }
 
 .glyphicon-asterisk:before {
@@ -7441,13 +7441,13 @@ input:checked + .slider:before {
 #top{
   float:left;
   width:100%;
-  height:90%;
+  height:92%;
 
 }
 #bottom{
   float:left;
   width:100%;
-  height:10%;
+  height:8%;
 
 }
 .rating-hr{
