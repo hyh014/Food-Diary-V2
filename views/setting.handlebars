@@ -54,7 +54,7 @@ label {
 </div>
 <hr>
 <div class="text-center" id="root">
-	<h1 class="page-header text-center" >Settings</h1>
+	<h1 class="text-center" style="font-family:Palatino;">Settings</h1>
 	<h3>Account Information</h2><hr>
 	<div class="container" id="account">
 		<h4>Username: {{id}}</h4>
@@ -106,6 +106,15 @@ function clicked(e)
     if(!confirm('Are you sure to log off?'))e.preventDefault();
     
 }
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114570926-2');
 </script>
 
 </body>

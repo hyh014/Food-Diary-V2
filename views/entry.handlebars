@@ -36,34 +36,39 @@ body {
         <a href="#" class="glyphicon glyphicon-question-sign" onclick="helpEntry()" style=" font-size:40px; float:right" role="button" id="help" name="entry"></a>
       </div>
 <hr>
-    <h1 class="page-header text-center" >Log Your Meal</h1>
-    <div class="inline-block">
-       <div class="container" style="display:inline-block; width: 120px" id="photos">
-         <div style="height:0px;overflow:hidden">
-          <input  type="file" id="fileInput" name="fileInput"/>
+    <h1 class="text-center" style="font-family:Palatino;">Log Your Meal</h1>
+
+      <div class="inline-block">
+         <div class="container col-lg-offset-4" style="display:inline-block; width:auto" id="photos">
+           <div style="height:0px;overflow:hidden">
+             <form id="addDiary" role="form" method="post" action="/addDiary/ne">
+              
+           </div>
+           <div>
+              <!--<label for="file-input">Take a Picture</label>-->
+              <input type="file" accept="image/*" id="file-input" capture="environment"/>
+              <img id="output">
+            </div>
+          <div class="transparent-button glyphicon glyphicon-camera glyphicon-size" type="button" style="width:auto;height:100%;">
+          </div>
+
+          </button><br>
+            <!--
+            <a href='/photo/{{id}}' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
+          -->
+            <p class="help-block" id="clock"></p>
          </div>
+           <div class="topright" style="display:inline-block;" id="text-input">
+
+              <span class="glyphicon glyphicon-pencil" style="margin-left:auto; font-size:30px;"></span>
+              <input type="text" class="row" style="width:140px; margin-left:-23px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
+              <textarea rows="4" cols="24" class="row" style="margin-left:10px; height: 100px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                         Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
 
 
-        <button class="transparent-button glyphicon glyphicon-camera glyphicon-size" type="button" style="width:100px;height:50px;" onclick="chooseFile();">
+           </div>
 
-
-        </button><br>
-          <!--
-          <a href='/photo/{{id}}' class="btn btn-info btn-sm" role="button">View Pictures</a><br/>
-        -->
-          <p class="help-block" id="clock"></p>
+         <br/>
        </div>
-         <div class="container topright" style="display:inline-block " id="text-input">
-            <form id="addDiary" role="form" method="post" action="/addDiary/ne">
-            <span class="glyphicon glyphicon-pencil" style="margin-left:10px; font-size:30px;"></span>
-            <input type="text" class="row" style="width:140px; margin-left:-23px;" placeholder="Enter food" name="foodName" id="foodName"/><br/>
-            <textarea rows="4" cols="24" class="row" style="margin-left:10px; height: 100px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="Comments:                         Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
-         
-
-         </div>
-         
-       <br/>
-     </div>
 
 
 
@@ -104,14 +109,39 @@ function changeID(){
   document.getElementById('userid').value=sessionStorage.name;
 }
 </script>
+
+
 <script>
-   function chooseFile() {
-      $("#fileInput").click();
-   }
+
+    const supported = 'mediaDevices' in navigator;
+    const player = document.getElementById('player');
+
+    const output = document.getElementById('output');
+
+  function doSomethingWithFiles(fileList) {
+    let file = null;
+
+    for (let i = 0; i < fileList.length; i++) {
+      if (fileList[i].type.match(/^image\//)) {
+        file = fileList[i];
+        break;
+      }
+    }
+
+    if (file !== null) {
+      output.src = URL.createObjectURL(file);
+    }
+  }
+  // Attach the video stream to the video element and autoplay.
+  const fileInput = document.getElementById('file-input');
+
+  fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
 </script>
+
 <script>
    function edit(){
     if(sessionStorage.getItem('edit') == 'true'){
+      document.getElementById('image').value = sessionStorage.image;
       document.getElementById('foodName').value = sessionStorage.foodName;
       document.getElementById('comments').value = sessionStorage.comments;
       document.getElementById('userid').value = sessionStorage.name;
@@ -139,12 +169,22 @@ function changeID(){
 
      <script src="/js/DisplayClock.js"></script>
      <script src="/js/entry.js"></script>
-     
-     
+
+
      <script src="https://code.jquery.com/jquery.js"></script>
      <script src="/js/bootstrap.min.js"></script>
      <script src="/scripts/jquery.rateit.min.js"></script>
      <script src="/js/user.js"></script>
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114570926-2');
+</script>
+
   </body>
      <script>
 function helpEntry() {

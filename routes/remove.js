@@ -10,7 +10,7 @@ exports.remove = function(req,res){
     if(userid == users.info[i].id){
       for(var j=0;j<users.info[i].datas.length;j++){
         if(users.info[i].datas[j].time==time && users.info[i].datas[j].date==date){
-          users.info[i].datas.splice(j-1,1);
+          users.info[i].datas.splice(j,1);
           return res.redirect('/diary/'+userid);
         }
       }

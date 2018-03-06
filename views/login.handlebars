@@ -19,7 +19,7 @@ body {
 </style>
 <body>
 <div id="root" class="text-center">
-<h1 class="page-header " >Login</h1>
+<h1 class="page-header " style="font-family:Palatino;">Login</h1>
 	<div class="container">
 		<text id="error" class="hide">Wrong Username/Password</text>
 		<div class="form-group">
@@ -47,5 +47,15 @@ body {
 	<script src="/js/user.js"></script>
 	{{>facebook}}
 	<script src="/js/facebook.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114570926-2');
+</script>
+
 </body>
 </html>

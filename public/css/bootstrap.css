@@ -373,7 +373,7 @@ hr {
   margin-bottom: 20px;
   border: 0;
   opacity:0 !important;
- 
+
 }
 
 .sr-only {
@@ -2355,7 +2355,7 @@ fieldset[disabled] .btn-default.active {
   color: #ffffff;
   background-color: #428bca;
   border-color: #357ebd;
-  
+
 }
 
 .btn-primary:hover,
@@ -2366,7 +2366,7 @@ fieldset[disabled] .btn-default.active {
   color: #ffffff;
   background-color: #3276b1;
   border-color: #285e8e;
-  
+
 }
 
 .btn-primary:active,
@@ -7141,10 +7141,34 @@ td.visible-print {
 .icon:hover {
     background-color: RoyalBlue;
 }
-.resize{
-  max-width:75%;
-  max-height:75%;
+@media (max-width: 600px) {
+  .resize {
+        width:75%;
+        height:75%;
+    }
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .resize {
+      width:60%;
+      height:60%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+.resize {
+    width:45%;
+    height:45%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .resize {
+      width:30%;
+      height:30%;
+    }
+}
+
 .topright{
   position: absolute;
   top: auto;
@@ -7378,7 +7402,7 @@ input:checked + .slider:before {
 
 .myBtnBack:hover {
   background-color: #428bca;
-  
+
 }
 .home1{
   padding:30px;
@@ -7404,7 +7428,7 @@ input:checked + .slider:before {
   border-color: none ;
   height:100px;
   width:150px;
-  
+
 }
 .a2 {
   color: #ffffff;
@@ -7412,14 +7436,14 @@ input:checked + .slider:before {
   border-color: none;
   height:100px;
   width:150px;
-  
+
 }
 
 .backInDiary {
   color: #ffffff;
   background-color: #ABEBC6;
   border-color: #357ebd;
-  
+
 }
 
 .glyphiconHome {
