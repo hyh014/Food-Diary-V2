@@ -15,7 +15,6 @@ function callBackFn(result){
     $('#login').attr('href','/index/'+userID);
     sessionStorage.setItem('name',userID);
     location.replace("/checkLogin/"+sessionStorage.getItem('name'));
-
   }
   else {
     $('#error').removeClass('hide');
@@ -24,7 +23,6 @@ function callBackFn(result){
 }
 
 $('#register').submit(function(){
-  console.log("ASDFasdfas");
   userID = document.getElementById('userid').value;
   password = document.getElementById('password').value;
   sessionStorage.setItem('name',userID);

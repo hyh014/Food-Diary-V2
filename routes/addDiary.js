@@ -2,7 +2,6 @@ var data = require("../data.json");
 exports.addDiary = function(req,res){
     var edit = req.params.edit;
     var image = req.body.image;
-    console.log(image);
     var foodName = req.body.foodName;
     var comments = req.body.comments;
     var taste = req.body.taste;

@@ -2914,6 +2914,7 @@ input[type="button"].btn-block {
 
 .glyphicon-camera:before {
   content: "\e046";
+   background-color:#FCF3CF;
 
 }
 
@@ -5417,7 +5418,13 @@ a.thumbnail.active {
 }
 
 .progress {
-  height: 20px;
+  height: 15px;
+  /* add margin-top, margin-left
+  add width
+  */
+  margin-top: 20px;
+  width:90%;
+  margin-left: 20px;
   margin-bottom: 20px;
   overflow: hidden;
   background-color: #f5f5f5;
@@ -5427,6 +5434,8 @@ a.thumbnail.active {
 }
 
 .progress-bar {
+  /*change floate left to center
+  */
   float: left;
   width: 0;
   height: 100%;
@@ -7469,6 +7478,9 @@ input:checked + .slider:before {
 
 }
 #bottom{
+  position:fixed;
+  bottom:0;
+  right:0;
   float:left;
   width:100%;
   height:8%;
@@ -7491,3 +7503,11 @@ input:checked + .slider:before {
   padding:0 !important;
   float:left !important;
 }
+
+.entry2BackNext {
+  color: white;
+  background-color: #87B536;
+  border-color: #87B536;
+
+}
+

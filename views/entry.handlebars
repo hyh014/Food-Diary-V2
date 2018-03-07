@@ -8,8 +8,6 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-
-
     <link href="/scripts/rateit.css" rel="stylesheet">
     <style>
 body {
@@ -122,11 +120,19 @@ function changeID(){
 
 </script>
 
-<script>
+     <script src="/js/DisplayClock.js"></script>
+     <script src="/js/entry.js"></script>
+     <script src="https://code.jquery.com/jquery.js"></script>
+     <script src="/js/bootstrap.min.js"></script>
+     <script src="/scripts/jquery.rateit.min.js"></script>
+     <script src="/js/user.js"></script>
+         <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="/js/javascript">
+
 
    function edit(){
     if(sessionStorage.getItem('edit') == 'true'){
-      document.getElementById('image').value = sessionStorage.image;
+      document.getElementById('output').src = sessionStorage.image;
       document.getElementById('foodName').value = sessionStorage.foodName;
       document.getElementById('comments').value = sessionStorage.comments;
       document.getElementById('userid').value = sessionStorage.name;
@@ -136,31 +142,24 @@ function changeID(){
       $('#anxietyRate').rateit('value',sessionStorage.anxiety);
       $('#clock').text(sessionStorage.date+" "+sessionStorage.time);
       $('#back').attr('href','/diary/'+sessionStorage.name);
-      document.getElementById('addDiary').action= '/addDiary/e';
+
+      //document.getElementById('addDiary').action= '/addDiary/e';
       sessionStorage.setItem('edit',false);
-    }/*
+    }
     else{
 
       document.getElementById('foodName').value = "";
       document.getElementById('comments').value = "";
-      $('#tasteRate').rateit('value',0);
+      $('#tasteRate').rateit('value',5);
       $('#healthRate').rateit('value',0);
       $('#moodRate').rateit('value',0);
       $('#anxietyRate').rateit('value',0);
       document.getElementById('addDiary').action = '/addDiary/ne';
-    }*/
+    }
   }
 window.onload=edit;
 </script>
-
-     <script src="/js/DisplayClock.js"></script>
-     <script src="/js/entry.js"></script>
-     <script src="https://code.jquery.com/jquery.js"></script>
-     <script src="/js/bootstrap.min.js"></script>
-     <script src="/scripts/jquery.rateit.min.js"></script>
-     <script src="/js/user.js"></script>
-     <!-- Global site tag (gtag.js) - Google Analytics -->
-
+<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -169,7 +168,7 @@ window.onload=edit;
 
   gtag('config', 'UA-114570926-2');
 </script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
   </body>
 
      <script>
