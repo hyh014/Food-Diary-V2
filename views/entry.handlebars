@@ -92,6 +92,39 @@ function changeID(){
 }
 </script>
 
+<script type="/js/javascript">
+   function edit(){
+    console.log("Sdfasfsa");
+    if(sessionStorage.getItem('edit') == 'true'){
+      document.getElementById('output').src = sessionStorage.image;
+      document.getElementById('foodName').value = sessionStorage.foodName;
+      document.getElementById('comments').value = sessionStorage.comments;
+      document.getElementById('userid').value = sessionStorage.name;
+      $('#tasteRate').rateit('value',sessionStorage.taste);
+      $('#healthRate').rateit('value',sessionStorage.health);
+      $('#moodRate').rateit('value',sessionStorage.mood);
+      $('#anxietyRate').rateit('value',sessionStorage.anxiety);
+      $('#clock').text(sessionStorage.date+" "+sessionStorage.time);
+      $('#back').attr('href','/diary/'+sessionStorage.name);
+
+      //document.getElementById('addDiary').action= '/addDiary/e';
+      sessionStorage.setItem('edit',false);
+    }
+    else{
+
+      document.getElementById('foodName').value = "";
+      document.getElementById('comments').value = "";
+      $('#tasteRate').rateit('value',0);
+      $('#healthRate').rateit('value',0);
+      $('#moodRate').rateit('value',0);
+      $('#anxietyRate').rateit('value',0);
+      document.getElementById('addDiary').action = '/addDiary/ne';
+    }
+  }
+
+window.onload=edit;
+</script>
+
 <script>
 
     const supported = 'mediaDevices' in navigator;
@@ -127,38 +160,7 @@ function changeID(){
      <script src="/scripts/jquery.rateit.min.js"></script>
      <script src="/js/user.js"></script>
          <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script type="/js/javascript">
 
-
-   function edit(){
-    if(sessionStorage.getItem('edit') == 'true'){
-      document.getElementById('output').src = sessionStorage.image;
-      document.getElementById('foodName').value = sessionStorage.foodName;
-      document.getElementById('comments').value = sessionStorage.comments;
-      document.getElementById('userid').value = sessionStorage.name;
-      $('#tasteRate').rateit('value',sessionStorage.taste);
-      $('#healthRate').rateit('value',sessionStorage.health);
-      $('#moodRate').rateit('value',sessionStorage.mood);
-      $('#anxietyRate').rateit('value',sessionStorage.anxiety);
-      $('#clock').text(sessionStorage.date+" "+sessionStorage.time);
-      $('#back').attr('href','/diary/'+sessionStorage.name);
-
-      //document.getElementById('addDiary').action= '/addDiary/e';
-      sessionStorage.setItem('edit',false);
-    }
-    else{
-
-      document.getElementById('foodName').value = "";
-      document.getElementById('comments').value = "";
-      $('#tasteRate').rateit('value',5);
-      $('#healthRate').rateit('value',0);
-      $('#moodRate').rateit('value',0);
-      $('#anxietyRate').rateit('value',0);
-      document.getElementById('addDiary').action = '/addDiary/ne';
-    }
-  }
-window.onload=edit;
-</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
 <script>
@@ -168,17 +170,11 @@ window.onload=edit;
 
   gtag('config', 'UA-114570926-2');
 </script>
-
   </body>
-
      <script>
 function helpEntry() {
     alert("Tutorials\n\nThis page intends to help you record your meals. You record meals by either take a photo or leave some texts. And you will then do  self-rate about current mood, food taste and food healthy level."
       );
-}
-$('#Save').click(changeText);
-function changeText(event){
-  $(this).text("Saved");
 }
 </script>
 

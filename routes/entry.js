@@ -24,7 +24,6 @@ exports.addEntryAlt = function(req,res){
     if(userid == users.info[i].id){
     //  if(users.info[i].session==session){
           authentication =true;
-          console.log("dfsadfsa");
           res.render('entry',users.info[i]);
     //  }
     }
