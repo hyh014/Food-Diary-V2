@@ -40,6 +40,8 @@ $('#addEntry').click(function(){
   var time = date.substring(9);
   var date = date.substring(0,8);
 
+  document.getElementById('image').value= sessionStorage.image;
+  console.log(document.getElementById('image').value);
   document.getElementById('taste').value= $('#tasteRate').rateit('value');
   document.getElementById('health').value=$('#healthRate').rateit('value');
   document.getElementById('mood').value=$('#moodRate').rateit('value');

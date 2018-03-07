@@ -5,7 +5,6 @@
     <title>Food Diary App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -184,33 +183,27 @@ h3{
          </div>
          <input type="hidden" name="mood" value="0"  id="mood"/>
         <hr>
-        <!--
+        
           <text style="font-size:22px; color: #1ABC9C; padding-right: 168px" class="Text-input">Anxiety:</text><br/>
           <div class="rateit" id="anxietyRate" data-rateit-mode="font" style="font-size:44px">
           </div>
           <input type="hidden" name="anxiety" value="0" id="anxiety"/>
         <hr>
-      -->
-      <!--
+      
+        <input type="hidden" name="image" id="image" value=""/>
+
           <input type="hidden" name="date" id="date" value=""/>
           <input type="hidden" name="time" id="time" value=""/>
           <input type="hidden" name="userid" id="userid" value=""/>
           <input type="hidden" name="foodName" id="foodName" value=""/>
           <input type="hidden" name="comments" id="comments" value=""/>
        </div>
-       -->
        <input type="submit" class="btn btn-sm btn-success" style="float:right; margin-right: 36px;" id="addEntry" onclick="clicked(event);" value="Add to Diary" Text="Submit" />
      </form>
 
 
-
-
-
-
-
-
-
 <!--   temporaryly comment out this:
+>>>>>>> 190cd7a409e43302febfc7e0a2ecdc89291cf8dd
         <a href="/entry2text/{{id}}" role="button" class="btn entry2BackNext" style="font-size:18px; margin-bottom: 50px; margin-left:50%;margin-top:30px;">Next</a>
         
 -->
@@ -220,9 +213,11 @@ h3{
     
       
    </div>
+     <script src="/js/entry.js"></script>
+
 
  </article>
-     <script src="/js/entry2.js"></script>
+
      <script src="https://code.jquery.com/jquery.js"></script>
      <script src="/js/bootstrap.min.js"></script>
      <script src="/scripts/jquery.rateit.min.js"></script>

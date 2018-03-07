@@ -25,8 +25,7 @@ var save = document.getElementById("save");
 /*dit.onclick = function() {
     save.style.visibility = "visible";
 
-<<<<<<< HEAD
+
 }
 =======
 }*/
->>>>>>> 5432d41761d93152f2463e839fc3b7bdade85abd

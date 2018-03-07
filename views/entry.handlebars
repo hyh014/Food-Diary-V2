@@ -59,7 +59,6 @@ body {
            </div>
          <br/>
        </div>
-        
         <hr>
      <div class="container"  id="Rating" style="margin-top:255px;margin-left:53px;">
        <text class="Text-input">Taste:</text><br/>
@@ -82,6 +81,7 @@ body {
         </div>
         <input type="hidden" name="anxiety" value="0" id="anxiety"/>
       <hr class="rating-hr">
+        <input type="hidden" id="image" name="image" value="">
         <input type="hidden" name="date" id="date" value=""/>
         <input type="hidden" name="time" id="time" value=""/>
         <input type="hidden" name="userid" id="userid" value=""/>
@@ -99,38 +99,32 @@ function changeID(){
 </script>
 
 <script>
-
     const supported = 'mediaDevices' in navigator;
     const player = document.getElementById('player');
-
     const output = document.getElementById('output');
-
   function doSomethingWithFiles(fileList) {
     let file = null;
-
     for (let i = 0; i < fileList.length; i++) {
       if (fileList[i].type.match(/^image\//)) {
         file = fileList[i];
         break;
       }
     }
-
     if (file !== null) {
       output.src = URL.createObjectURL(file);
+      sessionStorage.setItem('image',output.src);
     }
   }
   // Attach the video stream to the video element and autoplay.
   const fileInput = document.getElementById('file-input');
-
   fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
-
 </script>
 
 <script>
-
    function edit(){
     if(sessionStorage.getItem('edit') == 'true'){
-      document.getElementById('image').value = sessionStorage.image;
+      document.getElementById('output').src = sessionStorage.image;
+      console.log(document.getElementById('output').src);
       document.getElementById('foodName').value = sessionStorage.foodName;
       document.getElementById('comments').value = sessionStorage.comments;
       document.getElementById('userid').value = sessionStorage.name;
