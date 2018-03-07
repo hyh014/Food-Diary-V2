@@ -1,4 +1,4 @@
-var inputs = $("form#myForm input, form#myForm textarea");
+/*var inputs = $("form#myForm input, form#myForm textarea");
 
 var validateInputs = function validateInputs(inputs) {
   var validForm = true;
@@ -21,7 +21,7 @@ inputs.change(function() {
 
 var edit = document.getElementById("edit");
 var save = document.getElementById("save");
-
+*/
 /*dit.onclick = function() {
     save.style.visibility = "visible";
 

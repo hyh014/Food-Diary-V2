@@ -64,6 +64,7 @@ app.get('/index/:name', index.view);
 app.get('/diary/:name',diary.viewDiary);
 app.get('/setting/:name',setting.viewSetting);
 app.get('/entry/:name',entry.addEntry);
+app.get('/entryAlt/:name',entry.addEntryAlt);
 app.get('/stat/:name',stat.getStat);
 app.get('/news/:name',news.show);
 app.get('/entry2/:name',entry2.addEntry);

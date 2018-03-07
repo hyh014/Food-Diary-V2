@@ -138,16 +138,17 @@ function changeID(){
       $('#back').attr('href','/diary/'+sessionStorage.name);
       document.getElementById('addDiary').action= '/addDiary/e';
       sessionStorage.setItem('edit',false);
-    }
+    }/*
     else{
+
       document.getElementById('foodName').value = "";
       document.getElementById('comments').value = "";
       $('#tasteRate').rateit('value',0);
       $('#healthRate').rateit('value',0);
-      $('moodRate').rateit('value',0);
+      $('#moodRate').rateit('value',0);
       $('#anxietyRate').rateit('value',0);
       document.getElementById('addDiary').action = '/addDiary/ne';
-    }
+    }*/
   }
 window.onload=edit;
 </script>
