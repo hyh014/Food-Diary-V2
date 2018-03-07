@@ -11,13 +11,15 @@ exports.addDiary = function(req,res){
     var anxiety = req.body.anxiety;
     var date = req.body.date;
     var time = req.body.time;
-    var userid = req.body.userid;
+    var userid = 'tester1';
     console.log("going to for loop");
     console.log(userid);
     console.log(time);
     console.log(foodName);
+    console.log(data.info.length);
     for(var i=0; i<data.info.length;i++)
     {
+      console.log("??");
       if(userid==data.info[i].id)
       {
         console.log("checking for new image");
