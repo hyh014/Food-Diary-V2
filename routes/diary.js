@@ -14,6 +14,4 @@ exports.viewDiary = function(req,res){
   if(authentication == false){
   res.status(404).send();
   }
-
-
 }

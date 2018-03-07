@@ -26,7 +26,11 @@ function callBackFn(result){
 $('#register').click(function(){
   userID = document.getElementById('userid').value;
   sessionStorage.setItem('name',userID);
+  $.get("/user/"+sessionStorage.getItem('name'),callBack);
 });
+function callBack(result){
+
+}
 
 $('#addEntry').click(function(){
   sessionStorage.edit=false;
