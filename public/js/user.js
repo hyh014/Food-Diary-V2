@@ -53,7 +53,7 @@ $('#addEntry').click(function(){
   var date = $('#clock').text();
   var time = date.substring(9);
   var date = date.substring(0,8);
-
+  console.log(document.getElementById('taste'));
   document.getElementById('taste').value= $('#tasteRate').rateit('value');
   document.getElementById('health').value=$('#healthRate').rateit('value');
   document.getElementById('mood').value=$('#moodRate').rateit('value');
