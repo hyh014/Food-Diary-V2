@@ -5,7 +5,6 @@
     <title>Food Diary App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -50,12 +49,9 @@ body {
 
         <h1 style="color:#27AE60;">Hello {{id}}</h1>
         <h3 style="color:#27AE60;"> Take a photo of your meal</h3>
+        
+         <input  type="file" id="fileInput" style="display: none;" name="fileInput"/>
 
-           <div>
-             <label for="file-input" class="transparent-button glyphicon glyphicon-camera glyphicon-size"></label>
-              <input type="file" accept="image/*" style="display:none" id="file-input" capture="environment"/>
-            </div>
-            <img id="output" style="height:35vh;width:50vw;">
 
 
 
@@ -98,6 +94,7 @@ body {
           <input type="hidden" name="anxiety" value="0" id="anxiety"/>
         <hr>
       -->
+          <input type="hidden" name="image" id="image" value=""/>
           <input type="hidden" name="date" id="date" value=""/>
           <input type="hidden" name="time" id="time" value=""/>
           <input type="hidden" name="userid" id="userid" value=""/>
@@ -106,6 +103,13 @@ body {
        </div>
        
      </form>
+
+
+        <a href="/entry2text/{{id}}" role="button" class="btn entry2BackNext" style="font-size:18px; margin-bottom: 50px; margin-left:50%;margin-top:30px;">Next</a>
+        
+
+
+
       </div>
       <div id="bottom">
         <button id="diary" style="background-color: white; color:#87B536; font-size: 19px;" onclick="confirm1();" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
@@ -127,7 +131,7 @@ body {
 
      <script>
       $("#remove1").onclick = function () {
-      this.style.backgroundColor = "#ED3215";
+ this.style.backgroundColor = "#ED3215";
 };
 
      </script>
@@ -139,32 +143,6 @@ body {
   gtag('js', new Date());
 
   gtag('config', 'UA-114570926-2');
-</script>
-<script>
-    const supported = 'mediaDevices' in navigator;
-    const player = document.getElementById('player');
-
-    const output = document.getElementById('output');
-
-  function doSomethingWithFiles(fileList) {
-    let file = null;
-
-    for (let i = 0; i < fileList.length; i++) {
-      if (fileList[i].type.match(/^image\//)) {
-        file = fileList[i];
-        break;
-      }
-    }
-
-    if (file !== null) {
-      output.src = URL.createObjectURL(file);
-    }
-  }
-  // Attach the video stream to the video element and autoplay.
-  const fileInput = document.getElementById('file-input');
-
-  fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
-
 </script>
 
   </body>

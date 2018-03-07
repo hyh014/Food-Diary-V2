@@ -15,6 +15,7 @@ function callBackFn(result){
     $('#login').attr('href','/index/'+userID);
     sessionStorage.setItem('name',userID);
     location.replace("/checkLogin/"+sessionStorage.getItem('name'));
+
   }
   else {
     $('#error').removeClass('hide');
@@ -22,28 +23,13 @@ function callBackFn(result){
   }
 }
 
-$('#register').submit(function(){
+$('#register').click(function(){
   userID = document.getElementById('userid').value;
-  password = document.getElementById('password').value;
   sessionStorage.setItem('name',userID);
-  var bool=$.get("/user/"+sessionStorage.name,callBack);
-  if(bool==true){
-    return false;
-  }
-  else{
-    $("form").action="/register";
-    alert("existing userid");
-    location.reload();
-  }
+  $.get("/user/"+sessionStorage.getItem('name'),callBack);
 });
 function callBack(result){
-  console.log("in callback");
-  if(result.id == sessionStorage.name){
-    return true;
-  }
-  else{
-    return false;
-  }
+
 }
 
 $('#addEntry').click(function(){
@@ -53,7 +39,9 @@ $('#addEntry').click(function(){
   var date = $('#clock').text();
   var time = date.substring(9);
   var date = date.substring(0,8);
-  console.log(document.getElementById('taste'));
+
+  document.getElementById('image').value= sessionStorage.image;
+  console.log(document.getElementById('image').value);
   document.getElementById('taste').value= $('#tasteRate').rateit('value');
   document.getElementById('health').value=$('#healthRate').rateit('value');
   document.getElementById('mood').value=$('#moodRate').rateit('value');
@@ -75,9 +63,6 @@ $('#stat').click(function(){
 });
 $('#setting').click(function(){
   location.href="/setting/tester1";
-});
-$('#next').click(function(){
-  sessionStorage.setItem('image',document.getElementById('output').src);
 });
 
 $('#entry2rating').click(function(){

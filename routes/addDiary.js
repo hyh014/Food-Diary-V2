@@ -2,6 +2,7 @@ var data = require("../data.json");
 exports.addDiary = function(req,res){
     var edit = req.params.edit;
     var image = req.body.image;
+    console.log(image);
     var foodName = req.body.foodName;
     var comments = req.body.comments;
     var taste = req.body.taste;
@@ -11,10 +12,15 @@ exports.addDiary = function(req,res){
     var date = req.body.date;
     var time = req.body.time;
     var userid = req.body.userid;
+    console.log("going to for loop");
+    console.log(userid);
+    console.log(time);
+    console.log(foodName);
     for(var i=0; i<data.info.length;i++)
     {
       if(userid==data.info[i].id)
       {
+        console.log("checking for new image");
         if(image == ""){
           image = "/images/B1.jpg";
         }
