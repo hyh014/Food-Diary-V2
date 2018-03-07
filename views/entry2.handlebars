@@ -4,6 +4,11 @@
   <head>
     <title>Food Diary App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -14,7 +19,7 @@
     <link href="/scripts/rateit.css" rel="stylesheet">
     <style>
 body {
-    background-color:white;
+    background-image: url("/images/s13.jpg");
 }
 </style>
 <style>s
@@ -24,23 +29,99 @@ body {
 }
 </style>
   <body>
+
+
+
+
+    
     <div id="wrapper">
       <div class="text-center" id="top">
+
+       <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" 
+    style="width:35%; background-image: linear-gradient(to bottom,#87B536 0,#87B536 100%);">Step 1</div>
+   </div>
+ 
+
         <h1 style="color:#27AE60;">Hello {{id}}</h1>
         <h3 style="color:#27AE60;"> Take a photo of your meal</h3>
+        
          <input  type="file" id="fileInput" style="display: none;" name="fileInput"/>
 
 
-        <button class="glyphicon glyphicon-camera transparent-button" type="button" onclick="chooseFile();" style="color:#27AE60; font-size:200px; margin-top:40px; position:relative"></button><hr>
-        <button class="glyphicon glyphicon-remove transparent-button" id="remove1" style="font-size:50px"></button> 
+        <button class="glyphicon glyphicon-camera transparent-button" type="button" onclick="chooseFile();" style="color:#58D68D; font-size:200px; margin-top:68px; position:relative; height:183px;width:207px;"></button><hr>
+        <!--<button class="glyphicon glyphicon-remove transparent-button" id="remove1" style="font-size:50px"></button> 
         <button class="glyphicon glyphicon-ok transparent-button" style="font-size:50px"></button><hr>
-        <a href="/entry2text/{{id}}" role="button" class="btn btn-primary" style="font-size:18px; margin-bottom: 50px; margin-left:50%;margin-top:30px;">Next</a>
+        -->
+
+        <h4 style="margin-top:176px;color:#27AE60;">Enter food and leave comments</h3>
+<img src="/images/B1.jpg" style="width:220px; height:270px; margin-top: 20px"/>
+        <hr class ="rating-hr">  
+        <p class="help-block" id="clock"></p><hr class="rating-hr">
+         <div class="container" style="display:inline-block " id="text-input">
+          <span class="glyphicon glyphicon-pencil" style="margin-left:49px; margin-right: -5px; font-size:37px; color:#0c1004;"></span>
+          <input type="text" class="row" style="border-color:#27AE60 ; border-width: 0px; width:178px; margin-left:2px; height: 35px; margin-right: 4px; border-radius: 25px;" placeholder="     Enter food" name="foodName" id="foodName"/>
+          <button class=" glyphicon glyphicon-remove-circle" style="color:white; font-size: 20px" onclick="document.getElementById('foodName').value = ''"></button><br/>
+          <textarea rows="4" cols="30" class="row" style="border-color:#27AE60; border-width: 0px; margin-left:44px;border-radius: 18px; height: 90px; width:225; margin-right: 4px; margin-top:5px; resize:none;" placeholder="      Comments:                                 Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
+          <button class="glyphicon glyphicon-remove-circle" style="color:white; margin-top: 50px; font-size: 20px" onclick="document.getElementById('comments').value = ''"></button>
+         </div>
+         <hr>
+
+<h4 style="color:#1ABC9C;margin-top:116px;">Finish Self-Rating </h4>
+
+         <form id="addDiary" role="form" method="post" action="/addDiary/ne">
+          <div class="container"  id="Rating" >
+         <text style="font-size:27px; color: #87B536; padding-right: 168px" class="Text-input">Taste:</text><br/>
+         <div name="taste" class="rateit" id="tasteRate" data-rateit-mode="font" style="margin-top:12px; font-size:40px">
+        </div>
+        <input type="hidden" name="taste" id="taste" value="0" />
+       <hr>
+          <text style="font-size:27px; color: #87B536; padding-right: 168px" class="Text-input">Health:</text><br/>
+          <div class="rateit" id="healthRate" data-rateit-mode="font" style="margin-top:12px; font-size:40px">
+         </div>
+         <input type="hidden" name="health" value="0" id="health"/>
+        <hr>
+         <text style="font-size:27px; color: #87B536; padding-right: 168px" class="Text-input">Mood:</text><br/>
+         <div class="rateit" id="moodRate" data-rateit-mode="font" style="margin-top:12px; font-size:40px">
+         </div>
+         <input type="hidden" name="mood" value="0"  id="mood"/>
+        <hr>
+        <!--
+          <text style="font-size:22px; color: #1ABC9C; padding-right: 168px" class="Text-input">Anxiety:</text><br/>
+          <div class="rateit" id="anxietyRate" data-rateit-mode="font" style="font-size:44px">
+          </div>
+          <input type="hidden" name="anxiety" value="0" id="anxiety"/>
+        <hr>
+      -->
+          <input type="hidden" name="date" id="date" value=""/>
+          <input type="hidden" name="time" id="time" value=""/>
+          <input type="hidden" name="userid" id="userid" value=""/>
+          <input type="hidden" name="foodName" id="foodName" value=""/>
+          <input type="hidden" name="comments" id="comments" value=""/>
+       </div>
+       
+     </form>
+
+
+
+
+
+
+
+
+
+
+        <a href="/entry2text/{{id}}" role="button" class="btn entry2BackNext" style="font-size:18px; margin-bottom: 50px; margin-left:50%;margin-top:30px;">Next</a>
+        
+
+
+
       </div>
       <div id="bottom">
-        <button id="diary" style="background-color: #87B536; color:white; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
-        <button id="entry" style="background-color: #87B536; color:white; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
-        <button id="stat" style="background-color: #87B536; color:white; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
-        <button id="setting" style="background-color: #87B536; color:white; font-size: 19px;" class="btn quarter glyphicon glyphicon-cog"><br>Setting</button>
+        <button id="diary" style="background-color: white; color:#87B536; font-size: 19px;" onclick="confirm1();" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
+        <button id="entry" style="background-color: white; color:#87B536; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
+        <button id="stat" style="background-color: white; color:#87B536; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
+        <button id="setting" style="background-color: white; color:#87B536; font-size: 19px;" class="btn quarter glyphicon glyphicon-cog"><br>Setting</button>
       </div>
    </div>
      <script src="/js/entry.js"></script>
