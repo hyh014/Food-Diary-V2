@@ -151,7 +151,7 @@ h3{
     <text  class="button" style="float:right;margin-right: 25px;">Scroll down ↓</text>
 
         <h3 style="margin-top:210px;color:#0e9447;">Enter food and leave comments</h3>
-   <img src="/images/B1.jpg" style="width:220px; height:270px; margin-top: 20px"/>
+   <img id="photos" style="width:220px; height:270px; margin-top: 20px"/>
         <hr class ="rating-hr">  
         <p class="help-block" id="clock"></p><hr class="rating-hr">
          <div class="container" style="display:inline-block " id="text-input">
@@ -248,7 +248,7 @@ h3{
     const player = document.getElementById('player');
 
     const output = document.getElementById('output');
-
+    const photos = document.getElementById('photos');
   function doSomethingWithFiles(fileList) {
     let file = null;
 
@@ -261,6 +261,7 @@ h3{
 
     if (file !== null) {
       output.src = URL.createObjectURL(file);
+      photos.src = URL.createObjectURL(file);
     }
   }
   // Attach the video stream to the video element and autoplay.
