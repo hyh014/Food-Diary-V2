@@ -3,16 +3,19 @@ var password;
 var email;
 var phone;
 $('#login').click(function(){
+
   userID= document.getElementById('userid').value;
   password= document.getElementById('password').value;
-  $.get("/user/"+sessionStorage.getItem('name'),callBackFn);
+
+  $.get("/user/"+userID,callBackFn);
 });
 
 function callBackFn(result){
   if(userID == result.id && password == result.password)
   {
-    sessionStorage.setItem('name',result.id);
-    $('#login').attr('href','/index/'+result.id);
+    sessionStorage.setItem('name',userID);
+    console.log(sessionStorage.name);
+    $('#login').attr('href','/index/'+sessionStorage.name);
     location.replace("/checkLogin/"+sessionStorage.name);
 
   }

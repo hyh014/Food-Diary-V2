@@ -14,6 +14,7 @@ exports.userInfo = function(req,res){
 exports.checkLogin = function(req,res){
   var userid = req.params.name;
   var session= req.sessionID;
+
   for(var i=0; i<users.info.length;i++)
   {
     if(userid == users.info[i].id){
