@@ -164,8 +164,11 @@ function helpDiary() {
 <script>
 $(document).ready(function(){
     $(".remove").click(function(){
+			$(this).parent('#loop').remove();
         $(this).parent("#one").remove();//$("#one").remove();
 				var value = $.trim($(this).siblings('#date').text());
+				console.log("calling remove");
+				console.log(value);
 				location.replace("/remove/"+sessionStorage.getItem('name')+"/"+value);
     });
 		$(".edit").click(function(){
