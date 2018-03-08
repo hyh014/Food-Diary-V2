@@ -7599,4 +7599,11 @@ input:checked + .slider:before {
     background-color: transparent;
     border-color:transparent;
   }
+
+.login {
+  color: #ffffff;
+  background-color: #85b1e9;
+  border-color: #428bca;
+
+
 }
