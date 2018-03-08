@@ -7513,3 +7513,9 @@ input:checked + .slider:before {
 
 }
 
+.login {
+  color: #ffffff;
+  background-color: #85b1e9;
+  border-color: #428bca;
+
+}
