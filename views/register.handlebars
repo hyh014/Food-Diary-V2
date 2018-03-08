@@ -18,25 +18,33 @@
 <script src="js/bootstrap.min.js"></script>
 <style>
 body {
-    background-image: url("/images/224.jpg");
+    background-image: url("/images/s32.jpg");
+
+    
+    background-size:100vw 100vh;
+}
+
+h4{
+	font-family: serif;
+	font-size: 22px;
 }
 </style>
 <body>
 	<div id="root" class="text-center">
-		<h2>Register</h2>
+		<h1 class="page-header " style="font-family:Palatino;">Register</h1>
 		<form id="addID" role="form" method="get" action="/add">
 			<div id="input">
-			<h4>User Name:<br><input type="text" class="larger" name="userid" required id="userid" minlength="6">*</h4><br>
+			<h4 style="margin-top:20px;" >User Name:<br><input type="text" class="larger" name="userid" required id="userid" minlength="6">*</h4><br>
 			<h4>Password:<br><input type="password" class="larger" name="password" required id="password" minlength="6">*</h4><br>
 			<h4>Email:<br><input type="text" class="larger" name="email" required id="email" minlength="6">*</h4><br>
 			<h4>Phone:<br><input type="text" class="larger" name="phone" id="phone" ></h4><br>
 			</div>
 			<!--<h5 name="sample" id="sample">Hello</h5>
 			-->
-			<input type="submit" class="btn btn-primary larger" style="margin-top:10px;" id="register">
+			<input type="submit" class="btn login larger" style="margin-top:10px;" id="register">
 
 		</form>
-					<a href="/" role="button" class="btn btn-primary larger" style="margin-top:10px;">Back</a>
+					<a href="/" role="button" class="btn login larger" style="margin-top:10px;">Back</a>
 </div>
 	<script src="/js/user.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->

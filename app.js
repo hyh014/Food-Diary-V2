@@ -26,7 +26,7 @@ var entry2 = require('./routes/entry2');
 var entry2text = require('./routes/entry2text');
 var entry2rating = require('./routes/entry2rating');
 // Example route
-// var user = require('./routes/user');	
+// var user = require('./routes/user');
 var app = express();
 
 // all environments
@@ -64,10 +64,10 @@ app.get('/index/:name', index.view);
 app.get('/diary/:name',diary.viewDiary);
 app.get('/setting/:name',setting.viewSetting);
 app.get('/entry/:name',entry.addEntry);
-//app.get('/entryAlt/:name',entry.addEntryAlt);
 app.get('/stat/:name',stat.getStat);
 app.get('/news/:name',news.show);
 app.get('/entry2/:name',entry2.addEntry);
+app.get('/entry2Alt/:name',entry2.addEntryAlt);
 app.get('/entry2text/:name',entry2text.addEntry);
 app.get('/entry2rating/:name',entry2rating.addEntry);
 

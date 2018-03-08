@@ -14,7 +14,14 @@
 
 <style>
 body {
-    background-image: url("/images/224.jpg");
+    background-image: url("/images/s32.jpg");
+
+
+    background-size:100vw 100vh;
+}
+h4{
+	font-family: serif;
+	font-size:25px;
 }
 </style>
 <body>
@@ -23,16 +30,18 @@ body {
 	<div class="container">
 		<text id="error" class="hide">Wrong Username/Password</text>
 		<div class="form-group">
-			<input type="text" class="larger" name="userid" id="userid" placeholder="Username" required>
+			<h4 style="text-align: left;margin-left:48px; margin-top:50px;">Username</h4>
+			<input style="margin-top:3px; height:40px;" type="text" class="larger" name="userid" id="userid" placeholder="Username" required>
 		 </div>
 		<div class="form-group">
-			<input type="password" class="larger" name="password" id="password" placeholder="password" required>
+			<h4 style="text-align: left;margin-left:48px;">Password</h4>
+			<input style="height:40px;" type="password" class="larger" name="password" id="password" placeholder="password" required>
 		</div>
 		<div class="form-group">
-			<a href="#" role="button" class="btn btn-primary btn-lg larger" id="login">Login</a>
+			<a href="#" role="button" style="margin-top:44px;" class="btn login btn-lg larger" id="login">Login</a>
 		</div>
 		<div class="form-group">
-			<a href="/register" role="button" class="btn btn-primary btn-lg larger">Register</a>
+			<a href="/register" role="button" class="btn login btn-lg larger">Register</a>
 		</div>
 		<div class="form-group">
 			<fb:login-button
@@ -48,14 +57,6 @@ body {
 	{{>facebook}}
 	<script src="/js/facebook.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-114570926-2');
-</script>
 
 </body>
 </html>

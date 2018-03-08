@@ -15,7 +15,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+body{
 
+    background-image: url("/images/s32.jpg");
+
+
+
+    background-size:100vw 100vh;
+}
 
 /* When the input field gets focus, change its width to 100% */
 form.example input[type=text]:focus {
@@ -52,55 +59,85 @@ form.example::after {
     clear: both;
     display: table;
 }
+.page-header3 {
+  padding-bottom: 13px;
+  margin: 0px 0 20px;
+  border-bottom: 0px solid #eeeeee;
+  font-family: Comic Sans MS, cursive, sans-serif;
+  font-size:;
+  background-color: #25a725ab;
+}
 </style>
 
 </head>
 <body>
+
+
 	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+	<div class="page-header3">
+<div class="navbar" style="float:left">
+        <div class="dropdown" style="margin-top:4px; color:white;">
+          <button class="glyphicon glyphicon-list transparent-button " style="font-size:37px;"></button>
+          <div class="dropdown-content">
+            <a href="/index/{{id}}">Home</a>
+            <a href="/diary/{{id}}">Diary</a>
+            <a href="/stat/{{id}}">Statistics</a>
+            <a href="/news/{{id}}">News</a>
+            <a href="/setting/{{id}}">Settings</a>
+            <a href="/" style="color:red;" id="logoff">Log Out</a>
+        </div>
+      </div>
+      </div>
+    <text style="color:black; margin-left: 81px;font-size: 27px; color:white;">Diary</text>
+</div>
+	<!--
 	<div class="navbar" style="float:left">
 		<div class="dropdown">
 			<button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
 			<div class="dropdown-content">
 				<a href="/index/{{id}}">Home</a>
-				<a href="/entry/{{id}}">Entry</a>
+				<a href="/entry2/{{id}}">Entry</a>
 				<a href="/stat/{{id}}">Statistics</a>
 				<a href="/news/{{id}}">News</a>
 				<a href="/setting/{{id}}">Settings</a>
-				<a href="/" style="color:red;">Log Out</a>
+				<a href="/" style="color:red;" id="logout1">Log Out</a>
 		</div>
 	</div>
 	</div>
+-->
 	<div>
-		<a href="#" class="glyphicon glyphicon-question-sign" onclick="helpDiary()" style=" font-size:40px; float:right" role="button" id="help" name="entry"></a>
+		<a href="#" class="glyphicon glyphicon-question-sign" onclick="helpDiary()" style="margin-right:8px; font-size:40px; float:right" role="button" id="help" name="entry"></a>
 	</div>
 
 
 <hr>
-<h1 class="text-center" style="font-family:Palatino;">My Diary</h1>
+<!--<h1 class="text-center" style="font-family:Palatino;">My Diary</h1>-->
 <div class="text-center" style="margin-bottom:15px;">
 	<form class="col-lg-offset-4">
 </form>
 </div>
 
 	{{#each datas}}
-	<div id="loop" style="border-style:double;">
-		<div id = "one" class="container text-center">
-			<text id="date">{{date}} {{time}}</text><br>
-			<div class="container ">
-				<img src="{{image}}" class="resize">
+	<div id="loop" class="container diary-area text-center">
+		<div id = "one" class="text-center">
+			<text class="text-center" id="date">{{date}} {{time}}</text><br>
+			<div style="margin-top:30px; margin-bottom: 20px;" class="container text-center">
+				<img  src="{{image}}" class="resize">
 			</div>
 		<div id="input">
-			<text id="foodName">{{foodName}}</text><br>
-			<textarea id="comments" rows="4" cols="25" class="row" style="resize:none;" readonly>{{comments}}</textarea><br/>
+			<text class="diary-text text-center" id="foodName">{{foodName}}</text><br>
+			<textarea id="comments" rows="4" cols="25" class="row diary-textarea" readonly>{{comments}}</textarea><br/>
 		</div>
-		<div id="ratings">
+		<div id="ratings" class="text-center diary-rating">
 			<text id="health">Health:{{health}} &#9734;</text><br>
 			<text id="taste">Taste:{{taste}} &#9734;</text><br>
 			<text id="mood">Mood:{{mood}} &#9734;</text><br>
 			<text id="anxiety">Anxiety:{{anxiety}} </text>
+
 		</div>
-		<button class="edit btn btn-sm btn-success" >Edit</button>
-		<button class="remove btn btn-sm btn-success">Remove</button>
+		<hr>
+		<button class="edit btn btn-sm entry2BackNext" style="float:right;margin-top: -28px; margin-left:12px;">Edit</button>
+		<button class="remove btn btn-sm entry2BackNext" style="float:right;margin-top: -28px;">Remove</button>
 		<hr>
 		</div>
 	</div>
@@ -109,7 +146,7 @@ form.example::after {
 
 
 
-<a href="/index/{{id}}" class="myBtnBack" role="button">Back to Entry</a>
+<a href="/index/{{id}}" class="myBtnBack" style="width:100px; height: 32px; text-align: center; border-radius: 6px;" role="button">Back to Entry</a>
 <br>
 <script>
 function helpDiary() {
@@ -127,8 +164,11 @@ function helpDiary() {
 <script>
 $(document).ready(function(){
     $(".remove").click(function(){
+			$(this).parent('#loop').remove();
         $(this).parent("#one").remove();//$("#one").remove();
 				var value = $.trim($(this).siblings('#date').text());
+				console.log("calling remove");
+				console.log(value);
 				location.replace("/remove/"+sessionStorage.getItem('name')+"/"+value);
     });
 		$(".edit").click(function(){
@@ -184,7 +224,7 @@ function topFunction() {
 }
 	</script>
 
-
+  <script src="/js/analytics.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
 <script>

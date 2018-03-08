@@ -3,18 +3,20 @@ var password;
 var email;
 var phone;
 $('#login').click(function(){
+
   userID= document.getElementById('userid').value;
   password= document.getElementById('password').value;
-  sessionStorage.setItem('name',userID);
-  $.get("/user/"+sessionStorage.getItem('name'),callBackFn);
+
+  $.get("/user/"+userID,callBackFn);
 });
 
 function callBackFn(result){
   if(userID == result.id && password == result.password)
   {
-    $('#login').attr('href','/index/'+userID);
     sessionStorage.setItem('name',userID);
-    location.replace("/checkLogin/"+sessionStorage.getItem('name'));
+    console.log(sessionStorage.name);
+    $('#login').attr('href','/index/'+sessionStorage.name);
+    location.replace("/checkLogin/"+sessionStorage.name);
 
   }
   else {
@@ -26,7 +28,7 @@ function callBackFn(result){
 $('#register').click(function(){
   userID = document.getElementById('userid').value;
   sessionStorage.setItem('name',userID);
-  $.get("/user/"+sessionStorage.getItem('name'),callBack);
+  $.get("/user/"+sessionStorage.name,callBack);
 });
 function callBack(result){
 
@@ -41,7 +43,6 @@ $('#addEntry').click(function(){
   var date = date.substring(0,8);
 
   document.getElementById('image').value= sessionStorage.image;
-  console.log(document.getElementById('image').value);
   document.getElementById('taste').value= $('#tasteRate').rateit('value');
   document.getElementById('health').value=$('#healthRate').rateit('value');
   document.getElementById('mood').value=$('#moodRate').rateit('value');
@@ -53,16 +54,16 @@ $('#addEntry').click(function(){
 
 
 $('#diary').click(function(){
-  location.href="/diary/tester1";
+  location.href="/diary/"+sessionStorage.name;
 });
 $('#entry').click(function(){
-  location.href="/entry2/tester1";
+  location.href="/entry2/"+sessionStorage.name;
 });
 $('#stat').click(function(){
-  location.href="/stat/tester1";
+  location.href="/stat/"+sessionStorage.name;
 });
 $('#setting').click(function(){
-  location.href="/setting/tester1";
+  location.href="/setting/"+sessionStorage.name;
 });
 
 $('#entry2rating').click(function(){
@@ -75,10 +76,13 @@ $('#entry2rating').click(function(){
 
 $('#addEntry2').click(function(){
   sessionStorage.edit=false;
+
+
   var date = $('#clock').text();
   var time = date.substring(9);
   var date = date.substring(0,8);
-  sessionStorage.setItem('name','tester1');
+
+  document.getElementById('image').value= sessionStorage.image;
   document.getElementById('taste').value= $('#tasteRate').rateit('value');
   document.getElementById('health').value=$('#healthRate').rateit('value');
   document.getElementById('mood').value=$('#moodRate').rateit('value');
@@ -86,6 +90,4 @@ $('#addEntry2').click(function(){
   document.getElementById('date').value=date
   document.getElementById('time').value=time;
   document.getElementById('userid').value=sessionStorage.name;
-  document.getElementById('foodName').value = sessionStorage.foodName;
-  document.getElementById('comments').value = sessionStorage.comments;
 });

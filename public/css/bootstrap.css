@@ -127,7 +127,7 @@ sub {
 }
 
 img {
-  border: 0;
+  /*comment out this: to make border for output border: 0;*/
 }
 
 svg:not(:root) {
@@ -2914,7 +2914,7 @@ input[type="button"].btn-block {
 
 .glyphicon-camera:before {
   content: "\e046";
-   background-color:#FCF3CF;
+
 
 }
 
@@ -7152,28 +7152,28 @@ td.visible-print {
 }
 @media (max-width: 600px) {
   .resize {
-        width:75%;
+        width:90%;
         height:75%;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .resize {
-      width:60%;
+      width:80%;
       height:60%;
     }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
 .resize {
-    width:45%;
+    width:65%;
     height:45%;
   }
 }
 
 @media (min-width: 1200px) {
   .resize {
-      width:30%;
+      width:50%;
       height:30%;
     }
 }
@@ -7277,7 +7277,7 @@ td.visible-print {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #EC7063;
+  background-color: #F7DC6F;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -7366,9 +7366,11 @@ input:checked + .slider:before {
 
 .scrolling-box{
   overflow:auto;
-  width:600px;
-  height:350px;
+  float:left;
+  width:95vw;
+  height:50vh;
 }
+
 .larger-text{
   width:246px;
   height:50px;
@@ -7384,15 +7386,17 @@ input:checked + .slider:before {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: #3276b1;
+  background-color: #85b1e9;
   color: white;
   cursor: pointer;
-  padding: 15px;
+  /*padding: 15px;*/
   border-radius: 4px;
+  height:32px;
+  width: 58px;
 }
 
 #myBtn:hover {
-  background-color: #3276b1;
+  background-color: #85b1e9;
 }
 
 .myBtnBack {
@@ -7402,7 +7406,7 @@ input:checked + .slider:before {
   left: 30px !important;
   border: none;
   outline: none;
-  background-color: #428bca;
+  background-color: #85C1E9;
   color: white;
   cursor: pointer;
 
@@ -7410,7 +7414,7 @@ input:checked + .slider:before {
 }
 
 .myBtnBack:hover {
-  background-color: #428bca;
+  background-color: #85b1e9;
 
 }
 .home1{
@@ -7511,3 +7515,95 @@ input:checked + .slider:before {
 
 }
 
+
+@media (max-width: 600px) {
+  .diary-area{
+    margin-bottom:113px;
+    border-style:solid;
+    border-radius:72px;
+    height:550px;
+    width:327px;
+    margin-left:24px;
+    border-color:transparent;
+    background-color:#f0ad4e5e;
+  }
+  .diary-rating{
+    font-size: 16px;
+    color:black;
+    font-family: comic sans ms;
+    text-align:left;
+    margin-left:45px;
+    margin-top:6px;
+  }
+  .diary-textarea{
+    resize:none;
+    margin-top:10px;
+    border-radius:10px;
+    background-color:transparent;
+    border-color:transparent;
+    font-family:comic sans ms;
+    height: 104px;
+  }
+  .diary-text{
+    text-decoration: underline;
+    font-size:17px;
+    font-family:comic sans ms;
+    border-radius:10px;
+    background-color: transparent;
+    border-color:transparent;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media (min-width: 1200px) {
+  .diary-area{
+    margin-bottom:113px;
+    border-style:solid;
+    border-radius:72px;
+    height:90vh;
+    width:80vw;
+    margin-left:9vw;
+    border-color:transparent;
+    background-color:#f0ad4e5e;
+  }
+  .diary-rating{
+    font-size: 16px;
+    color:black;
+    font-family: comic sans ms;
+    text-align: center;
+
+    margin-top:6px;
+  }
+  .diary-textarea{
+    resize:none;
+    margin-top:10px;
+    border-radius:10px;
+    background-color:transparent;
+    border-color:transparent;
+    font-family:comic sans ms;
+    height: 104px;
+    width:30vw;
+  }
+  .diary-text{
+    text-decoration: underline;
+    font-size:17px;
+    font-family:comic sans ms;
+    border-radius:10px;
+    background-color: transparent;
+    border-color:transparent;
+  }
+
+.login {
+  color: #ffffff;
+  background-color: #85b1e9;
+  border-color: #428bca;
+
+
+}
