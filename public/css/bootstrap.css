@@ -127,7 +127,7 @@ sub {
 }
 
 img {
-  border: 0;
+  /*comment out this: to make border for output border: 0;*/
 }
 
 svg:not(:root) {
@@ -7277,7 +7277,7 @@ td.visible-print {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #EC7063;
+  background-color: #F7DC6F;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -7384,15 +7384,17 @@ input:checked + .slider:before {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: #3276b1;
+  background-color: #85b1e9;
   color: white;
   cursor: pointer;
-  padding: 15px;
+  /*padding: 15px;*/
   border-radius: 4px;
+  height:32px;
+  width: 58px;
 }
 
 #myBtn:hover {
-  background-color: #3276b1;
+  background-color: #85b1e9;
 }
 
 .myBtnBack {
@@ -7402,7 +7404,7 @@ input:checked + .slider:before {
   left: 30px !important;
   border: none;
   outline: none;
-  background-color: #428bca;
+  background-color: #85C1E9;
   color: white;
   cursor: pointer;
 
@@ -7410,7 +7412,7 @@ input:checked + .slider:before {
 }
 
 .myBtnBack:hover {
-  background-color: #428bca;
+  background-color: #85b1e9;
 
 }
 .home1{

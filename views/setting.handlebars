@@ -14,7 +14,10 @@
 </head>
 <style>
 body {
-    background-image: url("/images/224.jpg");
+    background-image: url("/images/s32.jpg");
+
+    
+    background-size:100vw 100vh;
 
 }
 h3 {
@@ -57,9 +60,12 @@ label {
 	<h1 class="text-center" style="font-family:Palatino;">Settings</h1>
 	<h3>Account Information</h2><hr>
 	<div class="container" id="account">
-		<h4>Username: {{id}}</h4>
-		<h4>Email: {{email}}</h4>
+		<h4 style="margin-top:-12px;">Username: {{id}}</h4>
+		<hr>
+		<h4 style="margin-top:-12px;">Email: {{email}}</h4>
+		<hr>
 		<h4>Phone: {{phone}}</h4>
+		
 	</div>
 	<fieldset>
 	<a href="/" class="btn btn-info btn-sm " style="width:100px;" onclick="clicked(event);"" role="button" id="login">Log Off</a>
@@ -97,7 +103,7 @@ label {
 		</div>
 	<hr>
 </div>
-<a href="/index/{{id}}" class="btn btn-primary " role="button" id="back">Home</a>
+<a href="/index/{{id}}" class="btn btn-primary" style="margin-top:-74px; margin-left:10px;" role="button" id="back">Home</a>
 
 <script>
 function clicked(e)
