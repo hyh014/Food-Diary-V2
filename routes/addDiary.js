@@ -14,6 +14,7 @@ exports.addDiary = function(req,res){
     var time = req.body.time;
     var userid = req.body.userid;
 
+    console.log(userid);
     for(var i=0; i<data.info.length;i++)
     {
 

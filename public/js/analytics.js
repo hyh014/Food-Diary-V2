@@ -5,12 +5,12 @@ $(document).ready(function(){
 });
 
 function initializePage(){
-  $('#logoff').click(clickLogoff);
+  $('#button').click(clickScroll);
 
 }
 
-function clickLogoff(){
+function clickScroll(e){
   e.preventDefault();
   gtag('create','UA-114570926-2','auto');
-  gtag('send','event','LogOff','click');
+  gtag('send','event','scroll','click');
 }

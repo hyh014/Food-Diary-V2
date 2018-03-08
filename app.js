@@ -65,10 +65,10 @@ app.get('/diary/:name',diary.viewDiary);
 app.get('/setting/:name',setting.viewSetting);
 app.get('/entry/:name',entry.addEntry);
 app.get('/entryAlt/:name',entry.addEntryAlt);
-//app.get('/entryAlt/:name',entry.addEntryAlt);
 app.get('/stat/:name',stat.getStat);
 app.get('/news/:name',news.show);
 app.get('/entry2/:name',entry2.addEntry);
+app.get('/entry2Alt/:name',entry2.addEntryAlt);
 app.get('/entry2text/:name',entry2text.addEntry);
 app.get('/entry2rating/:name',entry2rating.addEntry);
 
