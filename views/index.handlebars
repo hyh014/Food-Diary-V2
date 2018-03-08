@@ -25,7 +25,7 @@ body {
 <!-- Include all compiled plugins (blelow), or include individual files as needed -->
 <script src="/js/bootstrap.min.js"></script>
 <fieldset>
-	<a href="/" class="btn btn-info btn-sm " role="button" id="login">Log Off</a>
+	<a href="/" class="btn btn-info btn-sm " role="button" id="logoff">Log Off</a>
 
 </fieldset>
 <body>
@@ -63,7 +63,15 @@ function helpHome() {
 }
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script src="/js/analytics.js"></script>
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
 
-
-</body>
+	gtag('config', 'UA-114570926-2');
+</script>
+	</body>
 </html>
