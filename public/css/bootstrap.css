@@ -2914,7 +2914,7 @@ input[type="button"].btn-block {
 
 .glyphicon-camera:before {
   content: "\e046";
-   
+
 
 }
 
@@ -7152,28 +7152,28 @@ td.visible-print {
 }
 @media (max-width: 600px) {
   .resize {
-        width:75%;
+        width:90%;
         height:75%;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .resize {
-      width:60%;
+      width:80%;
       height:60%;
     }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
 .resize {
-    width:45%;
+    width:65%;
     height:45%;
   }
 }
 
 @media (min-width: 1200px) {
   .resize {
-      width:30%;
+      width:50%;
       height:30%;
     }
 }
@@ -7366,9 +7366,11 @@ input:checked + .slider:before {
 
 .scrolling-box{
   overflow:auto;
-  width:600px;
-  height:350px;
+  float:left;
+  width:95vw;
+  height:50vh;
 }
+
 .larger-text{
   width:246px;
   height:50px;
@@ -7513,3 +7515,88 @@ input:checked + .slider:before {
 
 }
 
+
+@media (max-width: 600px) {
+  .diary-area{
+    margin-bottom:113px;
+    border-style:solid;
+    border-radius:72px;
+    height:550px;
+    width:327px;
+    margin-left:24px;
+    border-color:transparent;
+    background-color:#f0ad4e5e;
+  }
+  .diary-rating{
+    font-size: 16px;
+    color:black;
+    font-family: comic sans ms;
+    text-align:left;
+    margin-left:45px;
+    margin-top:6px;
+  }
+  .diary-textarea{
+    resize:none;
+    margin-top:10px;
+    border-radius:10px;
+    background-color:transparent;
+    border-color:transparent;
+    font-family:comic sans ms;
+    height: 104px;
+  }
+  .diary-text{
+    text-decoration: underline;
+    font-size:17px;
+    font-family:comic sans ms;
+    border-radius:10px;
+    background-color: transparent;
+    border-color:transparent;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media (min-width: 1200px) {
+  .diary-area{
+    margin-bottom:113px;
+    border-style:solid;
+    border-radius:72px;
+    height:90vh;
+    width:80vw;
+    margin-left:9vw;
+    border-color:transparent;
+    background-color:#f0ad4e5e;
+  }
+  .diary-rating{
+    font-size: 16px;
+    color:black;
+    font-family: comic sans ms;
+    text-align: center;
+
+    margin-top:6px;
+  }
+  .diary-textarea{
+    resize:none;
+    margin-top:10px;
+    border-radius:10px;
+    background-color:transparent;
+    border-color:transparent;
+    font-family:comic sans ms;
+    height: 104px;
+    width:30vw;
+  }
+  .diary-text{
+    text-decoration: underline;
+    font-size:17px;
+    font-family:comic sans ms;
+    border-radius:10px;
+    background-color: transparent;
+    border-color:transparent;
+  }
+}

@@ -77,7 +77,7 @@ h3{
   -o-animation: glowing 1500ms infinite;
   animation: glowing 1500ms infinite;
   color:#f38207;
-  
+
 }
 
 .KW_progressContainer {
@@ -176,7 +176,7 @@ h3{
 
             <div>
              <label for="file-input" type="button" style="font-size: 139px; margin-top: 44px;margin-bottom: 28px;" class="transparent-button glyphicon glyphicon-camera glyphicon-size" onclick="showDiv()"></label>
-            
+
 
             <div id="welcomeDiv"  style="display:none;margin-top:-33px; margin-bottom: 30px;" class="answer_list" >Click Camera again to retake a photo</div>
 
@@ -184,15 +184,17 @@ h3{
               <input type="file" accept="image/*" style="display:none" id="file-input" capture="environment"/>
             </div>
             <img id="output" style="height:29vh;width:44vw;"><hr>
+{{#if viewAlt}}
+<text id="button" style="float:right;margin-right: 49px;margin-top: -20px; font-size: 19px;">Scroll down ⇩</text>
+{{else}}
+<text class="button" id="button" style="float:right;margin-right: 49px;margin-top: -20px; font-size: 19px;">Scroll down ⇩</text>
 
-    <text  class="button" style="float:right;margin-right: 49px;margin-top: -20px; font-size: 19px;">Scroll down ⇩</text>
-
-
+{{/if}}
         <h3 style="margin-top:149px;color:#0e9447;">Enter food and leave comments</h3>
         <hr>
         <p class="help-block" id="clock" style="margin-top:-15px;margin-bottom: -19px; color:#3c763ddb;margin-left:64px;"></p>
    <img id="photos" style="width:220px; height:270px; margin-top: 20px;"/>
-        <hr class ="rating-hr">  
+        <hr class ="rating-hr">
 
         <p class="help-block" id="clock"></p><hr class="rating-hr">
          <div class="container" style="display:inline-block " id="text-input">
@@ -203,8 +205,12 @@ h3{
           <button class="glyphicon glyphicon-remove-circle" style="color:#27AE60; margin-top: 50px; font-size: 20px" onclick="document.getElementById('comments').value = ''"></button>
          </div>
          <hr>
-         <button type="submit" class="button" style="float:right;margin-right: 25px; font-size: 19px;">Scroll down ↓</button>
+         {{#if viewAlt}}
+         <text  id="button" style="float:right;margin-right: 25px; font-size: 19px;" >Scroll down ⇩</text>
 
+         {{else}}
+         <text  class="button" id="button" style="float:right;margin-right: 25px; font-size: 19px;" >Scroll down ⇩</text>
+        {{/if}}
 <h3 style="color:#0e9447;margin-top:173px;">Finish Self-Rating </h3>
 
          <form id="addDiary" role="form" method="post" action="/addDiary/ne">
@@ -225,8 +231,9 @@ h3{
          <input type="hidden" name="mood" value="0"  id="mood"/>
         <hr>
 
-        
+
           <text style="font-size:22px; color: #e6a505; padding-right: 210px" class="Text-input">Anxiety:</text><br/>
+
           <div class="rateit" id="anxietyRate" data-rateit-mode="font" style="font-size:36px">
 
           </div>
@@ -241,12 +248,12 @@ h3{
           <input type="hidden" name="foodName" id="foodName" value=""/>
           <input type="hidden" name="comments" id="comments" value=""/>
        </div>
-       <input type="submit" class="btn btn-sm entry2BackNext" style="float:right; margin-right: 36px;" id="addEntry" onclick="clicked(event);" value="Add to Diary   ⇨" Text="Submit" />
+       <input type="submit" class="btn btn-sm entry2BackNext" style="float:right; margin-right: 36px;" id="addEntry2" onclick="clicked(event);" value="Add to Diary   ⇨" Text="Submit" />
      </form>
 
 
 <!--   temporaryly comment out this:
- 
+
         <a href="/entry2text/{{id}}" role="button" class="btn entry2BackNext" style="font-size:18px; margin-bottom: 50px; margin-left:50%;margin-top:30px;">Next</a>
 
 -->
@@ -265,12 +272,6 @@ h3{
      <script src="/js/bootstrap.min.js"></script>
      <script src="/scripts/jquery.rateit.min.js"></script>
      <script src="/js/user.js"></script>
-     <script>
-   function chooseFile() {
-      $("#fileInput").click();
-   }
-     </script>
-
      <script>
       $("#remove1").onclick = function () {
  this.style.backgroundColor = "#ED3215";
@@ -305,6 +306,7 @@ h3{
     if (file !== null) {
       output.src = URL.createObjectURL(file);
       photos.src = URL.createObjectURL(file);
+        sessionStorage.setItem('image',output.src);
     }
   }
   // Attach the video stream to the video element and autoplay.
@@ -336,9 +338,47 @@ $(window).load(function(){
 </script>
 -->
 <script>
+   function edit(){
+    if(sessionStorage.getItem('edit') == 'true'){
+      document.getElementById('output').src = sessionStorage.image;
+      console.log(document.getElementById('output').src);
+      document.getElementById('foodName').value = sessionStorage.foodName;
+      document.getElementById('comments').value = sessionStorage.comments;
+      document.getElementById('userid').value = sessionStorage.name;
+      $('#tasteRate').rateit('value',sessionStorage.taste);
+      $('#healthRate').rateit('value',sessionStorage.health);
+      $('#moodRate').rateit('value',sessionStorage.mood);
+      $('#anxietyRate').rateit('value',sessionStorage.anxiety);
+      $('#clock').text(sessionStorage.date+" "+sessionStorage.time);
+      $('#back').attr('href','/diary/'+sessionStorage.name);
+      document.getElementById('addDiary').action= '/addDiary/e';
+      sessionStorage.setItem('edit',false);
+    }
+    else{
+      document.getElementById('foodName').value = "";
+      document.getElementById('comments').value = "";
+      $('#tasteRate').rateit('value',0);
+      $('#healthRate').rateit('value',0);
+      $('moodRate').rateit('value',0);
+      $('#anxietyRate').rateit('value',0);
+      document.getElementById('addDiary').action = '/addDiary/ne';
+    }
+  }
+window.onload=edit;
+</script>
+<script>
   function showDiv() {
    document.getElementById('welcomeDiv').style.display = "block";
 }
+  </script>
+  <script src="/js/analytics.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114570926-2');
   </script>
   </body>
 </html>

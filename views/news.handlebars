@@ -10,12 +10,13 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/bootstrap.css" rel="stylesheet">
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <style>
 body {
     background-image: url("/images/s32.jpg");
 
-    
+
     background-size:100vw 100vh;
 }
 h2{
@@ -31,11 +32,10 @@ p{
 	<div class="navbar" style="float:left">
 		<div class="dropdown">
 			<button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
-
 			<div class="dropdown-content">
 				<a href="/index/{{id}}">Home</a>
-				<a href="/entry/{{id}}">Entry</a>
-				<a href="/diary{{id}}">Diary</a>
+				<a href="/entry2/{{id}}">Entry</a>
+				<a href="/diary/{{id}}">Diary</a>
 				<a href="/stat/{{id}}">Statistics</a>
 				<a href="/setting/{{id}}">Settings</a>
 				<a href="/" style="color:red;" id="logout1">Log Out</a>
@@ -49,57 +49,59 @@ p{
 <hr>
 <h1 class="text-center" style="font-family:Palatino;">News</h1>
 <div id="root">
-	<div class="container" id="FUN">
-		<h2>Fun</h2>
-		<div class="scrolling-box">
-			<h3><font size="4">How Animals Eat</h3>
-			<iframe width="560" height="315" style="max-width:50%;" src="https://www.youtube.com/embed/1PAghQ7jvL4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	<h2 class="container text-center" style=" font-family:comic sans ms;">Fun</h2><hr>
+	<div class="text-center" id="FUN">
+		<div class="scrolling-box text-center">
+			<h3>How Animals Eat</h3>
+			<iframe width="560" height="315" style="max-width:80vw;" src="https://www.youtube.com/embed/1PAghQ7jvL4" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
 			<hr>
-			<h3><font size="4">Funny Baby Eating Cake</h3>
-			<iframe width="560" height="315" style="max-width:50%;" src="https://www.youtube.com/embed/kbOgbll5tiw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			<h3><font size="4">Panda Eating</h3>
-			<iframe width="560" height="315" style="max-width:50%;" src="https://www.youtube.com/embed/EnWYNIwWj3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			<h3><font size="4">Funny Rancoo Eating</h3>
-			<iframe width="560" height="315" style="max-width:50%;" src="https://www.youtube.com/embed/T9PeJo67jyg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			<h3><font size="4">Funny Baby Fall Asleep</h3>
-			<iframe width="560" height="315" style="max-width:50%;" src="https://www.youtube.com/embed/G3Bao_JX0VY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			<h3 style="font-size:4px">Funny Baby Eating Cake</h3>
+			<iframe width="560" height="315" style="max-width:80vw;" src="https://www.youtube.com/embed/kbOgbll5tiw" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+			<h3 style="font-size:4px">Panda Eating</h3>
+			<iframe width="560" height="315" style="max-width:80vw;" src="https://www.youtube.com/embed/EnWYNIwWj3s" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+			<h3 style="font-size:4px">Funny Rancoo Eating</h3>
+			<iframe width="560" height="315" style="max-width:80vw;" src="https://www.youtube.com/embed/T9PeJo67jyg" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+			<h3 style="font-size:4px">Funny Baby Fall Asleep</h3>
+			<iframe width="560" height="315" style="max-width:80vw;" src="https://www.youtube.com/embed/G3Bao_JX0VY" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
 		</div>
-
 	</div>
 	<hr>
-	<div class="container" id="TIPS">
+	<h2 class="container text-center" style="font-family:comic sans ms;">Health Tips<h2>
+	<div class="text-center" id="TIPS">
 		<div>
-			<h2>Health Tips<h2>
 			<div class="scrolling-box" style="overflow:auto">
 				<div>
 					<div id="content" style="display:inline-block;">
-					<p>Eating right-what you put in your mouth -- starts with what you put in your shopping cart! </p>
-					<font size="2"><a href="https://healthyforgood.heart.org/eat-smart/articles/5-easy-ways-to-find-healthier-options-at-the-grocery-store">See Details</a></font>
+					<p style="font-family: 'Roboto', sans-serif;">Eating right-what you put in your mouth -- starts with what you put in your shopping cart! </p>
+					<a style="font-size:25px; font-family: 'Roboto', sans-serif;" href="https://healthyforgood.heart.org/eat-smart/articles/5-easy-ways-to-find-healthier-options-at-the-grocery-store">See Details</a>
 				</div>
 			</div>
+			<hr>
 				<div>
-
-					<div id="content" style="display:inline-block; ">
-						<p>Mindful Eating: Savor the Flavor</p>
-						<font size="2"><a href="https://healthyforgood.heart.org/be-well/articles/mindful-eating-savor-the-flavor">See Details</a></font>
+					<div id="content" style="display:inline-block; margin:0; ">
+						<p style="font-family: 'Roboto', sans-serif;">Mindful Eating: Savor the Flavor</p>
+						<a style="font-size:25px; font-family: 'Roboto', sans-serif;" href="https://healthyforgood.heart.org/be-well/articles/mindful-eating-savor-the-flavor" >See Details</a>
 				</div>
 		</div>
+		<hr>
 		<div>
 					<div id="content" style="display:inline-block; ">
-						<p>12 Strange-But-True Health Tips</p>
-						<font size="2"><a href="http://www.health.com/health/gallery/0,,20857218,00.html#crazy-health-tricks-that-really-work-0">See Details</a></font>
+						<p style="font-family: 'Roboto', sans-serif;">12 Strange-But-True Health Tips</p>
+						<a style="font-size:25px; font-family: 'Roboto', sans-serif;" href="http://www.health.com/health/gallery/0,,20857218,00.html#crazy-health-tricks-that-really-work-0" >See Details</a>
 				</div>
 		</div>
+		<hr>
 		<div>
 					<div id="content" style="display:inline-block; ">
-						<p>Heavy Drinking Is the Biggest Risk Factor for Dementia</p>
-						<font size="2"><a href="http://time.com/5169466/alcohol-leading-to-dementia/">See Details</a></font>
+						<p style="font-family: 'Roboto', sans-serif;">Heavy Drinking Is the Biggest Risk Factor for Dementia</p>
+						<a style="font-size:25px; font-family: 'Roboto', sans-serif;" href="http://time.com/5169466/alcohol-leading-to-dementia/" >See Details</a>
 				</div>
 		</div>
+		<hr>
 		<div>
 					<div id="content" style="display:inline-block; ">
-						<p>Here's Why Doctors Often Miss Heart Attack Symptoms in Women</p>
-						<font size="2"><a href="http://time.com/5168411/women-heart-attack-symptoms/">See Details</a></font>
+						<p style="font-family: 'Roboto', sans-serif;">Here's Why Doctors Often Miss Heart Attack Symptoms in Women</p>
+						<a style="font-size:25px; font-family: 'Roboto', sans-serif;" href="http://time.com/5168411/women-heart-attack-symptoms/" >See Details</a>
 				</div>
 		</div>
 	</div>

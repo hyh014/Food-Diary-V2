@@ -20,7 +20,7 @@ body{
     background-image: url("/images/s32.jpg");
 
 
-    
+
     background-size:100vw 100vh;
 }
 
@@ -71,7 +71,7 @@ form.example::after {
 			<button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
 			<div class="dropdown-content">
 				<a href="/index/{{id}}">Home</a>
-				<a href="/entry/{{id}}">Entry</a>
+				<a href="/entry2/{{id}}">Entry</a>
 				<a href="/stat/{{id}}">Statistics</a>
 				<a href="/news/{{id}}">News</a>
 				<a href="/setting/{{id}}">Settings</a>
@@ -92,23 +92,24 @@ form.example::after {
 </div>
 
 	{{#each datas}}
-	<div id="loop" style="margin-bottom: 113px;    border-style:solid; border-radius: 72px; height:550px; width: 327px; margin-left: 24px; border-color: transparent; background-color: #f0ad4e5e;">
-		<div id = "one" class="container text-center">
-			<text  id="date">{{date}} {{time}}</text><br>
-			<div style="margin-top:30px; margin-bottom: 20px;" class="container ">
-				<img style="width:90%;" src="{{image}}" class="resize">
+	<div id="loop" class="container diary-area text-center">
+		<div id = "one" class="text-center">
+			<text class="text-center" id="date">{{date}} {{time}}</text><br>
+			<div style="margin-top:30px; margin-bottom: 20px;" class="container text-center">
+				<img  src="{{image}}" class="resize">
 			</div>
 		<div id="input">
-			<text style="text-decoration: underline; font-size:17px; margin-left: -62px; font-family: comic sans ms; border-radius: 10px; background-color:transparent; border-color: transparent;" id="foodName">{{foodName}}</text><br>
-			<textarea id="comments" rows="4" cols="25" class="row" style="resize:none; margin-top: 10px;border-radius: 10px; background-color:transparent; border-color: transparent; font-family: Comic Sans MS; height:104px;" readonly>{{comments}}</textarea><br/>
+			<text class="diary-text text-center" id="foodName">{{foodName}}</text><br>
+			<textarea id="comments" rows="4" cols="25" class="row diary-textarea" readonly>{{comments}}</textarea><br/>
 		</div>
-		<div id="ratings" style="font-size: 16px; color: black; font-family: comic sans ms; text-align: left; margin-left: 45px; margin-top: 6px">
+		<div id="ratings" class="text-center diary-rating">
 			<text id="health">Health:{{health}} &#9734;</text><br>
 			<text id="taste">Taste:{{taste}} &#9734;</text><br>
 			<text id="mood">Mood:{{mood}} &#9734;</text><br>
 			<text id="anxiety">Anxiety:{{anxiety}} </text>
-			<hr>
+
 		</div>
+		<hr>
 		<button class="edit btn btn-sm entry2BackNext" style="float:right;margin-top: -28px; margin-left:12px;">Edit</button>
 		<button class="remove btn btn-sm entry2BackNext" style="float:right;margin-top: -28px;">Remove</button>
 		<hr>

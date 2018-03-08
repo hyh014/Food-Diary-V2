@@ -1,8 +1,9 @@
 var data = require("../data.json");
 exports.addDiary = function(req,res){
+
     var edit = req.params.edit;
     var image = req.body.image;
-    console.log(image);
+
     var foodName = req.body.foodName;
     var comments = req.body.comments;
     var taste = req.body.taste;
@@ -11,18 +12,14 @@ exports.addDiary = function(req,res){
     var anxiety = req.body.anxiety;
     var date = req.body.date;
     var time = req.body.time;
-    var userid = 'tester1';
-    console.log("going to for loop");
-    console.log(userid);
-    console.log(time);
-    console.log(foodName);
-    console.log(data.info.length);
+    var userid = req.body.userid;
+
     for(var i=0; i<data.info.length;i++)
     {
-      console.log("??");
+
       if(userid==data.info[i].id)
       {
-        console.log("checking for new image");
+
         if(image == ""){
           image = "/images/B1.jpg";
         }
@@ -37,11 +34,11 @@ exports.addDiary = function(req,res){
         "mood":mood,
         "anxiety":anxiety
         };
+        console.log(newObject);
         if(edit === 'e'){
           for(var j=0;j<data.info[i].datas.length;j++){
             if(time===data.info[i].datas[j].time && date===data.info[i].datas[j].date){
               data.info[i].datas[j] = newObject;
-              console.log("redirecting to diary");
               return res.redirect('/diary/'+userid);
             }
           }

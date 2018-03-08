@@ -23,7 +23,3 @@ exports.checkLogin = function(req,res){
   }
   return false;
 }
-
-exports.checkRegister = function(req,res){
-  
-}
