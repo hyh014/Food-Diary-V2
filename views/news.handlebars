@@ -13,12 +13,37 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <style>
-body {
-    background-image: url("/images/s32.jpg");
+    @media (max-width: 600px) {
+          body {
 
-
-    background-size:100vw 100vh;
+        background-image: url("/images/s32.jpg");
+        background-size: 100vw 100vh;
+     }
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+      body {
+
+        background-image: url("/images/s32.jpg");
+        background-size: 75vw 85vh;
+     }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    body {
+
+        background-image: url("/images/s32.jpg");
+        background-size: 50vw 65vh;
+     }
+}
+
+@media (min-width: 1200px) {
+      body{
+        background-image: url('/images/s32.jpg');
+        background-size:25vw 50vh;
+      }
+}
+
 h2{
 	font-family: Impact, Charcoal, sans-serif;
 
@@ -27,27 +52,37 @@ p{
 	font-family:"Times New Roman", Times, serif;
 	font-size:20px;
 }
+.page-header4{
+  padding-bottom: 13px;
+  margin: 0px 0 20px;
+  border-bottom: 0px solid #eeeeee;
+  font-family: Comic Sans MS, cursive, sans-serif;
+  font-size:;
+  background-color: #25a725ab;
+}
 </style>
 <body>
-	<div class="navbar" style="float:left">
-		<div class="dropdown">
-			<button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
-			<div class="dropdown-content">
-				<a href="/index/{{id}}">Home</a>
-				<a href="/entry2/{{id}}">Entry</a>
-				<a href="/diary/{{id}}">Diary</a>
-				<a href="/stat/{{id}}">Statistics</a>
-				<a href="/setting/{{id}}">Settings</a>
-				<a href="/" style="color:red;" id="logoff">Log Out</a>
-		</div>
-	</div>
-	</div>
+    <div class="page-header4 text-center">
+    <div class="navbar" style="float:left">
+            <div class="dropdown" style="margin-top:4px; color:white;">
+              <button class="glyphicon glyphicon-list transparent-button " style="font-size:37px; color:white"></button>
+              <div class="dropdown-content">
+                <a href="/index/{{id}}">Home</a>
+                <a href="/entry2/{{id}}">Entry</a>
+                <a href="/diary/{{id}}">Diary</a>
+                <a href="/stat/{{id}}">Statistics</a>
+                <a href="/setting/{{id}}">Settings</a>
+                <a href="/" style="color:red;" id="logoff">Log Out</a>
+            </div>
+          </div>
+          </div>
+        <text style="display:inline-block; font-size: 27px; color:white;" >News</text>
+    </div>
 	<div>
 
 		<a href="#" class="glyphicon glyphicon-question-sign" onclick="helpNews()" style=" font-size:40px; float:right" role="button" id="help" name="entry"></a>
 	</div>
 <hr>
-<h1 class="text-center" style="font-family:Palatino;">News</h1>
 <div id="root">
 	<h2 class="container text-center" style=" font-family:comic sans ms;">Fun</h2><hr>
 	<div class="text-center" id="FUN">
@@ -106,7 +141,6 @@ p{
 		</div>
 	</div>
 </div>
-<a href="/index/{{id}}" class="btn btn-primary" role="button">Back</a>
 <script>
 function helpNews() {
     alert("News:\n\nThis is the place where you could have fun while you are eating meals. You could browse the latest funny videos about eating that makes you laugh and the scientific healthy tips to help you eat healthier. This also contributes users to have a better mood."

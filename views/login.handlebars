@@ -8,17 +8,44 @@
 <!-- Bootstrap -->
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/bootstrap.css" rel="stylesheet">
+
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+
 
 </head>
 
 <style>
-body {
-    background-image: url("/images/s32.jpg");
+    @media (max-width: 600px) {
+          body {
 
-
-    background-size:100vw 100vh;
+        background-image: url("/images/s32.jpg");
+        background-size: 100vw 100vh;
+     }
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+      body {
+
+        background-image: url("/images/s32.jpg");
+        background-size: 75vw 85vh;
+     }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    body {
+
+        background-image: url("/images/s32.jpg");
+        background-size: 50vw 65vh;
+     }
+}
+
+@media (min-width: 1200px) {
+      body{
+        background-image: url('/images/s32.jpg');
+        background-size:25vw 50vh;
+      }
+}
+
 h4{
 	font-family: serif;
 	font-size:25px;
@@ -38,10 +65,10 @@ h4{
 			<input style="height:40px;" type="password" class="larger" name="password" id="password" placeholder="password" required>
 		</div>
 		<div class="form-group">
-			<a href="#" role="button" style="margin-top:44px;" class="btn login btn-lg larger" id="login">Login</a>
+			<a href="#" role="button" style="margin-top:44px;" class="btn btn-primary btn-lg larger" id="login">Login</a>
 		</div>
 		<div class="form-group">
-			<a href="/register" role="button" class="btn login btn-lg larger">Register</a>
+			<a href="/register" role="button" class="btn btn-primary btn-lg larger">Register</a>
 		</div>
 		<div class="form-group">
 			<fb:login-button

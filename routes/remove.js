@@ -11,7 +11,6 @@ exports.remove = function(req,res){
   console.log(time);
   console.log(year);
   console.log(req.params.year);
-  console.log(users.info[0].datas);
   for(var i=0;i<users.info.length;i++){
     if(userid == users.info[i].id){
       for(var j=0;j<users.info[i].datas.length;j++){
