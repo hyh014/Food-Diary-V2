@@ -7173,8 +7173,13 @@ td.visible-print {
 
 @media (min-width: 1200px) {
   .resize {
-      width:50%;
-      height:30%;
+    position: relative;
+    float: center;
+    width:  35vw;
+    height: 45vh;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
     }
 }
 
@@ -7564,7 +7569,7 @@ input:checked + .slider:before {
 
 @media (min-width: 1200px) {
   .diary-area{
-    margin-bottom:113px;
+    margin-bottom:10vw;
     border-style:solid;
     border-radius:72px;
     height:90vh;
