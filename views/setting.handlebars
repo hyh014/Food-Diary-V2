@@ -13,13 +13,37 @@
 
 </head>
 <style>
-body {
-    background-image: url("/images/s32.jpg");
+    @media (max-width: 600px) {
+          body {
 
-
-    background-size:100vw 100vh;
-
+        background-image: url("/images/s32.jpg");
+        background-size: 100vw 100vh;
+     }
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+      body {
+
+        background-image: url("/images/s32.jpg");
+        background-size: 75vw 85vh;
+     }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    body {
+
+        background-image: url("/images/s32.jpg");
+        background-size: 50vw 65vh;
+     }
+}
+
+@media (min-width: 1200px) {
+      body{
+        background-image: url('/images/s32.jpg');
+        background-size:25vw 50vh;
+      }
+}
+
 h3 {
 	margin-left: 30px;
     text-align: left;
@@ -51,13 +75,13 @@ label {
 <body>
 
 
-	<div class="page-header2">
+	<div class="page-header2 text-center">
 <div class="navbar" style="float:left">
         <div class="dropdown" style="margin-top:4px; color:white;">
-          <button class="glyphicon glyphicon-list transparent-button " style="font-size:37px;"></button>
+          <button class="glyphicon glyphicon-list transparent-button " style="font-size:37px; color:white"></button>
           <div class="dropdown-content">
             <a href="/index/{{id}}">Home</a>
-						<a href="/entry2/{{id}}">Entry</a>
+			<a href="/entry2/{{id}}">Entry</a>
             <a href="/diary/{{id}}">Diary</a>
             <a href="/stat/{{id}}">Statistics</a>
             <a href="/news/{{id}}">News</a>
@@ -66,18 +90,16 @@ label {
         </div>
       </div>
       </div>
-    <text style="color:black; margin-left: 81px;font-size: 27px; color:white;">Settings</text>
+    <text style="color:black;font-size: 27px; color:white;">Settings</text>
 </div>
 
 </div>
 
 <hr>
-<div class="text-center" id="root">
-	<!--
-	<h1 class="text-center" style="font-family:Palatino;">Settings</h1>
--->
-	<h3>Account Information</h2><hr>
-	<div class="container" id="account">
+<div id="root">
+<div class="text-center !important">
+	<h3>Account Information</h3><hr>
+	<div class="container text-center" id="account">
 		<h4 style="margin-top:-12px;">Username: {{id}}</h4>
 		<hr>
 		<h4 style="margin-top:-12px;">Email: {{email}}</h4>
@@ -85,8 +107,9 @@ label {
 		<h4>Phone: {{phone}}</h4>
 
 	</div>
+</div>
 	<fieldset>
-	<a href="/" class="btn btn-info btn-sm " style="width:100px;" onclick="clicked(event);" role="button" id="logoff">Log Off</a>
+	<a href="/" class="text-center btn btn-info btn-sm " style="width:100px;" onclick="clicked(event);" role="button" id="logoff">Log Off</a>
 
 </fieldset>
 	<form>
@@ -133,9 +156,5 @@ function clicked(e)
 
 }
 </script>
-<!-- Global site tag (gtag.js) - Google Analytics
--->
-
-
 </body>
 </html>

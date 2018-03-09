@@ -30,13 +30,37 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link href="/scripts/rateit.css" rel="stylesheet">
     <style>
-body {
+    @media (max-width: 600px) {
+          body {
 
-    background-image: url("/images/s32.jpg");
-
-
-    background-size:100vw 100vh;
+        background-image: url("/images/s32.jpg");
+        background-size: 100vw 100vh;
+     }
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+      body {
+
+        background-image: url("/images/s32.jpg");
+        background-size: 75vw 85vh;
+     }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    body {
+
+        background-image: url("/images/s32.jpg");
+        background-size: 50vw 65vh;
+     }
+}
+
+@media (min-width: 1200px) {
+      body{
+        background-image: url('/images/s32.jpg');
+        background-size:25vw 50vh;
+      }
+}
+
 </style>
 <style>
  h1{
@@ -124,16 +148,15 @@ h3{
   margin: 10px 0 20px;
   border-bottom: 0px solid #eeeeee;
   font-family: Comic Sans MS, cursive, sans-serif;
-  font-size:;
   background-color: #25a725ab;
 }
 </style>
   <body>
 
-    <div class="page-header1">
+    <div class="page-header1 text-center">
     <div class="navbar" style="float:left">
-            <div class="dropdown" style="margin-top:4px; color:white;">
-              <button class="glyphicon glyphicon-list transparent-button " style="font-size:37px;"></button>
+            <div class="dropdown" style="margin-top:4px; ">
+              <button class="glyphicon glyphicon-list transparent-button " style="font-size:37px; color:white"></button>
               <div class="dropdown-content">
                 <a href="/index/{{id}}">Home</a>
                 <a href="/diary/{{id}}">Diary</a>
@@ -144,7 +167,7 @@ h3{
             </div>
           </div>
           </div>
-        <text style="color:black; margin-left: 81px;font-size: 27px; color:white;">New Entry</text>
+        <text style="display:inline-block; color:black;font-size: 27px; color:white;" >New Entry</text>
     </div>
         <div class="KW_progressContainer">
         <div class="KW_progressBar">
@@ -157,8 +180,8 @@ h3{
 
     <article>
 
-            <h3 style=" text-align: left; margin-left: 69px; font-family: American Typewriter;">Hello  {{id}} !</h3>
-            <h3 style="font-family: American Typewriter;"> Take a photo of your meal</h3>
+            <h3 style=" text-align:center; font-family: American Typewriter;">Hello  {{id}} !</h3>
+            <h3 style="text-align:center; font-family: American Typewriter;"> Take a photo of your meal</h3>
 
 
               <form id="addDiary" role="form" method="post" action="/addDiary/ne">
@@ -183,17 +206,15 @@ h3{
 
             <h3 style="margin-top:107px;font-family: American Typewriter;">Enter food and leave comments</h3>
             <hr>
-            <p class="help-block" id="clock" style="margin-top:-15px;margin-bottom: -19px; color:#3c763ddb;margin-left:64px;"></p>
+            <p class="help-block text-center" id="clock" style="font-size:20px; margin-top:-15px;margin-bottom: -19px; color:#3c763ddb;"></p>
        <img id="photos" style="width:220px; height:270px; margin-top: 20px;"/>
             <hr class ="rating-hr">
-
-            <p class="help-block" id="clock"></p><hr class="rating-hr">
              <div class="container" style="display:inline-block " id="text-input">
               <span class="glyphicon glyphicon-pencil" style="margin-left:49px; margin-right: -5px; font-size:37px; color:#0c1004;"></span>
               <input type="text" class="row" style="border-color:#27AE60 ; border-width: 0px; width:178px; margin-left:2px; height: 35px; margin-right: 4px; border-radius: 25px;" placeholder="     Enter food" name="foodName" id="foodName"/>
-              <button class=" glyphicon glyphicon-remove-circle" style="color:#27AE60; font-size: 20px" onclick="document.getElementById('foodName').value = ''"></button><br/>
+              <button class="transparent-button glyphicon glyphicon-remove-circle" style="color:#27AE60; font-size: 20px" onclick="document.getElementById('foodName').value = ''"></button><br/>
               <textarea rows="4" cols="30" class="row" style="border-color:#27AE60; border-width: 0px; margin-left:44px;border-radius: 18px; height: 90px; width:225; margin-right: 4px; margin-top:5px; resize:none;" placeholder="      Comments:                                 Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
-              <button class="glyphicon glyphicon-remove-circle" style="color:#27AE60; margin-top: 50px; font-size: 20px" onclick="document.getElementById('comments').value = ''"></button>
+              <button class="transparent-button glyphicon glyphicon-remove-circle" style="color:#27AE60; margin-top: 50px; font-size: 20px" onclick="document.getElementById('comments').value = ''"></button>
              </div>
              <hr>
 {{#if viewAlt}}
@@ -209,12 +230,12 @@ h3{
              <div name="taste" class="rateit" id="tasteRate" data-rateit-mode="font" style="margin-top:12px; font-size:36px">
             </div>
             <input type="hidden" name="taste" id="taste" value="0" />
-
+<hr>
               <text style="font-size:27px; color: #e6a505; padding-right: 210px" class="Text-input">Health:</text><br/>
               <div class="rateit" id="healthRate" data-rateit-mode="font" style="margin-top:12px; font-size:36px">
              </div>
              <input type="hidden" name="health" value="0" id="health"/>
-
+<hr>
              <text style="font-size:27px; color: #e6a505; padding-right: 210px" class="Text-input">Mood:</text><br/>
              <div class="rateit" id="moodRate" data-rateit-mode="font" style="margin-top:12px; font-size:36px">
              </div>
@@ -303,6 +324,7 @@ h3{
        function edit(){
         if(sessionStorage.getItem('edit') == 'true'){
           document.getElementById('output').src = sessionStorage.image;
+          document.getElementById('photos').src = sessionStorage.image;
           console.log(document.getElementById('output').src);
           document.getElementById('foodName').value = sessionStorage.foodName;
           document.getElementById('comments').value = sessionStorage.comments;
