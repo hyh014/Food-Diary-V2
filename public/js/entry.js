@@ -1,4 +1,4 @@
-var inputs = $("form#myForm input, form#myForm textarea");
+/*var inputs = $("form#myForm input, form#myForm textarea");
 
 var validateInputs = function validateInputs(inputs) {
   var validForm = true;

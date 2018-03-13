@@ -12,6 +12,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "amcharts3": "^3.21.12",
     "browserify": "^16.1.0",
     "express": "3.x",
     "express3-handlebars": "*",
