@@ -16,10 +16,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500" rel="stylesheet">
 <style>
+
+/*
     @media (max-width: 600px) {
           body {
 
-        background-image: url("/images/s32.jpg");
+        background-image: url("/images/use2.png");
         background-size: 100vw 100vh;
      }
 }
@@ -27,7 +29,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
       body {
 
-        background-image: url("/images/s32.jpg");
+        background-image: url("/images/use2.png");
         background-size: 75vw 85vh;
      }
 }
@@ -35,19 +37,20 @@
 @media (min-width: 992px) and (max-width: 1199px) {
     body {
 
-        background-image: url("/images/s32.jpg");
+        background-image: url("/images/use2.png");
         background-size: 50vw 65vh;
      }
 }
 
 @media (min-width: 1200px) {
       body{
-        background-image: url('/images/s32.jpg');
+        background-image: url("/images/use2.jpng");
         background-size:25vw 50vh;
       }
 }
 
 /* When the input field gets focus, change its width to 100% */
+
 form.example input[type=text]:focus {
     width: 80%;
 }
@@ -96,7 +99,7 @@ form.example::after {
 
 
 	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
+<!--
 	<div class="page-header3 text-center">
 <div class="navbar" style="float:left;">
         <div class="dropdown" style="margin-top:4px;">
@@ -116,6 +119,7 @@ form.example::after {
     <text style=" font-size: 27px; color:white;">Diary</text>
 
 </div>
+-->
 	<!--
 	<div class="navbar" style="float:left">
 		<div class="dropdown">
@@ -131,10 +135,16 @@ form.example::after {
 	</div>
 	</div>
 -->
+<div class="page-header">
+<h1 style="text-align:center; color:#f0ad4e; " >Diary</h1>
+<button id="setting" style="margin-top:-82px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
+</div>
+
+<!--
 	<div>
 		<a href="#" class="glyphicon glyphicon-question-sign" onclick="helpDiary()" style="margin-right:8px; font-size:40px; float:right" role="button" id="help" name="entry"></a>
 	</div>
-
+-->
 
 <hr>
 <!--<h1 class="text-center" style="font-family:Palatino;">My Diary</h1>-->
@@ -142,9 +152,9 @@ form.example::after {
 </div>
 
 	{{#each datas}}
-	<div id="loop" class="container diary-area text-center">
+	<div id="loop" style = "margin-top:-21px;" class="container diary-area text-center">
 		<div id = "one" class="text-center">
-			<text class="text-center" style="font-size:15px; font-family:font-family: Montserrat, sans-serif;" id="date">{{date}} {{time}}</text><hr class="rating-hr">
+			<text class="text-center" style="font-size:15px; font-family: Montserrat, sans-serif;" id="date">{{date}} {{time}}</text><hr class="rating-hr">
 			<div style="margin-top:20px; margin-bottom: 20px;" class="container text-center">
 				<img  src="{{image}}" class="resize">
 			</div>
@@ -160,8 +170,8 @@ form.example::after {
 
 		</div>
 		<hr>
-		<button class="edit btn btn-sm entry2BackNext" style="float:right;margin-top: -28px; margin-left:12px;">Edit</button>
-		<button class="remove btn btn-sm entry2BackNext" style="float:right;margin-top: -28px;">Remove</button>
+		<button class="edit btn btn-sm entry2BackNext" style="float:right;margin-top: -60px; margin-left:12px;">Edit</button>
+		<button class="remove btn btn-sm entry2BackNext" style="float:right;margin-top: -60px;">Remove</button>
 		<hr>
 		</div>
 	</div>
@@ -169,9 +179,17 @@ form.example::after {
 
 
 
-
-<a href="/index/{{id}}" class="myBtnBack" style="width:100px; height: 32px; text-align: center; border-radius: 6px;" role="button">Back to Entry</a>
+<!-- comment this button out because we don't need it base on current navigation bar
+<a href="/index/{{id}}" class="myBtnBack" style="font-size:17px; width:127px; height: 32px; text-align: center; border-radius: 6px;" role="button">Back to Entry</a>
+-->
 <br>
+<div id="bottom" style="margin-top:30px;">
+        <button id="diary" style="background-color: #f0ad4e4d; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
+        <button id="entry" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
+        <button id="stat" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
+        
+        <button id="news" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-film"><br>News</button>
+      </div>
 <script>
 function helpDiary() {
     alert("Tutorials\n\nIn this page, you could view your diary history. You could either scrolls up down or click the calendar to find one specific day."
@@ -249,7 +267,8 @@ function topFunction() {
 	</script>
 
   <script src="/js/analytics.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
+ <!--
+Global site tag (gtag.js) - Google Analytics 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -258,6 +277,7 @@ function topFunction() {
 
   gtag('config', 'UA-114570926-2');
 </script>
+-->
 
 </body>
 </html>

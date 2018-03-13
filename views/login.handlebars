@@ -18,15 +18,15 @@
     @media (max-width: 600px) {
           body {
 
-        background-image: url("/images/s32.jpg");
+        background-image: url("/images/use.jpg");
         background-size: 100vw 100vh;
-     }
+   
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
       body {
 
-        background-image: url("/images/s32.jpg");
+        background-image: url("/images/use.jpg");
         background-size: 75vw 85vh;
      }
 }
@@ -34,20 +34,21 @@
 @media (min-width: 992px) and (max-width: 1199px) {
     body {
 
-        background-image: url("/images/s32.jpg");
+        background-image: url("/images/use.jpg");
         background-size: 50vw 65vh;
      }
 }
 
 @media (min-width: 1200px) {
       body{
-        background-image: url('/images/s32.jpg');
+        background-image: url('/images/use.jpg');
         background-size:25vw 50vh;
       }
 }
 
 h4{
-	font-family: serif;
+	/*font-family: serif;*/
+
 	font-size:25px;
 }
 </style>
@@ -55,22 +56,24 @@ h4{
 <div id="root" class="text-center">
 <h1 class="page-header " style="font-family:Palatino;">Login</h1>
 	<div class="container">
-		<text id="error" class="hide">Wrong Username/Password</text>
+		<text id="error" style="color:red;font-size: 18px;"  class="hide">Wrong Username/Password</text>
 		<div class="form-group">
-			<h4 style="text-align: left;margin-left:48px; margin-top:50px;">Username</h4>
-			<input style="margin-top:3px; height:40px;" type="text" class="larger" name="userid" id="userid" placeholder="Username" required>
+			<h4 style="text-align: left;margin-left:48px; margin-top:20px; font-weight: bold; font-size: 22px;">Username</h4>
+			<input style=" border-color: black;margin-top:3px;font-size:large; height:40px;background-color: transparent; border-radius:10px; text-align: center;"  class="larger" name="userid" id="userid" required>
 		 </div>
 		<div class="form-group">
-			<h4 style="text-align: left;margin-left:48px;">Password</h4>
-			<input style="height:40px;" type="password" class="larger" name="password" id="password" placeholder="password" required>
+			<h4 style="text-align: left;margin-left:48px;font-weight: bold; font-size: 22px;">Password</h4>
+			<input style="margin-bottom:26px;  border-color: black; height:40px;font-size:large; background-color: transparent; border-radius:10px; text-align: center;" type="password" class="larger" name="password" id="password"  required>
 		</div>
 		<div class="form-group">
-			<a href="#" role="button" style="margin-top:44px;" class="btn btn-primary btn-lg larger" id="login">Login</a>
+			<a href="#" role="button" style="font-weight: bold; color:white;"  id="login">Login</a>
 		</div>
 		<div class="form-group">
-			<a href="/register" role="button" class="btn btn-primary btn-lg larger">Register</a>
+			<!-- class="btn btn-primary btn-lg larger" comment out for login and register buttom
+		-->
+			<a href="/register" style="font-weight: bold; color:white;" role="button" >Register</a>
 		</div>
-		<div class="form-group">
+		<div class="form-group" style="margin-top:50px;">
 			<fb:login-button
 			  scope="public_profile,email"
 			  onlogin="checkLoginState();">

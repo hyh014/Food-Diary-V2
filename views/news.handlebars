@@ -16,7 +16,7 @@
     @media (max-width: 600px) {
           body {
 
-        background-image: url("/images/s32.jpg");
+        background-image: url("/images/use2.png");
         background-size: 100vw 100vh;
      }
 }
@@ -24,7 +24,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
       body {
 
-        background-image: url("/images/s32.jpg");
+        background-image: url("/images/use2.png");
         background-size: 75vw 85vh;
      }
 }
@@ -32,14 +32,14 @@
 @media (min-width: 992px) and (max-width: 1199px) {
     body {
 
-        background-image: url("/images/s32.jpg");
+        background-image: url("/images/use2.png");
         background-size: 50vw 65vh;
      }
 }
 
 @media (min-width: 1200px) {
       body{
-        background-image: url('/images/s32.jpg');
+        background-image: url('/images/use2.png');
         background-size:25vw 50vh;
       }
 }
@@ -62,7 +62,10 @@ p{
 }
 </style>
 <body>
+
+<!--
     <div class="page-header4 text-center">
+
     <div class="navbar" style="float:left">
             <div class="dropdown" style="margin-top:4px; color:white;">
               <button class="glyphicon glyphicon-list transparent-button " style="font-size:37px; color:white"></button>
@@ -76,12 +79,16 @@ p{
             </div>
           </div>
           </div>
+       
         <text style="display:inline-block; font-size: 27px; color:white;" >News</text>
     </div>
-	<div>
+-->
+<div class="page-header">
+<h1 style="text-align:center; color:#f0ad4e; " >News</h1>
+<button id="setting" style="margin-top:-82px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
+</div>
 
-		<a href="#" class="glyphicon glyphicon-question-sign" onclick="helpNews()" style=" font-size:40px; float:right" role="button" id="help" name="entry"></a>
-	</div>
+	
 <hr>
 <div id="root">
 	<h2 class="container text-center" style=" font-family:comic sans ms;">Fun</h2><hr>
@@ -140,6 +147,15 @@ p{
 				</div>
 		</div>
 	</div>
+
+
+<div id="bottom" style="margin-top:30px;">
+        <button id="diary" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
+        <button id="entry" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
+        <button id="stat" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
+        
+        <button id="news" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-film"><br>News</button>
+      </div>
 </div>
 <script>
 function helpNews() {
