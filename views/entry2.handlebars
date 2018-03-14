@@ -315,7 +315,7 @@ You could also click the “minus” sign to clear all.</p>
                   <input type="file" accept="image/*" style="display:none" id="file-input" capture="environment"/>
                 </div>
                 <img id="output" style="height:29vh;width:44vw;"><hr>
-
+              <text style="color:coral;float: right; margin-right: 30px; margin-top: -22px;font-size: 21px;">Scroll down ⇩</text>
 
             <h3 style="margin-top:107px;font-family: American Typewriter; color:coral;">Enter food and leave comments</h3>
             <hr>
@@ -325,9 +325,10 @@ You could also click the “minus” sign to clear all.</p>
              <div class="container" style="display:inline-block " id="text-input">
               <span class="glyphicon glyphicon-pencil" style="margin-left:49px; margin-right: -5px; font-size:37px; color:#0c1004;"></span>
               <input type="text" class="row" style="width:2em; border-color:#27AE60 ; border-width: 0px; width:178px; margin-left:-9px; height: 35px; margin-right: 4px; border-radius: 25px;" placeholder="     Enter food" name="foodName" id="foodName"/>
-              <button class="transparent-button glyphicon glyphicon-remove-circle" style="width:2em; color:#f0ad4e; font-size: 20px" onclick="document.getElementById('foodName').value = ''"></button><br/>
+              <button class="transparent-button glyphicon glyphicon-remove-circle" style="width:2em; color:#f0ad4e; font-size: 20px" onclick="dosomethingElse();document.getElementById('foodName').value = ''"></button><br/>
               <textarea rows="4" cols="30" class="row" style="border-color:#27AE60; border-width: 0px; margin-left:44px;border-radius: 18px; height: 90px; width:225; margin-right: 4px; margin-top:5px; resize:none;" placeholder="      Comments:                                 Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
-              <button class="transparent-button glyphicon glyphicon-remove-circle" style="color:#f0ad4e;width:2em; margin-top: 50px; font-size: 20px" onclick="document.getElementById('comments').value = ''"></button>
+              <button class="transparent-button glyphicon glyphicon-remove-circle" style="color:#f0ad4e;width:2em; margin-top: 50px; font-size: 20px" onclick="dosomethingElse();document.getElementById('comments').value = ''"></button>
+              <text style="color:coral;float: right; margin-right: 30px; margin-top: 63px;font-size: 21px;">Scroll down ⇩</text>
              </div>
              <hr>
 
@@ -474,11 +475,32 @@ You could also click the “minus” sign to clear all.</p>
           $('moodRate').rateit('value',0);
           $('#anxietyRate').rateit('value',0);
           document.getElementById('addDiary').action = '/addDiary/ne';
+
         }
       }
     window.onload=edit;
     </script>
 
+<script>
+  function dosomethingElse(){
+    confirm = 0;
+  }
+function clicked(e)
+{
+    if(!confirm('Do you want to submit?'))e.preventDefault();
+    confirm = 0;
+}
+</script>
+
+<script type="text/javascript">
+  window.onbeforeunload = confirmExit;
+  function confirmExit()
+  {
+    if (confirm != 0){
+    return "Do you want to leave this page without saving?";
+   }
+  }
+</script>
     <!-- modal -->
 <script>
 // Get the modal
