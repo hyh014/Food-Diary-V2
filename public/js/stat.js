@@ -134,7 +134,7 @@ zoomChart();
 function generateChartData() {
     var chartData = [];
     var firstDate = new Date();
-    firstDate.setDate(firstDate.getDate() - 100);
+    firstDate.setDate(firstDate.getDate() - 50);
 
         var health=0;
         var taste=0;
@@ -142,7 +142,7 @@ function generateChartData() {
         var anxiety=0;
 
 
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < 50; i++) {
         // we create date objects here. In your data, you can have date strings
         // and then set format of your dates using chart.dataDateFormat property,
         // however when possible, use date objects, as this will speed up chart rendering.
