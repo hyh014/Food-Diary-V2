@@ -58,20 +58,6 @@ var chart = AmCharts.makeChart("chartdiv", {
         "axisThickness": 2,
         "axisAlpha": 1,
         "position": "left"
-    }, {
-        "id":"v2",
-        "axisColor": "#FCD202",
-        "axisThickness": 2,
-        "axisAlpha": 1,
-        "position": "right"
-    }, {
-        "id":"v3",
-        "axisColor": "#B0DE09",
-        "axisThickness": 2,
-        "gridAlpha": 0,
-        "offset": 50,
-        "axisAlpha": 1,
-        "position": "left"
     }],
     "graphs": [{
         "valueAxis": "v1",
@@ -107,8 +93,8 @@ var chart = AmCharts.makeChart("chartdiv", {
         "bulletBorderThickness":1,
         "hideBulletsCount":30,
         "title": "anxiety",
-        "valueFied":"anxiety",
-        "fillAlphas":0
+        "valueField":"anxiety",
+    "fillAlphas":0
     }],
     "chartScrollbar": {},
     "chartCursor": {
@@ -128,39 +114,41 @@ var chart = AmCharts.makeChart("chartdiv", {
 
 chart.addListener("dataUpdated", zoomChart);
 zoomChart();
-
-
+chart.tapToActivate = false;
 // generate some random data, quite different range
 function generateChartData() {
     var chartData = [];
     var firstDate = new Date();
-    firstDate.setDate(firstDate.getDate() - 50);
+    firstDate.setDate(firstDate.getDate() - 100);
 
-        var health=0;
-        var taste=0;
-        var mood=0;
-        var anxiety=0;
+        var health = 5;
+        var taste = 5;
+        var mood = 5;
+        var anxiety = 5;
 
 
-    for (var i = 0; i < 50; i++) {
+
+    for (var i = 0; i < 100; i++) {
         // we create date objects here. In your data, you can have date strings
         // and then set format of your dates using chart.dataDateFormat property,
         // however when possible, use date objects, as this will speed up chart rendering.
         var newDate = new Date(firstDate);
-        newDate.setDate(newDate + i);
-        console.log(newDate);
-
-        visits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
-        hits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
-        views += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
-
+        newDate.setDate(newDate.getDate() + i);
+         console.log(newDate.getDate());
+        health = Math.round(Math.random()*5);
+        taste = Math.round(Math.random()*5);
+        mood = Math.round(Math.random()*5);
+        anxiety = Math.round(Math.random()*5);
+        
         chartData.push({
             date: newDate,
-            visits: visits,
-            hits: hits,
-            views: views
+            health:health,
+            taste:taste,
+            mood:mood,
+            anxiety:anxiety
         });
     }
+
     return chartData;
 }
 
