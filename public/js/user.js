@@ -65,6 +65,9 @@ $('#stat').click(function(){
 $('#setting').click(function(){
   location.href="/setting/"+sessionStorage.name;
 });
+$('#news').click(function(){
+  location.href="/news/"+sessionStorage.name;
+})
 
 $('#entry2rating').click(function(){
 

@@ -10,14 +10,22 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/bootstrap.css" rel="stylesheet">
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <!-- jQuery (necessary for Bootstrap's JavaScript vvplugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
 </head>
 <style>
     @media (max-width: 600px) {
           body {
 
-        background-image: url("/images/m5.jpg");
+        background-image: url("/images/use2.png");
         background-size: 100vw 100vh;
      }
 }
@@ -25,7 +33,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
       body {
 
-        background-image: url("/images/m5.jpg");
+        background-image: url("/images/use2.png");
         background-size: 75vw 85vh;
      }
 }
@@ -33,14 +41,14 @@
 @media (min-width: 992px) and (max-width: 1199px) {
     body {
 
-        background-image: url("/images/m5.jpg");
+        background-image: url("/images/use2.png");
         background-size: 50vw 65vh;
      }
 }
 
 @media (min-width: 1200px) {
       body{
-        background-image: url('/images/m5.jpg');
+        background-image: url('/images/use2.png');
         background-size:25vw 50vh;
       }
 }
@@ -58,6 +66,7 @@
 
 <body>
 	<input type="hidden" id="userid" name="userid" value=""/>
+<!--
 		<div class="page-header3 text-center">
 <div class="navbar" style="float:left">
         <div class="dropdown" style="margin-top:4px;">
@@ -76,10 +85,13 @@
     <text style="color:black; font-size: 27px; color:white;">Statistic</text>
 
 </div>
+-->
+<div class="page-header">
+<h1 style="text-align:center; color:#f0ad4e; " >Statistics</h1>
+<button id="setting" style="margin-top:-82px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
+</div>
 
-		<div>
-		  <a href="#" class="glyphicon glyphicon-question-sign" onclick="helpStat()" style=" font-size:40px; float:right;" role="button" id="help" name="stat"></a>
-		</div>
+		
 <hr>
 <div id="root" class="text-center">
 
@@ -99,12 +111,21 @@
 	<!--
 	<a href = "/cal1" row = "button" class="glyphicon glyphicon-calendar" style="padding-left:5px; font-size:50px"></a><br>
 	-->
-	<div class="container" >
-		<img src="/images/t.jpg" class="img" style="margin-top: 46px; width:90%;height:90%;">
+	<div class="container" style="background-color:white;">
+		<div id="chartdiv"></div>  
 	</div>
 
+	<div id="bottom" style="margin-top:30px;">
+        <button id="diary" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
+        <button id="entry" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
+        <button id="stat" style="background-color: #f7f0a1; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
+        
+        <button id="news" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-film"><br>News</button>
+      </div>
+ 
 </div>
-<a href="/index/{{id}}" class="btn btn-primary " style="margin-top:237px; margin-left: 27px; float:left;" role="button" id="back">Home</a>
+<script src="/js/user.js"></script>
+<script src="/js/entry.js"></script>
 <script src="/js/stat.js"></script>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>

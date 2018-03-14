@@ -10,6 +10,8 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/bootstrap.css" rel="stylesheet">
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <style>
@@ -62,27 +64,6 @@ p{
 }
 </style>
 <body>
-
-<!--
-    <div class="page-header4 text-center">
-
-    <div class="navbar" style="float:left">
-            <div class="dropdown" style="margin-top:4px; color:white;">
-              <button class="glyphicon glyphicon-list transparent-button " style="font-size:37px; color:white"></button>
-              <div class="dropdown-content">
-                <a href="/index/{{id}}">Home</a>
-                <a href="/entry2/{{id}}">Entry</a>
-                <a href="/diary/{{id}}">Diary</a>
-                <a href="/stat/{{id}}">Statistics</a>
-                <a href="/setting/{{id}}">Settings</a>
-                <a href="/" style="color:red;" id="logoff">Log Out</a>
-            </div>
-          </div>
-          </div>
-       
-        <text style="display:inline-block; font-size: 27px; color:white;" >News</text>
-    </div>
--->
 <div class="page-header">
 <h1 style="text-align:center; color:#f0ad4e; " >News</h1>
 <button id="setting" style="margin-top:-82px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
@@ -147,40 +128,27 @@ p{
 				</div>
 		</div>
 	</div>
+</div>
 
-
-<div id="bottom" style="margin-top:30px;">
+</div>
+	<div id="bottom" style="margin-top:30px;">
         <button id="diary" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
         <button id="entry" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
         <button id="stat" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
-        
-        <button id="news" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-film"><br>News</button>
+        <button id="news" style="background-color: #f7f0a1; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-film"><br>News</button>
       </div>
-</div>
+
 <script>
 function helpNews() {
     alert("News:\n\nThis is the place where you could have fun while you are eating meals. You could browse the latest funny videos about eating that makes you laugh and the scientific healthy tips to help you eat healthier. This also contributes users to have a better mood."
     	);
 }
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript">
-	$(function() {
-  $('#bookmarkme').click(function() {
-    if (window.sidebar && window.sidebar.addPanel) { // Mozilla Firefox Bookmark
-      window.sidebar.addPanel(document.title, window.location.href, '');
-    } else if (window.external && ('AddFavorite' in window.external)) { // IE Favorite
-      window.external.AddFavorite(location.href, document.title);
-    } else if (window.opera && window.print) { // Opera Hotlist
-      this.title = document.title;
-      return true;
-    } else { // webkit - safari/chrome
-      alert('Press ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL') + ' + D to bookmark this page.');
-    }
-  });
-});
-</script>
-
-
+		<script src="/js/user.js"></script>
+		<script src="/js/entry.js"></script>
+		<script src="https://code.jquery.com/jquery.js"></script>
+	 	<script src="/js/bootstrap.min.js"></script>
+	  <script src="/scripts/jquery.rateit.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 </html>

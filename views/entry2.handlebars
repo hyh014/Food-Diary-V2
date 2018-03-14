@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--
-     Google Analytics Content Experiment code 
-    <script>function utmx_section(){}function utmx(){}(function(){var
-    k='171166699-6',d=document,l=d.location,c=d.cookie;
-    if(l.search.indexOf('utm_expid='+k)>0)return;
-    function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-    indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-    length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-    '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-    '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-    '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-    valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-    '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-    </script><script>utmx('url','A/B');</script>
-     End of Google Analytics Content Experiment code 
--->
 
     <title>Food Diary App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -331,13 +315,6 @@ You could also click the “minus” sign to clear all.</p>
                   <input type="file" accept="image/*" style="display:none" id="file-input" capture="environment"/>
                 </div>
                 <img id="output" style="height:29vh;width:44vw;"><hr>
-<!--
-{{#if viewAlt}}
-  <text  id="button" style="float:center; font-size: 19px;">Scroll down ⇩</text>
-{{else}}
-    <text class="button" id="button" style="float:center;margin-right: 49px;margin-top: -20px; font-size: 19px;">Scroll down ⇩</text>
-{{/if}}
--->
 
 
             <h3 style="margin-top:107px;font-family: American Typewriter; color:coral;">Enter food and leave comments</h3>
@@ -353,6 +330,7 @@ You could also click the “minus” sign to clear all.</p>
               <button class="transparent-button glyphicon glyphicon-remove-circle" style="color:#f0ad4e;width:2em; margin-top: 50px; font-size: 20px" onclick="document.getElementById('comments').value = ''"></button>
              </div>
              <hr>
+
              <!--
 {{#if viewAlt}}
 <text  id="button" style="float:right;margin-right: 25px; font-size: 19px;" >Scroll down ⇩</text>
@@ -362,26 +340,27 @@ You could also click the “minus” sign to clear all.</p>
 -->
     <h3 style="margin-top:113px;margin-bottom:24px;font-family: American Typewriter;color:coral;">Finish Self-Rating </h3>
 
+
              <form id="addDiary" role="form" method="post" action="/addDiary/ne">
               <div class="container"  id="Rating" >
-             <text style="font-size:24px; color:black; padding-right: 160px;font-family: American Typewriter;" class="Text-input">Taste:</text><br/>
+             <text style="font-size:24px; color:#f1a132; padding-right: 160px;font-family: American Typewriter;" class="Text-input">Taste:</text><br/>
              <div name="taste" class="rateit" id="tasteRate" data-rateit-mode="font" style="font-family: American Typewriter;margin-top:12px; font-size:36px">
             </div>
             <input type="hidden" name="taste" id="taste" value="0" />
 <hr>
-              <text style="font-size:24px; color: black;font-family: American Typewriter; padding-right: 160px" class="Text-input">Health:</text><br/>
+              <text style="font-size:24px; color: #f1a132;font-family: American Typewriter; padding-right: 160px" class="Text-input">Health:</text><br/>
               <div class="rateit" id="healthRate" data-rateit-mode="font" style="margin-top:12px; font-size:36px">
              </div>
              <input type="hidden" name="health" value="0" id="health"/>
 <hr>
-             <text style="font-size:24px;font-family: American Typewriter; color: black; padding-right: 160px" class="Text-input">Mood:</text><br/>
+             <text style="font-size:24px;font-family: American Typewriter; color: #f1a132; padding-right: 160px" class="Text-input">Mood:</text><br/>
              <div class="rateit" id="moodRate" data-rateit-mode="font" style="margin-top:12px; font-size:36px">
              </div>
              <input type="hidden" name="mood" value="0"  id="mood"/>
             <hr>
 
 
-              <text style="font-size:24px; color: black; padding-right: 160px;font-family: American Typewriter;" class="Text-input">Anxiety:</text><br/>
+              <text style="font-size:24px; color: #f1a132; padding-right: 160px;font-family: American Typewriter;" class="Text-input">Anxiety:</text><br/>
 
               <div class="rateit" id="anxietyRate" data-rateit-mode="font" style="font-size:36px">
 
@@ -404,7 +383,7 @@ You could also click the “minus” sign to clear all.</p>
 
 <div id="bottom" style="margin-top:30px;">
         <button id="diary" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
-        <button id="entry" style="background-color: #f0ad4e4d; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
+        <button id="entry" style="background-color:#f7f0a1; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
         <button id="stat" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
         
         <button id="news" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-film"><br>News</button>
@@ -534,18 +513,6 @@ window.onclick = function(event) {
        document.getElementById('welcomeDiv').style.display = "block";
     }
       </script>
-      <script src="/js/analytics.js"></script>
-<!--
-       Global site tag (gtag.js) - Google Analytics 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-114570926-2');
-      </script>
--->
 
   </body>
 </html>

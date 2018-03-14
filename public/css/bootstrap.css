@@ -7615,6 +7615,12 @@ input:checked + .slider:before {
 
 }
 
+#chartdiv {
+  width : 100%;
+  height  : 500px;
+}                         
+
+
 #myBtn222{
   display: none;
   position: fixed;
