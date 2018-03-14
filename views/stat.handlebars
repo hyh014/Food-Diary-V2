@@ -62,9 +62,52 @@
   font-size:;
   background-color: #25a725ab;
 }
+
+/* Modal Content */
+.modal-content {
+    position: fixed;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: orange;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
 </style>
 
 <body>
+
 	<input type="hidden" id="userid" name="userid" value=""/>
 <!--
 		<div class="page-header3 text-center">
@@ -86,9 +129,31 @@
 
 </div>
 -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Q & A</h2>
+    </div>
+    <div class="modal-body">
+      <h3 style="text-align: left;">How to see my report?</h3>
+      
+
+    </div>
+   
+  </div>
+
+</div>
+
+
 <div class="page-header">
 <h1 style="text-align:center; color:#f0ad4e; " >Statistics</h1>
-<button id="setting" style="margin-top:-82px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
+<button id="setting" style="margin-top:-68px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
+<button style="color:orange; margin-right:10px;margin-top:-17px;float:right;text-decoration: underline;"  id="myBtn222">Q & A</button>
 </div>
 
 		
@@ -136,7 +201,40 @@ function helpStat() {
       );
 }
 </script>
+<!-- modal -->
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
 
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn222");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+    <script>
+      function showDiv() {
+       document.getElementById('welcomeDiv').style.display = "block";
+    }
+      </script>
 
 </body>
 </html>

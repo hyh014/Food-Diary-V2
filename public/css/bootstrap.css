@@ -580,8 +580,8 @@ cite {
 }
 
 .page-header {
-  padding-bottom: 9px;
-  margin: 40px 0 20px;
+  padding-bottom: 1px;
+  margin: 25px 0 15px;
   border-bottom: 1px solid #eeeeee;
   font-family: Comic Sans MS, cursive, sans-serif;
   font-size:;
@@ -2631,8 +2631,8 @@ fieldset[disabled] .btn-link:focus {
 }
 
 .btn-sm {
-  padding: 5px 10px;
-  font-size: 12px;
+  padding: 3px 8px;
+  font-size: 15px;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -7376,6 +7376,8 @@ input:checked + .slider:before {
   float:left;
   width:95vw;
   height:50vh;
+  
+  white-space: nowrap;
 }
 
 .larger-text{
@@ -7637,4 +7639,13 @@ input:checked + .slider:before {
   border-radius: 4px;
   height:32px;
   width: 58px;
+}
+
+.scrolling-box1{
+  overflow:auto;
+  float:left;
+  width:95vw;
+  height:50vh;
+  
+  white-space: nowrap;
 }

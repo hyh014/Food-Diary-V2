@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Bootstrap -->
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/bootstrap.css" rel="stylesheet">
@@ -62,14 +63,66 @@ p{
   font-size:;
   background-color: #25a725ab;
 }
+
+div.scrollmenu {
+    background-color: #f5c66d7a;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu iframe {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+div.scrollmenu iframe:hover {
+    background-color: white;
+}
+
+.coupon {
+    border: 5px solid #e8b76994;
+    width: 90%;
+    border-radius: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+    margin-bottom: 50px;
+}
+
+.container {
+    padding: 2px 16px;
+    background-color: #f1f1f1;
+}
+
+.promo {
+    background: #ccc;
+    padding: 3px;
+}
+
+.expire {
+    color: red;
+}
 </style>
 <body>
 <div class="page-header">
 <h1 style="text-align:center; color:#f0ad4e; " >News</h1>
-<button id="setting" style="margin-top:-82px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
+<button id="setting" style="margin-top:-68px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
 </div>
 
-	
+<h3 style="color:coral;margin-left: 20px; font-family:comic sans ms">Fun Videos</h3>
+<div class="scrollmenu">
+	<iframe width="190" height="170" style="max-width:80vw;" src="https://www.youtube.com/embed/1PAghQ7jvL4" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+	<iframe width="190" height="170" style="max-width:80vw;" src="https://www.youtube.com/embed/kbOgbll5tiw" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+	<iframe width="190" height="170" style="max-width:80vw;" src="https://www.youtube.com/embed/EnWYNIwWj3s" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+	<iframe width="190" height="170" style="max-width:80vw;" src="https://www.youtube.com/embed/T9PeJo67jyg" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+
+  
+</div>
+
+
+<!--
 <hr>
 <div id="root">
 	<h2 class="container text-center" style=" font-family:comic sans ms;">Fun</h2><hr>
@@ -89,14 +142,50 @@ p{
 		</div>
 	</div>
 	<hr>
-	<h2 class="container text-center" style="font-family:comic sans ms;">Health Tips<h2>
+
+
+-->
+
+<h3 style="color:coral;margin-left: 20px; font-family:comic sans ms">Health Tips</h3>
+
+<div class="coupon">
+  <div class="container" style="background-color:white">
+    <a style="text-decoration: underline; font-size:10px; color:black;" href="https://healthyforgood.heart.org/eat-smart/articles/5-easy-ways-to-find-healthier-options-at-the-grocery-store"><h4><b>Eating right starts with what you put in your shopping cart!</b></h4> </a>
+    <p2 style="font-size:14px;">Read food labels, even for so-called “healthier” foods. Ingredients and nutrient content can vary a lot by brand and preparation...</p2>
+  </div>
+</div>
+	
+
+<div class="coupon" style="margin-top:-40px;">
+  <div class="container" style="background-color:white">
+    <a style="text-decoration: underline; font-size:10px; color:black;" href="https://healthyforgood.heart.org/be-well/articles/mindful-eating-savor-the-flavor"><h4><b>Mindful Eating: Savor the Flavor</b></h4> </a>
+    <p2 style="font-size:14px;">How do you meditate while eating? Slow down. Being mindful and paying attention to the food you consume could help you eat healthier...</p2>
+  </div>
+</div>
+
+<div class="coupon" style="margin-top:-40px;">
+  <div class="container" style="background-color:white">
+    <a style="text-decoration: underline; font-size:10px; color:black;" href="http://www.health.com/food/low-carb-pinterest-recipes"><h4><b>9 Low-Carb Recipes People Are Loving on Pinterest</b></h4> </a>
+    <p2 style="font-size:14px;">If you've bid farewell to bread and pasta because of health concerns, you're not alone. Whether you're dealing with celiac disease or want to lower ...</p2>
+  </div>
+</div>
+
+<div class="coupon" style="margin-top:-40px;">
+  <div class="container" style="background-color:white">
+    <a style="text-decoration: underline; font-size:10px; color:black;" href="http://time.com/5169466/alcohol-leading-to-dementia/"><h4><b>Heavy Drinking Is the Biggest Risk Factor for Dementia</b></h4> </a>
+    <p2 style="font-size:14px;">Hot on the heels of headlines linking alcohol consumption with longer life comes new research that casts a much more sobering light on drinking. According to an analysis...</p2>
+  </div>
+</div>
+
+
+<!--
 	<div class="text-center" id="TIPS">
 		<div>
 			<div class="scrolling-box" style="overflow:auto">
 				<div>
 					<div id="content" style="display:inline-block;">
-					<p style="font-family: 'Roboto', sans-serif;">Eating right-what you put in your mouth -- starts with what you put in your shopping cart! </p>
-					<a style="font-size:25px; font-family: 'Roboto', sans-serif;" href="https://healthyforgood.heart.org/eat-smart/articles/5-easy-ways-to-find-healthier-options-at-the-grocery-store">See Details</a>
+					
+					<a style="font-size:10px;" href="https://healthyforgood.heart.org/eat-smart/articles/5-easy-ways-to-find-healthier-options-at-the-grocery-store">Eating right starts with what you put in your shopping cart!</a>
 				</div>
 			</div>
 			<hr>
@@ -131,6 +220,7 @@ p{
 </div>
 
 </div>
+-->
 	<div id="bottom" style="margin-top:30px;">
         <button id="diary" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
         <button id="entry" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
