@@ -20,6 +20,8 @@
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
 <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <style>
     @media (max-width: 600px) {
@@ -103,6 +105,97 @@
     background-color: #5cb85c;
     color: white;
 }
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.prev {
+  border-radius: 3px 0 0 3px;
+  background-color: white;
+  color:orange;
+  left:0;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  background-color: white;
+  color:orange;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: #f5dab5;
+  color:white;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: white;
+  padding: 0px 10px;
+  color: coral;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 </style>
 
@@ -157,7 +250,8 @@
 </div>
 
 		
-<hr>
+
+
 <div id="root" class="text-center">
 
 	<div align="center" >
@@ -173,12 +267,68 @@
 		<option value="monthly" id="month">Monthly</option>
 		<option value="yearly" id="year">Yearly</option>
 	</select>
-	<!--
+	
 	<a href = "/cal1" row = "button" class="glyphicon glyphicon-calendar" style="padding-left:5px; font-size:50px"></a><br>
-	-->
+	
 	<div class="container" style="background-color:white;">
 		<div id="chartdiv"></div>  
 	</div>
+
+<!--
+<h3 style="text-align:center">Food Gallery</h3>
+
+<div class="container">
+	{{#each datas}}
+  <div class="mySlides">
+  
+   <div class="caption-container">
+    <p id="caption">{{date}}</p>
+  </div>
+    <img src="{{image}}" class="resize" style="width:350px;height:220px;">
+    
+  </div>
+{{/each}}
+  </div> 
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+-->
+  
+  </div>
+
+
+
+
+  <div class="w3-container" style="margin-top:30px;">
+  
+  <button onclick="document.getElementById('id01').style.display='block'" style="font-size:20px; color:coral;background-color:#f0ad4e63; border-color: transparent;">Food Gallery</button>
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p style="text-align: center;color:coral;">Food Gallery</p>
+   <!-- Food Gallery starts here -->
+        <div class="container">
+	{{#each datas}}
+  <div class="mySlides">
+  
+   <div class="caption-container">
+    <p style="font-size: 10px;" id="caption">{{date}}</p>
+  </div>
+    <img src="{{image}}" class="resize" style="width:300px;height:220px;">
+    
+  </div>
+{{/each}}
+  </div> 
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 	<div id="bottom" style="margin-top:30px;">
         <button id="diary" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
@@ -235,6 +385,37 @@ window.onclick = function(event) {
        document.getElementById('welcomeDiv').style.display = "block";
     }
       </script>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
 
 </body>
 </html>

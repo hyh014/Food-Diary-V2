@@ -89,7 +89,10 @@ form.example::after {
   border-bottom: 0px solid #eeeeee;
   font-family: Comic Sans MS, cursive, sans-serif;
   background-color: #25a725ab;
+
 }
+
+
 </style>
 
 </head>
@@ -99,7 +102,9 @@ form.example::after {
 	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <div class="page-header">
 <h1 style="text-align:center; color:#f0ad4e; " >Hello {{id}}</h1>
+
 <button id="setting" style="margin-top:-68px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
+</div>
 </div>
 
 <!--
@@ -117,9 +122,11 @@ form.example::after {
 	<div id="loop" style = "margin-top:-21px;" class="container diary-area text-center">
 		<div id = "one" class="text-center">
 			<text class="text-center" style="font-size:15px; font-family: Montserrat, sans-serif;" id="date">{{date}} {{time}}</text><hr class="rating-hr">
-			<div style="margin-top:20px; margin-bottom: 20px;" class="container text-center">
+			
+			<div style="margin-top:20px; margin-bottom: 20px;" class=" container text-center">
 				<img  src="{{image}}" class="resize">
-			</div>
+			
+		</div>
 		<div id="input">
 			<text class="diary-text text-center" id="foodName">{{foodName}}</text><br>
 			<textarea id="comments" rows="4" cols="25" class="row diary-textarea" readonly>{{comments}}</textarea><br/>
