@@ -17,6 +17,7 @@
 <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
 <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/plugins/responsive/responsive.min.js"></script>
 </head>
 <style>
     @media (max-width: 600px) {
@@ -94,25 +95,16 @@
 			<a href="#" class="btn selection" style="font-size: 19px; color:black;" role="button" id="mood">Mood</a>
 			<a href="#" class="btn selection" style="font-size: 19px; color:black;" role="button" id="anxiety">Anxiety</a>
 	</div>
-	<div class="container">
-
-	<select name="timespan" class="col-lg-offset-2" >
-		<option value="weekly" id="week">Weekly</option>
-		<option value="monthly" id="month">Monthly</option>
-		<option value="yearly" id="year">Yearly</option>
-	</select>
-	<!--
-	<a href = "/cal1" row = "button" class="glyphicon glyphicon-calendar" style="padding-left:5px; font-size:50px"></a><br>
-	-->
 	<div class="container" style="background-color:white;">
 		<div id="chartdiv"></div>  
 	</div>
  
 </div>
-<a href="/index/{{id}}" class="btn btn-primary " style="margin-top:237px; margin-left: 27px; float:left;" role="button" id="back">Home</a>
+<a href="/index/{{id}}" class="btn btn-primary " style=" margin-left: 27px; float:left;" role="button" id="back">Home</a>
 <script src="/js/stat.js"></script>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+
 <script>
 	document.getElementById('userid').value=sessionStorage.getItem('userid');
 function helpStat() {

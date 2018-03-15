@@ -1,4 +1,11 @@
 
+$( document ).ready(function() {
+      var w = $(document).width()*.9;
+  var h = $(document).height();
+  document.getElementById('chartdiv').style.width = w + 'px';
+  document.getElementById('chartdiv').style.height = h + 'px';
+  chart.invalidateSize();
+});
 $('a.selection').click(function(){
 
   var selected = this.id;
@@ -41,6 +48,7 @@ $('a.selection').click(function(){
   }
 
 });
+
 
 var chartData = generateChartData();
 
@@ -109,15 +117,18 @@ var chart = AmCharts.makeChart("chartdiv", {
     "export": {
       "enabled": true,
         "position": "bottom-right"
-     }
+     },
+  "responsive": {
+    "enabled": true
+  }
 });
 
 chart.addListener("dataUpdated", zoomChart);
 zoomChart();
-chart.tapToActivate = false;
+
 // generate some random data, quite different range
-function generateChartData() {
-    var chartData = [];
+function dataCallBack(result){
+     var chartData = [];
     var firstDate = new Date();
     firstDate.setDate(firstDate.getDate() - 100);
 
@@ -149,7 +160,10 @@ function generateChartData() {
         });
     }
 
-    return chartData;
+    setData(charData);
+}
+function generateChartData() {
+  $.get("/user/"+sessionStorage.name,dataCallBack);
 }
 
 function zoomChart(){
