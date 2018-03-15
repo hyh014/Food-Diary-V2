@@ -5,10 +5,10 @@ exports.viewDiary = function(req,res){
   var authentication = false;
   for(var i=0;i<users.info.length;i++){
     if(userid == users.info[i].id){
-      //if(users.info[i].session==session){
+      if(users.info[i].session==session){
         authentication =true;
           res.render('diary',users.info[i]);
-  //   }
+     }
     }
   }
   if(authentication == false){
