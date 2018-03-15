@@ -14,7 +14,6 @@ exports.addDiary = function(req,res){
     var time = req.body.time;
     var userid = req.body.userid;
 
-    console.log(userid);
     for(var i=0; i<data.info.length;i++)
     {
 
@@ -35,10 +34,11 @@ exports.addDiary = function(req,res){
         "mood":mood,
         "anxiety":anxiety
         };
-        console.log(newObject);
+
         if(edit === 'e'){
           for(var j=0;j<data.info[i].datas.length;j++){
             if(time===data.info[i].datas[j].time && date===data.info[i].datas[j].date){
+
               data.info[i].datas[j] = newObject;
               return res.redirect('/diary/'+userid);
             }

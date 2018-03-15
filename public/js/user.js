@@ -14,7 +14,6 @@ function callBackFn(result){
   if(userID == result.id && password == result.password)
   {
     sessionStorage.setItem('name',userID);
-    console.log(sessionStorage.name);
     $('#login').attr('href','/index/'+sessionStorage.name);
     location.replace("/checkLogin/"+sessionStorage.name);
 
@@ -33,14 +32,16 @@ $('#register').click(function(){
 function callBack(result){
 
 }
-
+/*
 $('#addEntry').click(function(){
   sessionStorage.edit=false;
 
 
   var date = $('#clock').text();
-  var time = date.substring(9);
-  var date = date.substring(0,8);
+
+  var time = date.substring(11);
+  var date = date.substring(0,10);
+
 
   document.getElementById('image').value= sessionStorage.image;
   document.getElementById('taste').value= $('#tasteRate').rateit('value');
@@ -50,7 +51,7 @@ $('#addEntry').click(function(){
   document.getElementById('date').value=date
   document.getElementById('time').value=time;
   document.getElementById('userid').value=sessionStorage.name;
-});
+});*/
 
 
 $('#diary').click(function(){
@@ -82,8 +83,8 @@ $('#addEntry2').click(function(){
 
 
   var date = $('#clock').text();
-  var time = date.substring(9);
-  var date = date.substring(0,8);
+  var time = date.substring(11);
+  var date = date.substring(0,10);
 
   document.getElementById('image').value= sessionStorage.image;
   document.getElementById('taste').value= $('#tasteRate').rateit('value');

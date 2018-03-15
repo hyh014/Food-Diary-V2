@@ -208,7 +208,7 @@ h3{
 
 /* Add Animation */
 @-webkit-keyframes slideIn {
-    from {bottom: -300px; opacity: 0} 
+    from {bottom: -300px; opacity: 0}
     to {bottom: 0; opacity: 1}
 }
 
@@ -218,36 +218,16 @@ h3{
 }
 
 @-webkit-keyframes fadeIn {
-    from {opacity: 0} 
+    from {opacity: 0}
     to {opacity: 1}
 }
 
 @keyframes fadeIn {
-    from {opacity: 0} 
+    from {opacity: 0}
     to {opacity: 1}
 }
 </style>
   <body>
-    <!--
-    <div class="page-header1 text-center">
-    <div class="navbar" style="float:left">
-
-            <div class="dropdown" style="margin-top:4px; ">
-              <button class="glyphicon glyphicon-list transparent-button " style="font-size:37px; color:white"></button>
-              <div class="dropdown-content">
-                <a href="/index/{{id}}">Home</a>
-                <a href="/diary/{{id}}">Diary</a>
-                <a href="/stat/{{id}}">Statistics</a>
-                <a href="/news/{{id}}">News</a>
-                <a href="/setting/{{id}}">Settings</a>
-                <a href="/" style="color:red;" id="logoff">Log Out</a>
-            </div>
-          </div>
-        
-          </div>
-        <text style="display:inline-block; color:black;font-size: 27px; color:white;" >New Entry</text>
-    </div>
--->
 <div class="page-header ">
 <h2 style="text-align:center; color:#F38414; font-family: American Typewriter;" ><i>Hello! {{id}}</i></h2>
 <button style="color:orange; margin-right:10px;margin-top:-38px;float:right;text-decoration: underline;"  id="myBtn222">Q & A</button>
@@ -293,7 +273,7 @@ You could also click the “minus” sign to clear all.</p>
 -- Once you leave this page without submit, your changes will not be saved.</p>
 
     </div>
-   
+
   </div>
 
 </div>
@@ -385,7 +365,7 @@ You could also click the “minus” sign to clear all.</p>
         <button id="diary" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
         <button id="entry" style="background-color:#f7f0a1; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
         <button id="stat" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
-        
+
         <button id="news" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-film"><br>News</button>
       </div>
 <!--
@@ -441,9 +421,9 @@ You could also click the “minus” sign to clear all.</p>
     $(window).load(function(){
       $(window).scroll(function() {
         var wintop = $(window).scrollTop(), docheight = $('article').height(), winheight = $(window).height();
-        console.log(wintop);
+
         var totalScroll = (wintop/(docheight-winheight))*100;
-        console.log("total scroll" + totalScroll);
+
         $(".KW_progressBar").css("width",totalScroll+"%");
       });
     });
@@ -453,7 +433,6 @@ You could also click the “minus” sign to clear all.</p>
         if(sessionStorage.getItem('edit') == 'true'){
           document.getElementById('output').src = sessionStorage.image;
           document.getElementById('photos').src = sessionStorage.image;
-          console.log(document.getElementById('output').src);
           document.getElementById('foodName').value = sessionStorage.foodName;
           document.getElementById('comments').value = sessionStorage.comments;
           document.getElementById('userid').value = sessionStorage.name;
@@ -490,7 +469,7 @@ var btn = document.getElementById("myBtn222");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the modal
 btn.onclick = function() {
     modal.style.display = "block";
 }

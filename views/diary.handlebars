@@ -149,7 +149,7 @@ form.example::after {
         <button id="diary" style="background-color: #f7f0a1; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
         <button id="entry" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
         <button id="stat" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
-        
+
         <button id="news" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-film"><br>News</button>
       </div>
 <script>
@@ -170,8 +170,6 @@ $(document).ready(function(){
 			$(this).parent('#loop').remove();
         $(this).parent("#one").remove();//$("#one").remove();
 				var value = $.trim($(this).siblings('#date').text());
-				console.log("calling remove");
-				console.log(value);
 				location.replace("/remove/"+sessionStorage.getItem('name')+"/"+value);
     });
 		$(".edit").click(function(){
@@ -187,8 +185,8 @@ $(document).ready(function(){
 			var anxiety = $(this).siblings('#ratings').children('#anxiety').text();//$('#anxiety').text();
 			var date = $(this).siblings('#date').text();//$('#date').text();
 
-			var time = date.substring(9);
-			var date = date.substring(0,8);
+			var time = date.substring(11);
+			var date = date.substring(0,10);
 			health = health.substring(7,8);
 			taste = taste.substring(6,7);
 			mood = mood.substring(5,6);
