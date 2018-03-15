@@ -51,7 +51,7 @@ $('a.selection').click(function(){
 
 
 function generateGraph(){
-  $.get('/user/tester1',dataCallBack);//+sessionStorage.name,dataCallBack);
+  $.get('/user/'+sessionStorage.name,dataCallBack);
 }
 
 function dataCallBack(result){

@@ -5,11 +5,11 @@ exports.addEntry = function(req,res){
   var authentication = false;
   for(var i=0;i<users.info.length;i++){
     if(userid == users.info[i].id){
-    //  if(users.info[i].session==session){
+      if(users.info[i].session==session){
           users.info[i]["viewAlt"] = false;
           authentication =true;
           res.render('entry',users.info[i]);
-    //  }
+      }
     }
   }
   if(authentication==false){
@@ -22,11 +22,11 @@ exports.addEntryAlt = function(req,res){
   var authentication = false;
   for(var i=0;i<users.info.length;i++){
     if(userid == users.info[i].id){
-    //  if(users.info[i].session==session){
+      if(users.info[i].session==session){
           users.info[i]["viewAlt"]=true;
           authentication =true;
           res.render('entry',users.info[i]);
-    //  }
+      }
     }
   }
   if(authentication==false){
