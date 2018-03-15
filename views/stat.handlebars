@@ -2,8 +2,8 @@
 
 <html>
 <head>
-	<title>Food Diary App</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Diary App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap -->
@@ -27,28 +27,22 @@
 /*
     @media (max-width: 600px) {
           body {
-
         background-image: url("/images/use2.png");
         background-size: 100vw 100vh;
      }
 }
-
 @media (min-width: 768px) and (max-width: 991px) {
       body {
-
         background-image: url("/images/use2.png");
         background-size: 75vw 85vh;
      }
 }
-
 @media (min-width: 992px) and (max-width: 1199px) {
     body {
-
         background-image: url("/images/use2.png");
         background-size: 50vw 65vh;
      }
 }
-
 @media (min-width: 1200px) {
       body{
         background-image: url('/images/use2.png');
@@ -56,7 +50,6 @@
       }
 }
 */
-
 .page-header3 {
   padding-bottom: 13px;
   margin: 0px 0 20px;
@@ -65,7 +58,6 @@
   font-size:;
   background-color: #25a725ab;
 }
-
 /* Modal Content */
 .modal-content {
     position: fixed;
@@ -77,7 +69,6 @@
     animation-name: slideIn;
     animation-duration: 0.4s
 }
-
 /* The Close Button */
 .close {
     color: white;
@@ -85,22 +76,18 @@
     font-size: 28px;
     font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
     color: white;
     text-decoration: none;
     cursor: pointer;
 }
-
 .modal-header {
     padding: 2px 16px;
     background-color: orange;
     color: white;
 }
-
 .modal-body {padding: 2px 16px;}
-
 .modal-footer {
     padding: 2px 16px;
     background-color: #5cb85c;
@@ -109,26 +96,21 @@
 * {
   box-sizing: border-box;
 }
-
 img {
   vertical-align: middle;
 }
-
 /* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
 }
-
 /* Hide the images by default */
 .mySlides {
   display: none;
 }
-
 /* Add a pointer when hovering over the thumbnail images */
 .cursor {
   cursor: pointer;
 }
-
 /* Next & previous buttons */
 .prev,
 .next {
@@ -145,7 +127,6 @@ img {
   user-select: none;
   -webkit-user-select: none;
 }
-
 /* Position the "next button" to the right */
 .prev {
   border-radius: 3px 0 0 3px;
@@ -159,14 +140,12 @@ img {
   background-color: white;
   color:orange;
 }
-
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
   background-color: #f5dab5;
   color:white;
 }
-
 /* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
@@ -175,7 +154,6 @@ img {
   position: absolute;
   top: 0;
 }
-
 /* Container for image text */
 .caption-container {
   text-align: center;
@@ -183,29 +161,30 @@ img {
   padding: 0px 10px;
   color: coral;
 }
-
 .close {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
     color: white;
     text-decoration: none;
     cursor: pointer;
 }
+<<<<<<< HEAD
+=======
 h4{
 	text-align: left; 
 	font-weight: bold
 }
+>>>>>>> d626a304da7f305e2710f1213be9c7ffd07d31bc
 </style>
 
 <body>
 
-	<input type="hidden" id="userid" name="userid" value=""/>
+  <input type="hidden" id="userid" name="userid" value=""/>
 <!-- The Modal -->
 <div id="myModal" class="modal">
 
@@ -237,44 +216,41 @@ h4{
 <div class="page-header">
 <h1 style="text-align:center; color:#f0ad4e; " >Statistics</h1>
 <button id="setting" style="margin-top:-68px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
-<button style="color:orange; background-color: transparent;border-color: transparent;margin-right:10px;margin-top:-19px;float:right;text-decoration: underline;"  id="myBtn222">Q & A</button>
+<!--<button style="color:orange; background-color: transparent;border-color: transparent;margin-right:10px;margin-top:-19px;float:right;text-decoration: underline;"  id="myBtn222">How to use this graph?</button>
+-->
+
 </div>
 
 
-<hr>
-<div id="root" class="text-center">
-	<h3 style="margin-left:-235px; font-weight: normal; color: #f59815; margin-top:-15px;">Report</h3>
+<div id="root" class="text-center" style="margin-top:20px;">
+
+	<button style="color:orange; background-color: transparent;border-color: transparent;margin-right:20px;margin-top:-16px;float:right;text-decoration: underline; font-size: 11px;"  id="myBtn222">How to use this graph?</button>
 	<div class="container" style="background-color:white;">
 		<div id="chartdiv"></div>
 	</div>
 
 <!--
 <h3 style="text-align:center">Food Gallery</h3>
-
 <div class="container">
-	{{#each datas}}
+  {{#each datas}}
   <div class="mySlides">
-
    <div class="caption-container">
     <p id="caption">{{date}}</p>
   </div>
     <img src="{{image}}" class="resize" style="width:350px;height:220px;">
-
   </div>
 {{/each}}
   </div>
   <a class="prev" onclick="plusSlides(-1)">❮</a>
   <a class="next" onclick="plusSlides(1)">❯</a>
-
 -->
   </div>
 
 
 
+  <div class="w3-container" style="margin-top:0px;">
 
-  <div class="w3-container" style="margin-top:10px;">
-
-  <button onclick="document.getElementById('id01').style.display='block'" style="font-size:20px; color:coral;background-color:#f0ad4e63; border-color: transparent;">Food Gallery</button>
+  <button onclick="document.getElementById('id01').style.display='block'" style="margin-left: 36px; margin-top: 10px; font-size:17px; color:coral;background-color:#f0ad4e63; border-color: transparent;">Food Gallery</button>
 
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content">
@@ -283,7 +259,7 @@ h4{
         <p style="text-align: center;color:coral;">Food Gallery</p>
    <!-- Food Gallery starts here -->
         <div class="container">
-	{{#each datas}}
+  {{#each datas}}
   <div class="mySlides">
 
    <div class="caption-container">
@@ -304,7 +280,7 @@ h4{
 
 
 
-	<div id="bottom" style="margin-top:30px;">
+  <div id="bottom" style="margin-top:30px;">
         <button id="diary" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
         <button id="entry" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
         <button id="stat" style="background-color: #f7f0a1; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
@@ -319,7 +295,7 @@ h4{
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script>
-	document.getElementById('userid').value=sessionStorage.getItem('userid');
+  document.getElementById('userid').value=sessionStorage.getItem('userid');
 function helpStat() {
     alert("Tutorials\n\nThis page gives out statistical analysis with graphs to help you track your self-logged meals. It will provides you weekly, monthly and yearly barchart graphs about your food health, food taste and mood."
       );
@@ -329,23 +305,18 @@ function helpStat() {
 <script>
 // Get the modal
 var modal = document.getElementById('myModal');
-
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn222");
-
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
 // When the user clicks the button, open the modal
 btn.onclick = function() {
     modal.style.display = "block";
 }
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
 }
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -363,15 +334,12 @@ window.onclick = function(event) {
 <script>
 var slideIndex = 1;
 showSlides(slideIndex);
-
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
-
 function currentSlide(n) {
   showSlides(slideIndex = n);
 }
-
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -386,8 +354,9 @@ function showSlides(n) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
+
+  //dots[slideIndex-1].className += " active";
+  //captionText.innerHTML = dots[slideIndex-1].alt;
 }
 </script>
 

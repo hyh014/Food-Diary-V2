@@ -72,7 +72,6 @@ function dataCallBack(result){
         sameDateCount++;
       }
       else{
-        console.log(taste);
         health = health/sameDateCount;
         taste = taste/sameDateCount;
         mood = mood/sameDateCount;

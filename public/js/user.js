@@ -29,9 +29,8 @@ $('#register').click(function(){
   sessionStorage.setItem('name',userID);
   $.get("/user/"+sessionStorage.name,callBack);
 });
-function callBack(result){
 
-}
+
 /*
 $('#addEntry').click(function(){
   sessionStorage.edit=false;
