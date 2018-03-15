@@ -163,6 +163,8 @@ h3{
     -webkit-animation-duration: 0.4s;
     animation-name: fadeIn;
     animation-duration: 0.4s
+
+
 }
 
 /* Modal Content */
@@ -201,14 +203,14 @@ h3{
 .modal-body {padding: 2px 16px;}
 
 .modal-footer {
-    padding: 2px 16px;
+    padding: 0px 16px;
     background-color: #5cb85c;
     color: white;
 }
 
 /* Add Animation */
 @-webkit-keyframes slideIn {
-    from {bottom: -300px; opacity: 0} 
+    from {bottom: -300px; opacity: 0}
     to {bottom: 0; opacity: 1}
 }
 
@@ -218,40 +220,20 @@ h3{
 }
 
 @-webkit-keyframes fadeIn {
-    from {opacity: 0} 
+    from {opacity: 0}
     to {opacity: 1}
 }
 
 @keyframes fadeIn {
-    from {opacity: 0} 
+    from {opacity: 0}
     to {opacity: 1}
 }
 </style>
   <body>
-    <!--
-    <div class="page-header1 text-center">
-    <div class="navbar" style="float:left">
-
-            <div class="dropdown" style="margin-top:4px; ">
-              <button class="glyphicon glyphicon-list transparent-button " style="font-size:37px; color:white"></button>
-              <div class="dropdown-content">
-                <a href="/index/{{id}}">Home</a>
-                <a href="/diary/{{id}}">Diary</a>
-                <a href="/stat/{{id}}">Statistics</a>
-                <a href="/news/{{id}}">News</a>
-                <a href="/setting/{{id}}">Settings</a>
-                <a href="/" style="color:red;" id="logoff">Log Out</a>
-            </div>
-          </div>
-        
-          </div>
-        <text style="display:inline-block; color:black;font-size: 27px; color:white;" >New Entry</text>
-    </div>
--->
 <div class="page-header ">
-<h1 style="text-align:center; color:#f0ad4e;" >New Entry</h1>
-<button style="color:orange; margin-right:10px;margin-top:-38px;float:right;text-decoration: underline;"  id="myBtn222">Q & A</button>
-<button id="setting" style="margin-right:10px; margin-top:-82px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
+<h2 style="text-align:center; color:#F38414; font-family: American Typewriter;" ><i>Hello! {{id}}</i></h2>
+<button style="color:orange; margin-right:10px;margin-top:-17px;float:right;text-decoration: underline;"  id="myBtn222">Q & A</button>
+<button id="setting" style="margin-right:-60px; margin-top:-61px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
 </div>
         <div class="KW_progressContainer">
         <div class="KW_progressBar">
@@ -293,14 +275,13 @@ You could also click the “minus” sign to clear all.</p>
 -- Once you leave this page without submit, your changes will not be saved.</p>
 
     </div>
-   
+
   </div>
 
 </div>
 
 
-            <h3 style=" text-align:center; font-family: American Typewriter;">Hello  {{id}} !</h3>
-            <h3 style="text-align:center; font-family: American Typewriter;"> Take a photo of your meal</h3>
+            <h3 style="text-align:center; font-family: American Typewriter; color:coral;"> Take a photo of your meal</h3>
 
 
               <form id="addDiary" role="form" method="post" action="/addDiary/ne">
@@ -315,9 +296,9 @@ You could also click the “minus” sign to clear all.</p>
                   <input type="file" accept="image/*" style="display:none" id="file-input" capture="environment"/>
                 </div>
                 <img id="output" style="height:29vh;width:44vw;"><hr>
+              <text style="color:coral;float: right; margin-right: 30px; margin-top: -22px;font-size: 21px;">Scroll down ⇩</text>
 
-
-            <h3 style="margin-top:107px;font-family: American Typewriter;">Enter food and leave comments</h3>
+            <h3 style="margin-top:107px;font-family: American Typewriter; color:coral;">Enter food and leave comments</h3>
             <hr>
             <p class="help-block text-center" id="clock" style="font-size:20px; margin-top:-15px;margin-bottom: -19px; color:black;"></p>
        <img id="photos" style="width:220px; height:270px; margin-top: 20px;"/>
@@ -325,33 +306,35 @@ You could also click the “minus” sign to clear all.</p>
              <div class="container" style="display:inline-block " id="text-input">
               <span class="glyphicon glyphicon-pencil" style="margin-left:49px; margin-right: -5px; font-size:37px; color:#0c1004;"></span>
               <input type="text" class="row" style="width:2em; border-color:#27AE60 ; border-width: 0px; width:178px; margin-left:-9px; height: 35px; margin-right: 4px; border-radius: 25px;" placeholder="     Enter food" name="foodName" id="foodName"/>
-              <button class="transparent-button glyphicon glyphicon-remove-circle" style="width:2em; color:#f0ad4e; font-size: 20px" onclick="document.getElementById('foodName').value = ''"></button><br/>
+              <button class="transparent-button glyphicon glyphicon-remove-circle" style="width:2em; color:#f0ad4e; font-size: 20px" onclick="dosomethingElse();document.getElementById('foodName').value = ''"></button><br/>
               <textarea rows="4" cols="30" class="row" style="border-color:#27AE60; border-width: 0px; margin-left:44px;border-radius: 18px; height: 90px; width:225; margin-right: 4px; margin-top:5px; resize:none;" placeholder="      Comments:                                 Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
-              <button class="transparent-button glyphicon glyphicon-remove-circle" style="color:#f0ad4e;width:2em; margin-top: 50px; font-size: 20px" onclick="document.getElementById('comments').value = ''"></button>
+              <button class="transparent-button glyphicon glyphicon-remove-circle" style="color:#f0ad4e;width:2em; margin-top: 50px; font-size: 20px" onclick="dosomethingElse();document.getElementById('comments').value = ''"></button>
+              <text style="color:coral;float: right; margin-right: 30px; margin-top: 63px;font-size: 21px;">Scroll down ⇩</text>
              </div>
              <hr>
-    <h3 style="margin-top:113px;margin-bottom:24px;font-family: American Typewriter;">Finish Self-Rating </h3>
+    <h3 style="margin-top:113px;margin-bottom:24px;font-family: American Typewriter;color:coral;">Finish Self-Rating </h3>
+
 
              <form id="addDiary" role="form" method="post" action="/addDiary/ne">
               <div class="container"  id="Rating" >
-             <text style="font-size:24px; color:black; padding-right: 160px;font-family: American Typewriter;" class="Text-input">Taste:</text><br/>
+             <text style="font-size:24px; color:#f1a132; padding-right: 160px;font-family: American Typewriter;" class="Text-input">Taste:</text><br/>
              <div name="taste" class="rateit" id="tasteRate" data-rateit-mode="font" style="font-family: American Typewriter;margin-top:12px; font-size:36px">
             </div>
             <input type="hidden" name="taste" id="taste" value="0" />
 <hr>
-              <text style="font-size:24px; color: black;font-family: American Typewriter; padding-right: 160px" class="Text-input">Health:</text><br/>
+              <text style="font-size:24px; color: #f1a132;font-family: American Typewriter; padding-right: 160px" class="Text-input">Health:</text><br/>
               <div class="rateit" id="healthRate" data-rateit-mode="font" style="margin-top:12px; font-size:36px">
              </div>
              <input type="hidden" name="health" value="0" id="health"/>
 <hr>
-             <text style="font-size:24px;font-family: American Typewriter; color: black; padding-right: 160px" class="Text-input">Mood:</text><br/>
+             <text style="font-size:24px;font-family: American Typewriter; color: #f1a132; padding-right: 160px" class="Text-input">Mood:</text><br/>
              <div class="rateit" id="moodRate" data-rateit-mode="font" style="margin-top:12px; font-size:36px">
              </div>
              <input type="hidden" name="mood" value="0"  id="mood"/>
             <hr>
 
 
-              <text style="font-size:24px; color: black; padding-right: 160px;font-family: American Typewriter;" class="Text-input">Anxiety:</text><br/>
+              <text style="font-size:24px; color: #f1a132; padding-right: 160px;font-family: American Typewriter;" class="Text-input">Anxiety:</text><br/>
 
               <div class="rateit" id="anxietyRate" data-rateit-mode="font" style="font-size:36px">
 
@@ -374,9 +357,9 @@ You could also click the “minus” sign to clear all.</p>
 
 <div id="bottom" style="margin-top:30px;">
         <button id="diary" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
-        <button id="entry" style="background-color: #f0ad4e4d; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
+        <button id="entry" style="background-color:#f7f0a1; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
         <button id="stat" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
-        
+
         <button id="news" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-film"><br>News</button>
       </div>
 <!--
@@ -432,9 +415,9 @@ You could also click the “minus” sign to clear all.</p>
     $(window).load(function(){
       $(window).scroll(function() {
         var wintop = $(window).scrollTop(), docheight = $('article').height(), winheight = $(window).height();
-        console.log(wintop);
+
         var totalScroll = (wintop/(docheight-winheight))*100;
-        console.log("total scroll" + totalScroll);
+
         $(".KW_progressBar").css("width",totalScroll+"%");
       });
     });
@@ -444,7 +427,6 @@ You could also click the “minus” sign to clear all.</p>
         if(sessionStorage.getItem('edit') == 'true'){
           document.getElementById('output').src = sessionStorage.image;
           document.getElementById('photos').src = sessionStorage.image;
-          console.log(document.getElementById('output').src);
           document.getElementById('foodName').value = sessionStorage.foodName;
           document.getElementById('comments').value = sessionStorage.comments;
           document.getElementById('userid').value = sessionStorage.name;
@@ -465,11 +447,32 @@ You could also click the “minus” sign to clear all.</p>
           $('moodRate').rateit('value',0);
           $('#anxietyRate').rateit('value',0);
           document.getElementById('addDiary').action = '/addDiary/ne';
+
         }
       }
     window.onload=edit;
     </script>
 
+<script>
+  function dosomethingElse(){
+    confirm = 0;
+  }
+function clicked(e)
+{
+    if(!confirm('Do you want to submit?'))e.preventDefault();
+    confirm = 0;
+}
+</script>
+
+<script type="text/javascript">
+  window.onbeforeunload = confirmExit;
+  function confirmExit()
+  {
+    if (confirm != 0){
+    return "Do you want to leave this page without saving?";
+   }
+  }
+</script>
     <!-- modal -->
 <script>
 // Get the modal
@@ -481,7 +484,7 @@ var btn = document.getElementById("myBtn222");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the modal
 btn.onclick = function() {
     modal.style.display = "block";
 }

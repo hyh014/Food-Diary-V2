@@ -4,7 +4,7 @@ function formatAMPM() {
 var d = new Date();
     var a_p ="";
     var curr_hour = d.getHours();
-    var year = d.getFullYear().toString().substring(2);
+    var year = d.getFullYear();
     if(curr_hour <12)
     {
       a_p="AM";

@@ -1,16 +1,11 @@
 var users = require('../data.json');
 exports.remove = function(req,res){
-  console.log("SDFASDFSDFASDFA");
   var userid = req.params.name;
   var month = req.params.month;
   var day = req.params.day;
-  var year = req.params.year.substring(0,2);
-  var time = req.params.year.substring(3);
+  var year = req.params.year.substring(0,4);
+  var time = req.params.year.substring(5);
   var date = month+"/"+day+"/"+year;
-  console.log(date);
-  console.log(time);
-  console.log(year);
-  console.log(req.params.year);
   for(var i=0;i<users.info.length;i++){
     if(userid == users.info[i].id){
       for(var j=0;j<users.info[i].datas.length;j++){
