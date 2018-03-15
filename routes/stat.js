@@ -1,6 +1,5 @@
 var users = require('../data.json');
 exports.getStat = function(req,res){
-  console.log(req.params.name);
   var userid = req.params.name;
   var session = req.sessionID;
   var authentication = false;
