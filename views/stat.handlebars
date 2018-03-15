@@ -173,6 +173,13 @@ img {
     text-decoration: none;
     cursor: pointer;
 }
+<<<<<<< HEAD
+=======
+h4{
+	text-align: left; 
+	font-weight: bold
+}
+>>>>>>> d626a304da7f305e2710f1213be9c7ffd07d31bc
 </style>
 
 <body>
@@ -185,10 +192,18 @@ img {
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>Q & A</h2>
+      <h2 style="text-align: center;">Q & A</h2>
     </div>
     <div class="modal-body">
-      <h3 style="text-align: left;">How to see my report?</h3>
+      <h4>What is the graph?</h4>
+      <p>  The original graph presenting is the overall graph combining all four elements for a random time period.</p>
+      <h4> How to can I see different time period?</h4>
+      <p>  Move the upper scroller to right or left and you could see different time periods. </p>
+      <h4> How can I see a particular day?</h4>
+      <p>  Click on the graph body, you should see the exact date you click on and four elements' data for that date</p>
+      <h4> How to view a single graph for a particular element?</h4>
+      <p>  Click on the label under the graph. You could click on it to remove that element from graph, and click on again to reset it back. </p>
+
 
 
     </div>
@@ -201,14 +216,17 @@ img {
 <div class="page-header">
 <h1 style="text-align:center; color:#f0ad4e; " >Statistics</h1>
 <button id="setting" style="margin-top:-68px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
-<button class="transparent-button" style="color:orange; margin-right:10px;margin-top:-17px;float:right; text-decoration:underline;"   id="myBtn222">Q & A</button>
+<button style="color:orange; background-color: transparent;border-color: transparent;margin-right:10px;margin-top:-19px;float:right;text-decoration: underline;"  id="myBtn222">Q & A</button>
+
 </div>
 
 
 <div id="root" class="text-center">
+
   <div class="container" style="background-color:white;">
     <div id="chartdiv"></div>
   </div>
+
 
 <!--
 <h3 style="text-align:center">Food Gallery</h3>
