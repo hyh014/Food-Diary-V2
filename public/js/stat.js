@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
   generateGraph();
   var w = $(document).width()*.9;
@@ -49,11 +48,10 @@ $('a.selection').click(function(){
 });
 
 
-// generate some random data, quite different range
 
 
 function generateGraph(){
-  $.get('/user/'+sessionStorage.name,dataCallBack);
+  $.get('/user/tester1',dataCallBack);//+sessionStorage.name,dataCallBack);
 }
 
 function dataCallBack(result){
@@ -74,7 +72,6 @@ function dataCallBack(result){
         sameDateCount++;
       }
       else{
-        console.log(taste);
         health = health/sameDateCount;
         taste = taste/sameDateCount;
         mood = mood/sameDateCount;
@@ -97,7 +94,9 @@ function dataCallBack(result){
       // we create date objects here. In your data, you can have date strings
       // and then set format of your dates using chart.dataDateFormat property,
       // however when possible, use date objects, as this will speed up chart rendering.
-}
+
+  }
+
   var chart = AmCharts.makeChart("chartdiv", {
       "type": "serial",
       "theme": "dark",
@@ -175,5 +174,4 @@ function dataCallBack(result){
  zoomChart();
   // generate some random data, quite different range
 
-  
 }
