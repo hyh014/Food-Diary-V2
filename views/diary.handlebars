@@ -89,7 +89,10 @@ form.example::after {
   border-bottom: 0px solid #eeeeee;
   font-family: Comic Sans MS, cursive, sans-serif;
   background-color: #25a725ab;
+
 }
+
+
 </style>
 
 </head>
@@ -99,17 +102,13 @@ form.example::after {
 	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <div class="page-header">
 <h1 style="text-align:center; color:#f0ad4e; " >Hello {{id}}</h1>
-<button id="setting" style="margin-top:-82px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
+
+<button id="setting" style="margin-top:-68px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
+</div>
 </div>
 
-<!--
-	<div>
-		<a href="#" class="glyphicon glyphicon-question-sign" onclick="helpDiary()" style="margin-right:8px; font-size:40px; float:right" role="button" id="help" name="entry"></a>
-	</div>
--->
 
 <hr>
-<!--<h1 class="text-center" style="font-family:Palatino;">My Diary</h1>-->
 <div class="text-center" style="margin-bottom:15px;">
 </div>
 
@@ -117,9 +116,11 @@ form.example::after {
 	<div id="loop" style = "margin-top:-21px;" class="container diary-area text-center">
 		<div id = "one" class="text-center">
 			<text class="text-center" style="font-size:15px; font-family: Montserrat, sans-serif;" id="date">{{date}} {{time}}</text><hr class="rating-hr">
-			<div style="margin-top:20px; margin-bottom: 20px;" class="container text-center">
+
+			<div style="margin-top:20px; margin-bottom: 20px;" class=" container text-center">
 				<img  src="{{image}}" class="resize">
-			</div>
+
+		</div>
 		<div id="input">
 			<text class="diary-text text-center" id="foodName">{{foodName}}</text><br>
 			<textarea id="comments" rows="4" cols="25" class="row diary-textarea" readonly>{{comments}}</textarea><br/>
@@ -138,12 +139,6 @@ form.example::after {
 		</div>
 	</div>
 	{{/each}}
-
-
-
-<!-- comment this button out because we don't need it base on current navigation bar
-<a href="/index/{{id}}" class="myBtnBack" style="font-size:17px; width:127px; height: 32px; text-align: center; border-radius: 6px;" role="button">Back to Entry</a>
--->
 <br>
 <div id="bottom" style="margin-top:30px;">
         <button id="diary" style="background-color: #f7f0a1; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>

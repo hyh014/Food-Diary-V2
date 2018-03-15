@@ -9,7 +9,6 @@ $('a.selection').click(function(){
 
   var selected = this.id;
   var time = $('option').get(0).id;
-  console.log(time);
   if(selected === 'taste')
   {
     if(time === 'week'){
