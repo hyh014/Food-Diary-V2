@@ -155,7 +155,7 @@ function changeID(){
    function edit(){
     if(sessionStorage.getItem('edit') == 'true'){
       document.getElementById('output').src = sessionStorage.image;
-      console.log(document.getElementById('output').src);
+     
       document.getElementById('foodName').value = sessionStorage.foodName;
       document.getElementById('comments').value = sessionStorage.comments;
       document.getElementById('userid').value = sessionStorage.name;

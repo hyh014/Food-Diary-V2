@@ -3,6 +3,7 @@ exports.addDiary = function(req,res){
 
     var edit = req.params.edit;
     var image = req.body.image;
+
     var foodName = req.body.foodName;
     var comments = req.body.comments;
     var taste = req.body.taste;
@@ -18,7 +19,7 @@ exports.addDiary = function(req,res){
       if(userid==data.info[i].id)
       {
 
-        if(image == ""){
+        if(i == 0){
           image = "/images/B1.jpg";
         }
           var newObject = {
@@ -36,6 +37,7 @@ exports.addDiary = function(req,res){
         if(edit === 'e'){
           for(var j=0;j<data.info[i].datas.length;j++){
             if(time===data.info[i].datas[j].time && date===data.info[i].datas[j].date){
+
               data.info[i].datas[j] = newObject;
               return res.redirect('/diary/'+userid);
             }

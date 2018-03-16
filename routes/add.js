@@ -7,7 +7,7 @@ exports.addID = function(req,res){
   var email = req.query.email;
   var phone = req.query.phone;
   var session = req.sessionID;
-    let newID = {
+    var newID = {
         'id':userid,
         'password':password,
         'email':email,
@@ -17,8 +17,8 @@ exports.addID = function(req,res){
         'share':'N',
         'session':session,
         'datas':[]
-      }
+      };
         data.info.push(newID);
-        return res.redirect('/entry2/'+userid);
+        return res.redirect('/index/'+userid);
       }
 }

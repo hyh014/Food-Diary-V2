@@ -23,35 +23,28 @@
 <style>
     @media (max-width: 600px) {
           body {
-
         background-image: url("/images/use2.png");
         background-size: 100vw 100vh;
      }
 }
-
 @media (min-width: 768px) and (max-width: 991px) {
       body {
-
         background-image: url("/images/use2.png");
         background-size: 75vw 85vh;
      }
 }
-
 @media (min-width: 992px) and (max-width: 1199px) {
     body {
-
         background-image: url("/images/use2.png");
         background-size: 50vw 65vh;
      }
 }
-
 @media (min-width: 1200px) {
       body{
         background-image: url('/images/use2.png');
         background-size:25vw 50vh;
       }
 }
-
 h3 {
 	margin-left: 30px;
     text-align: left;
@@ -70,7 +63,6 @@ label {
 	font: Arial, Helvetica, sans-serif 100px;
 	margin-left: 40px;
 }
-
 .page-header2 {
   padding-bottom: 13px;
   margin: 0px 0 20px;
@@ -111,16 +103,12 @@ label {
             <a href="/diary/{{id}}">Diary</a>
             <a href="/stat/{{id}}">Statistics</a>
             <a href="/news/{{id}}">News</a>
-
             <a href="/" style="color:red;" >Log Out</a>
         </div>
       </div>
       </div>
-
     <text style="color:black;font-size: 27px; color:white; margin-left: -42px;">Settings</text>
-
 </div>
-
 </div>
 -->
 <div class="page-header">
@@ -189,9 +177,8 @@ label {
 	-->
 	<hr>
 	<div id="bottom" style="margin-top:30px;">
-		        <button id="entry" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
+        <button id="entry" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
         <button id="diary" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
-
         <button id="stat" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
         
         <button id="news" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-film"><br>News</button>
@@ -203,9 +190,7 @@ label {
 <script>
 function clicked(e)
 {
-
     if(!confirm('Are you sure to log off?'))e.preventDefault();
-
 }
 </script>
 </body>
