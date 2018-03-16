@@ -19,7 +19,7 @@ exports.checkLogin = function(req,res){
   {
     if(userid == users.info[i].id){
         users.info[i].session=session;
-        return res.redirect('/index/'+userid);
+        return res.redirect('/entry2/'+userid);
     }
   }
   return false;
