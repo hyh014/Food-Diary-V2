@@ -199,7 +199,6 @@ h3{
 }
 </style>
   <body>
-    <div class="top">
 <div class="page-header ">
 <h2 style="text-align:center; color:#F38414; font-family: American Typewriter;" ><i>Hello! {{id}}</i></h2>
 
@@ -283,7 +282,7 @@ You could also click the “minus” sign to clear all.</p>
               <text style="color:coral;float: right; margin-right: 30px; margin-top: 63px;font-size: 21px;">Scroll down ⇩</text>
              </div>
              <hr>
-    <h3 style="margin-top:90px;margin-bottom:24px;font-family: American Typewriter;color:coral;">Finish Self-Rating </h3>
+    <h3 style="margin-top:113px;margin-bottom:24px;font-family: American Typewriter;color:coral;">Finish Self-Rating </h3>
 
 
              <form id="addDiary" role="form" method="post" action="/addDiary/ne">
@@ -292,17 +291,17 @@ You could also click the “minus” sign to clear all.</p>
              <div name="taste" class="rateit" id="tasteRate" data-rateit-mode="font" style="font-family: American Typewriter;margin-top:12px; font-size:36px">
             </div>
             <input type="hidden" name="taste" id="taste" value="0" />
-<hr class="rating-hr">
+<hr>
               <text style="font-size:24px; color: #f1a132;font-family: American Typewriter; padding-right: 160px" class="Text-input">Health:</text><br/>
               <div class="rateit" id="healthRate" data-rateit-mode="font" style="margin-top:12px; font-size:36px">
              </div>
              <input type="hidden" name="health" value="0" id="health"/>
-<hr class="rating-hr">
+<hr>
              <text style="font-size:24px;font-family: American Typewriter; color: #f1a132; padding-right: 160px" class="Text-input">Mood:</text><br/>
              <div class="rateit" id="moodRate" data-rateit-mode="font" style="margin-top:12px; font-size:36px">
              </div>
              <input type="hidden" name="mood" value="0"  id="mood"/>
-            <hr class="rating-hr">
+            <hr>
 
 
               <text style="font-size:24px; color: #f1a132; padding-right: 160px;font-family: American Typewriter;" class="Text-input">Anxiety:</text><br/>
@@ -312,7 +311,7 @@ You could also click the “minus” sign to clear all.</p>
               </div>
 
               <input type="hidden" name="anxiety" value="0" id="anxiety"/>
-            <hr class="rating-hr">
+            <hr>
 
             <input type="hidden" name="image" id="image" value=""/>
               <input type="hidden" name="date" id="date" value=""/>
@@ -322,10 +321,10 @@ You could also click the “minus” sign to clear all.</p>
               <input type="hidden" name="comments" id="comments" value=""/>
            </div>
 
-           <input type="submit" class="btn btn-sm entry2BackNext" style="float:right; margin-right: 36px;" id="addEntry2" onclick="clicked(event);" value="Add to Diary   ⇨" Text="Submit" />
+           <input type="submit" class="btn btn-sm entry2BackNext" style="float:right; margin-right: 36px; margin-top:-11px;" id="addEntry2" onclick="clicked(event);" value="Add to Diary   ⇨" Text="Submit" />
 
          </form>
-</div>
+
 <div id="bottom" style="margin-top:30px;">
         <button id="entry" style="background-color:#f7f0a1; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
         <button id="diary" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
