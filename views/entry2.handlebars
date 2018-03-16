@@ -366,15 +366,16 @@ You could also click the “minus” sign to clear all.</p>
         }
         if (file !== null) {
           output.src = URL.createObjectURL(file);
-         photos.src = output.src;
+         photos.src = URL.createObjectURL(file);
+         sessionStorage.setItem('image',output.src);
          }
-          sessionStorage.setItem('image',output.src);
+          
         }
-
-      
-      // Attach the video stream to the video element and autoplay.
       const fileInput = document.getElementById('file-input');
       fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
+      
+      // Attach the video stream to the video element and autoplay.
+
     </script>
     <script>
     $(window).load(function(){
