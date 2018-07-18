@@ -10,7 +10,7 @@ exports.userInfo = function(req,res){
   }
   res.json(data);
 }
-
+//https://www.npmjs.com/package/bcryptjs
 exports.checkLogin = function(req,res){
   var userid = req.params.name;
   var session= req.sessionID;
