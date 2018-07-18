@@ -31,28 +31,6 @@ $('#register').click(function(){
 });
 
 
-/*
-$('#addEntry').click(function(){
-  sessionStorage.edit=false;
-
-
-  var date = $('#clock').text();
-
-  var time = date.substring(11);
-  var date = date.substring(0,10);
-
-
-  document.getElementById('image').value= sessionStorage.image;
-  document.getElementById('taste').value= $('#tasteRate').rateit('value');
-  document.getElementById('health').value=$('#healthRate').rateit('value');
-  document.getElementById('mood').value=$('#moodRate').rateit('value');
-  document.getElementById('anxiety').value=$('#anxietyRate').rateit('value');
-  document.getElementById('date').value=date
-  document.getElementById('time').value=time;
-  document.getElementById('userid').value=sessionStorage.name;
-});*/
-
-
 $('#diary').click(function(){
   location.href="/diary/"+sessionStorage.name;
 });

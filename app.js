@@ -22,9 +22,6 @@ var setting = require('./routes/setting');
 var entry = require('./routes/entry');
 var stat = require('./routes/stat');
 var news = require('./routes/news');
-var entry2 = require('./routes/entry2');
-var entry2text = require('./routes/entry2text');
-var entry2rating = require('./routes/entry2rating');
 // Example route
 // var user = require('./routes/user');
 var app = express();
@@ -66,10 +63,6 @@ app.get('/setting/:name',setting.viewSetting);
 app.get('/entry/:name',entry.addEntry);
 app.get('/stat/:name',stat.getStat);
 app.get('/news/:name',news.show);
-app.get('/entry2/:name',entry2.addEntry);
-app.get('/entry2Alt/:name',entry2.addEntryAlt);
-app.get('/entry2text/:name',entry2text.addEntry);
-app.get('/entry2rating/:name',entry2rating.addEntry);
 
 app.get('/register', register.view);
 app.get('/photo/:name',photo.view);
