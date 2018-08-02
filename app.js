@@ -28,11 +28,11 @@ var app = express();
 
 var admin = require("firebase-admin");
 
-var serviceAccount = require("path/to/serviceAccountKey.json");
-
+var serviceAccount = require("/serviceAccount.json");
+let config = require("/js/config.js");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://my-project-1519903201611.firebaseio.com"
+  databaseURL: config.databaseURL
 });
 
 
