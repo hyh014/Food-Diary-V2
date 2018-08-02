@@ -1,4 +1,6 @@
-var users = require("../data.json");
+let users = require("../data.json");
+let bcrypt = require('bcryptjs');
+
 exports.userInfo = function(req,res){
   var userID = req.params.id;
   var data="";
@@ -12,7 +14,18 @@ exports.userInfo = function(req,res){
 }
 //https://www.npmjs.com/package/bcryptjs
 exports.checkLogin = function(req,res){
-  var userid = req.params.name;
+
+  let user = req.body.email;
+  let password = req.body.password;
+  for(var i=0; i<users.info.length;i++)
+  {
+    bcrypt.compare(password,hash).then((res) =>{
+
+    });
+
+  }
+  res.redirect('/');
+/*  var userid = req.params.name;
   var session= req.sessionID;
 
   for(var i=0; i<users.info.length;i++)
@@ -21,5 +34,5 @@ exports.checkLogin = function(req,res){
         return res.redirect('/entry/'+userid);
     }
   }
-  return false;
+  return false;*/
 }

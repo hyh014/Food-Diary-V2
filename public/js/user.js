@@ -6,8 +6,7 @@ $('#login').click(function(){
 
   userID= document.getElementById('userid').value;
   password= document.getElementById('password').value;
-
-  $.get("/user/"+userID,callBackFn);
+  
 });
 
 function callBackFn(result){
@@ -16,7 +15,6 @@ function callBackFn(result){
     sessionStorage.setItem('name',userID);
     $('#login').attr('href','/index/'+sessionStorage.name);
     location.replace("/checkLogin/"+sessionStorage.name);
-
   }
   else {
     $('#error').removeClass('hide');
@@ -45,30 +43,4 @@ $('#setting').click(function(){
 });
 $('#news').click(function(){
   location.href="/news/"+sessionStorage.name;
-})
-
-$('#entry2rating').click(function(){
-
-  var food=document.getElementById('foodName').value;
-    sessionStorage.setItem('foodName',food);
-  var comment = document.getElementById('comments').value;
-  sessionStorage.setItem('comments',comment);
-});
-
-$('#addEntry2').click(function(){
-  sessionStorage.edit=false;
-
-
-  var date = $('#clock').text();
-  var time = date.substring(11);
-  var date = date.substring(0,10);
-
-  document.getElementById('image').value= sessionStorage.image;
-  document.getElementById('taste').value= $('#tasteRate').rateit('value');
-  document.getElementById('health').value=$('#healthRate').rateit('value');
-  document.getElementById('mood').value=$('#moodRate').rateit('value');
-  document.getElementById('anxiety').value=$('#anxietyRate').rateit('value');
-  document.getElementById('date').value=date
-  document.getElementById('time').value=time;
-  document.getElementById('userid').value=sessionStorage.name;
 });

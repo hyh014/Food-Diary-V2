@@ -26,6 +26,16 @@ var news = require('./routes/news');
 // var user = require('./routes/user');
 var app = express();
 
+var admin = require("firebase-admin");
+
+var serviceAccount = require("path/to/serviceAccountKey.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://my-project-1519903201611.firebaseio.com"
+});
+
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -55,7 +65,7 @@ app.get('/user/:id',user.userInfo);
 app.get('/add',add.addID);
 app.post('/addDiary/:edit',addDiary.addDiary);
 app.get('/remove/:name/:month/:day/:year',remove.remove);
-app.get('/checkLogin/:name',user.checkLogin);
+app.post('/checkLogin',user.checkLogin);
 
 app.get('/index/:name', index.view);
 app.get('/diary/:name',diary.viewDiary);
