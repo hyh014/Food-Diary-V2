@@ -25,8 +25,9 @@
     "jquery.rateit": "^1.1.1",
     "mongodb": "*",
     "mongoose": "*",
-    "npm": "^6.2.0",
+    "npm": "^6.3.0",
     "semver": "^5.5.0",
+    "serve-favicon": "^2.5.0",
     "uglify-js": "^3.4.0",
     "uniq": "^1.0.1"
   },

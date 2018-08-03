@@ -26,14 +26,10 @@ var news = require('./routes/news');
 // var user = require('./routes/user');
 var app = express();
 
-var admin = require("firebase-admin");
 
-var serviceAccount = require("/serviceAccount.json");
-let config = require("/js/config.js");
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: config.databaseURL
-});
+
+var serviceAccount = require("./serviceAccount.json");
+var favicon = require('serve-favicon');
 
 
 // all environments
@@ -76,6 +72,9 @@ app.get('/news/:name',news.show);
 
 app.get('/register', register.view);
 app.get('/photo/:name',photo.view);
+// Initialize Firebase
+
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
