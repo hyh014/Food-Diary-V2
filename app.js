@@ -3,79 +3,86 @@
  * Module dependencies.
  */
 
-var express = require('express');
-var http = require('http');
-var path = require('path');
-var handlebars = require('express3-handlebars');
+const express = require('express');
+const http = require('http');
+const path = require('path');
+const handlebars = require('express3-handlebars');
+const connect = require('connect');
+const favicon = require('serve-favicon');
+const morgan = require('morgan');
+const methodOverride = require('method-override');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const errorhandler = require('errorhandler');
 
-var login = require('./routes/login');
-var index = require('./routes/index');
-var photo = require('./routes/photo');
-var register = require('./routes/register');
-var user = require('./routes/user');
-var add = require('./routes/add');
-var remove = require('./routes/remove');
-var addDiary = require('./routes/addDiary');
+const login = require('./routes/login');
+const index = require('./routes/index');
+const photo = require('./routes/photo');
+const register = require('./routes/register');
+const user = require('./routes/user');
+const add = require('./routes/add');
+const remove = require('./routes/remove');
+const addDiary = require('./routes/addDiary');
 
-var diary = require('./routes/diary');
-var setting = require('./routes/setting');
-var entry = require('./routes/entry');
-var stat = require('./routes/stat');
-var news = require('./routes/news');
+const diary = require('./routes/diary');
+const setting = require('./routes/setting');
+const entry = require('./routes/entry');
+const stat = require('./routes/stat');
+const news = require('./routes/news');
 // Example route
-// var user = require('./routes/user');
-var app = express();
+// const user = require('./routes/user');
+const app = express();
 
 
-
-var serviceAccount = require("./serviceAccount.json");
-var favicon = require('serve-favicon');
+const serviceAccount = require("./serviceAccount.json");
 
 
 // all environments
-app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
-app.use(express.favicon());
-app.use(express.logger('dev'));
+//app.use(express.static(__dirname + '/views'));
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(express.methodOverride());
-app.use(express.cookieParser('IxD secret key'));
-app.use(express.session());
-app.use(app.router);
+app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(cookieParser('IxD secret key'));
+const sess = {
+  secret: 'secret',
+  cookie: {secure:true}
+}
+app.use(session(sess));
+app.use(express.Router());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+if (process.env.NODE_ENV === 'development') {
+  // only use in development
+  app.use(errorhandler());
 }
 
-app.get('/',login.view);
+app.use('/',login.view);
 // Example route
 // app.get('/users', user.list);
 /*app.get('/data.json',user.info);
 */
-app.get('/user/:id',user.userInfo);
-app.get('/add',add.addID);
-app.post('/addDiary/:edit',addDiary.addDiary);
-app.get('/remove/:name/:month/:day/:year',remove.remove);
-app.post('/checkLogin',user.checkLogin);
+app.use('/user/:id',user.userInfo);
+app.use('/add',add.addID);
+app.use('/addDiary/:edit',addDiary.addDiary);
+app.use('/remove/:name/:month/:day/:year',remove.remove);
+app.use('/checkLogin',user.checkLogin);
 
-app.get('/index/:name', index.view);
-app.get('/diary/:name',diary.viewDiary);
-app.get('/setting/:name',setting.viewSetting);
-app.get('/entry/:name',entry.addEntry);
-app.get('/stat/:name',stat.getStat);
-app.get('/news/:name',news.show);
+app.use('/index/:name', index.view);
+app.use('/diary/:name',diary.viewDiary);
+app.use('/setting/:name',setting.viewSetting);
+app.use('/entry/:name',entry.addEntry);
+app.use('/stat/:name',stat.getStat);
+app.use('/news/:name',news.show);
 
-app.get('/register', register.view);
-app.get('/photo/:name',photo.view);
-// Initialize Firebase
-
+app.use('/register', register.view);
+app.use('/photo/:name',photo.view);
 
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+
+http.createServer(app).listen(3000);

@@ -1,7 +1,7 @@
 var data = require("../data.json");
 var bcrypt = require('bcryptjs');
-exports.addID = function(req,res){
-  
+exports.addID = function(req,res,next){
+
   if(req.query.userid != undefined)
   {
   var userid = req.query.userid;

@@ -1,7 +1,7 @@
 let users = require("../data.json");
 let bcrypt = require('bcryptjs');
 
-exports.userInfo = function(req,res){
+exports.userInfo = function(req,res,next){
   var userID = req.params.id;
   var data="";
   for(var i =0; i<users.info.length;i++)
@@ -13,7 +13,7 @@ exports.userInfo = function(req,res){
   res.json(data);
 }
 //https://www.npmjs.com/package/bcryptjs
-exports.checkLogin = function(req,res){
+exports.checkLogin = function(req,res,next){
 
   let user = req.body.email;
   let password = req.body.password;

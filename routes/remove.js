@@ -1,5 +1,5 @@
 var users = require('../data.json');
-exports.remove = function(req,res){
+exports.remove = function(req,res,next){
   var userid = req.params.name;
   var month = req.params.month;
   var day = req.params.day;

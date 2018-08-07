@@ -1,5 +1,5 @@
 var data = require("../data.json");
-exports.addDiary = function(req,res){
+exports.addDiary = function(req,res,next){
 
     var edit = req.params.edit;
     var image = req.body.image;

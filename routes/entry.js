@@ -1,5 +1,5 @@
 var users = require('../data.json');
-exports.addEntry = function(req,res){
+exports.addEntry = function(req,res,next){
   var userid = req.params.name;
   var session = req.sessionID;
   var authentication = false;
@@ -14,7 +14,7 @@ exports.addEntry = function(req,res){
   }
 
 }
-exports.addEntryAlt = function(req,res){
+exports.addEntryAlt = function(req,res,next){
   var userid = req.params.name;
   var session = req.sessionID;
   var authentication = false;

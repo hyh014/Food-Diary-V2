@@ -1,5 +1,5 @@
 var users = require('../data.json');
-exports.getStat = function(req,res){
+exports.getStat = function(req,res,next){
   var userid = req.params.name;
   var authentication = false;
   for(var i=0;i<users.info.length;i++){

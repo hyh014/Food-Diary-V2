@@ -1,5 +1,5 @@
 var users = require('../data.json');
-exports.viewDiary = function(req,res){
+exports.viewDiary = function(req,res,next){
   var userid = req.params.name;
   var session = req.sessionID;
   var authentication = false;

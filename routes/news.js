@@ -1,5 +1,5 @@
 var users = require('../data.json');
-exports.show = function(req,res){
+exports.show = function(req,res,next){
   var userid = req.params.name;
   var session = req.sessionID;
   var authentication = false;
@@ -7,7 +7,7 @@ exports.show = function(req,res){
     if(userid == users.info[i].id){
 
           res.render('news',users.info[i]);
-      
+
     }
   }
 
