@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Food Diary App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (blelow), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<style>
+body {
+    background-image: url("/images/use.jpg");
+
+
+    background-size:100vw 100vh;
+}
+
+h4{
+
+	font-size: 22px;
+	text-align: left;
+	margin-left:60px;
+}
+</style>
+<body>
+	<div id="root" class="text-center">
+		<h1 class="page-header " style="font-family:Palatino;">Register</h1>
+		<form id="addID" role="form" action="/add">
+			<div id="input">
+			<h4>Email:<br><input type="text" style="height:40px; border-color: black; background-color: transparent; border-radius:10px; text-align: center;"  class="larger" name="email" required id="email" minlength="6">*</h4><br>
+			<h4>Password:<br><input type="password" style="height:40px; border-color: black; background-color: transparent; border-radius:10px; text-align: center;" class="larger" name="password" required id="password" minlength="6">*</h4><br>
+			</div>
+			<!--<h5 name="sample" id="sample">Hello</h5>
+			-->
+			<input type="submit" style="background-color:transparent; border-color: transparent;font-weight: bold; color:black; margin-top:10px; font-size: 20px;"  id="register">
+
+		</form>
+					<a href="/" role="button"  style="font-weight: bold; color:black; margin-top:50px; float: left; margin-left:31px;">Back</a>
+</div>
+	<script src="/js/user.js"></script>
+<!--
+	- Global site tag (gtag.js) - Google Analytics
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114570926-2');
+</script>
+-->
+
+</body>
+	</html>

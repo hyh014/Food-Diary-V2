@@ -31,7 +31,6 @@
             <a href="/index/{{id}}">Home</a>
             <a href="/diary/{{id}}">Diary</a>
             <a href="/stat/{{id}}">Statistics</a>
-            <a href="/news/{{id}}">News</a>
             <a href="/setting/{{id}}">Settings</a>
             <a href="/" style="color:red;">Log Out</a>
         </div>
@@ -155,7 +154,7 @@ function changeID(){
    function edit(){
     if(sessionStorage.getItem('edit') == 'true'){
       document.getElementById('output').src = sessionStorage.image;
-     
+
       document.getElementById('foodName').value = sessionStorage.foodName;
       document.getElementById('comments').value = sessionStorage.comments;
       document.getElementById('userid').value = sessionStorage.name;
@@ -188,7 +187,7 @@ window.onload=edit;
      <script src="/scripts/jquery.rateit.min.js"></script>
      <script src="/js/user.js"></script>
   <!--
-      Global site tag (gtag.js) - Google Analytics 
+      Global site tag (gtag.js) - Google Analytics
      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
      <script>
        window.dataLayer = window.dataLayer || [];

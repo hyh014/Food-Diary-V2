@@ -6,7 +6,7 @@ $('#login').click(function(){
 
   userID= document.getElementById('userid').value;
   password= document.getElementById('password').value;
-  
+
 });
 
 function callBackFn(result){
@@ -21,13 +21,6 @@ function callBackFn(result){
     $('#error').show();
   }
 }
-
-$('#register').click(function(){
-  userID = document.getElementById('userid').value;
-  sessionStorage.setItem('name',userID);
-  $.get("/user/"+sessionStorage.name,callBack);
-});
-
 
 $('#diary').click(function(){
   location.href="/diary/"+sessionStorage.name;
