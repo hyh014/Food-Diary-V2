@@ -2,7 +2,7 @@
 /**
  * Module dependencies.
  */
-
+require('dotenv').load();
 const express = require('express');
 const http = require('http');
 const path = require('path');
@@ -29,14 +29,27 @@ const setting = require('./routes/setting');
 const entry = require('./routes/entry');
 const stat = require('./routes/stat');
 const news = require('./routes/news');
+
+//const serviceAccounts = require('./serviceAccount.json');
 // Example route
 // const user = require('./routes/user');
 const app = express();
 
 
-const serviceAccount = require("./serviceAccount.json");
+const firebase = require('firebase');
+/*firebase.initializeApp({
+  serviceAccount: serviceAccounts,
+  databaseURL: process.env.DATABASEURL
+});*/
+firebase.initializeApp({
+  apiKey: process.env.APIKEY,
+  authDomain: process.env.AUTHDOMAIN,
+  databaseURL: process.env.DATABASEURL,
+  storageBucket: process.env.STORAGEBUCKET,
+  messagingSenderId: process.env.MESSAGINGSENDERID
+});
 
-
+firebase.auth().createUserWithEmailAndPassword("fdfdfD@gmail.com","sdfsdfsd");
 // all environments
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars());
