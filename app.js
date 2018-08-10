@@ -59,6 +59,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(cookieParser('IxD secret key'));
+app.use(express.static('public'));
 const sess = {
   secret: 'secret',
   cookie: {secure:true}
