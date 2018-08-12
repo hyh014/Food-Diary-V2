@@ -16,10 +16,10 @@ const errorhandler = require('errorhandler');
 
 const example = require('./routes/example');
 const login = require('./routes/login');
+const register = require('./routes/register');
 /*
 const index = require('./routes/index');
 const photo = require('./routes/photo');
-const register = require('./routes/register');
 const user = require('./routes/user');
 const add = require('./routes/add');
 const remove = require('./routes/remove');
@@ -59,18 +59,20 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(cookieParser('IxD secret key'));
-app.use(express.static('public'));
+//app.use(express.static('public'));
 const sess = {
   secret: 'secret',
   cookie: {secure:true}
 }
 app.use(session(sess));
 //app.use(express.Router());
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/',login);
 app.use('/example',example);
+app.use('/register', register);
+app.use('/register/hello', register);
 // Example route
 // app.get('/users', user.list);
 /*app.get('/data.json',user.info);
@@ -87,7 +89,7 @@ app.use('/setting/:name',setting.viewSetting);
 app.use('/entry/:name',entry.addEntry);
 app.use('/stat/:name',stat.getStat);
 
-app.use('/register', register.view);
+
 app.use('/photo/:name',photo.view);
 */
 http.createServer(app).listen(3000);
