@@ -1,38 +1,71 @@
-let users = require("../data.json");
-let bcrypt = require('bcryptjs');
+const express = require('express');
+const router = express.Router();
+const firebase = require('firebase');
 
-exports.userInfo = function(req,res,next){
-  var userID = req.params.id;
-  var data="";
-  for(var i =0; i<users.info.length;i++)
-  {
-    if(userID == users.info[i].id){
-        data = users.info[i];
-    }
-  }
-  res.json(data);
-}
-//https://www.npmjs.com/package/bcryptjs
-exports.checkLogin = function(req,res,next){
-
-  let user = req.body.email;
-  let password = req.body.password;
-  for(var i=0; i<users.info.length;i++)
-  {
-    bcrypt.compare(password,hash).then((res) =>{
-
+router.post('/addUser', function(req,res,next){
+  console.log("post");
+  const email = req.body.email;
+  const password = req.body.password;
+  console.log(email);
+  console.log(password);
+/*
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+    .then(function() {
+      // Existing and future Auth states are now persisted in the current
+      // session only. Closing the window would clear any existing state even
+      // if a user forgets to sign out.
+      // ...
+      // New sign-in will be persisted with session persistence.
+      return firebase.auth().createUserWithEmailAndPassword(email, password);
+    })
+    .catch(function(error) {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      if(errorCode == 'auth/weak-password'){
+        alert('The password is too weak.');
+        res.redirect('/register');
+      }else if(errorCode == "auth/invalid-email")
+      {
+        alert('The email is invalid.');
+        res.redirect('/register');
+      }else if(errorCode == "auth/email-already-in-use")
+      {
+        alert('The email is already in use.');
+        res.redirect('/register');
+      }else {
+        alert(errorMessage);
+        res.sendStatus(200);
+      }
     });
+    */
+    res.redirect('/login');
+});
 
-  }
-  res.redirect('/');
-/*  var userid = req.params.name;
-  var session= req.sessionID;
+router.post('/login', function(req,res,next){
+  const email = req.body.email;
+  const password = req.body.password;
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+    .then(function() {
+      // Existing and future Auth states are now persisted in the current
+      // session only. Closing the window would clear any existing state even
+      // if a user forgets to sign out.
+      // ...
+      // New sign-in will be persisted with session persistence.
+      return firebase.auth().signInWithEmailAndPassword(email, password);
+    })
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+    });
+    res.render('/index');
+});
 
-  for(var i=0; i<users.info.length;i++)
-  {
-    if(userid == users.info[i].id){
-        return res.redirect('/entry/'+userid);
-    }
-  }
-  return false;*/
-}
+router.use('/logout', function(req,res,next){
+  firebase.auth().signOut().then(function(){
+    res.render('/');
+  });
+});
+
+module.exports = router;

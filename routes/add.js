@@ -1,6 +1,7 @@
-var data = require("../data.json");
+const express = require('express');
+const router = express.Router();
 const firebase = require('firebase');
-exports.addID = function(req,res,next){
+router.use('/', function(req,res,next){
   const email = req.body.email;
   const password = req.body.password;
 
@@ -22,4 +23,16 @@ exports.addID = function(req,res,next){
     alert(errorMessage);
     res.sendStatus(200);
   }
-}
+});
+
+router.use('/login', function(req,res,next){
+  const email = req.body.email;
+  const password = req.body.password;
+
+  firebase.auth()..signInWithEmailAndPassword(email, password).catch(function(error) {
+    var errorCode = error.code;
+  var errorMessage = error.message;
+
+  });
+});
+module.exports = router;

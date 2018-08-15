@@ -15,7 +15,7 @@
 <div id="root" class="text-center">
 <h1 class="page-header " style="font-family: Palatino;">Login</h1>
 	<div class="container">
-		<form class="form" action="/checkLogin" >
+		<form class="form" method="post" action="/user/login" >
 			<div class="form-group">
 				<label for="email">Email:</label>
 				<input class="form-control" type="email" name="email" id="email" required/>
@@ -25,7 +25,7 @@
 				<input class="form-control" type="password" name="password" id="password" required/>
 				</div>
 				<input type="submit" value="Sign in" >
-				<a href="/example" style="font-weight: bold; color:black;" role="button" >Register</a>
+				<a href="/register" style="font-weight: bold; color:black;" role="button" >Register</a>
 		</form>
 	</div>
 </div>

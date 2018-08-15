@@ -13,14 +13,16 @@ const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const errorhandler = require('errorhandler');
+const bodyParser = require('body-parser');
 
-const example = require('./routes/example');
+
 const login = require('./routes/login');
 const register = require('./routes/register');
+const user = require('./routes/user');
 /*
 const index = require('./routes/index');
 const photo = require('./routes/photo');
-const user = require('./routes/user');
+
 const add = require('./routes/add');
 const remove = require('./routes/remove');
 const addDiary = require('./routes/addDiary');
@@ -55,8 +57,8 @@ app.set('view engine', 'hbs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 app.use(morgan('dev'));
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(cookieParser('IxD secret key'));
 //app.use(express.static('public'));
@@ -69,16 +71,17 @@ app.use(session(sess));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/',login);
-app.use('/example',example);
+app.use('/',register);
 app.use('/register', register);
-app.use('/register/hello', register);
+app.post('/user/addUser',user);
+app.post('/user/login',user);
+app.use('/user/logout',user);
 // Example route
 // app.get('/users', user.list);
 /*app.get('/data.json',user.info);
 */
 /*app.use('/user/:id',user.userInfo);
-app.use('/add',add.addID);
+
 app.use('/addDiary/:edit',addDiary.addDiary);
 app.use('/remove/:name/:month/:day/:year',remove.remove);
 app.use('/checkLogin',user. checkLogin);
