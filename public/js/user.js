@@ -1,26 +1,4 @@
-var userID;
-var password;
-var email;
-var phone;
-$('#login').click(function(){
 
-  userID= document.getElementById('userid').value;
-  password= document.getElementById('password').value;
-
-});
-
-function callBackFn(result){
-  if(userID == result.id && password == result.password)
-  {
-    sessionStorage.setItem('name',userID);
-    $('#login').attr('href','/index/'+sessionStorage.name);
-    location.replace("/checkLogin/"+sessionStorage.name);
-  }
-  else {
-    $('#error').removeClass('hide');
-    $('#error').show();
-  }
-}
 
 $('#diary').click(function(){
   location.href="/diary/"+sessionStorage.name;

@@ -19,8 +19,8 @@ const bodyParser = require('body-parser');
 const login = require('./routes/login');
 const register = require('./routes/register');
 const user = require('./routes/user');
-/*
 const index = require('./routes/index');
+/*
 const photo = require('./routes/photo');
 
 const add = require('./routes/add');
@@ -37,6 +37,7 @@ const stat = require('./routes/stat');
 // const user = require('./routes/user');
 const app = express();
 const firebase = require('firebase');
+
 /*firebase.initializeApp({
   serviceAccount: serviceAccounts,
   databaseURL: process.env.DATABASEURL
@@ -57,10 +58,11 @@ app.set('view engine', 'hbs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 app.use(morgan('dev'));
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(cookieParser('IxD secret key'));
+
 //app.use(express.static('public'));
 const sess = {
   secret: 'secret',
@@ -71,11 +73,15 @@ app.use(session(sess));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/',register);
+app.use('/',login);
 app.use('/register', register);
-app.post('/user/addUser',user);
-app.post('/user/login',user);
-app.use('/user/logout',user);
+app.use('/user',user);
+app.use('/index', index);
+
+//app.post('/user/login',user);
+//app.use('/user/logout',user);
+
+
 // Example route
 // app.get('/users', user.list);
 /*app.get('/data.json',user.info);
@@ -86,7 +92,7 @@ app.use('/addDiary/:edit',addDiary.addDiary);
 app.use('/remove/:name/:month/:day/:year',remove.remove);
 app.use('/checkLogin',user. checkLogin);
 
-app.use('/index/:name', index.view);
+
 app.use('/diary/:name',diary.viewDiary);
 app.use('/setting/:name',setting.viewSetting);
 app.use('/entry/:name',entry.addEntry);

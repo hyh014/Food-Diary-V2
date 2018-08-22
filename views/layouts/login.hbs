@@ -15,7 +15,10 @@
 <div id="root" class="text-center">
 <h1 class="page-header " style="font-family: Palatino;">Login</h1>
 	<div class="container">
-		<form class="form" method="post" action="/user/login" >
+		{{#if message}}
+			<div class="alert alert-danger" role="alert">{{message}}</div>
+		{{/if}}
+		<form class="form" method="POST" action="/user/login" >
 			<div class="form-group">
 				<label for="email">Email:</label>
 				<input class="form-control" type="email" name="email" id="email" required/>
@@ -25,6 +28,7 @@
 				<input class="form-control" type="password" name="password" id="password" required/>
 				</div>
 				<input type="submit" value="Sign in" >
+
 				<a href="/register" style="font-weight: bold; color:black;" role="button" >Register</a>
 		</form>
 	</div>
@@ -32,5 +36,4 @@
 </body>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/user.js"></script>
-
 </html>

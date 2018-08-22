@@ -7,11 +7,6 @@ router.get('/', function(req, res, next) {
 		res.render('register');
 });
 
-// POST request to /login
-router.post('/', function(req, res, next) {
-    // do something
-		res.render('register');
-});
 
 // POST request to /login
 router.use('/hello', function(req, res, next) {

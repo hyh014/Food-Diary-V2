@@ -1,16 +1,9 @@
-var data = require('../data.json');
-/*
- * GET home page.
- */
-exports.view = function(req,res,next){
-    var userid = "tester1";
-    for(var i=0;i<data.info.length;i++){
-      if(userid == data.info[i].id){
+var express = require('express');
+var router = express.Router();
 
-            res.render('index',data.info[i]);
+// GET request to /login
 
-      }
-    }
-
-
-  }
+router.get('/', function(req, res, next) {
+    // do something
+		res.render('index');
+});
