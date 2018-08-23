@@ -15,7 +15,6 @@ const session = require('express-session');
 const errorhandler = require('errorhandler');
 const bodyParser = require('body-parser');
 
-
 const login = require('./routes/login');
 const register = require('./routes/register');
 const user = require('./routes/user');
@@ -62,7 +61,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(cookieParser('IxD secret key'));
-
+app.set('trust proxy', 1);
 //app.use(express.static('public'));
 const sess = {
   secret: 'secret',
@@ -70,7 +69,9 @@ const sess = {
 }
 app.use(session(sess));
 //app.use(express.Router());
-app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(express.static(__dirname + '/public'));
+//app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/',login);

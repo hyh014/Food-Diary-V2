@@ -21,10 +21,12 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
       {
         res.render('register',{message:'Email Already In Use'});
       }else {
-				res.render('/index');
+				res.render('register',{message:error});
       }
     });
-
+      let sessData = req.session;
+      sessData.
+      res.render('/index');
 });
 
 router.post('/login', function(req,res,next){
@@ -44,10 +46,10 @@ router.post('/login', function(req,res,next){
 				{
 					res.render('login',{message:'Email Already In Use'});
 				}else {
-					console.log(errorMessage);
-					res.render('index');
+					res.render('login',{message:error});
 				}
 			});
+      res.render('/index');
 });
 
 router.use('/logout', function(req,res,next){

@@ -1,5 +1,3 @@
-
-
 $('#diary').click(function(){
   location.href="/diary/"+sessionStorage.name;
 });
