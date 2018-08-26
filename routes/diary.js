@@ -1,14 +1,12 @@
 var users = require('../data.json');
-exports.viewDiary = function(req,res,next){
-  var userid = req.params.name;
-  var session = req.sessionID;
-  var authentication = false;
-  for(var i=0;i<users.info.length;i++){
-    if(userid == users.info[i].id){
+var express = require('express');
+var router = express.Router();
 
-          res.render('diary',users.info[i]);
+// GET request to /login
 
-    }
-  }
+router.get('/', function(req, res, next) {
+    // do something
+		res.render('diary',users.info[0]);
+});
 
-}
+module.exports = router;

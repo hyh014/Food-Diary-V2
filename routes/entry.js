@@ -1,30 +1,14 @@
-var users = require('../data.json');
-exports.addEntry = function(req,res,next){
-  var userid = req.params.name;
-  var session = req.sessionID;
-  var authentication = false;
-  for(var i=0;i<users.info.length;i++){
-    if(userid == users.info[i].id){
+var express = require('express');
+var router = express.Router();
 
-          users.info[i]["viewAlt"] = false;
+// GET request to /login
 
-          res.render('entry',users.info[i]);
+router.get('/', function(req, res, next) {
+    // do something
+		res.render('entry');
+});
 
-    }
-  }
+// POST request to /login
 
-}
-exports.addEntryAlt = function(req,res,next){
-  var userid = req.params.name;
-  var session = req.sessionID;
-  var authentication = false;
-  for(var i=0;i<users.info.length;i++){
-    if(userid == users.info[i].id){
-          users.info[i]["viewAlt"]=true;
 
-          res.render('entry',users.info[i]);
-
-    }
-  }
-
-}
+module.exports = router;

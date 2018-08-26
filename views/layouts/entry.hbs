@@ -6,65 +6,39 @@
     <title>Food Diary App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-    <!-- Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <!-- Bootstrap -->
+  <link href="/css/style.css"  type="text/css" rel="stylesheet">
+  <link href="/css/bootstrap-grid.css"  type="text/css" rel="stylesheet">
+  <link href="/css/bootstrap-reboot.css"  type="text/css" rel="stylesheet">
+  <link href="/css/bootstrap.css" type="text/css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery.js"></script>
     <link href="/scripts/rateit.css" rel="stylesheet">
-
-   <style>
-    body {
-        background-image: url("/images/224.jpg");
-    }
-
-</style>
-
-
   <body>
-
-      <div class="navbar" style="float:left">
-        <div class="dropdown">
-          <button class="glyphicon glyphicon-list transparent-button " style="font-size:40px;"></button>
-          <div class="dropdown-content">
-            <a href="/index/{{id}}">Home</a>
-            <a href="/diary/{{id}}">Diary</a>
-            <a href="/stat/{{id}}">Statistics</a>
-            <a href="/setting/{{id}}">Settings</a>
-            <a href="/" style="color:red;">Log Out</a>
-        </div>
-      </div>
-      </div>
       <div>
         <a href="#" class="glyphicon glyphicon-question-sign" onclick="helpEntry()" style=" font-size:40px; margin-right: 13px;float:right" role="button" id="help" name="entry"></a>
       </div>
-<hr>
-    <h1 class="text-center" style="font-family:Palatino;">Log Your Meal</h1><hr>
-    <p class="help-block" id="clock" style="margin-top:-25px; color:black;margin-left:64px;"></p>
+<br>
+<div class="text-center">
+    <h1 style="font-family:Palatino;">Log Your Meal</h1><br>
+    <p class="help-block" id="clock" ></p>
+    </div>
       <div class="inline-block">
-
-         <div class="container col-lg-offset-4" style="display:inline-block; margin-right:auto" id="photos">
            <div style="height:0px;overflow:hidden">
              <form id="addDiary" role="form" method="post" action="/addDiary/ne">
            </div>
-           <div>
-             <label for="file-input" style="font-size: 32px; margin-left: 62px;" class="transparent-button glyphicon glyphicon-camera glyphicon-size"></label>
-              <input type="file" accept="image/*" style="display:none" id="file-input" capture="environment"/>
-            </div>
-
          </div>
            <div class="topright" style="display:inline-block;" id="text-input">
-
               <span class="glyphicon glyphicon-pencil" style="margin-left:-14px; font-size:30px;"></span>
               <input type="text" class="row" style=" border-radius:10px; border-color: transparent;
               width:153px; margin-left:5px;" placeholder="    Enter food" name="foodName" id="foodName"/><br/>
-              <textarea rows="4" cols="24" class="row" style="border-radius:10px; border-color: transparent; margin-left:-62px; height: 76px;width:240px; margin-right: 20px; margin-top:5px; resize:none;" placeholder="  Comments:                                        Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
-              <hr><img id="output" style="margin-top: -23px; margin-left: -32px; height:26vh;width:50vw;">
+              <textarea rows="4" cols="24" class="row" style="border-radius:10px; resize:none;"
+           placeholder="  Comments:                                        Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
+
            </div>
          <br/>
-       </div>
+
         <hr>
+      </div>
      <div class="container"  id="Rating" style="margin-top:255px;margin-left:53px;">
        <text class="Text-input">Taste:</text><br/>
        <div name="taste" class="rateit" id="tasteRate" >
@@ -218,13 +192,14 @@ function clicked(e)
 </script>
 
 <script type="text/javascript">
+/*
   window.onbeforeunload = confirmExit;
   function confirmExit()
   {
     if (confirm != 0){
     return "Do you want to leave this page without saving?";
    }
-  }
+ }*/
 </script>
 
 <script src="/js/analytics.js"></script>

@@ -19,6 +19,8 @@ const login = require('./routes/login');
 const register = require('./routes/register');
 const user = require('./routes/user');
 const index = require('./routes/index');
+const entry = require('./routes/entry');
+const diary = require('./routes/diary');
 /*
 const photo = require('./routes/photo');
 
@@ -26,9 +28,9 @@ const add = require('./routes/add');
 const remove = require('./routes/remove');
 const addDiary = require('./routes/addDiary');
 
-const diary = require('./routes/diary');
+
 const setting = require('./routes/setting');
-const entry = require('./routes/entry');
+
 const stat = require('./routes/stat');
 */
 //const serviceAccounts = require('./serviceAccount.json');
@@ -78,7 +80,8 @@ app.use('/',login);
 app.use('/register', register);
 app.use('/user',user);
 app.use('/index', index);
-
+app.use('/entry',entry);
+app.use('/diary',diary);
 //app.post('/user/login',user);
 //app.use('/user/logout',user);
 
@@ -94,9 +97,9 @@ app.use('/remove/:name/:month/:day/:year',remove.remove);
 app.use('/checkLogin',user. checkLogin);
 
 
-app.use('/diary/:name',diary.viewDiary);
+
 app.use('/setting/:name',setting.viewSetting);
-app.use('/entry/:name',entry.addEntry);
+
 app.use('/stat/:name',stat.getStat);
 
 
