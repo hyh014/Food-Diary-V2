@@ -21,6 +21,7 @@ const user = require('./routes/user');
 const index = require('./routes/index');
 const entry = require('./routes/entry');
 const diary = require('./routes/diary');
+const community = require('./routes/community');
 /*
 const photo = require('./routes/photo');
 
@@ -82,6 +83,7 @@ app.use('/user',user);
 app.use('/index', index);
 app.use('/entry',entry);
 app.use('/diary',diary);
+app.use('/community',community);
 //app.post('/user/login',user);
 //app.use('/user/logout',user);
 

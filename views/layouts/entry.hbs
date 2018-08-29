@@ -21,25 +21,24 @@
 <div class="text-center">
     <h1 style="font-family:Palatino;">Log Your Meal</h1><br>
     <p class="help-block" id="clock" ></p>
-    </div>
-      <div class="inline-block">
-           <div style="height:0px;overflow:hidden">
-             <form id="addDiary" role="form" method="post" action="/addDiary/ne">
-           </div>
-         </div>
-           <div class="topright" style="display:inline-block;" id="text-input">
-              <span class="glyphicon glyphicon-pencil" style="margin-left:-14px; font-size:30px;"></span>
-              <input type="text" class="row" style=" border-radius:10px; border-color: transparent;
-              width:153px; margin-left:5px;" placeholder="    Enter food" name="foodName" id="foodName"/><br/>
-              <textarea rows="4" cols="24" class="row" style="border-radius:10px; resize:none;"
-           placeholder="  Comments:                                        Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea><br/>
 
-           </div>
+    <video autoplay></video>
+    <img src="">
+    <canvas style="display:none"></canvas>
+    <button>Capture</button>
+
+    <form id="addDiary" role="form" method="post" action="/addDiary/ne">
+      <div class="text-center" style="display:inline-block; " id="text-input">
+      <!--  <input type="file" accept="image/*" capture>-->
+        <br>
+        <textarea class="row" style="border-radius:10px;"
+           placeholder="  Comments:                                        Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
+        <br>
+      </div>
          <br/>
 
         <hr>
-      </div>
-     <div class="container"  id="Rating" style="margin-top:255px;margin-left:53px;">
+     <div class="container"  id="Rating" >
        <text class="Text-input">Taste:</text><br/>
        <div name="taste" class="rateit" id="tasteRate" >
       </div>
@@ -65,43 +64,13 @@
         <input type="hidden" name="time" id="time" value=""/>
         <input type="hidden" name="userid" id="userid" value=""/>
      </div>
-     <a href="/index/{{id}}" class="btn btn-primary " style="margin-left:36px;" role="button" id="back">Home</a>
-
+     <a href="/index" class="btn btn-primary " style="margin-left:36px;" role="button" id="back">Home</a>
      <input type="submit" class="btn btn-sm entry2BackNext" style="float:right; margin-right: 36px;" id="addEntry" onclick="clicked(event);" value="Add to Diary  ⇨" Text="Submit" />
       </form>
     </div>
-
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>Q and A</h2>
-    </div>
-    <div class="modal-body">
-      <h2>Some text in the Modal Body</h2>
-      <p>Some other text...</p>
-    </div>
-    <div class="modal-footer">
-      <h3>Modal Footer</h3>
-    </div>
-  </div>
-
 </div>
 
-
-
-<script type="text/javascript">
-function changeID(){
-  document.getElementById('userid').value=sessionStorage.name;
-}
-</script>
-
+<!--
 <script>
     const supported = 'mediaDevices' in navigator;
     const player = document.getElementById('player');
@@ -123,7 +92,7 @@ function changeID(){
   const fileInput = document.getElementById('file-input');
   fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
 </script>
-
+-->
 <script>
    function edit(){
     if(sessionStorage.getItem('edit') == 'true'){
@@ -142,7 +111,7 @@ function changeID(){
       sessionStorage.setItem('edit',false);
     }
     else{
-      document.getElementById('foodName').value = "";
+      //document.getElementById('foodName').value = "";
       document.getElementById('comments').value = "";
       $('#tasteRate').rateit('value',0);
       $('#healthRate').rateit('value',0);
@@ -176,32 +145,8 @@ function helpEntry() {
     alert("Tutorials\n\nThis page intends to help you record your meals. You record meals by either take a photo or leave some texts. And you will then do  self-rate about current mood, food taste and food healthy level."
       );
 }
-$('#Save').click(changeText);
-function changeText(event){
-  $(this).text("Saved");
-}
+
 </script>
 
-
-<script>
-function clicked(e)
-{
-    if(!confirm('Do you want to submit?'))e.preventDefault();
-    confirm = 0;
-}
-</script>
-
-<script type="text/javascript">
-/*
-  window.onbeforeunload = confirmExit;
-  function confirmExit()
-  {
-    if (confirm != 0){
-    return "Do you want to leave this page without saving?";
-   }
- }*/
-</script>
-
-<script src="/js/analytics.js"></script>
   </body>
 </html>

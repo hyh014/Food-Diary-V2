@@ -1,7 +1,7 @@
 $(document).ready(function(){
   generateGraph();
-  var w = $(document).width()*.9;
-  var h = $(document).height()*.7;
+  var w = $(document).width()*.4;
+  var h = $(document).height()*.4;
   document.getElementById('chartdiv').style.width = w +'px';
   document.getElementById('chartdiv').style.height = h + 'px';
 });

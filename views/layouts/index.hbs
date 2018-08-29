@@ -2,13 +2,10 @@
 
 <html>
 <head>
-
-
 	<title>Food Diary App</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<!-- Bootstrap -->
 <!-- Bootstrap -->
 <link href="/css/style.css"  type="text/css" rel="stylesheet">
 <link href="/css/bootstrap-grid.css"  type="text/css" rel="stylesheet">
@@ -22,16 +19,20 @@
 	</fieldset>
 	<br>
 	<h1 style="text-align:center; font-family:Palatino" class="page-header " >HOME</h1>
-	<div class="tab" align="Center">
-		<a href="/entry" class="btn a1 btn-lg larger index-padding" style="margin-bottom:5px;" role="button" id="entry"><br>New Entry</a>
-
-			<a href="/diary" class="btn a2 btn-lg larger index-padding" role="button"  id="diary"><br>View Diary</a>
-		<!--	<div style="display:inline-block"><a href="/anxiety" class="btn btn-primary btn-lg " role="button" style="font-size:21.5px" id="anxiety">Anxiety</a><br></div>-->
-
+	<div class="container " style="border:1px solid black">
+		<div style="display:flex;">
+			<a href="/entry" class="btn btn-lg index-button" style=" flex:1" role="button" id="entry">New Entry</a><br>
+			<a href="/diary" class="btn btn-lg index-button" style=" flex:1" role="button"  id="diary">View Diary</a><br>
+			<a href="/community" class="btn btn-lg index-button" style=" flex:1;" role="button" id="community">Community</a>
 		</div>
-		<div class="container" style="background-color:white;">
-			<div id="chartdiv"></div>
+		<div style="display:flex">
+			<div class="index-chart" style="flex:1">
+				<div id="chartdiv"></div>
+			</div>
 		</div>
+	</div>
+
+
 
 			<br />
 	</div>
