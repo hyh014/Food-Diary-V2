@@ -4,14 +4,18 @@ const firebase = require('firebase');
 
 
 
+
 router.post('/addUser', function(req,res){
   const email = req.body.email;
   const password = req.body.password;
-firebase.auth().createUserWithEmailAndPassword(email, password)
-    .catch(function(error) {
+  firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+    res.render('index');
+  },function(error) {
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
+      console.log(errorMessage);
+      console.log(errorCode);
       if(errorCode == 'auth/weak-password'){
         res.render('register',{message:'Weak Password'})
       }else if(errorCode == "auth/invalid-email")
@@ -20,36 +24,48 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
       }else if(errorCode == "auth/email-already-in-use")
       {
         res.render('register',{message:'Email Already In Use'});
-      }else {
-				res.render('register',{message:error});
+      }else if(errorCode == 'auth/operation-not-allowed'){
+        res.render('register',{message:'Email/Password Account are Not Enabled'});
+      }else{
+        res.render('register',{message:errorMessage});
       }
     });
-      let sessData = req.session;
-      sessData.
-      res.render('/index');
 });
 
 router.post('/login', function(req,res,next){
   const email = req.body.email;
   const password = req.body.password;
-      firebase.auth().signInWithEmailAndPassword(email, password)
-			.catch(function(error) {
+
+      firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+        res.render('index');
+      },function(error) {
 				// Handle Errors here.
 				const errorCode = error.code;
 				const errorMessage = error.message;
+        console.log(errorMessage);
+        console.log(errorCode);
 				if(errorCode == 'auth/wrong-password'){
-						res.render('login',{message:'wrong Password'});
+
+					res.render('login',{message:'Wrong Password'});
+
 				}else if(errorCode == "auth/invalid-email")
 				{
+
 					res.render('login',{message:'Invalid Email'});
-				}else if(errorCode == "auth/email-already-in-use")
+
+				}else if(errorCode == "auth/user-disabled")
 				{
-					res.render('login',{message:'Email Already In Use'});
-				}else {
-					res.render('login',{message:error});
-				}
+
+					res.render('login',{message:'The User is Currently Disabled'});
+
+				}else if(errorCode == 'auth/user-not-found'){
+          res.render('login',{message:"User Not Found"});
+        }
+        else{
+          res.render('login',{message:errorMessage});
+        }
 			});
-      res.render('/index');
+
 });
 
 router.use('/logout', function(req,res,next){

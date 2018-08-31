@@ -22,19 +22,14 @@
     <h1 style="font-family:Palatino;">Log Your Meal</h1><br>
     <p class="help-block" id="clock" ></p>
 
-    <video autoplay></video>
-    <img src="">
-    <canvas style="display:none"></canvas>
-    <button>Capture</button>
-
     <form id="addDiary" role="form" method="post" action="/addDiary/ne">
-      <div class="text-center" style="display:inline-block; " id="text-input">
-      <!--  <input type="file" accept="image/*" capture>-->
+      <input type="file" accept="image/*" id="file-input" capture="environment" required/><br>
+       <img id="photo" style="height:25vh;width:25vw;">
+       <input type="hidden" id="blob">
         <br>
-        <textarea class="row" style="border-radius:10px;"
+        <textarea class="text-center" style="border-radius:10px;"
            placeholder="  Comments:                                        Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
         <br>
-      </div>
          <br/>
 
         <hr>
@@ -69,30 +64,6 @@
       </form>
     </div>
 </div>
-
-<!--
-<script>
-    const supported = 'mediaDevices' in navigator;
-    const player = document.getElementById('player');
-    const output = document.getElementById('output');
-  function doSomethingWithFiles(fileList) {
-    let file = null;
-    for (let i = 0; i < fileList.length; i++) {
-      if (fileList[i].type.match(/^image\//)) {
-        file = fileList[i];
-        break;
-      }
-    }
-    if (file !== null) {
-      output.src = URL.createObjectURL(file);
-      sessionStorage.setItem('image',output.src);
-    }
-  }
-  // Attach the video stream to the video element and autoplay.
-  const fileInput = document.getElementById('file-input');
-  fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
-</script>
--->
 <script>
    function edit(){
     if(sessionStorage.getItem('edit') == 'true'){
@@ -129,23 +100,27 @@ window.onload=edit;
      <script src="/js/bootstrap.min.js"></script>
      <script src="/scripts/jquery.rateit.min.js"></script>
      <script src="/js/user.js"></script>
-  <!--
-      Global site tag (gtag.js) - Google Analytics
-     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
-     <script>
-       window.dataLayer = window.dataLayer || [];
-       function gtag(){dataLayer.push(arguments);}
-       gtag('js', new Date());
-
-       gtag('config', 'UA-114570926-2');
-     </script>
--->
-     <script>
-function helpEntry() {
-    alert("Tutorials\n\nThis page intends to help you record your meals. You record meals by either take a photo or leave some texts. And you will then do  self-rate about current mood, food taste and food healthy level."
-      );
+<script>
+const supported = 'mediaDevices' in navigator;
+const photo = document.getElementById('photo');
+const blobURL = document.getElementById('blob');
+function doSomethingWithFiles(fileList) {
+let file = null;
+for (let i = 0; i < fileList.length; i++) {
+  if (fileList[i].type.match(/^image\//)) {
+    file = fileList[i];
+    break;
+  }
 }
+if (file !== null) {
+ photo.src = URL.createObjectURL(file);
+ blobURL.value = photo.src;
+ console.log("Blob URL: "+ blobURL.value);
+ }
 
+}
+const fileInput = document.getElementById('file-input');
+fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
 </script>
 
   </body>

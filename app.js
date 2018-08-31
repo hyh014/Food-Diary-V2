@@ -18,16 +18,20 @@ const bodyParser = require('body-parser');
 const login = require('./routes/login');
 const register = require('./routes/register');
 const user = require('./routes/user');
-const index = require('./routes/index');
 const entry = require('./routes/entry');
 const diary = require('./routes/diary');
 const community = require('./routes/community');
+const addDiary = require('./routes/addDiary');
+
+
+//GET RID OF ONCE COMPLETE
+const index = require('./routes/index');
 /*
 const photo = require('./routes/photo');
 
 const add = require('./routes/add');
 const remove = require('./routes/remove');
-const addDiary = require('./routes/addDiary');
+
 
 
 const setting = require('./routes/setting');
@@ -80,10 +84,16 @@ app.use(express.static(__dirname + '/public'));
 app.use('/',login);
 app.use('/register', register);
 app.use('/user',user);
-app.use('/index', index);
 app.use('/entry',entry);
+
 app.use('/diary',diary);
 app.use('/community',community);
+app.post('/addDiary',addDiary);
+
+//GET RID OF ONCE COMPLETE
+app.use('/index',index);
+
+
 //app.post('/user/login',user);
 //app.use('/user/logout',user);
 
@@ -94,7 +104,7 @@ app.use('/community',community);
 */
 /*app.use('/user/:id',user.userInfo);
 
-app.use('/addDiary/:edit',addDiary.addDiary);
+
 app.use('/remove/:name/:month/:day/:year',remove.remove);
 app.use('/checkLogin',user. checkLogin);
 

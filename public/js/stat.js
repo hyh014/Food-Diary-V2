@@ -1,10 +1,10 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
   generateGraph();
   var w = $(document).width()*.4;
   var h = $(document).height()*.4;
   document.getElementById('chartdiv').style.width = w +'px';
   document.getElementById('chartdiv').style.height = h + 'px';
-});
+});*/
 $('a.selection').click(function(){
 
   var selected = this.id;
@@ -51,7 +51,7 @@ $('a.selection').click(function(){
 
 
 function generateGraph(){
-  $.get('/user/'+sessionStorage.name,dataCallBack);
+//  $.get('/user/'+sessionStorage.name,dataCallBack);
 }
 
 function dataCallBack(result){
