@@ -23,9 +23,9 @@
     <p class="help-block" id="clock" ></p>
 
     <form id="addDiary" role="form" method="post" action="/addDiary/ne">
-      <input type="file" accept="image/*" id="file-input" capture="environment" required/><br>
-       <img id="photo" style="height:25vh;width:25vw;">
-       <input type="hidden" id="blob">
+      <input type="file" accept="image/*" id="file-input" capture="environment"/><br>
+       <canvas id="canvas" width="250px" height="250px" style="border:1px solid #000000;"></canvas>
+       <input type="hidden" id="dataURL">
         <br>
         <textarea class="text-center" style="border-radius:10px;"
            placeholder="  Comments:                                        Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
@@ -100,28 +100,6 @@ window.onload=edit;
      <script src="/js/bootstrap.min.js"></script>
      <script src="/scripts/jquery.rateit.min.js"></script>
      <script src="/js/user.js"></script>
-<script>
-const supported = 'mediaDevices' in navigator;
-const photo = document.getElementById('photo');
-const blobURL = document.getElementById('blob');
-function doSomethingWithFiles(fileList) {
-let file = null;
-for (let i = 0; i < fileList.length; i++) {
-  if (fileList[i].type.match(/^image\//)) {
-    file = fileList[i];
-    break;
-  }
-}
-if (file !== null) {
- photo.src = URL.createObjectURL(file);
- blobURL.value = photo.src;
- console.log("Blob URL: "+ blobURL.value);
- }
-
-}
-const fileInput = document.getElementById('file-input');
-fileInput.addEventListener('change', (e) => doSomethingWithFiles(e.target.files));
-</script>
 
   </body>
 </html>
