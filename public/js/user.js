@@ -1,6 +1,9 @@
 const supported = 'mediaDevices' in navigator;
 let canvas = document.getElementById('canvas');
-let dataURL = document.getElementById('data');
+let dataURL = document.getElementById('dataURL');
+let ctx = canvas.getContext('2d');
+ctx.fillStyle = '#fff';  /// set white fill style
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 let img = new Image();
 
 function doSomethingWithFiles(fileList) {
@@ -13,17 +16,14 @@ for (let i = 0; i < fileList.length; i++) {
 }
 if (file !== null) {
  img.src = URL.createObjectURL(file);
-
- console.log("Blob URL: "+ img.src);
- dataURL.value = canvas.toDataURL('image/jpeg',1.0);
- console.log("Data URL: "+ dataURL.value;
  }
 
 }
 img.onload= function(){
-  canvas.getContext('2d').drawImage(img,0,0,img.width,    img.height
+  ctx.drawImage(img,0,0,img.width,    img.height
                                        ,0,0,canvas.width, canvas.height);
-
+  dataURL.value = canvas.toDataURL('image/jpeg',1.0);
+  console.log("Data URL: "+ dataURL.value);
 }
 
 const fileInput = document.getElementById('file-input');

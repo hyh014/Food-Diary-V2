@@ -88,7 +88,7 @@ app.use('/entry',entry);
 
 app.use('/diary',diary);
 app.use('/community',community);
-app.post('/addDiary',addDiary);
+app.use('/addDiary/:edit',addDiary);
 
 //GET RID OF ONCE COMPLETE
 app.use('/index',index);

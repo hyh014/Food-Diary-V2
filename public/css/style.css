@@ -293,3 +293,7 @@ textarea {
   height: calc(100vh - 80vh);
   resize: none;
 }
+  canvas {
+    width: 30%;
+    height: 30%;
+  }
