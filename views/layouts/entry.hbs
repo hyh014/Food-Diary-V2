@@ -24,12 +24,12 @@
 
     <form id="addDiary" role="form" method="post" action="/addDiary/ne">
       <input type="file" accept="image/*" id="file-input" capture="environment"/><br>
-       <canvas id="canvas" width="250%" height="250%" style="border:1px solid #000000;"></canvas>
+       <canvas id="canvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
        <input type="hidden" id="dataURL" name="dataURL">
        <img id="hello">
         <br>
-        <textarea  style="border-radius:10px;"
-           placeholder="  Comments:                                        Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
+        <textarea style="border-radius:10px;" width="20vw" height="20vh"
+           placeholder="  Comments:       Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
         <br>
          <br/>
 
@@ -59,8 +59,8 @@
         <input type="hidden" name="date" id="date" value=""/>
         <input type="hidden" name="time" id="time" value=""/>
      </div>
-     <a href="/index" class="btn btn-primary " style="margin-left:36px;" role="button" id="back">Home</a>
-     <input type="submit" class="btn btn-sm entry2BackNext" style="float:right; margin-right: 36px;" id="addEntry" onclick="clicked(event);" value="Add to Diary  ⇨" Text="Submit" />
+     <a href="/index" class="btn btn-primary" style="float:left; margin-left:36px" role="button" id="back">Back</a>
+     <input type="submit" class="btn btn-sm entry2BackNext btn-dark" style="float:right; font-weight: bold; color:white; margin-right: 36px;" id="addEntry" onclick="clicked(event);" value="Add to Diary  ⇨" Text="Submit" />
       </form>
     </div>
 </div>

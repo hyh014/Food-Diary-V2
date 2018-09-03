@@ -287,13 +287,21 @@
 
   white-space: nowrap;
 }
-textarea {
-
-  width:  calc(100vw - 80vw);      /* calc and viewport to the rescue */
-  height: calc(100vh - 80vh);
+#comments {
+  width:  20vw;      /* calc and viewport to the rescue */
+  height: 20vh;
   resize: none;
 }
+
+@media (min-width: 1200px) {
   canvas {
-    width: 30%;
-    height: 30%;
+    height: 45vh;
+    width: 25vw;
   }
+}
+@media(max-width:1199px){
+  canvas {
+    height: 10vh;
+    width: 10vw;
+  }
+}
