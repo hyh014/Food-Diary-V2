@@ -16,14 +16,41 @@ router.post('/', function(req,res,next){
   var newObject = {
       "imageURL":dataURL,
       "comments":comments,
+      'date':date,
       "time":time,
       "taste":taste,
       "health":health,
       "mood":mood,
-      "anxiety":anxiety
+      "anxiety":anxiety,
       };
-      firebase.database().ref('users/'+UUID);
+  let ref = firebase.database().ref('users/'+UUID);
+  let newID=ref.push(newObject);
+  let key = newID.key;
+  ref.addListenerForSingleValueEvent(new ValueEventListener(){
+    @Override
+    public void onDataChange(DataSnapshot DataSnapshot){
+      let list[];
+      children = dataSnapShot.getChildrenCount();
+      for(DataSnapshot snapshot:children){
+        let val = snapshot.val();
+        let entry = {
+          "imageURL":val.imageURL,
+          'comments':val.comments,
+          'date':val.date,
+          'time':val.time,
+          'taste':val.taste,
+          'health':val.health,
+          'mood':val.mood,
+          'anxiety':val.anxiety
+        };
+        list.unshift(entry);
+      }
+    }
+    @Override
+    public void onCancelled(DatabaseError databaseError){
 
+    }
+  });
       /*
       if(user){
 
