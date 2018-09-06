@@ -64,8 +64,8 @@ app.set('view engine', 'hbs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ limit:'50mb', extended: true, parameterLimit:50000 }));
+app.use(bodyParser.json({limit:'50mb'}));
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(cookieParser('IxD secret key'));
 app.set('trust proxy', 1);

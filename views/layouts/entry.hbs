@@ -25,7 +25,7 @@
     <form id="addDiary" role="form" method="post" action="/addDiary/ne">
       <input type="file" accept="image/*" id="file-input" capture="environment"/><br>
        <canvas id="canvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
-       <input type="hidden" id="dataURL" name="dataURL">
+
        <img id="hello">
         <br>
         <textarea style="border-radius:10px;" width="20vw" height="20vh"
@@ -55,12 +55,11 @@
         </div>
         <input type="hidden" name="anxiety" value="0" id="anxiety"/>
       <hr class="rating-hr">
-        <input type="hidden" id="image" name="image" value="">
+      <input type="hidden" name="dataURL" id="dataURL" value="" />
         <input type="hidden" name="date" id="date" value=""/>
-        <input type="hidden" name="time" id="time" value=""/>
      </div>
      <a href="/index" class="btn btn-primary" style="float:left; margin-left:36px" role="button" id="back">Back</a>
-     <input type="submit" class="btn btn-sm entry2BackNext btn-dark" style="float:right; font-weight: bold; color:white; margin-right: 36px;" id="addEntry" onclick="clicked(event);" value="Add to Diary  ⇨" Text="Submit" />
+     <input type="submit" class="btn btn-sm entry2BackNext btn-dark" style="float:right; font-weight: bold; color:white; margin-right: 36px;" id="addEntry" value="Add to Diary  ⇨" />
       </form>
     </div>
 </div>
