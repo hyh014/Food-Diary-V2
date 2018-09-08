@@ -22,29 +22,18 @@ router.post('/', function(req,res,next){
       "mood":mood,
       "anxiety":anxiety,
       };
-      console.log(newObject);
-      /*
+
+/*
   let ref = firebase.database().ref('users/'+UUID);
-  let newID=ref.push(newObject);
-  let key = newID.key;
-  let list = [];
-  ref.once('value',function(snapshot){
-    snapshot.forEach(function(childSnapshot){
-      let entry = {
-        'key': childSnapshot.key,
-        'data': childSnapshot.val()
-      };
-      list.unshift(entry);
-    });
-  });
-      res.render('diary',list);
+  ref.push(newObject);
+  res.redirect('/diary');
 /*
       if(user){
 
       }else{
         res.render('login',{message:'Please Login First'});
       }*/
-      res.render('diary');
+
 });
 
 module.exports = router;
