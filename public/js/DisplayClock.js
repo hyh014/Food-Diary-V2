@@ -37,12 +37,6 @@ if (curr_min.length == 1)
 return (month+"/"+date+"/"+year+" "+curr_hour+":"+curr_min+a_p);
 }
 
-$('#addEntry').click( function(){
-  let date = document.getElementById("date");
-  date.value= formatAMPM();
-  document.getElementById('taste').value= $('#tasteRate').rateit('value');
-  document.getElementById('health').value=$('#healthRate').rateit('value');
-  document.getElementById('mood').value=$('#moodRate').rateit('value');
-  document.getElementById('anxiety').value=$('#anxietyRate').rateit('value');
-
-});
+document.getElementById('addEntry').onClick = function({
+  document.getElementById('date').value = formatAMPM();
+})

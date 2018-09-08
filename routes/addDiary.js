@@ -22,18 +22,34 @@ router.post('/', function(req,res,next){
       "mood":mood,
       "anxiety":anxiety,
       };
+<<<<<<< HEAD
 
 
+=======
+      console.log(newObject);
+      /*
+>>>>>>> parent of 94cc6d35... firebase
   let ref = firebase.database().ref('users/'+UUID);
-  ref.push(newObject);
-  res.redirect('/diary');
+  let newID=ref.push(newObject);
+  let key = newID.key;
+  let list = [];
+  ref.once('value',function(snapshot){
+    snapshot.forEach(function(childSnapshot){
+      let entry = {
+        'key': childSnapshot.key,
+        'data': childSnapshot.val()
+      };
+      list.unshift(entry);
+    });
+  });
+      res.render('diary',list);
 /*
       if(user){
 
       }else{
         res.render('login',{message:'Please Login First'});
       }*/
-
+      res.render('diary');
 });
 
 module.exports = router;

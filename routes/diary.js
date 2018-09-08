@@ -1,8 +1,6 @@
-
+var users = require('../data.json');
 var express = require('express');
 var router = express.Router();
-const firebase = require('firebase');
-let data = require('../my-project-1519903201611-export.json');
 
 // GET request to /login
 
