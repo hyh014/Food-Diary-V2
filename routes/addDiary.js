@@ -12,7 +12,7 @@ router.post('/', function(req,res,next){
   const mood = req.body.mood;
   const anxiety = req.body.anxiety;
   const date = req.body.date;
-  //const UUID = firebase.auth().currentUser.uid;
+  const UUID = firebase.auth().currentUser.uid;
   const newObject = {
       "imageURL":imageURL,
       "comments":comments,
@@ -23,7 +23,7 @@ router.post('/', function(req,res,next){
       "anxiety":anxiety,
       };
 
-/*
+
   let ref = firebase.database().ref('users/'+UUID);
   ref.push(newObject);
   res.redirect('/diary');
