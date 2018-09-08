@@ -8,7 +8,7 @@ let data = require('../my-project-1519903201611-export.json');
 
 router.get('/', function(req, res, next) {
 
-			const UUID = 'gqn1G7aM2GRIt5cKgQmwRoJK0E73';//firebase.auth().currentUser.uid;
+			const UUID = firebase.auth().currentUser.uid;
 		  let ref = firebase.database().ref('users/'+UUID);
 
 		  let list = {entry:[]};
