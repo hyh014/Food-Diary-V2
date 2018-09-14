@@ -1,12 +1,6 @@
-var config = {
-  apiKey: "AIzaSyCSHqADgMlrT2iHoWBp7NLwePbmFG2S4PM",
-  authDomain: "my-project-1519903201611.firebaseapp.com",
-  databaseURL: "https://my-project-1519903201611.firebaseio.com",
-  projectId: "my-project-1519903201611",
-  storageBucket: "my-project-1519903201611.appspot.com",
-  messagingSenderId: "58050717665"
-};
-firebase.initializeApp(config);
+
+
+
 /*$(document).ready(function(){
   generateGraph();
   var w = $(document).width()*.4;
@@ -33,7 +27,7 @@ function generateGraph(){
     });
   });
 
-//  $.get('/user/'+sessionStorage.name,dataCallBack);
+  $.get(list,dataCallBack);
 }
 
 function dataCallBack(result){
@@ -43,7 +37,7 @@ function dataCallBack(result){
       var taste = 0;
       var mood = 0;
       var anxiety = 0;
-      var sameDate = result.datas[result.datas.length-1].date;
+      var sameDate = result.entry[result.entry.length-1].date;
       var sameDateCount=0;
   for (var i = result.datas.length-2; i >0 ; i--) {
       if(sameDate == result.datas[i].date){
@@ -159,14 +153,12 @@ function dataCallBack(result){
 }
 $(document).ready(function(){
     $(".remove").click(function(){
-      let user = firebase.auth().currentUser.uid;
-      let key = $(this).siblings('#key').value;
-      let ref = firebase.database().ref('/users/'+user);
+      let key = $(this).siblings('#ratings').children('#key');
+      key = key[0].value;
 			$(this).parent('#loop').remove();
-        $(this).parent("#one").remove();//$("#one").remove();
-				var value = $.trim($(this).siblings('#date').text());
-        ref.child(key).remove();
-
+      $(this).parent("#one").remove();
+			var value = $.trim($(this).siblings('#date').text());
+      //location.replace('/remove/'+key);
     });
 
 		$(".edit").click(function(){

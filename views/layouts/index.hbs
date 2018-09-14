@@ -31,15 +31,34 @@
 			<!--	<div id="chartdiv"></div>-->
 			</div>
 		</div>
+		<input type="hidden" value={{user}}>
 	</div>
 
 
 
 			<br />
 	</div>
+	<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyCSHqADgMlrT2iHoWBp7NLwePbmFG2S4PM",
+	    authDomain: "my-project-1519903201611.firebaseapp.com",
+	    databaseURL: "https://my-project-1519903201611.firebaseio.com",
+	    projectId: "my-project-1519903201611",
+	    storageBucket: "my-project-1519903201611.appspot.com",
+	    messagingSenderId: "58050717665"
+	  };
+	  firebase.initializeApp(config);
+		firebase.auth().onAuthStateChanged(function(user) {
+		  if (user) {
+		    console.log("signed in");
+		  } else {
+		    console.log('not here');
+		  }
+		});
 
-<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
-<script src="/js/firebase.js"></script>
+	</script>
 <script src="/js/stat.js"></script>
 	</body>
 </html>

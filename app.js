@@ -22,7 +22,7 @@ const entry = require('./routes/entry');
 const diary = require('./routes/diary');
 const community = require('./routes/community');
 const addDiary = require('./routes/addDiary');
-
+const remove = require('./routes/remove');
 
 //GET RID OF ONCE COMPLETE
 const index = require('./routes/index');
@@ -30,7 +30,7 @@ const index = require('./routes/index');
 const photo = require('./routes/photo');
 
 const add = require('./routes/add');
-const remove = require('./routes/remove');
+
 
 
 
@@ -87,8 +87,9 @@ app.use('/user',user);
 app.use('/entry',entry);
 
 app.use('/diary',diary);
-app.use('/community',community);
+//app.use('/community',community);
 app.use('/addDiary/:edit',addDiary);
+app.use('/remove/:key',remove);
 
 //GET RID OF ONCE COMPLETE
 app.use('/index',index);

@@ -9,7 +9,7 @@ router.post('/addUser', function(req,res){
   const email = req.body.email;
   const password = req.body.password;
   firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
-    res.render('index');
+    res.redirect('/index');
   },function(error) {
       // Handle Errors here.
       const errorCode = error.code;
@@ -35,7 +35,7 @@ router.post('/login', function(req,res,next){
   const password = req.body.password;
 
       firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
-        res.render('index');
+        res.redirect('/index');
       },function(error) {
 				// Handle Errors here.
 				const errorCode = error.code;
