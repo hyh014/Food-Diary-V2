@@ -14,8 +14,6 @@ router.post('/addUser', function(req,res){
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorMessage);
-      console.log(errorCode);
       if(errorCode == 'auth/weak-password'){
         res.render('register',{message:'Weak Password'})
       }else if(errorCode == "auth/invalid-email")
@@ -42,8 +40,6 @@ router.post('/login', function(req,res,next){
 				// Handle Errors here.
 				const errorCode = error.code;
 				const errorMessage = error.message;
-        console.log(errorMessage);
-        console.log(errorCode);
 				if(errorCode == 'auth/wrong-password'){
 
 					res.render('login',{message:'Wrong Password'});

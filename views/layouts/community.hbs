@@ -25,8 +25,15 @@
 	</div>
 	<hr>
 	<div class="container">
+			{{#each entry}}
+			{{if current}}
+			<img src="/images/profileFill.png" style="border-radius:50%; width:4vw; height:4vh; margin-top:-4vh">
+			<textarea style="border-radius:10px; resize:none;" rows="2" cols="100" readonly>Hi Everyone!</textarea>
+			{{else}}
 		<textarea style="border-radius:10px; resize:none;" rows="2" cols="100" readonly>Hi Everyone!</textarea>
 		<img src="/images/profileFill.png" style="border-radius:50%; width:4vw; height:4vh; margin-top:-4vh">
+		{{/if}}
+			{{/each}}
 	</div>
 </div>
 </body>

@@ -1,3 +1,12 @@
+var config = {
+  apiKey: "AIzaSyCSHqADgMlrT2iHoWBp7NLwePbmFG2S4PM",
+  authDomain: "my-project-1519903201611.firebaseapp.com",
+  databaseURL: "https://my-project-1519903201611.firebaseio.com",
+  projectId: "my-project-1519903201611",
+  storageBucket: "my-project-1519903201611.appspot.com",
+  messagingSenderId: "58050717665"
+};
+firebase.initializeApp(config);
 /*$(document).ready(function(){
   generateGraph();
   var w = $(document).width()*.4;
@@ -5,52 +14,25 @@
   document.getElementById('chartdiv').style.width = w +'px';
   document.getElementById('chartdiv').style.height = h + 'px';
 });*/
-$('a.selection').click(function(){
-
-  var selected = this.id;
-  var time = $('option').get(0).id;
-  if(selected === 'taste')
-  {
-    if(time === 'week'){
-      $('img').attr('src','/images/taste1.png');
-    }
-    else{
-      $('img').attr('src','/images/taste2.png');
-    }
-  }
-  else if(selected === 'health')
-  {
-      if(time === 'week'){
-      $('img').attr('src','/images/health1.png');
-    }
-    else{
-      $('img').attr('src','/images/health2.png');
-    }
-  }
-  else if(selected === 'mood')
-  {
-      if(time === 'week'){
-      $('img').attr('src','/images/mood1.png');
-    }
-    else{
-      $('img').attr('src','/images/mood2.png');
-    }
-  }
-  else {
-      if(time === 'week'){
-      $('img').attr('src','/images/taste1.png');
-    }
-    else{
-      $('img').attr('src','/images/taste2.png');
-    }
-  }
-
-});
-
-
-
 
 function generateGraph(){
+  const UUID = firebase.auth().currentUser.uid;
+  let ref = firebase.database().ref('users/'+UUID);
+
+  let list = {entry:[]};
+  ref.once('value',function(snapshot){
+    snapshot.forEach(function(child){
+      let val = child.val();
+      list.entry.unshift({
+        'health':val.health,
+        'taste':val.taste,
+        'mood':val.mood,
+        'anxiety':val.anxiety,
+        'date':val.date
+      });
+    });
+  });
+
 //  $.get('/user/'+sessionStorage.name,dataCallBack);
 }
 
@@ -175,3 +157,44 @@ function dataCallBack(result){
   // generate some random data, quite different range
 
 }
+$(document).ready(function(){
+    $(".remove").click(function(){
+      let user = firebase.auth().currentUser.uid;
+      let key = $(this).siblings('#key').value;
+      let ref = firebase.database().ref('/users/'+user);
+			$(this).parent('#loop').remove();
+        $(this).parent("#one").remove();//$("#one").remove();
+				var value = $.trim($(this).siblings('#date').text());
+        ref.child(key).remove();
+
+    });
+
+		$(".edit").click(function(){
+			sessionStorage.setItem('edit',true);
+			sessionStorage.setItem('editDate',true);
+			var image = $(this).siblings('.container').children('img')[0].src;
+			var foodName = $(this).siblings('#input').children('#foodName').text();//$('#foodName').text();
+			var comments = $(this).siblings('#input').children('#comments').text();//$('#comments').text();
+			var health = $(this).siblings('#ratings').children('#health').text();//$('#health').text();
+			var taste = $(this).siblings('#ratings').children('#taste').text();//$('#taste').text();
+			var mood = $(this).siblings('#ratings').children('#mood').text();//$('#mood').text();
+			var anxiety = $(this).siblings('#ratings').children('#anxiety').text();//$('#anxiety').text();
+			var date = $(this).siblings('#date').text();//$('#date').text();
+			var time = date.substring(11);
+			var date = date.substring(0,10);
+			health = health.substring(7,8);
+			taste = taste.substring(6,7);
+			mood = mood.substring(5,6);
+			anxiety = anxiety.substring(8,9);
+			sessionStorage.setItem('image',image);
+			sessionStorage.setItem('foodName',foodName);
+			sessionStorage.setItem('comments',comments);
+			sessionStorage.setItem('health',health);
+			sessionStorage.setItem('taste',taste);
+			sessionStorage.setItem('mood',mood);
+			sessionStorage.setItem('anxiety',anxiety);
+			sessionStorage.setItem('time',time);
+			sessionStorage.setItem('date',date);
+			location.replace("/entry2/"+sessionStorage.getItem('name'));
+		});
+});

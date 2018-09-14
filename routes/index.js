@@ -4,8 +4,13 @@ var router = express.Router();
 // GET request to /login
 
 router.get('/', function(req, res, next) {
-    // do something
+	let user = firebase.auth().currentUser;
+	if(user){
 		res.render('index');
+	}else{
+		res.render('login',{message:'Please Login First'});
+	}
+
 });
 
 module.exports = router;

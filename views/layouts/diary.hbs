@@ -31,7 +31,6 @@
 <br>
 <div class="text-center" style="margin-bottom:15px;">
 </div>
-	<text>{{list}}</text>
 	{{#each entry}}
 	<div id="loop" style = "margin-top:-21px;" class="container diary-area text-center">
 		<div id = "one" class="text-center">
@@ -49,8 +48,8 @@
 			<text id="taste">Taste: {{data.taste}} &#9734;</text><br>
 			<text id="mood">Mood: {{data.mood}} &#9734;</text><br>
 			<text id="anxiety">Anxiety: {{data.anxiety}} &#9734;</text>
+			<input type="hidden" value={{key}} id="key">
 		</div>
-		<input type="hidden" value={{key}} id="key">
 		<hr>
 		<button class="edit btn btn-sm entry2BackNext" style="float:right;margin-top: -60px; margin-left:12px;">Edit</button>
 		<button class="remove btn btn-sm entry2BackNext" style="float:right;margin-top: -60px;">Remove</button>
@@ -67,55 +66,12 @@
         <button id="stat" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
 			-->
       </div>
-<script>
-function helpDiary() {
-    alert("Tutorials\n\nIn this page, you could view your diary history. You could either scrolls up down or click the calendar to find one specific day."
-      );
-}
-</script>
-		<script src="/js/entry.js"></script>
-		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 	 	<script src="/js/bootstrap.min.js"></script>
 	  <script src="/scripts/jquery.rateit.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $(".remove").click(function(){
-			$(this).parent('#loop').remove();
-        $(this).parent("#one").remove();//$("#one").remove();
-				var value = $.trim($(this).siblings('#date').text());
-				location.replace("/remove/"+sessionStorage.getItem('name')+"/"+value);
-    });
-		$(".edit").click(function(){
-			sessionStorage.setItem('edit',true);
-			sessionStorage.setItem('editDate',true);
-			var image = $(this).siblings('.container').children('img')[0].src;
-			var foodName = $(this).siblings('#input').children('#foodName').text();//$('#foodName').text();
-			var comments = $(this).siblings('#input').children('#comments').text();//$('#comments').text();
-			var health = $(this).siblings('#ratings').children('#health').text();//$('#health').text();
-			var taste = $(this).siblings('#ratings').children('#taste').text();//$('#taste').text();
-			var mood = $(this).siblings('#ratings').children('#mood').text();//$('#mood').text();
-			var anxiety = $(this).siblings('#ratings').children('#anxiety').text();//$('#anxiety').text();
-			var date = $(this).siblings('#date').text();//$('#date').text();
-			var time = date.substring(11);
-			var date = date.substring(0,10);
-			health = health.substring(7,8);
-			taste = taste.substring(6,7);
-			mood = mood.substring(5,6);
-			anxiety = anxiety.substring(8,9);
-			sessionStorage.setItem('image',image);
-			sessionStorage.setItem('foodName',foodName);
-			sessionStorage.setItem('comments',comments);
-			sessionStorage.setItem('health',health);
-			sessionStorage.setItem('taste',taste);
-			sessionStorage.setItem('mood',mood);
-			sessionStorage.setItem('anxiety',anxiety);
-			sessionStorage.setItem('time',time);
-			sessionStorage.setItem('date',date);
-			location.replace("/entry2/"+sessionStorage.getItem('name'));
-		});
-});
-</script>
+		<script src="/js/remove.js"></script>
+		<script src="/js/stat.js"></script>
+
 <script>
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
