@@ -21,19 +21,16 @@
 
 	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <div class="page-header">
-<h1 style="text-align:center; color:#f0ad4e; " >Hello {{id}}</h1>
+<h1 style="text-align:center; color:#f0ad4e; ">Diary</h1>
 
 <button id="setting" style="margin-top:-68px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
 </div>
 </div>
-
-
 <br>
-
 	{{#each entry}}
 	<div id="loop" style = "margin-top:-21px;" class="container diary-area text-center">
 		<div id = "one" class="text-center">
-			<text class="text-center" style="font-size:15px; " id="date">{{data.date}} {{data.time}}</text><hr class="rating-hr">
+			<text class="text-center" style="font-size:15px; " id="date">{{data.date}} {{data.time}}</text><br class="rating-br">
 
 			<div style="margin-top:20px; margin-bottom: 20px;" class=" container text-center">
 				<img  src="{{data.imageURL}}" style="width:40vw; height:45vh">
@@ -49,10 +46,10 @@
 			<text id="anxiety">Anxiety: {{data.anxiety}} &#9734;</text>
 			<input type="hidden" value={{key}} id="key">
 		</div>
-		<hr>
+		<br>
 		<!--<button class="edit btn btn-sm entry2BackNext" style="float:right;margin-top: -60px; margin-left:12px;">Edit</button>-->
 		<button class="remove btn btn-sm" style="float:right;margin-top: -60px;">Remove</button>
-		<hr>
+		<br>
 		</div>
 	</div>
 
