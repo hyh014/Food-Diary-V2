@@ -53,6 +53,8 @@
 		firebase.auth().onAuthStateChanged(function(user) {
 		  if (user) {
 		    console.log("signed in");
+				console.log(user);
+				console.log(user.uid);
 		  } else {
 		    console.log('not here');
 		  }

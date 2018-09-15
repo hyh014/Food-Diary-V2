@@ -89,7 +89,7 @@ app.use('/entry',entry);
 app.use('/diary',diary);
 //app.use('/community',community);
 app.use('/addDiary/:edit',addDiary);
-app.use('/remove/:key',remove);
+//app.use('/remove',remove);
 
 //GET RID OF ONCE COMPLETE
 app.use('/index',index);

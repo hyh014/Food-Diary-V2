@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 let firebase = require('firebase');
 
-// GET request to /login
+
 
 router.get('/:key', function(req, res, next) {
 	let user = firebase.auth().currentUser;
@@ -15,7 +15,6 @@ router.get('/:key', function(req, res, next) {
 	}else{
 		res.render('login',{message:'Please Login First'});
 	}
-
 });
 
 module.exports = router;

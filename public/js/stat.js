@@ -152,14 +152,6 @@ function dataCallBack(result){
 
 }
 $(document).ready(function(){
-    $(".remove").click(function(){
-      let key = $(this).siblings('#ratings').children('#key');
-      key = key[0].value;
-			$(this).parent('#loop').remove();
-      $(this).parent("#one").remove();
-			var value = $.trim($(this).siblings('#date').text());
-      //location.replace('/remove/'+key);
-    });
 
 		$(".edit").click(function(){
 			sessionStorage.setItem('edit',true);
