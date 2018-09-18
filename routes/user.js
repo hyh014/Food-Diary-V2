@@ -66,7 +66,7 @@ router.post('/login', function(req,res,next){
 
 router.use('/logout', function(req,res,next){
   firebase.auth().signOut().then(function(){
-    res.render('/');
+    res.redirect('/login');
   });
 });
 

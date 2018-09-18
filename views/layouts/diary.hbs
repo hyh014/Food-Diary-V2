@@ -22,7 +22,7 @@
 	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <div class="page-header">
 <h1 style="text-align:center; color:#f0ad4e; ">Diary</h1>
-
+<a href="/index" class="btn btn-success">Back</a>
 <button id="setting" style="margin-top:-68px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
 </div>
 </div>
@@ -75,7 +75,6 @@
 					messagingSenderId: "58050717665"
 				};
 				firebase.initializeApp(config);
-
 			    $(".remove").click(function(){
 			      let key = $(this).siblings('#ratings').children('#key');
 						let UUID = firebase.auth().currentUser.uid;
@@ -88,12 +87,9 @@
 
 			    });
 				});
-
-
 		</script>
 	 	<script src="/js/bootstrap.min.js"></script>
 	  <script src="/scripts/jquery.rateit.min.js"></script>
-		<script src="/js/stat.js"></script>
 
 <script>
 window.onscroll = function() {scrollFunction()};
