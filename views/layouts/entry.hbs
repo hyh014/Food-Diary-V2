@@ -14,13 +14,10 @@
   <script src="https://code.jquery.com/jquery.js"></script>
     <link href="/scripts/rateit.css" rel="stylesheet">
   <body>
-      <div>
-        <a href="#" class="glyphicon glyphicon-question-sign" onclick="helpEntry()" style=" font-size:40px; margin-right: 13px;float:right" role="button" id="help" name="entry"></a>
-      </div>
-<br>
+
 <div class="text-center">
-    <h1 style="font-family:Palatino;">Log Your Meal</h1><br>
-    <p class="help-block" id="clock" ></p>
+    <h1 >Log Your Meal</h1><br>
+    <h4 class="help-block" id="clock" ></h4>
 
     <form id="addDiary" role="form" method="post" action="/addDiary/ne">
       <input type="file" accept="image/*" id="file-input" capture="environment"/><br>
@@ -29,7 +26,7 @@
        <img id="hello">
         <br>
         <textarea style="border-radius:10px;" width="20vw" height="20vh"
-           placeholder="  Comments:       Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
+           placeholder="Comments: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
         <br>
          <br/>
 
@@ -58,8 +55,8 @@
       <input type="hidden" name="dataURL" id="dataURL" value="" />
         <input type="hidden" name="date" id="date" value=""/>
      </div>
-     <a href="/index" class="btn btn-primary" style="float:left; margin-left:36px" role="button" id="back">Back</a>
-     <input type="submit" class="btn btn-sm entry2BackNext btn-dark" style="float:right; font-weight: bold; color:white; margin-right: 36px;" id="addEntry" value="Add to Diary  ⇨" />
+     <a href="/index" class="btn btn-dark" style="float:left; margin-left:36px; " role="button" id="entryBackBtn">Back</a>
+     <input type="submit" class="btn  entry2BackNext btn-primary" style="float:right; font-weight: bold; color:white; margin-right: 36px;" id="addEntry" value="Add to Diary  ⇨" />
       </form>
     </div>
 </div>
