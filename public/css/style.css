@@ -173,15 +173,12 @@
     background-color: transparent;
     border-color:transparent;
   }
-  .profile-icon{
-    style="border-radius:50%;
-    width:5vw;
-    height:5vh;
-    margin-top:-4vh
-  }
-  .community-text{
-    width:80vw;
-    height:15vh;
+
+  #comments {
+    width:  100vw;      /* calc and viewport to the rescue */
+    height: 20vh;
+    resize: none;
+
   }
 }
 
@@ -284,7 +281,11 @@
   width:  20vw;      /* calc and viewport to the rescue */
   height: 20vh;
   resize: none;
+  }
+
 }
+
+
 
 @media (min-width: 1200px) {
   canvas {
@@ -294,7 +295,7 @@
 }
 @media(max-width:1199px){
   canvas {
-    height: 10vh;
-    width: 10vw;
+    height: 55vh;
+    width: 100vw;
   }
 }
