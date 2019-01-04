@@ -13,58 +13,48 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <link href="/scripts/rateit.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500" rel="stylesheet">
 
 </head>
 <body>
-
-
-	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-<div class="page-header">
-<h1 style="text-align:center; color:#f0ad4e; ">Diary</h1>
-<a href="/index" class="btn btn-success">Back</a>
-<button id="setting" style="margin-top:-68px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
-</div>
-</div>
-<br>
+	<button id="top" title="Go to top">Top</button>
+	<div class="page-header">
+	<h1 style="text-align:center; color:#f0ad4e; ">Diary</h1>
+	<a href="/index" class="btn btn-success">Back</a>
+	<button id="setting" style="margin-top:-68px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
+	</div>
+	</div>
+	<br>
 	{{#each entry}}
 	<div id="loop" style = "margin-top:-21px;" class="container diary-area text-center">
 		<div id = "one" class="text-center">
 			<text class="text-center" style="font-size:15px; " id="date">{{data.date}} {{data.time}}</text><br class="rating-br">
-
 			<div style="margin-top:20px; margin-bottom: 20px;" class=" container text-center">
-				<img  src="{{data.imageURL}}" style="width:40vw; height:45vh">
-
-		</div>
-		<div id="input">
-			<textarea id="comments" rows="4" cols="25" class="row diary-textarea text-center" readonly>{{data.comments}}</textarea><br/>
-		</div>
-		<div id="ratings" class="text-center diary-rating">
-			<text id="health">Health: {{data.health}} &#9734;</text><br>
-			<text id="taste">Taste: {{data.taste}} &#9734;</text><br>
-			<text id="mood">Mood: {{data.mood}} &#9734;</text><br>
-			<text id="anxiety">Anxiety: {{data.anxiety}} &#9734;</text>
-			<input type="hidden" value={{key}} id="key">
-		</div>
-		<br>
-		<!--<button class="edit btn btn-sm entry2BackNext" style="float:right;margin-top: -60px; margin-left:12px;">Edit</button>-->
-		<button class="remove btn btn-sm" style="float:right;margin-top: -60px;">Remove</button>
-		<br>
+					<img  src="{{data.imageURL}}" style="width:40vw; height:45vh">
+			</div>
+			<div id="input">
+				<textarea id="comments" rows="4" cols="25" class="row diary-textarea text-center" readonly>{{data.comments}}</textarea><br/>
+			</div>
+			<div id="ratings" class="text-center diary-rating">
+				<text id="health">Health: {{data.health}} &#9734;</text><br>
+				<text id="taste">Taste: {{data.taste}} &#9734;</text><br>
+				<text id="mood">Mood: {{data.mood}} &#9734;</text><br>
+				<text id="anxiety">Anxiety: {{data.anxiety}} &#9734;</text>
+				<input type="hidden" value={{key}} id="key">
+			</div>
+			<br>
+			<button class="edit btn btn-sm " style="margin-top: -60px; margin-left:12px;">Edit</button>
+			<button class="remove btn btn-sm" id="remove" style="float:right;margin-top: -60px;">Remove</button>
+			<br>
 		</div>
 	</div>
 
 	{{/each}}
 <br>
 
-	<!--
-        <button id="entry" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
-        <button id="diary" style="background-color: #f7f0a1; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
-        <button id="stat" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
-			-->
+
 
 		<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
 		<script>
-
 			$(document).ready(function(){
 				var config = {
 					apiKey: "AIzaSyCSHqADgMlrT2iHoWBp7NLwePbmFG2S4PM",
@@ -75,37 +65,23 @@
 					messagingSenderId: "58050717665"
 				};
 				firebase.initializeApp(config);
-			    $(".remove").click(function(){
-			      let key = $(this).siblings('#ratings').children('#key');
-						let UUID = firebase.auth().currentUser.uid;
-			      key = key[0].value;
-				//		$(this).parent('#loop').remove();
-			      $(this).parent("#one").parent().remove();
-						var value = $.trim($(this).siblings('#date').text());
-						let ref = firebase.database().ref('users/'+UUID+'/'+key);
-						ref.remove();
-
-			    });
+				let remove = document.getElementById('remove');
+				remove.addEventListener('onclick',function(){
+					let key = $(this).siblings('#ratings').children('#key');
+					let UUID = firebase.auth().currentUser.uid;
+					key = key[0].value;
+			//		$(this).parent('#loop').remove();
+					$(this).parent("#one").parent().remove();
+					let value = $.trim($(this).siblings('#date').text());
+					let ref = firebase.database().ref('users/'+UUID+'/'+key);
+					ref.remove();
+				},false);
 				});
 		</script>
 	 	<script src="/js/bootstrap.min.js"></script>
 	  <script src="/scripts/jquery.rateit.min.js"></script>
-
-<script>
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
-    }
-}
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-	</script>
+		<script src="/js/scroll.js"></script>
+		<script src="/js/edit.js"></script>
 
 
 </body>

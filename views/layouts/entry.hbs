@@ -11,7 +11,7 @@
   <link href="/css/bootstrap-grid.css"  type="text/css" rel="stylesheet">
   <link href="/css/bootstrap-reboot.css"  type="text/css" rel="stylesheet">
   <link href="/css/bootstrap.css" type="text/css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery.js"></script>
+
     <link href="/scripts/rateit.css" rel="stylesheet">
   <body>
       <div>
@@ -19,40 +19,34 @@
       </div>
 <br>
 <div class="text-center">
-    <h1 style="font-family:Palatino;">Log Your Meal</h1><br>
+    <h1 >Log Your Meal</h1><br>
     <p class="help-block" id="clock" ></p>
 
     <form id="addDiary" role="form" method="post" action="/addDiary/ne">
       <input type="file" accept="image/*" id="file-input" capture="environment"/><br>
        <canvas id="canvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
 
-       <img id="hello">
+       <!-- <img id="hello"> -->
         <br>
         <textarea style="border-radius:10px;" width="20vw" height="20vh"
            placeholder="  Comments:       Eg: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
         <br>
-         <br/>
-
         <hr>
      <div class="container"  id="Rating" >
        <text class="Text-input">Taste:</text><br/>
-       <div class="rateit" id="tasteRate" data-rateit-mode="font"  style="font-size:50px">
-      </div>
+       <div class="rateit" id="tasteRate" data-rateit-mode="font"  style="font-size:50px"></div>
       <input type="hidden" name="taste" id="taste" value="0" />
      <hr class="rating-hr">
         <text class="Text-input">Health:</text><br/>
-        <div class="rateit" id="healthRate" data-rateit-mode="font"  style="font-size:50px">
-       </div>
+        <div class="rateit" id="healthRate" data-rateit-mode="font"  style="font-size:50px"></div>
        <input type="hidden" name="health" value="0" id="health"/>
       <hr class="rating-hr">
        <text class="Text-input">Mood:</text><br/>
-       <div class="rateit" id="moodRate" data-rateit-mode="font"  style="font-size:50px">
-       </div>
+       <div class="rateit" id="moodRate" data-rateit-mode="font"  style="font-size:50px"></div>
        <input type="hidden" name="mood" value="0"  id="mood"/>
       <hr class="rating-hr">
         <text class="Text-input">Anxiety:</text><br/>
-        <div class="rateit" id="anxietyRate" data-rateit-mode="font"  style="font-size:50px">
-        </div>
+        <div class="rateit" id="anxietyRate" data-rateit-mode="font"  style="font-size:50px"></div>
         <input type="hidden" name="anxiety" value="0" id="anxiety"/>
       <hr class="rating-hr">
       <input type="hidden" name="dataURL" id="dataURL" value="" />
@@ -63,41 +57,15 @@
       </form>
     </div>
 </div>
-<!--
-<script>
-   function edit(){
-    if(sessionStorage.getItem('edit') == 'true'){
-      document.getElementById('output').src = sessionStorage.image;
 
-      document.getElementById('foodName').value = sessionStorage.foodName;
-      document.getElementById('comments').value = sessionStorage.comments;
-      $('#tasteRate').rateit('value',sessionStorage.taste);
-      $('#healthRate').rateit('value',sessionStorage.health);
-      $('#moodRate').rateit('value',sessionStorage.mood);
-      $('#anxietyRate').rateit('value',sessionStorage.anxiety);
-      $('#clock').text(sessionStorage.date+" "+sessionStorage.time);
-      $('#back').attr('href','/diary/'+sessionStorage.name);
-      document.getElementById('addDiary').action= '/addDiary/e';
-      sessionStorage.setItem('edit',false);
-    }
-    else{
-      //document.getElementById('foodName').value = "";
-      document.getElementById('comments').value = "";
-      $('#tasteRate').rateit('value',0);
-      $('#healthRate').rateit('value',0);
-      $('moodRate').rateit('value',0);
-      $('#anxietyRate').rateit('value',0);
-      document.getElementById('addDiary').action = '/addDiary/ne';
-    }
-  }
-window.onload=edit;
-</script>-->
 
-     <script src="/js/DisplayClock.js"></script>
+
      <script src="https://code.jquery.com/jquery.js"></script>
+     <script src="/js/DisplayClock.js"></script>
      <script src="/js/bootstrap.min.js"></script>
      <script src="/scripts/jquery.rateit.min.js"></script>
      <script src="/js/user.js"></script>
+     <script src="/js/entryEdit.js"></script>
 
   </body>
 </html>

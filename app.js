@@ -44,10 +44,6 @@ const stat = require('./routes/stat');
 const app = express();
 const firebase = require('firebase');
 
-/*firebase.initializeApp({
-  serviceAccount: serviceAccounts,
-  databaseURL: process.env.DATABASEURL
-});*/
 firebase.initializeApp({
   apiKey: process.env.APIKEY,
   authDomain: process.env.AUTHDOMAIN,
@@ -72,8 +68,11 @@ app.set('trust proxy', 1);
 //app.use(express.static('public'));
 const sess = {
   secret: 'secret',
-  cookie: {secure:true}
-}
+  cookie: {secure:true},
+  resave: true,
+  saveUninitialized:true
+};
+
 app.use(session(sess));
 //app.use(express.Router());
 
@@ -87,8 +86,8 @@ app.use('/user',user);
 app.use('/entry',entry);
 
 app.use('/diary',diary);
-//app.use('/community',community);
-app.use('/addDiary/:edit',addDiary);
+app.use('/community',community);
+app.use('/addDiary',addDiary);
 //app.use('/remove',remove);
 
 //GET RID OF ONCE COMPLETE

@@ -13,26 +13,24 @@
 <link href="/css/bootstrap.css" type="text/css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery.js"></script>
 <body>
-
 <div class="text-center">
-<h1 class="page-header " style="font-family: Palatino;">Community</h1>
+	<h1 class="page-header" >Community</h1>
 	<div class="container">
 		<form class="form" method="POST" action="/community/submit" >
       <textarea style="border-radius:10px; resize:none"
-          name="messages" id="messages" placeholder="Discuss With Others About Your Experience! "></textarea><br>
+          name="messages" id="messages" placeholder="Discuss With Others About Your Experience! " class="community-text"></textarea><br>
 				<input type="submit" class="btn btn-dark" style="font-weight: bold; color:white;" value="Post" ><br>
 		</form>
 	</div>
 	<hr>
 	<div class="container">
 			{{#each entry}}
-			{{if current}}
-			<img src="/images/profileFill.png" style="border-radius:50%; width:4vw; height:4vh; margin-top:-4vh">
-			<textarea style="border-radius:10px; resize:none;" rows="2" cols="100" readonly>Hi Everyone!</textarea>
-			{{else}}
-		<textarea style="border-radius:10px; resize:none;" rows="2" cols="100" readonly>Hi Everyone!</textarea>
-		<img src="/images/profileFill.png" style="border-radius:50%; width:4vw; height:4vh; margin-top:-4vh">
-		{{/if}}
+
+			<img src="/images/profileFill.png" class="profile-icon">
+			<text>{{email}}</text>
+			<br>
+			<textarea style="border-radius:10px; resize:none;" class="community-text" readonly>{{message}}</textarea>
+
 			{{/each}}
 	</div>
 </div>

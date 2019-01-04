@@ -5,29 +5,33 @@ let firebase = require('firebase');
 // GET request to /login
 
 router.get('/', function(req, res, next) {
-	let user = firebase.auth().currentUser.uid;
+
+
+	let user = firebase.auth().currentUser;
 	if(user){
-		let ref = firebase.database().ref('/messages');
+		user = user.uid;
+		let ref = firebase.database().ref('messages');
 		let list = {entry:[]};
 
 		ref.once('value',function(snapshot){
-			snapshot.forEach(function(child){
-				let val = child.val();
-				if(val.userid === user){
-					list.entry.unshift({
-						'message': val.message,
-						'current':true
-					});
-				}else{
-					list.entry.unshift({
-						'message': val.message,
-						'current':false
-					});
-				}
+			if(snapshot.numChildren()==0){
+				list.entry.unshift({
+					'message':'Nothing Here',
 
-			});
+				});
+			}else {
+				snapshot.forEach(function(child){
+					let val = child.val();
+						list.entry.unshift({
+							'message': val.message,
+							'email':val.email
+						});
+
+				});
+			}
 			 res.render('community',list);
 		});
+		res.render('community',list);
 	}else{
 		res.render('login',{message:'Please Login First'});
 	}
@@ -36,16 +40,17 @@ router.get('/', function(req, res, next) {
 });
 
 // POST request to /login
+
 router.post('/submit',function(req,res,next){
-	let user = firebase.auth().currentUser.uid;
+	let user = firebase.auth().currentUser.getEmail();
 	let ref = firebase.database().ref('/messages');
 	let message = req.body.messages;
 
 	let newMessage = {
 		'message': message,
-		'userid':user
+		'email':user
 	}
-	ref.push(message);
+	ref.push(newMessage);
 	res.redirect('/community');
 });
 
