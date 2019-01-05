@@ -1,6 +1,6 @@
 $(".edit").click(function(){
   sessionStorage.setItem('edit',true);
-  var image = $(this).siblings('.container').children('img').src;
+  var image = $(this).siblings('#image-container').children('img')[0].src;;
   var comments = $(this).siblings('#input').children('#comments').text();
   var health = $(this).siblings('#ratings').children('#health').text();
   var taste = $(this).siblings('#ratings').children('#taste').text();

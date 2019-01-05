@@ -27,7 +27,7 @@
 	<div id="loop" style = "margin-top:-21px;" class="container diary-area text-center">
 		<div id = "one" class="text-center">
 			<text class="text-center" style="font-size:15px; " id="date">{{data.date}} {{data.time}}</text><br class="rating-br">
-			<div style="margin-top:20px; margin-bottom: 20px;" class=" container text-center">
+			<div id="image-container" style="margin-top:20px; margin-bottom: 20px;" class=" container text-center">
 					<img  src="{{data.imageURL}}" style="width:40vw; height:45vh">
 			</div>
 			<div id="input">
@@ -41,7 +41,7 @@
 				<input type="hidden" value={{key}} id="key">
 			</div>
 			<br>
-			<button class="edit btn btn-sm " style="margin-top: -60px; margin-left:12px;">Edit</button>
+			<button class="edit btn btn-sm " id="edit" style="margin-top: -60px; margin-left:12px;">Edit</button>
 			<button class="remove btn btn-sm" id="remove" style="float:right;margin-top: -60px;">Remove</button>
 			<br>
 		</div>
