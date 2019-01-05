@@ -1,8 +1,13 @@
 window.onload = function(){
   console.log(sessionStorage);
  if(sessionStorage.getItem('edit')){
-
-   //document.getElementById('output').src = sessionStorage.image;
+   let canvas = document.getElementById('canvas');
+   let img = new Image();
+   img.src = sessionStorage.getItem('image');
+   let ctx = canvas.getContext('2d');
+   let dataURL = document.getElementById('dataURL');
+   dataURL.value = img.src;
+   ctx.drawImage(img , 0 , 0);
    $('#comments').html(sessionStorage.getItem('comments'));
    console.log(sessionStorage.getItem('comments'));
    console.log(sessionStorage.getItem('health'));

@@ -24,7 +24,6 @@ img.onload= function(){
   ctx.drawImage(img,0,0,img.width,    img.height
                    ,0,0,canvas.width, canvas.height);
   dataURL.value = canvas.toDataURL('image/jpeg',1.0);
-  console.log("Data URL: "+ dataURL.value);
 }
 
 const fileInput = document.getElementById('file-input');

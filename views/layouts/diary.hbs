@@ -23,31 +23,32 @@
 	</div>
 	</div>
 	<br>
-	{{#each entry}}
-	<div id="loop" style = "margin-top:-21px;" class="container diary-area text-center">
-		<div id = "one" class="text-center">
-			<text class="text-center" style="font-size:15px; " id="date">{{data.date}} {{data.time}}</text><br class="rating-br">
-			<div id="image-container" style="margin-top:20px; margin-bottom: 20px;" class=" container text-center">
-					<img  src="{{data.imageURL}}" style="width:40vw; height:45vh">
-			</div>
-			<div id="input">
-				<textarea id="comments" rows="4" cols="25" class="row diary-textarea text-center" readonly>{{data.comments}}</textarea><br/>
-			</div>
-			<div id="ratings" class="text-center diary-rating">
-				<text id="health">Health: {{data.health}} &#9734;</text><br>
-				<text id="taste">Taste: {{data.taste}} &#9734;</text><br>
-				<text id="mood">Mood: {{data.mood}} &#9734;</text><br>
-				<text id="anxiety">Anxiety: {{data.anxiety}} &#9734;</text>
-				<input type="hidden" value={{key}} id="key">
-			</div>
-			<br>
-			<button class="edit btn btn-sm " id="edit" style="margin-top: -60px; margin-left:12px;">Edit</button>
-			<button class="remove btn btn-sm" id="remove" style="float:right;margin-top: -60px;">Remove</button>
-			<br>
-		</div>
-	</div>
+	<div id="list">
+		{{#each entry}}
+		<div id="loop" style = "margin-top:-21px;" class="container diary-area text-center">
 
-	{{/each}}
+				<text class="text-center" style="font-size:15px; " id="date">{{data.date}} {{data.time}}</text><br class="rating-br">
+				<div id="image-container" style="margin-top:20px; margin-bottom: 20px;" class=" container text-center">
+						<img  src="{{data.imageURL}}" style="width:40vw; height:45vh">
+				</div>
+				<div id="input">
+					<textarea id="comments" rows="4" cols="25" class="row diary-textarea text-center" readonly>{{data.comments}}</textarea><br/>
+				</div>
+				<div id="ratings" class="text-center diary-rating">
+					<text id="health">Health: {{data.health}} &#9734;</text><br>
+					<text id="taste">Taste: {{data.taste}} &#9734;</text><br>
+					<text id="mood">Mood: {{data.mood}} &#9734;</text><br>
+					<text id="anxiety">Anxiety: {{data.anxiety}} &#9734;</text>
+					<input type="hidden" value={{key}} id="key">
+				</div>
+				<br>
+				<button class="edit btn btn-sm " id="edit" style="margin-top: -60px; margin-left:12px;">Edit</button>
+				<button class="remove btn btn-sm" id="remove" style="float:right;margin-top: -60px;">Remove</button>
+				<br>
+
+		</div>
+		{{/each}}
+	</div>
 <br>
 
 
@@ -64,17 +65,29 @@
 					messagingSenderId: "58050717665"
 				};
 				firebase.initializeApp(config);
-				let remove = document.getElementById('remove');
-				remove.addEventListener('onclick',function(){
-					let key = $(this).siblings('#ratings').children('#key');
-					let UUID = firebase.auth().currentUser.uid;
-					key = key[0].value;
-			//		$(this).parent('#loop').remove();
-					$(this).parent("#one").parent().remove();
-					let value = $.trim($(this).siblings('#date').text());
-					let ref = firebase.database().ref('users/'+UUID+'/'+key);
-					ref.remove();
+
+				let parent = document.getElementById('list');
+				list.addEventListener('click',function(event){
+					if(event.target.id === 'remove'){
+						let target = event.target;
+						let key = $('#'+target.id).siblings('#ratings').children('#key')[0].value; console.log('key',key);
+						let UUID = firebase.auth().currentUser.uid;
+						$(target).parent().remove();
+						let ref = firebase.database().ref('users/'+UUID+'/'+key);
+						ref.remove();
+					}
 				},false);
+				// let remove = document.getElementById('remove');
+				// remove.addEventListener('click',function(){
+				// 	let key = $(this).siblings('#ratings').children('#key');
+				// 	let UUID = firebase.auth().currentUser.uid;
+				// 	key = key[0].value;
+				// 	// $(this).parent('#loop').remove();
+				// 	$(this).parent("#one").parent().remove();
+				// 	let value = $.trim($(this).siblings('#date').text());
+				// 	let ref = firebase.database().ref('users/'+UUID+'/'+key);
+				// 	ref.remove();
+				// },false);
 				});
 		</script>
 	 	<script src="/js/bootstrap.min.js"></script>
