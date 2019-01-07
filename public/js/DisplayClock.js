@@ -1,4 +1,6 @@
 document.getElementById("clock").innerHTML = formatAMPM();
+let date = document.getElementById("date");
+date.value= formatAMPM();
 
 function formatAMPM() {
 var d = new Date();
@@ -38,8 +40,7 @@ return (month+"/"+date+"/"+year+" "+curr_hour+":"+curr_min+a_p);
 }
 
 $('#addEntry').click( function(){
-  let date = document.getElementById("date");
-  date.value= formatAMPM();
+
   document.getElementById('taste').value= $('#tasteRate').rateit('value');
   document.getElementById('health').value=$('#healthRate').rateit('value');
   document.getElementById('mood').value=$('#moodRate').rateit('value');

@@ -6,7 +6,7 @@ $(".edit").click(function(){
   var taste = $(this).siblings('#ratings').children('#taste').text();
   var mood = $(this).siblings('#ratings').children('#mood').text();
   var anxiety = $(this).siblings('#ratings').children('#anxiety').text();
-
+  let key = $(this).siblings('#ratings').children('#key').val();
   var date = $(this).siblings('#date').text();
   var time = date.substring(11);
   var date = date.substring(0,10);
@@ -23,5 +23,7 @@ $(".edit").click(function(){
   sessionStorage.setItem('anxiety',anxiety);
   sessionStorage.setItem('time',time);
   sessionStorage.setItem('date',date);
+  sessionStorage.setItem('key',key);
+
   location.replace("/entry");
 });

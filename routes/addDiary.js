@@ -29,7 +29,6 @@ router.post('/', function(req,res,next){
 });
 
 router.post('/e',function(req,res,next){
-  const edit = req.params.edit;
   const imageURL = req.body.dataURL;
   const comments = req.body.comments;
   const taste = req.body.taste;
@@ -49,6 +48,7 @@ router.post('/e',function(req,res,next){
       "anxiety":anxiety,
       };
   let ref = firebase.database().ref('users/'+UUID+'/'+key);
+
   ref.update(newObject);
   res.redirect('/diary');
 });

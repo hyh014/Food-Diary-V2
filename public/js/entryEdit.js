@@ -17,11 +17,12 @@ window.onload = function(){
    $('div#anxietyRate').rateit('value',sessionStorage.getItem('anxiety'));
    $('#clock').text(sessionStorage.getItem('date')+" "+sessionStorage.getItem('time'));
    $('#back').attr('href','/diary');
+   $('#key').val(sessionStorage.getItem('key'));
+   $('#date').val(sessionStorage.getItem('date')+' '+sessionStorage.getItem('time'));
    document.getElementById('addDiary').action= '/addDiary/e';
    sessionStorage.clear();
  }
  else{
-   //document.getElementById('foodName').value = "";
    document.getElementById('comments').value = "";
    $('#tasteRate').rateit('value',0);
    $('#healthRate').rateit('value',0);
