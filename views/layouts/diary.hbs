@@ -23,75 +23,88 @@
 	</div>
 	</div>
 	<br>
-	<div id="list">
-		{{#each entry}}
-		<div id="loop" style = "margin-top:-21px;" class="container diary-area text-center">
+	<diary-entry-list>
+		<diary-entry  >
+				<text style="font-size:15px; " >04/25/2019 2:37PM</text>
+				<div style="margin-top:20px; margin-bottom: 20px;" class="container ">
+						<img  src="/images/Lunch images/B1.jpg" style="width:40vw; height:45vh">
+				</div>
+				<diary-comment>
+					<textarea  rows="4" cols="25" class="diary-textarea comments" readonly>THIS IS A PLACEHOLDER COMMENT</textarea>
+				</diary-comment>
+				<diary-rating  class="diary-rating">
+					<text >Health: 4 &#9734;</text><br>
+					<text >Taste: 4 &#9734;</text><br>
+					<text >Mood:4 &#9734;</text><br>
+					<text >Anxiety: 4 &#9734;</text>
+				</diary-rating>
+				<br>
+				<!-- <button class="edit btn btn-sm " id="edit" style="margin-top: -60px; margin-left:12px;">Edit</button> -->
+				<button class="remove btn btn-sm" style="float:right;margin-top: -60px;">Remove</button>
+				<br>
 
-				<text class="text-center" style="font-size:15px; " id="date">{{data.date}} {{data.time}}</text><br class="rating-br">
-				<div id="image-container" style="margin-top:20px; margin-bottom: 20px;" class=" container text-center">
+		</diary-entry>
+
+		<!-- {{#each entry}}
+		<diary-entry data-key="{{key}}" >
+				<text style="font-size:15px; " >{{data.date}} {{data.time}}</text>
+				<div style="margin-top:20px; margin-bottom: 20px;" class="container ">
 						<img  src="{{data.imageURL}}" style="width:40vw; height:45vh">
 				</div>
-				<div id="input">
-					<textarea id="comments" rows="4" cols="25" class="row diary-textarea text-center" readonly>{{data.comments}}</textarea><br/>
-				</div>
-				<div id="ratings" class="text-center diary-rating">
-					<text id="health">Health: {{data.health}} &#9734;</text><br>
-					<text id="taste">Taste: {{data.taste}} &#9734;</text><br>
-					<text id="mood">Mood: {{data.mood}} &#9734;</text><br>
-					<text id="anxiety">Anxiety: {{data.anxiety}} &#9734;</text>
-					<input type="hidden" value={{key}} id="key">
-				</div>
-				<br>
-				<button class="edit btn btn-sm " id="edit" style="margin-top: -60px; margin-left:12px;">Edit</button>
-				<button class="remove btn btn-sm" id="remove" style="float:right;margin-top: -60px;">Remove</button>
+				<diary-comment>
+					<textarea  rows="4" cols="25" class="diary-textarea comments" readonly>{{data.comments}}</textarea>
+				</diary-comment>
+				<diary-rating  class="diary-rating">
+					<text >Health: {{data.health}} &#9734;</text><br>
+					<text >Taste: {{data.taste}} &#9734;</text><br>
+					<text >Mood: {{data.mood}} &#9734;</text><br>
+					<text >Anxiety: {{data.anxiety}} &#9734;</text>
+				</diary-rating>
+				<br> -->
+				<!-- <button class="edit btn btn-sm " id="edit" style="margin-top: -60px; margin-left:12px;">Edit</button> -->
+				<!-- <button class="remove btn btn-sm" style="float:right;margin-top: -60px;">Remove</button>
 				<br>
 
-		</div>
-		{{/each}}
-	</div>
+		</diary-entry>
+		{{/each}} -->
+	</diary-entry-list>
 <br>
 
 
 
-		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
 
-		<script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-database.js"></script>
+<!-- CHANGE TO SCRIPT ONCE DONE WITH CSS -->
+		<noscript>
 			$(document).ready(function(){
-				var config = {
-					apiKey: "AIzaSyCSHqADgMlrT2iHoWBp7NLwePbmFG2S4PM",
-					authDomain: "my-project-1519903201611.firebaseapp.com",
-					databaseURL: "https://my-project-1519903201611.firebaseio.com",
-					projectId: "my-project-1519903201611",
-					storageBucket: "my-project-1519903201611.appspot.com",
-					messagingSenderId: "58050717665"
-				};
-				firebase.initializeApp(config);
-
+				if(firebase.apps.length === 0){
+					  var config = {
+					  	apiKey: {{apiKey}},
+					  	authDomain: {{authDomain}},
+					  	databaseURL: {{databaseURL}},
+					  	projectId: {{projectId}},
+					  	storageBucket: {{storageBucket}},
+					  	messagingSenderId: {{messagingSenderId}}
+					  };
+					  firebase.initializeApp(config);
+				}
 				let parent = document.getElementById('list');
 				list.addEventListener('click',function(event){
-					if(event.target.id === 'remove'){
+					if(event.target.classList[0] === 'remove'){
 						let target = event.target;
-						let key = $('#'+target.id).siblings('#ratings').children('#key')[0].value; console.log('key',key);
+						let key = $(target).parent().data('key');
 						let UUID = firebase.auth().currentUser.uid;
 						$(target).parent().remove();
 						let ref = firebase.database().ref('users/'+UUID+'/'+key);
 						ref.remove();
 					}
 				},false);
-				// let remove = document.getElementById('remove');
-				// remove.addEventListener('click',function(){
-				// 	let key = $(this).siblings('#ratings').children('#key');
-				// 	let UUID = firebase.auth().currentUser.uid;
-				// 	key = key[0].value;
-				// 	// $(this).parent('#loop').remove();
-				// 	$(this).parent("#one").parent().remove();
-				// 	let value = $.trim($(this).siblings('#date').text());
-				// 	let ref = firebase.database().ref('users/'+UUID+'/'+key);
-				// 	ref.remove();
-				// },false);
 				});
-		</script>
+		</noscript>
 	 	<script src="/js/bootstrap.min.js"></script>
 	  <script src="/scripts/jquery.rateit.min.js"></script>
 		<script src="/js/scroll.js"></script>
