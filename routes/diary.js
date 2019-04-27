@@ -6,7 +6,7 @@ require('dotenv').load();
 // GET request to /login
 router.get('/', function(req, res, next) {
 	res.render('diary');
-}
+});
 
 //							UNCOMMENT ONCE DONE
 // router.get('/', function(req, res, next) {

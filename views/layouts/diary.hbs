@@ -9,28 +9,26 @@
 <link href="/css/bootstrap-grid.css"  type="text/css" rel="stylesheet">
 <link href="/css/bootstrap-reboot.css"  type="text/css" rel="stylesheet">
 <link href="/css/bootstrap.css" type="text/css" rel="stylesheet">
+<link href="/font/"
 <script src="https://code.jquery.com/jquery.js"></script>
 <link href="/scripts/rateit.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
 	<button id="top" title="Go to top">Top</button>
 	<div class="page-header">
 	<h1 style="text-align:center; color:#f0ad4e; ">Diary</h1>
-	<a href="/index" class="btn btn-success">Back</a>
-	<button id="setting" style="margin-top:-68px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>
-	</div>
+	<a href="/index" class="btn btn-success" style="font-size:1.5rem">⇦</a>
 	</div>
 	<br>
 	<diary-entry-list>
-		<diary-entry  >
-				<text style="font-size:15px; " >04/25/2019 2:37PM</text>
+		<diary-entry>
+				<diary-date>04/25/2019 2:37PM</diary-date>
 				<div style="margin-top:20px; margin-bottom: 20px;" class="container ">
-						<img  src="/images/Lunch images/B1.jpg" style="width:40vw; height:45vh">
+						<img src="./images/fake1.png" style="width:40vw; height:45vh">
 				</div>
 				<diary-comment>
-					<textarea  rows="4" cols="25" class="diary-textarea comments" readonly>THIS IS A PLACEHOLDER COMMENT</textarea>
+					<textarea rows="4" cols="25" class="diary-textarea text-center" readonly>THIS IS A PLACEHOLDER COMMENT</textarea>
 				</diary-comment>
 				<diary-rating  class="diary-rating">
 					<text >Health: 4 &#9734;</text><br>
@@ -42,7 +40,44 @@
 				<!-- <button class="edit btn btn-sm " id="edit" style="margin-top: -60px; margin-left:12px;">Edit</button> -->
 				<button class="remove btn btn-sm" style="float:right;margin-top: -60px;">Remove</button>
 				<br>
-
+		</diary-entry>
+		<diary-entry  >
+				<diary-date>04/25/2019 2:37PM</diary-date>
+				<div style="margin-top:20px; margin-bottom: 20px;" class="container ">
+						<img src="./images/fake1.png" style="width:40vw; height:45vh">
+				</div>
+				<diary-comment >
+					<textarea  rows="4" cols="25" class="diary-textarea text-center" readonly>THIS IS A PLACEHOLDER COMMENT</textarea>
+				</diary-comment>
+				<diary-rating  class="diary-rating">
+					<text >Health: 4 &#9734;</text><br>
+					<text >Taste: 4 &#9734;</text><br>
+					<text >Mood:4 &#9734;</text><br>
+					<text >Anxiety: 4 &#9734;</text>
+				</diary-rating>
+				<br>
+				<!-- <button class="edit btn btn-sm " id="edit" style="margin-top: -60px; margin-left:12px;">Edit</button> -->
+				<button class="remove btn btn-sm" style="float:right;margin-top: -60px;">Remove</button>
+				<br>
+		</diary-entry>
+		<diary-entry >
+				<diary-date>04/25/2019 2:37PM</diary-date>
+				<div style="margin-top:20px; margin-bottom: 20px;" class="container ">
+						<img src="./images/fake1.png" style="width:40vw; height:45vh">
+				</div>
+				<diary-comment >
+					<textarea  rows="4" cols="25" class="diary-textarea text-center" readonly>THIS IS A PLACEHOLDER COMMENT</textarea>
+				</diary-comment>
+				<diary-rating  class="diary-rating">
+					<text >Health: 4 &#9734;</text><br>
+					<text >Taste: 4 &#9734;</text><br>
+					<text >Mood:4 &#9734;</text><br>
+					<text >Anxiety: 4 &#9734;</text>
+				</diary-rating>
+				<br>
+				<!-- <button class="edit btn btn-sm " id="edit" style="margin-top: -60px; margin-left:12px;">Edit</button> -->
+				<button class="remove btn btn-sm" style="float:right;margin-top: -60px;">Remove</button>
+				<br>
 		</diary-entry>
 
 		<!-- {{#each entry}}
@@ -52,7 +87,7 @@
 						<img  src="{{data.imageURL}}" style="width:40vw; height:45vh">
 				</div>
 				<diary-comment>
-					<textarea  rows="4" cols="25" class="diary-textarea comments" readonly>{{data.comments}}</textarea>
+					<textarea  rows="4" cols="25" class="diary-textarea text-center" readonly>{{data.comments}}</textarea>
 				</diary-comment>
 				<diary-rating  class="diary-rating">
 					<text >Health: {{data.health}} &#9734;</text><br>

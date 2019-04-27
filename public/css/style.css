@@ -5,25 +5,44 @@
 
 diary-entry-list{
   display:flex;
+  flex-wrap:wrap;
 
   width: 100vw;
   height: 100vh;
 
-  flex-direction:column;
-  align-items:center;
+  justify-content: center;
 }
 
 diary-entry{
   display:block;
+  background-color:#f0ad4e5e;
+  border-width: 0.5vmin;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 5vmin;
 }
+
 diary-rating{
   display:block;
 }
 
 diary-comment{
   display:block;
+  text-align:center !important;
 }
 
+diary-date{
+  display:inherit;
+  text-align:center !important;
+}
+
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 100%;
+}
 .scrolling-box{
   overflow:auto;
   float:left;
@@ -102,6 +121,7 @@ diary-comment{
   margin-top:1px;
   margin-bottom:1px;
 }
+
 .quarter{
   width:25% !important;
   height:100% !important;
@@ -250,14 +270,13 @@ diary-comment{
     }
 }
 
-
-
 @media (min-width: 1200px) {
   canvas {
     height: 45vh;
     width: 25vw;
   }
 }
+
 @media(max-width:1199px){
   canvas {
     height: 55vh;

@@ -76,8 +76,8 @@ const sess = {
 app.use(session(sess));
 //app.use(express.Router());
 
-app.use(express.static(__dirname + '/public'));
-//app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname + 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/',login);
