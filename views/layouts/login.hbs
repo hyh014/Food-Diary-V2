@@ -27,11 +27,25 @@
 				<input type="submit" class="btn btn-dark" style="font-weight: bold; color:white;" value="Log in" ><br>
 				<a href="/register" class="btn btn-outline" style="font-weight: bold; color:black; margin-top: 1vh" role="button" >Register</a>
 		</form>
-
 	</div>
 </div>
 </body>
 
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
+<script>
+	if(firebase.apps.length === 0){
+		var config = {
+	    apiKey: "AIzaSyCSHqADgMlrT2iHoWBp7NLwePbmFG2S4PM",
+	    authDomain: "my-project-1519903201611.firebaseapp.com",
+	    databaseURL: "https://my-project-1519903201611.firebaseio.com",
+	    projectId: "my-project-1519903201611",
+	    storageBucket: "my-project-1519903201611.appspot.com",
+	    messagingSenderId: "58050717665"
+	  };
+	  firebase.initializeApp(config);
+	}
+</script>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.bundle.js"></script>
 <script src="/js/bootstrap.js"></script>

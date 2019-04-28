@@ -1,6 +1,7 @@
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
     let top = document.getElementById("top");
+
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         top.style.display = "block";
     } else {
