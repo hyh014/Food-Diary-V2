@@ -33,20 +33,21 @@
 
 <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-app.js"></script>
-<script>
-	if(firebase.apps.length === 0){
-		var config = {
-	    apiKey: "AIzaSyCSHqADgMlrT2iHoWBp7NLwePbmFG2S4PM",
-	    authDomain: "my-project-1519903201611.firebaseapp.com",
-	    databaseURL: "https://my-project-1519903201611.firebaseio.com",
-	    projectId: "my-project-1519903201611",
-	    storageBucket: "my-project-1519903201611.appspot.com",
-	    messagingSenderId: "58050717665"
-	  };
-	  firebase.initializeApp(config);
-	}
-</script>
 <script src="https://code.jquery.com/jquery.js"></script>
+<script>
+	$.ajax({url:'/user/env',success:function(result){
+		if(firebase.app.length === 0){
+		firebase.initializeApp({
+		  apiKey: result.apiKey,
+		  authDomain: result.authDomain,
+		  databaseURL: result.databaseURL,
+		  storageBucket: result.storageBucket,
+		  messagingSenderId: result.messagingSenderId
+		});
+	}
+	}});
+</script>
+
 <script src="/js/bootstrap.bundle.js"></script>
 <script src="/js/bootstrap.js"></script>
 

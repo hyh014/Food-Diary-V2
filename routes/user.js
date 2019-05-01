@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const firebase = require('firebase');
-
+require('dotenv').load();
 
 
 
@@ -68,6 +68,17 @@ router.use('/logout', function(req,res,next){
   firebase.auth().signOut().then(function(){
     res.redirect('/');
   });
+});
+
+router.get('/env',function(req,res,next){
+  const result = {
+  apiKey: process.env.APIKEY,
+  authDomain: process.env.AUTHDOMAIN,
+  databaseURL: process.env.DATABASEURL,
+  storageBucket: process.env.STORAGEBUCKET,
+  messagingSenderId: process.env.MESSAGINGSENDERID
+}
+  res.send(result);
 });
 
 module.exports = router;
