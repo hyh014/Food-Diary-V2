@@ -8,52 +8,50 @@
   </head>
   <!-- Bootstrap -->
   <link href="/css/style.css"  type="text/css" rel="stylesheet">
-  <link href="/css/bootstrap-grid.css"  type="text/css" rel="stylesheet">
-  <link href="/css/bootstrap-reboot.css"  type="text/css" rel="stylesheet">
-  <link href="/css/bootstrap.css" type="text/css" rel="stylesheet">
+  <link href="/css/bootstrap-grid.min.css"  type="text/css" rel="stylesheet">
+  <link href="/css/bootstrap-reboot.min.css"  type="text/css" rel="stylesheet">
+  <link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 
     <link href="/scripts/rateit.css" rel="stylesheet">
   <body>
 
 <div class="text-center">
-    <h1 >Log Your Meal</h1><br>
+    <h1 >Log Your Meal</h1>
+    <div class="container entry-box" >
+      <h4 class="help-block" id="clock" ></h4>
+      <form id="addDiary" role="form" method="post" action="/addDiary/ne">
+        <input type="file" accept="image/*" id="file-input" capture="environment"/>
+        <canvas id="canvas" width="400" height="400" style="border:1px solid #000;margin:auto;display:block"></canvas>
+        <textarea class='entry-textarea' style="border-radius:10px;"
+        placeholder="Comments: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
 
-    <h4 class="help-block" id="clock" ></h4>
 
-
-    <form id="addDiary" role="form" method="post" action="/addDiary/ne">
-      <input type="file" accept="image/*" id="file-input" capture="environment"/><br>
-       <canvas id="canvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
-
-       <!-- <img id="hello"> -->
-        <br>
-        <textarea class='form-control comments' style="border-radius:10px;"
-           placeholder="Comments: I had a really good time with friends eating this wonderful brunch." name="comments" id="comments"></textarea>
-        <br>
-        <hr>
-     <div class="container"  id="Rating" >
-       <text class="Text-input">Taste:</text><br/>
-       <div class="rateit" id="tasteRate" data-rateit-mode="font"  style="font-size:50px"></div>
-      <input type="hidden" name="taste" id="taste" value="0" />
-     <hr class="rating-hr">
-        <text class="Text-input">Health:</text><br/>
-        <div class="rateit" id="healthRate" data-rateit-mode="font"  style="font-size:50px"></div>
-       <input type="hidden" name="health" value="0" id="health"/>
-      <hr class="rating-hr">
-       <text class="Text-input">Mood:</text><br/>
-       <div class="rateit" id="moodRate" data-rateit-mode="font"  style="font-size:50px"></div>
-       <input type="hidden" name="mood" value="0"  id="mood"/>
-      <hr class="rating-hr">
-        <text class="Text-input">Anxiety:</text><br/>
-        <div class="rateit" id="anxietyRate" data-rateit-mode="font"  style="font-size:50px"></div>
-        <input type="hidden" name="anxiety" value="0" id="anxiety"/>
-      <hr class="rating-hr">
+        <rating-block>
+          <text class="Text-input">Taste:</text><br/>
+          <div class="rateit" id="tasteRate" data-rateit-mode="font"  style="font-size:2.5rem"></div>
+          <input type="hidden" name="taste" id="taste" value="0" />
+        </rating-block>
+        <rating-block>
+          <text class="Text-input">Health:</text><br/>
+          <div class="rateit" id="healthRate" data-rateit-mode="font"  style="font-size:2.5rem"></div>
+          <input type="hidden" name="health" value="0" id="health"/>
+        </rating-block>
+        <rating-block>
+           <text class="Text-input">Mood:</text><br/>
+           <div class="rateit" id="moodRate" data-rateit-mode="font"  style="font-size:2.5rem"></div>
+           <input type="hidden" name="mood" value="0"  id="mood"/>
+        </rating-block>
+        <rating-block>
+          <text class="Text-input">Anxiety:</text><br/>
+          <div class="rateit" id="anxietyRate" data-rateit-mode="font"  style="font-size:2.5rem"></div>
+          <input type="hidden" name="anxiety" value="0" id="anxiety"/>
+        </rating-block>
       <input type="hidden" name="dataURL" id="dataURL" value="" />
       <input type="hidden" name="date" id="date" value=""/>
       <input type="hidden" name="key" id="key" value=""/>
      </div>
-     <a href="/index" class="btn btn-dark" style="float:left; margin-left:36px; " role="button" id="entryBackBtn">Back</a>
-     <input type="submit" class="btn  entry2BackNext btn-primary" style="float:right; font-weight: bold; color:white; margin-right: 36px;" id="addEntry" value="Add to Diary  ⇨" />
+     <a href="/index" class="btn btn-dark" style="float:left; margin-left:10vmin; " role="button" id="entryBackBtn">Back</a>
+     <input type="submit" class="btn  entry2BackNext btn-primary" style="float:right; font-weight: bold; color:white; margin-right: 10vmin;" id="addEntry" value="Add to Diary  ⇨" />
       </form>
     </div>
 </div>

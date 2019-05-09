@@ -8,30 +8,19 @@
 </head>
 <!-- Bootstrap -->
 <link href="/css/style.css"  type="text/css" rel="stylesheet">
-<link href="/css/bootstrap-grid.css"  type="text/css" rel="stylesheet">
-<link href="/css/bootstrap-reboot.css"  type="text/css" rel="stylesheet">
-<link href="/css/bootstrap.css" type="text/css" rel="stylesheet">
+<link href="/css/bootstrap-grid..min.css"  type="text/css" rel="stylesheet">
+<link href="/css/bootstrap-reboot.min.css"  type="text/css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery.js"></script>
 <body>
 <div class="text-center">
-	<h1 class="page-header" >Community</h1>
+	<h1 class="page-header">Community</h1>
 	<div class="container">
-		<form class="form" method="POST" action="/community/submit" >
-      <textarea style="border-radius:10px; resize:none"
-          name="messages" id="messages" placeholder="Discuss With Others About Your Experience! " class="community-text"></textarea><br>
-				<input type="submit" class="btn btn-dark" style="font-weight: bold; color:white;" value="Post" ><br>
-		</form>
+
 	</div>
 	<hr>
 	<div class="container">
-			{{#each entry}}
 
-			<img src="/images/profileFill.png" class="profile-icon">
-			<text>{{email}}</text>
-			<br>
-			<textarea style="border-radius:10px; resize:none;" class="community-text" readonly>{{message}}</textarea>
-
-			{{/each}}
 	</div>
 </div>
 </body>

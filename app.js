@@ -93,28 +93,4 @@ app.use('/addDiary',addDiary);
 //GET RID OF ONCE COMPLETE
 app.use('/index',index);
 
-
-//app.post('/user/login',user);
-//app.use('/user/logout',user);
-
-
-// Example route
-// app.get('/users', user.list);
-/*app.get('/data.json',user.info);
-*/
-/*app.use('/user/:id',user.userInfo);
-
-
-app.use('/remove/:name/:month/:day/:year',remove.remove);
-app.use('/checkLogin',user. checkLogin);
-
-
-
-app.use('/setting/:name',setting.viewSetting);
-
-app.use('/stat/:name',stat.getStat);
-
-
-app.use('/photo/:name',photo.view);
-*/
 http.createServer(app).listen(3000);

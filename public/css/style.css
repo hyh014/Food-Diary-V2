@@ -22,6 +22,22 @@ diary-entry{
   margin: 5vmin;
 }
 
+.entry-textarea{
+  width:100vmin;
+  height:10vh;
+}
+.entry-box{
+  display:flex;
+  flex-direction:column;
+  align-content:space-between;
+  justify-content:center;
+  align-items:center;
+}
+
+rating-block{
+  display:block;
+}
+
 diary-rating{
   display:block;
 }
