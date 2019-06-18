@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const firebase = require('firebase');
+const firebase = require('firebase/app');
+require('firebase/auth');
+
 require('dotenv').load();
 
 

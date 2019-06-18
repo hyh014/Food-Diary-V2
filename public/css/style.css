@@ -22,6 +22,16 @@ diary-entry{
   margin: 5vmin;
 }
 
+button:active,
+button:hover{
+  -webkit-animation-name:zoom;
+  -webkit-animation-name: 1s;
+  animation-name:zoom;
+  animation-duration:1s;
+}
+
+
+
 .entry-textarea{
   width:100vmin;
   height:10vh;
@@ -207,7 +217,7 @@ textarea {
 }
 
 
-@media (min-width: 1200px) {
+
   .diary-area{
     margin-bottom:10vw;
     border-style:solid;
@@ -258,16 +268,20 @@ textarea {
 
 
   }
+
+  /* INDEX PAGE */
   .index-container{
     width:50%;
     border: 1px solid black;
   }
   .index-button{
-
     width:100%;
-    background: white;
     margin: 1vh 1vw 1vh 1vw;
-
+    transition:transform .5s;
+  }
+  .index-button:hover,
+  .index-button:active{
+    transform:scale(1.1);
   }
   .index-chart
   {
@@ -291,7 +305,9 @@ textarea {
     resize: none;
     margin:auto;
     }
-}
+
+
+
 
 @media (min-width: 1200px) {
   canvas {

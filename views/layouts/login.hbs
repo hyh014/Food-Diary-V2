@@ -15,7 +15,7 @@
 <body>
 
 <div id="root" class="text-center">
-<h1 class="page-header " style="font-family: Palatino;">Login</h1>
+<h1 class="page-header " >Food Diary</h1>
 	<div class="container">
 		{{#if message}}
 			<div class="alert alert-danger" role="alert">{{message}}</div>
@@ -36,7 +36,6 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <script>
 	$.ajax({url:'/user/env',success:function(result){
-		if(firebase.app.length === 0){
 		firebase.initializeApp({
 		  apiKey: result.apiKey,
 		  authDomain: result.authDomain,
@@ -44,7 +43,7 @@
 		  storageBucket: result.storageBucket,
 		  messagingSenderId: result.messagingSenderId
 		});
-	}
+
 	}});
 </script>
 

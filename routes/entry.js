@@ -5,14 +5,13 @@ const firebase = require('firebase');
 // GET request to /login
 
 router.get('/', function(req, res, next) {
-	res.render('entry');
-	/*
+
 	let user = firebase.auth().currentUser;
-		if(user){
-			res.render('entry');
-		}else{
-			res.render('login',{message:'Please Login First'});
-		}*/
+	if(user){
+		res.render('entry');
+	}else{
+		res.render('login',{message:'Please Login First'});
+	}
 });
 
 // POST request to /login
