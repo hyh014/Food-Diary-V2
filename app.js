@@ -15,6 +15,7 @@ const session = require('express-session');
 const errorhandler = require('errorhandler');
 const bodyParser = require('body-parser');
 
+const csrf = require('csurf');
 const login = require('./routes/login');
 const register = require('./routes/register');
 const user = require('./routes/user');
@@ -52,6 +53,7 @@ firebase.initializeApp({
   messagingSenderId: process.env.MESSAGINGSENDERID
 });
 
+
 // all environments
 app.set('views', __dirname + '/views/layouts');//path.join(__dirname, 'views'));
 app.engine('hbs', exphbs({defaultLayout: false}));
@@ -63,17 +65,20 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ limit:'50mb', extended: true, parameterLimit:50000 }));
 app.use(bodyParser.json({limit:'50mb'}));
 app.use(methodOverride('X-HTTP-Method-Override'));
-app.use(cookieParser('IxD secret key'));
+
 app.set('trust proxy', 1);
 //app.use(express.static('public'));
 const sess = {
   secret: 'secret',
   cookie: {secure:true},
-  resave: true,
-  saveUninitialized:true
+  resave: false,
+  saveUninitialized:false
 };
 
 app.use(session(sess));
+var csrfProtection = csrf({cookie:true});
+app.use(cookieParser('IxD secret key'));
+app.use(csrfProtection);
 //app.use(express.Router());
 
 // app.use(express.static(path.join(__dirname + 'public')));

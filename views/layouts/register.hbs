@@ -23,27 +23,12 @@
 
 			<h4>Email:<br><input type="text" style="height:40px; border-color: black; background-color: transparent; border-radius:10px; text-align: center;"  class="larger" name="email" required id="email" minlength="6">*</h4><br>
 			<h4>Password:<br><input type="password" style="height:40px; border-color: black; background-color: transparent; border-radius:10px; text-align: center;" class="larger" name="password" required id="password" minlength="6">*</h4><br>
-
-<!--
-For transparent style
-style="background-color:transparent; border-color: transparent;font-weight: bold; color:black; margin-top:10px; font-size: 20px;"
--->
+			<input type="hidden" name="_csrf" value="{{csrfToken}}">
 			<input type="submit" class="btn btn-dark" style="font-weight: bold; color:white;" id="register">
 		</form>
 					<a href="/" class="btn btn-outline" style="font-weight: bold; color:black; margin-top: 1vh" role="button">Back</a>
 				</div>
-	<script src="/js/user.js"></script>
-<!--
-	- Global site tag (gtag.js) - Google Analytics
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114570926-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-114570926-2');
-</script>
--->
 
 </body>
 	</html>

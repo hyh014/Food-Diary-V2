@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
     // do something
-		res.render('register');
+		res.render('register',{csrfToken:req.csrfToken()});
 });
 
 // POST request to /login

@@ -35,7 +35,7 @@ router.post('/addUser', function(req,res){
 router.post('/login', function(req,res,next){
   const email = req.body.email;
   const password = req.body.password;
-
+  console.log(req.body._csrf);
       firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
         res.redirect('/index');
       },function(error) {

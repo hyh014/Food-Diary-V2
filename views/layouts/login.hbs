@@ -23,6 +23,7 @@
 		<form class="form" method="POST" action="/user/login" >
 			<h4>Email:<br><input type="text" style="height:40px; border-color: black; background-color: transparent; border-radius:10px; text-align: center;"  class="larger" name="email" required id="email">*</h4><br>
 			<h4>Password:<br><input type="password" style="height:40px; border-color: black; background-color: transparent; border-radius:10px; text-align: center;" class="larger" name="password" required id="password" minlength="6">*</h4><br>
+			<input type="hidden" name="_csrf" value="{{csrfToken}}">
 
 				<input type="submit" class="btn btn-dark" style="font-weight: bold; color:white;" value="Log in" ><br>
 				<a href="/register" class="btn btn-outline" style="font-weight: bold; color:black; margin-top: 1vh" role="button" >Register</a>
