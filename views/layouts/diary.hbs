@@ -23,7 +23,7 @@
 	</a>
 	</div>
 
-	<diary-entry-list class="list">
+	<diary-entry-list class="list" id="list">
 		<diary-entry>
 				<diary-date>04/25/2019 2:37PM</diary-date>
 				<div style="margin-top:20px; margin-bottom: 20px;" class="container ">
@@ -33,17 +33,17 @@
 					<textarea rows="4" cols="25" class="diary-textarea text-center" readonly>THIS IS A PLACEHOLDER COMMENT</textarea>
 				</diary-comment>
 				<diary-rating  class="diary-rating">
-					<text >Health: 4 &#9734;</text><br>
-					<text >Taste: 4 &#9734;</text><br>
-					<text >Mood: 4 &#9734;</text><br>
-					<text >Anxiety: 4 &#9734;</text>
+					Health:<text class="health"> 4 &#9734;</text><br>
+					Taste:<text class="taste"> 4 &#9734;</text><br>
+					Mood:<text class="mood"> 4 &#9734;</text><br>
+					Anxiety:<text class="anxiety"> 4 &#9734;</text>
 				</diary-rating>
 
 				<button class="remove btn  diary-button" title="Delete Entry">
-					<i class="fas fa-trash-alt"></i>
+					<i class=" fa-trash-alt fas"></i>
 				</button>
-				<button class="edit btn  diary-button" disabled>
-					<i class="fas fa-edit"></i>
+				<button class="edit btn  diary-button" >
+					<i class="fa-edit fas "></i>
 				</button>
 
 		</diary-entry>
@@ -64,7 +64,7 @@
 				<button class="remove btn  diary-button" title="Delete Entry">
 					<i class="fas fa-trash-alt"></i>
 				</button>
-				<button class="edit btn  diary-button" disabled>
+				<button class="edit btn  diary-button" >
 					<i class="fas fa-edit"></i>
 				</button>
 
@@ -87,7 +87,7 @@
 				<button class="remove btn  diary-button" title="Delete Entry">
 					<i class="fas fa-trash-alt"></i>
 				</button>
-				<button class="edit btn  diary-button" disabled>
+				<button class="edit btn  diary-button" >
 					<i class="fas fa-edit"></i>
 				</button>
 
@@ -110,7 +110,7 @@
 				<button class="remove btn  diary-button" title="Delete Entry">
 					<i class="fas fa-trash-alt"></i>
 				</button>
-				<button class="edit btn  diary-button" disabled>
+				<button class="edit btn  diary-button" >
 					<i class="fas fa-edit"></i>
 				</button>
 
@@ -149,21 +149,6 @@
 <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase-database.js"></script>
 <!-- CHANGE TO SCRIPT ONCE DONE WITH CSS -->
-		<script>
-			$(document).ready(function(){
-				let parent = document.getElementById('list');
-				list.addEventListener('click',function(event){
-					if(event.target.classList[0] === 'remove'){
-						let target = event.target;
-						let key = $(target).parent().data('key');
-						let UUID = firebase.auth().currentUser.uid;
-						$(target).parent().remove();
-						let ref = firebase.database().ref('users/'+UUID+'/'+key);
-						ref.remove();
-					}
-				},false);
-				});
-		</script>
 	 	<script src="/js/bootstrap.min.js"></script>
 	  <script src="/scripts/jquery.rateit.min.js"></script>
 		<script src="/js/scroll.js"></script>
