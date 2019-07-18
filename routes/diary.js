@@ -2,7 +2,6 @@
 var express = require('express');
 var router = express.Router();
 let firebase = require('firebase');
-require('dotenv').load();
 // GET request to /login
 router.get('/', function(req, res, next) {
 	res.render('diary');
@@ -23,11 +22,6 @@ router.get('/', function(req, res, next) {
 // 					'data': child.val()
 // 				});
 // 			});
-// 			list.apiKey= process.env.APIKEY;
-// 			list.authDomain= process.env.AUTHDOMAIN;
-// 			list.databaseURL= process.env.DATABASEURL;
-// 			list.storageBucket= process.env.STORAGEBUCKET;
-// 			list.messagingSenderId= process.env.MESSAGINGSENDERID;
 // 			 res.render('diary',list);
 // 		});
 // 	}else{

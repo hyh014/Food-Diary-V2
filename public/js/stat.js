@@ -12,7 +12,7 @@ $(document).ready(function(){
 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      generateChart();
+      //  generateChart();
       var h = $(document).height()*.5;
       document.getElementById('chartdiv').style.height = h + 'px';
     } else {

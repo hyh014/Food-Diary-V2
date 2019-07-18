@@ -44,7 +44,7 @@ router.post('/login', function(req,res,next){
 				const errorMessage = error.message;
 				if(errorCode == 'auth/wrong-password'){
 
-					res.render('login',{message:'Wrong Password'});
+					res.render('login',{message:'Incorrect Password'});
 
 				}else if(errorCode == "auth/invalid-email")
 				{

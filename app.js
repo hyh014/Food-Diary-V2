@@ -21,9 +21,9 @@ const register = require('./routes/register');
 const user = require('./routes/user');
 const entry = require('./routes/entry');
 const diary = require('./routes/diary');
-const community = require('./routes/community');
+const setting = require('./routes/setting');
 const addDiary = require('./routes/addDiary');
-const remove = require('./routes/remove');
+
 
 //GET RID OF ONCE COMPLETE
 const index = require('./routes/index');
@@ -91,7 +91,7 @@ app.use('/user',user);
 app.use('/entry',entry);
 
 app.use('/diary',diary);
-app.use('/community',community);
+app.use('/setting',setting);
 app.use('/addDiary',addDiary);
 //app.use('/remove',remove);
 

@@ -1,5 +1,14 @@
 
 $(document).ready(function(){
+  $.ajax({url:'/user/env',success:function(result){
+		firebase.initializeApp({
+		  apiKey: result.apiKey,
+		  authDomain: result.authDomain,
+		  databaseURL: result.databaseURL,
+		  storageBucket: result.storageBucket,
+		  messagingSenderId: result.messagingSenderId
+    });
+    
   let list = document.getElementById('list');
   list.addEventListener('click',function(event){
     
