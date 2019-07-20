@@ -6,14 +6,14 @@ let firebase = require('firebase');
 
 router.get('/', function(req, res, next) {
 
-
-	let user = firebase.auth().currentUser;
-	if(user){
-		user = user.uid;
-		res.render('setting');
-	}else{
-		res.redirect('/');
-	}
+	res.render('setting');
+	// let user = firebase.auth().currentUser;
+	// if(user){
+	// 	user = user.uid;
+	// 	res.render('setting');
+	// }else{
+	// 	res.redirect('/');
+	// }
 
 
 });

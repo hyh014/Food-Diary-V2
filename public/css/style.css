@@ -1,6 +1,6 @@
 * {
- margin: 0;
- padding: 0;
+ margin: 0 ;
+ padding: 0 ;
 }
 
 diary-entry-list{
@@ -62,13 +62,7 @@ diary-date{
   text-align:center !important;
 }
 
-textarea {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 
-    width: 100%;
-}
 
 .diary-button{
   float:right;
@@ -387,5 +381,61 @@ label[for=file-input]{
     height: 55vh;
     width: 100vw;
   }
-}
 
+}
+@media(min-width:426px){
+  textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 50%;
+  }
+  .grid{
+    display: grid;
+    grid-template-columns:15vw 1fr 15vw;
+    grid-template-rows: 10vh 1fr 5vh;
+  
+  }
+  
+  .grid-main{
+    grid-column-start: 2;
+    grid-column-end:3;
+    grid-row-start:2;
+    grid-row-end:3;
+    background-color:red;
+    
+  }
+  .grid-main-center{
+    justify-self:center;
+    
+  }
+  .grid-main-form{
+    border-radius: 8px;
+    border: 5px solid black;
+    box-shadow:2px 2px 2px grey;
+    margin: 0px 10vw 0px;
+  }
+  .grid-header{
+    grid-column-start:1;
+    grid-column-end:2;
+    grid-row-start:1;
+    grid-row-end:2;
+    background-color:blue;
+  }
+}
+@media(max-width:425px){
+  textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 100%;
+  }
+  
+}
+.icon{
+  width:20%;
+  height:20%;
+  
+}

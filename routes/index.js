@@ -11,6 +11,8 @@ router.get('/', function(req, res, next) {
 	if(user){
 		res.render('index',{user:user.uid});
 	}else{
+		
+		req.session.message = "Please Login First";
 		res.redirect('/');
 	}
 });

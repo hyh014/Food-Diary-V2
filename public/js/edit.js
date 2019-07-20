@@ -7,7 +7,7 @@ $(document).ready(function(){
 		  databaseURL: result.databaseURL,
 		  storageBucket: result.storageBucket,
 		  messagingSenderId: result.messagingSenderId
-    });
+    }));
     
   let list = document.getElementById('list');
   list.addEventListener('click',function(event){

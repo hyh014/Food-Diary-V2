@@ -5,8 +5,9 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
     // do something
-
-		res.render('login',{csrfToken:req.csrfToken()});
+    let message = req.session.message;
+    req.session.message = null
+		res.render('login',{csrfToken:req.csrfToken(),message:message});
 });
 
 // POST request to /login

@@ -17,17 +17,24 @@ router.post('/addUser', function(req,res){
       const errorCode = error.code;
       const errorMessage = error.message;
       if(errorCode == 'auth/weak-password'){
-        res.render('register',{message:'Weak Password'})
+        req.session.message = "Weak Password";
+		    res.redirect('/register');
       }else if(errorCode == "auth/invalid-email")
       {
-        res.render('register',{message:'Invalid Email'});
+        req.session.message = "Invalid Email";
+	    	res.redirect('/register');
+
       }else if(errorCode == "auth/email-already-in-use")
       {
-        res.render('register',{message:'Email Already In Use'});
+        req.session.message = "Email Already In Use";
+	    	res.redirect('/register');
       }else if(errorCode == 'auth/operation-not-allowed'){
-        res.render('register',{message:'Email/Password Account are Not Enabled'});
+        req.session.message = "Email/Password Account Is Not Enabled";
+	    	res.redirect('/register');
       }else{
-        res.render('register',{message:errorMessage});
+        req.session.message = errorMessage;
+	    	res.redirect('/register');
+        
       }
     });
 });
@@ -43,24 +50,28 @@ router.post('/login', function(req,res,next){
 				const errorCode = error.code;
 				const errorMessage = error.message;
 				if(errorCode == 'auth/wrong-password'){
-
-					res.render('login',{message:'Incorrect Password'});
+          req.session.message = "Incorrect Password";
+          res.redirect('/');
+				
 
 				}else if(errorCode == "auth/invalid-email")
 				{
 
-					res.render('login',{message:'Invalid Email'});
+          req.session.message = "Invalid Email";
+          res.redirect('/');
 
 				}else if(errorCode == "auth/user-disabled")
 				{
-
-					res.render('login',{message:'The User is Currently Disabled'});
+          req.session.message = "This User Is Disabled";
+          res.redirect('/');
 
 				}else if(errorCode == 'auth/user-not-found'){
-          res.render('login',{message:"User Not Found"});
+          req.session.message = "User Not Found";
+          res.redirect('/');
         }
         else{
-          res.render('login',{message:errorMessage});
+          req.session.message = errorMessage;
+          res.redirect('/');
         }
 			});
 

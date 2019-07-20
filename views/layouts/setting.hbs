@@ -5,7 +5,6 @@
 	<title>Food Diary App</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Bootstrap -->
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/bootstrap.css" rel="stylesheet">
@@ -15,180 +14,49 @@
 
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<link href="/css/style.css"  type="text/css" rel="stylesheet">
 <link href="/scripts/rateit.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500" rel="stylesheet">
+
 
 </head>
-<style>
-    @media (max-width: 600px) {
-          body {
-        background-image: url("/images/use2.png");
-        background-size: 100vw 100vh;
-     }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-      body {
-        background-image: url("/images/use2.png");
-        background-size: 75vw 85vh;
-     }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-    body {
-        background-image: url("/images/use2.png");
-        background-size: 50vw 65vh;
-     }
-}
-@media (min-width: 1200px) {
-      body{
-        background-image: url('/images/use2.png');
-        background-size:25vw 50vh;
-      }
-}
-h3 {
-	margin-left: 30px;
-    text-align: left;
-    
-    color:#f57242;
-}
-h4{
-	text-align:left;
-	margin-left: 38px;
-	display:inline-block;
-    float:left;
-    font-weight: inherit;
-    /*font-family: Times;*/
-}
-label {
 
-	margin-left: 40px;
-}
-.page-header2 {
-  padding-bottom: 13px;
-  margin: 0px 0 20px;
-  border-bottom: 0px solid #eeeeee;
-
-  background-color: #25a725ab;
-}
-.settingStyle{
-	border:2px solid transparent;
-	padding:19px;
-	background-color:#fcf8e3;
-	width:360px
-	border-bottom-color: #f0ad4e73;
-    border-top-color: #f0ad4e7a;
-}
-.settingStyle1{
-	border:2px solid transparent;
-	padding:0px;
-	background-color: #fcf8e3;
-	width:375px
-
-    border-top-color: #f0ad4e7a;
-    border-bottom-color: #f0ad4e7a
-}
-</style>
 
 <body>
-
-<!--
-	<div class="page-header2 text-center">
-<div class="navbar" style="float:left">
-        <div class="dropdown" style="margin-top:4px; color:white;">
-          <button class="glyphicon glyphicon-list transparent-button " style="font-size:37px; color:white"></button>
-          <div class="dropdown-content">
-            <a href="/index/{{id}}">Home</a>
-			<a href="/entry2/{{id}}">Entry</a>
-            <a href="/diary/{{id}}">Diary</a>
-            <a href="/stat/{{id}}">Statistics</a>
-            <a href="/news/{{id}}">News</a>
-            <a href="/" style="color:red;" >Log Out</a>
-        </div>
-      </div>
-      </div>
-    <text style="color:black;font-size: 27px; color:white; margin-left: -42px;">Settings</text>
-</div>
-</div>
--->
-<div class="page-header">
-<h1 style="text-align:center; color:#f0ad4e; " >Settings</h1>
-<!--<button id="setting" style="margin-top:-82px;float:right; background-color: transparent; color:#f0ad4e; font-size: 31px;" class="btn glyphicon glyphicon-cog"><br></button>-->
-</div>
-
-<hr>
-<div id="root">
-<div class="text-center !important">
-	<h3>Account Information</h3><hr>
-	<div class=" text-center" id="account">
-		<div class="settingStyle">
-		<h4 style="margin-top:-12px;">Username:  {{id}}</h4>
+	<div class="grid">
+		<div class="grid-header">
+			<nav>
+				<a href="#">About</a>
+				<a href="/entry">New Entry</a>
+				<a href="/diary">Diary </a>
+			</nav>
 		</div>
-
-
-		<div class="settingStyle" style="margin-top:0px">
-		<h4 style="margin-top:-12px;">Email:  {{email}}</h4>
+		<div class="text-center">
+			<h1>Setting</h1>
 		</div>
-		<div class="settingStyle" style="margin-top:0px">
-		<h4 style="margin-top:-12px;">Phone:  {{phone}}</h4>
-	</div>
-
-	</div>
-</div>
-	<fieldset>
-	<a href="/user/logout" class="text-center btn btn-info " style="font-size:16px; padding:2px;margin-top:20px; margin-left:145px; ; width:100px;" onclick="clicked(event);" role="button" id="logoff">Log Off</a>
-
-</fieldset>
-	<form>
-		<fieldset>
-			<h3>Notifications:</h2><hr>
-				<div class="settingStyle1">
-				<div id="Location">
-					<h4>Allow Location</h4>
-					<label for="location"></label>
-					<label class="switch">
-		  			<input type="checkbox">
-		  			<span class="slider round"></span>
-					</label><br>
-				</div>
+		<div class="grid-main" >
+			<form class="grid-main-center grid-main-form text-center" style="background-color:#f0ad4e;">
+				<div><image class="icon" src="/images/man.svg" onerror="/images/man.png"></image></div>
+				<h2>Email: example@gmail.com<br>
+					Created: 01/01/19</h2>
+				<hr>
+					<h4>Old Password: <br>
+					<input type="text"/>
+					</h4>
+					<h4>New Password:<br>
+					<input type="text"/>
+					</h4>
+					<input type="submit"/>
+					<hr>
+					<a href="/logout" class="btn">Log Out</a>
+					<button class="btn">Delete User</button>
+				</form>
 			</div>
-			<div class="settingStyle1" >
-				<div id="camera">
-					<h4>Allow Camera</h4>
-					<label for="camera"></label>
-					<label class="switch">
-				  	<input type="checkbox">
-				  	<span class="slider round"></span>
-				</label><br>
-				</div>
-			</div>
-		</fieldset>
-	</form>
-	<hr>
-	<!--
-	<h3>Privacy</h2><hr>
-		<div id="share">
-			<h4>Share my diary</h4>
-			<label class="switch">
-	  		<input type="checkbox">
-	  		<span class="slider round"></span>
-			</label>
 		</div>
-	-->
-	<hr>
-	<div id="bottom" style="margin-top:30px;">
-        <button id="entry" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-pencil"><br>Entry</button>
-        <button id="diary" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="quarter glyphicon glyphicon-book btn"><br>Diary</button>
-        <button id="stat" style="background-color: #fcf8e3; color:#f0ad4e; font-size: 19px;" class="btn quarter glyphicon glyphicon-stats"><br>Stats</button>
-              </div>
-</div>
+	</div>
+</body>
 <script src="/js/user.js"></script>
 <script src="/js/entry.js"></script>
 
-<script>
-function clicked(e)
-{
-    if(!confirm('Are you sure to log off?'))e.preventDefault();
-}
-</script>
-</body>
+
 </html>

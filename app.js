@@ -15,6 +15,8 @@ const session = require('express-session');
 const errorhandler = require('errorhandler');
 const bodyParser = require('body-parser');
 
+
+
 const csrf = require('csurf');
 const login = require('./routes/login');
 const register = require('./routes/register');
@@ -54,6 +56,8 @@ firebase.initializeApp({
 });
 
 
+
+
 // all environments
 app.set('views', __dirname + '/views/layouts');//path.join(__dirname, 'views'));
 app.engine('hbs', exphbs({defaultLayout: false}));
@@ -70,9 +74,9 @@ app.set('trust proxy', 1);
 //app.use(express.static('public'));
 const sess = {
   secret: 'secret',
-  cookie: {secure:true},
+  cookie: {secure:!true},
   resave: false,
-  saveUninitialized:false
+  saveUninitialized:true
 };
 
 app.use(session(sess));
@@ -100,3 +104,4 @@ app.use('/index',index);
 
 let port = process.env.PORT || 3000;
 http.createServer(app).listen(port);
+
