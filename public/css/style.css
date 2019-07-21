@@ -65,7 +65,7 @@ diary-date{
 
 
 .diary-button{
-  float:right;
+  /* float:right; */
   margin: 1%;
   display:inline-block;
 }
@@ -248,13 +248,8 @@ diary-date{
     background-color: transparent;
     border-color:transparent;
   }
-  .profile-icon{
-    style="border-radius:50%;
-    width:10vw;
-    height:10vh;
-    margin-top:-4vh
-  }
-  }
+
+  
   .login {
     color: #ffffff;
     background-color: #85b1e9;
@@ -403,7 +398,7 @@ label[for=file-input]{
     grid-column-end:3;
     grid-row-start:2;
     grid-row-end:3;
-    background-color:red;
+    
     
   }
   .grid-main-center{
@@ -416,12 +411,13 @@ label[for=file-input]{
     box-shadow:2px 2px 2px grey;
     margin: 0px 10vw 0px;
   }
+
   .grid-header{
     grid-column-start:1;
     grid-column-end:2;
     grid-row-start:1;
     grid-row-end:2;
-    background-color:blue;
+    
   }
 }
 @media(max-width:425px){
@@ -432,10 +428,52 @@ label[for=file-input]{
 
     width: 100%;
   }
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
   
 }
 .icon{
   width:20%;
-  height:20%;
+  height:auto;
+  
+}
+
+.input-button{
+  padding: 1vmin;
+}
+
+
+/* The navigation menu links */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 2vmin 8px 2vmin;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 2.5vmin;
+  font-size: 2.5em;
   
 }

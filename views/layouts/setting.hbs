@@ -10,9 +10,6 @@
 <link href="/css/bootstrap.css" rel="stylesheet">
 
 
-
-
-
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <link href="/css/style.css"  type="text/css" rel="stylesheet">
 <link href="/scripts/rateit.css" rel="stylesheet">
@@ -25,7 +22,9 @@
 <body>
 	<div class="grid">
 		<div class="grid-header">
-			<nav>
+			<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+			<nav class="sidenav" id="mySidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 				<a href="#">About</a>
 				<a href="/entry">New Entry</a>
 				<a href="/diary">Diary </a>
@@ -38,25 +37,36 @@
 			<form class="grid-main-center grid-main-form text-center" style="background-color:#f0ad4e;">
 				<div><image class="icon" src="/images/man.svg" onerror="/images/man.png"></image></div>
 				<h2>Email: example@gmail.com<br>
-					Created: 01/01/19</h2>
+				Created: 01/01/19</h2>
 				<hr>
-					<h4>Old Password: <br>
-					<input type="text"/>
-					</h4>
-					<h4>New Password:<br>
-					<input type="text"/>
-					</h4>
-					<input type="submit"/>
-					<hr>
-					<a href="/logout" class="btn">Log Out</a>
-					<button class="btn">Delete User</button>
-				</form>
-			</div>
+				<h4>Old Password: <br>
+				<input type="text"/>
+				</h4>
+				<h4>New Password: <br>
+				<input type="text"/>
+				</h4>
+				<input class="btn btn-success btn-outline-dark" type="submit" value="Change Password"/>
+				<hr>
+				<div style="margin-bottom:1vmin">
+					<a href="/logout" class="btn btn-primary">Log Out</a>
+				</div>
+				<div style="margin-bottom:1vmin">
+					<button class="btn" >Delete User</button>
+				</div>
+				
+			</form>
 		</div>
 	</div>
+
 </body>
-<script src="/js/user.js"></script>
-<script src="/js/entry.js"></script>
-
-
+	<script>
+		function openNav() {
+		document.getElementById("mySidenav").style.width = "250px";
+		}
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+		}
+	</script>
+	<script src="/js/user.js"></script>
+	<script src="/js/entry.js"></script>
 </html>
