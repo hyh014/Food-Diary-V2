@@ -2,25 +2,47 @@
 $(document).ready(function(){
   // Initialize Firebase
   $.ajax({url:'/user/env',success:function(result){
-		firebase.initializeApp({
-		  apiKey: result.apiKey,
-		  authDomain: result.authDomain,
-		  databaseURL: result.databaseURL,
-		  storageBucket: result.storageBucket,
-		  messagingSenderId: result.messagingSenderId
-		});
+    // if(!firebase.apps.length)
+    // {
+    //   firebase.initializeApp({
+    //     apiKey: result.apiKey,
+    //     authDomain: result.authDomain,
+    //     databaseURL: result.databaseURL,
+    //     storageBucket: result.storageBucket,
+    //     messagingSenderId: result.messagingSenderId,
+    //     appId: result.appId,
+    //     projectId: result.projectId
+    //   });
+    //   console.log("init");
+    // }
+    var firebaseConfig = {
+      apiKey: "AIzaSyCSHqADgMlrT2iHoWBp7NLwePbmFG2S4PM",
+      authDomain: "my-project-1519903201611.firebaseapp.com",
+      databaseURL: "https://my-project-1519903201611.firebaseio.com",
+      projectId: "my-project-1519903201611",
+      storageBucket: "my-project-1519903201611.appspot.com",
+      messagingSenderId: "58050717665",
+      appId: "1:58050717665:web:4a91f091b0d62359"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase.auth().currentUser);
 
   firebase.auth().onAuthStateChanged(function(user) {
+    
+    console.log("Firebase?");
+    console.log(user);
     if (user) {
-      //  generateChart();
+      generateChart();
       var h = $(document).height()*.5;
       document.getElementById('chartdiv').style.height = h + 'px';
-    } else {
-      res.redirect('/login');
+    }else{
+      console.log("no user");
     }
     });
 
     function generateChart(){
+      console.log("generating graph");
       const UUID = firebase.auth().currentUser.uid;
       let ref = firebase.database().ref('users/'+UUID);
 

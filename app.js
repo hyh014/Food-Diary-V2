@@ -52,7 +52,9 @@ firebase.initializeApp({
   authDomain: process.env.AUTHDOMAIN,
   databaseURL: process.env.DATABASEURL,
   storageBucket: process.env.STORAGEBUCKET,
-  messagingSenderId: process.env.MESSAGINGSENDERID
+  messagingSenderId: process.env.MESSAGINGSENDERID,
+  appId: process.env.APPID,
+  projectId: process.env.PROJECTID
 });
 
 

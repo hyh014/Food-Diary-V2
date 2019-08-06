@@ -7,7 +7,8 @@ $(document).ready(function(){
 		  databaseURL: result.databaseURL,
 		  storageBucket: result.storageBucket,
 		  messagingSenderId: result.messagingSenderId
-    }));
+    });
+  }});
     
   let list = document.getElementById('list');
   list.addEventListener('click',function(event){
@@ -19,11 +20,11 @@ $(document).ready(function(){
         target = target.parentElement;
       }
         
-      // let key = $(target).parent().data('key');
-      // let UUID = firebase.auth().currentUser.uid;
+      let key = $(target).parent().data('key');
+      let UUID = firebase.auth().currentUser.uid;
       $(target).parent().remove();
-      // let ref = firebase.database().ref('users/'+UUID+'/'+key);
-      // ref.remove();
+      let ref = firebase.database().ref('users/'+UUID+'/'+key);
+      ref.remove();
     }else if(event.target.classList[0] === 'edit' || event.target.classList[0] === 'fa-edit'){
       let target = event.target;
       if(target.classList[0] === 'fa-edit')
