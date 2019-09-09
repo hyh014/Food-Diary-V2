@@ -24,7 +24,7 @@
 	</div>
 
 	<diary-entry-list class="list" id="list">
-		<diary-entry>
+		<diary-entry data-key="1">
 				<diary-date>04/25/2019 2:37PM</diary-date>
 				<div style="margin-top:20px; margin-bottom: 20px;" class="container ">
 						<img src="./images/fake1.png" style="width:40vw; height:45vh">
@@ -50,7 +50,7 @@
 
 
 		</diary-entry>
-				<diary-entry>
+		<diary-entry data-key="2">
 				<diary-date>04/25/2019 2:37PM</diary-date>
 				<div style="margin-top:20px; margin-bottom: 20px;" class="container ">
 						<img src="./images/fake1.png" style="width:40vw; height:45vh">
@@ -74,7 +74,7 @@
 				<button class='btn  diary-button cancel' style="display:none"><i class='fas fa-times'></i></button>
 				<button class='btn  diary-button change' style="display:none"><i class='fas fa-check'></i></button>
 		</diary-entry>
-				<diary-entry>
+		<diary-entry data-key="3">
 				<diary-date>04/25/2019 2:37PM</diary-date>
 				<div style="margin-top:20px; margin-bottom: 20px;" class="container ">
 						<img src="./images/fake1.png" style="width:40vw; height:45vh">
@@ -98,7 +98,7 @@
 				<button class='btn  diary-button cancel' style="display:none"><i class='fas fa-times'></i></button>
 				<button class='btn  diary-button change' style="display:none"><i class='fas fa-check'></i></button>
 		</diary-entry>
-				<diary-entry>
+		<diary-entry data-key="4">
 				<diary-date>04/25/2019 2:37PM</diary-date>
 				<div style="margin-top:20px; margin-bottom: 20px;" class="container ">
 						<img src="./images/fake1.png" style="width:40vw; height:45vh">
@@ -148,6 +148,19 @@
 		</diary-entry>
 		{{/each}} -->
 	</diary-entry-list>
+	<div id="editModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close">&times;</span>
+			</div>
+			<div class="modal-body">
+				<form id="modal-form">
+					<p>Some text in the Modal..</p>
+					<input id="modal-form-button" type="submit">
+				</form>
+			</div>
+		</div>
+	</div>
 <br>
 
 
