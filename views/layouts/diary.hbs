@@ -11,6 +11,11 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <link href="/scripts/rateit.css" rel="stylesheet">
 
+<style>
+	td{
+		padding:10px;
+	}
+</style>
 </head>
 <body>
 	<button id="top" title="Go to top" onclick="topFunction()">
@@ -150,13 +155,36 @@
 	</diary-entry-list>
 	<div id="editModal" class="modal">
 		<div class="modal-content">
-			<div class="modal-header">
-				<span class="close">&times;</span>
+			<span style="margin-left:auto" class="close">&times;</span>
+			<div class="modal-header" style="margin:auto">
+				<h1>Edit Diary</h1>
 			</div>
 			<div class="modal-body">
 				<form id="modal-form">
-					<p>Some text in the Modal..</p>
-					<input id="modal-form-button" type="submit">
+					<div>
+						<textarea id="comment" style="resize:none" name="comment" required></textarea>
+					</div>
+					<div >
+						<table style="margin:auto" align="center">
+							<tr>
+								<td>Health:</td>
+								<td><input id="health" name="health" type="number" min="1" max="5" step="0.5"></td>
+							</tr>
+							<tr>
+								<td>Taste:</td>
+								<td><input id="taste" name="taste" type="number" min="1" max="5" step="0.5"></td>
+							</tr>
+							<tr>
+								<td>Mood:</td>
+								<td><input id="mood" name="mood" type="number" min="1" max="5" step="0.5"></td>
+							</tr>
+							<tr>
+								<td>Anxiety:</td>
+								<td><input id="anxiety" name="anxiety" type="number" min="1" max="5" step="0.5"></td>
+							</tr>
+						</table>
+					</div>
+ 					<input id="modal-form-button" type="submit">
 				</form>
 			</div>
 		</div>
