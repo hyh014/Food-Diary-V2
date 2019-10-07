@@ -17,7 +17,7 @@ const bodyParser = require('body-parser');
 
 
 
-const csrf = require('csurf');
+// const csrf = require('csurf');
 const login = require('./routes/login');
 const register = require('./routes/register');
 const user = require('./routes/user');
@@ -80,9 +80,11 @@ const sess = {
 };
 
 app.use(session(sess));
-var csrfProtection = csrf({cookie:true});
+// var csrfProtection = csrf({cookie:true});
 app.use(cookieParser('IxD secret key'));
-app.use(csrfProtection);
+// app.use(csrfProtection);
+
+
 //app.use(express.Router());
 
 // app.use(express.static(path.join(__dirname + 'public')));

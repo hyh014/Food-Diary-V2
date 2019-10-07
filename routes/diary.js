@@ -29,6 +29,22 @@ router.get('/', function(req, res, next) {
 // 	}
 // });
 
+router.post('/edit',function(req,res,next){
+	let user = firebase.auth().currentUser;
+	if(user){
+		const UUID = firebase.auth().currentUser.uid;
+		let ref = firebase.database().ref('users/' + UUID+'/'+req.body.key);
+		ref.update({
+			comment:req.body.comment,
+			health:req.body.health,
+			taste:req.body.taste,
+			mood:req.body.mood,
+			 
+		})
+	}
+	res.sendStatus(200);	
+});
+
 module.exports = router;
 /*
  	EXAMPLE

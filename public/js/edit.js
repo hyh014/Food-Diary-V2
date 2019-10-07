@@ -11,7 +11,44 @@ $(document).ready(function(){
   }
 
   });
+  let form = document.getElementById('modal-form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    let info = {
+      key:sessionStorage.getItem('key'),
+      comment:$('#comment').val(),
+      health:$('#health').val(),
+      taste:$('#taste').val(),
+      mood:$('#mood').val(),
+      anxiety:$('#anxiety').val()
+    };
+    $.ajax({
+      type:"POST",
+      url:'/diary/edit',
+      data: info,
+      success: function(){
+        $('#comment').removeAttr('value');
+        $('#health').removeAttr('value');
+        $('#mood').removeAttr('value');
+        $('#taste').removeAttr('taste');
+        $('#anxiety').removeAttr('value');
 
+        let target = $("diary-entry[data-key="+sessionStorage.getItem('key')+']');
+        console.log(target.children('diary-comment').children('textarea').val());
+        target.children('diary-comment').children('textarea').val(info.comment);
+        target.children('diary-rating').children('.health')[0].innerHTML= info.health + ' &#9734;'
+        target.children('diary-rating').children('.taste')[0].innerHTML= info.taste + ' &#9734;'
+        target.children('diary-rating').children('.mood')[0].innerHTML= info.mood + ' &#9734;'
+        target.children('diary-rating').children('.anxiety')[0].innerHTML= info.anxiety + ' &#9734;'
+
+
+      },
+      error: function(){
+        alert('Something went wrong! Please refresh the page and Try again');
+      }
+    });
+    $("span.close")[0].click();
+  });
   let list = document.getElementById('list');
   list.addEventListener('click',function(event){
     
@@ -39,7 +76,8 @@ $(document).ready(function(){
   });
 
   let editForm = (target) =>{
-    console.log($(target).parent()[0].dataset.key);
+    sessionStorage.setItem('key',$(target).parent()[0].dataset.key);
+    // console.log($(target).parent()[0].dataset.key);
     $('#editModal').show();
   }
 // When the user clicks on <span> (x), close the modal
