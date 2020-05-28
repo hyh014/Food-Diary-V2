@@ -8,6 +8,7 @@ $(document).ready(function(){
 		  storageBucket: result.storageBucket,
 		  messagingSenderId: result.messagingSenderId
     });
+<<<<<<< HEAD
   }
 
   });
@@ -49,6 +50,10 @@ $(document).ready(function(){
     });
     $("span.close")[0].click();
   });
+=======
+  }});
+    
+>>>>>>> 08b79cad7c2cce97c628ac3b9780424dedb1e0b0
   let list = document.getElementById('list');
   list.addEventListener('click',function(event){
     
@@ -59,11 +64,11 @@ $(document).ready(function(){
         target = target.parentElement;
       }
         
-      // let key = $(target).parent().data('key');
-      // let UUID = firebase.auth().currentUser.uid;
+      let key = $(target).parent().data('key');
+      let UUID = firebase.auth().currentUser.uid;
       $(target).parent().remove();
-      // let ref = firebase.database().ref('users/'+UUID+'/'+key);
-      // ref.remove();
+      let ref = firebase.database().ref('users/'+UUID+'/'+key);
+      ref.remove();
     }else if(event.target.classList[0] === 'edit' || event.target.classList[0] === 'fa-edit'){
       let target = event.target;
       if(target.classList[0] === 'fa-edit')

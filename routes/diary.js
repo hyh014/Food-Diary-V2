@@ -3,31 +3,30 @@ var express = require('express');
 var router = express.Router();
 let firebase = require('firebase');
 // GET request to /login
-router.get('/', function(req, res, next) {
-	res.render('diary');
-});
 
 //							UNCOMMENT ONCE DONE
-// router.get('/', function(req, res, next) {
-// 	let user = firebase.auth().currentUser;
-// 	if(user){
-// 		const UUID = firebase.auth().currentUser.uid;
-// 		let ref = firebase.database().ref('users/'+UUID);
-//
-// 		let list = {entry:[]};
-// 		ref.once('value',function(snapshot){
-// 			snapshot.forEach(function(child){
-// 				list.entry.unshift({
-// 					'key': child.key,
-// 					'data': child.val()
-// 				});
-// 			});
-// 			 res.render('diary',list);
-// 		});
-// 	}else{
-// 		res.render('login',{message:'Please Login First'});
-// 	}
-// });
+router.get('/', function(req, res, next) {
+	let user = firebase.auth().currentUser;
+	console.log(user);
+	if(user){
+		
+		const UUID = firebase.auth().currentUser.uid;
+		let ref = firebase.database().ref('users/'+UUID);
+
+		let list = {entry:[]};
+		ref.once('value',function(snapshot){
+			snapshot.forEach(function(child){
+				list.entry.unshift({
+					'key': child.key,
+					'data': child.val()
+				});``
+			});
+			 res.render('diary',list);
+		});
+	}else{
+		res.render('login',{message:'Please Login First'});
+	}
+});
 
 router.post('/edit',function(req,res,next){
 	let user = firebase.auth().currentUser;

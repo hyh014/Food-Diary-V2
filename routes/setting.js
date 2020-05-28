@@ -6,14 +6,14 @@ let firebase = require('firebase');
 
 router.get('/', function(req, res, next) {
 
-	res.render('setting');
-	// let user = firebase.auth().currentUser;
-	// if(user){
-	// 	user = user.uid;
-	// 	res.render('setting');
-	// }else{
-	// 	res.redirect('/');
-	// }
+	// res.render('setting');
+	let user = firebase.auth().currentUser;
+	if(user){
+		console.log(user.metadata.creationTime);
+		res.render('setting',{email:user.email,created: user.metadata.creationTime});
+	}else{
+		res.redirect('/');
+	}
 
 
 });

@@ -44,6 +44,7 @@ router.post('/login', function(req,res,next){
   const password = req.body.password;
   console.log(req.body._csrf);
       firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+        
         res.redirect('/index');
       },function(error) {
 				// Handle Errors here.
@@ -89,7 +90,9 @@ router.get('/env',function(req,res,next){
   authDomain: process.env.AUTHDOMAIN,
   databaseURL: process.env.DATABASEURL,
   storageBucket: process.env.STORAGEBUCKET,
-  messagingSenderId: process.env.MESSAGINGSENDERID
+  messagingSenderId: process.env.MESSAGINGSENDERID,
+  appId:process.env.APPID,
+  projectId:process.env.PROJECTID
 }
   res.send(result);
 });

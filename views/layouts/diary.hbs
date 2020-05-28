@@ -29,7 +29,11 @@
 	</div>
 
 	<diary-entry-list class="list" id="list">
+<<<<<<< HEAD
 		<diary-entry data-key="1">
+=======
+		{{!-- <diary-entry>
+>>>>>>> 08b79cad7c2cce97c628ac3b9780424dedb1e0b0
 				<diary-date>04/25/2019 2:37PM</diary-date>
 				<div style="margin-top:20px; margin-bottom: 20px;" class="container ">
 						<img src="./images/fake1.png" style="width:40vw; height:45vh">
@@ -126,32 +130,35 @@
 				</button>
 				<button class='btn  diary-button cancel' style="display:none"><i class='fas fa-times'></i></button>
 				<button class='btn  diary-button change' style="display:none"><i class='fas fa-check'></i></button>
-		</diary-entry>
-		<!-- {{#each entry}}
-		<diary-entry data-key="{{key}}" >
-				<text style="font-size:15px; " >{{data.date}} {{data.time}}</text>
+		</diary-entry> --}}
+		 {{#each entry}}
+		 <diary-entry data-key="{{key}}">
+				<diary-date>{{data.date}} {{data.time}}</diary-date>
 				<div style="margin-top:20px; margin-bottom: 20px;" class="container ">
 						<img  src="{{data.imageURL}}" style="width:40vw; height:45vh">
 				</div>
 				<diary-comment>
-					<textarea  rows="4" cols="25" class="diary-textarea text-center" readonly>{{data.comments}}</textarea>
+					<textarea rows="4" cols="25" class="diary-textarea text-center" readonly>THIS IS A PLACEHOLDER COMMENT</textarea>
 				</diary-comment>
 				<diary-rating  class="diary-rating">
-					<text >Health: {{data.health}} &#9734;</text><br>
-					<text >Taste: {{data.taste}} &#9734;</text><br>
-					<text >Mood: {{data.mood}} &#9734;</text><br>
-					<text >Anxiety: {{data.anxiety}} &#9734;</text>
+					Health: <text class="health"> {{data.health}} &#9734;</text><br>
+					Taste: <text class="taste"> {{data.taste}} &#9734;</text><br>
+					Mood: <text class="mood"> {{data.mood}} &#9734;</text><br>
+					Anxiety: <text class="anxiety"> {{data.anxiety}} &#9734;</text>
 				</diary-rating>
-				<br> -->
-				<!--
+
 				<button class="remove btn  diary-button" title="Delete Entry">
 					<i class=" fa-trash-alt fas"></i>
 				</button>
 				<button class="edit btn  diary-button" title="Edit Entry">
 					<i class="fa-edit fas "></i>
 				</button>
+				<button class='btn  diary-button cancel' style="display:none"><i class='fas fa-times'></i></button>
+				<button class='btn  diary-button change' style="display:none"><i class='fas fa-check'></i></button>
+
+
 		</diary-entry>
-		{{/each}} -->
+		{{/each}} 
 	</diary-entry-list>
 	<div id="editModal" class="modal">
 		<div class="modal-content">
