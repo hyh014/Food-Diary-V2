@@ -93,8 +93,18 @@ window.onclick = function(event) {
   }
 }
 
-$("#modal-form-button").submit(function(e){
+$("#modal-form-button").click(function(e){
+  e.preventDefault();
+  let change = {
+    key:sessionStorage.getItem('key'),
+    comment:$('#comment').val(),
+    health:$('#health').val(),
+    taste:$('#taste').val(),
+    mood:$('#mood').val(),
+    anxiety:$('#anxiety').val()
 
+  }
+  console.log(change);
 });
 //   let cancel = (target) =>{
 //     let textarea = $(target).siblings("diary-comment").children()[0] ;

@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
     // do something
     let message = req.session.message;
     req.session.message = null;
-		res.render('register',{csrfToken:req.csrfToken(),message:message});
+		res.render('register',{message:message});
 });
 
 // POST request to /login
